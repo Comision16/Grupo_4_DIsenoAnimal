@@ -9,9 +9,9 @@ Nuestro objetivo es brindar a nuestros clientes una experiencia de compra satisf
 ###### María Belén Ibañez
 Soy de la provincia de Tucumán, ciudad de Alderetes. Tengo 33 años. Disfruto de la compañía de mi hijo, esposo, cerros y mates. Codear es mi cable a tierra.
 ###### Mariana Angeles
-Tengo 25 años , Escucho música casi todo el dia, el MATE algo infaltable en mi vida. Me gusta disfrutar el tiempo libre junto mi familia al aire libre. Me gusta compartir momentos con ellos  y ver a mis hijos divertirse 🫶🏽
+Tengo 25 años , Escucho música casi todo el dia, el MATE algo infaltable en mi vida. Me gusta disfrutar el tiempo libre junto mi familia al aire libre. Me gusta compartir momentos con ellos  y ver a mis hijos divertirse. 🫶🏽
 ###### Sasha Toledo
-Soy de ,tengo 24 años, me gustan los animales y los videojuegos
+Soy de ,tengo 24 años, me gustan los animales y los videojuegos.
 ###### Alejandro Elias
 Tengo 46 años, Soy de Lanus y me gusta la tecnología y la musica.
 ###### Diego Alejandro Ocampo
@@ -19,6 +19,9 @@ Tengo 42 años, soy de la localidad de Lanus O. Provincia de Buenos Aires,
 me gusta mucho pasear y la música.
 ###### Nicolas Oflaerti
 Tengo 36 años, soy de San Miguel. Me gusta mucho viajar y anelo poder trabajar de programador viajando y recorriendo nuestro bello pais.
+
+------------
+
 
 > Sitios de referencia
 

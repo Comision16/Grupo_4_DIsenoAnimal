@@ -31,7 +31,21 @@ Tengo 36 años, soy de San Miguel. Me gusta mucho viajar y anelo poder trabajar 
 
 ###### Por los clientes a los que apuntan:
 
-(aca van los links de Maria)
+https://www.barkbox.com/: BarkBox Se destaca por ofrecer cajas de suscripción mensual con juguetes y golosinas para perros. 
+Es un gran referente si se apunta a propietarios de perros y se desea incorporar un modelo de suscripción.
+
+https://www.chewy.com/: Elegí Chewy porque se enfoca en ofrecer productos para mascotas, incluyendo perros, gatos, pájaros, reptiles y otros animales. 
+Brinda servicios de entrega de alimentos y productos para mascotas directamente a los hogares de los clientes.
+
+https://figopetinsurance.com/ : Se especializa en seguros de salud para mascotas.Si planeamos ofrecer seguros o servicios relacionados 
+con la salud y el bienestar de las mascotas, este sitio puede brindarnos ideas sobre cómo dirigirnos a clientes preocupados por la salud de sus animales.
+
+https://www.petco.com/ : ofrece servicios como cuidado de mascotas y adopciones. 
+Esto lo hace adecuado para aquellos que desean atender a un público diverso.
+
+https://www.thehonestkitchen.com/ : Se enfoca en ofrecer alimentos naturales y saludables para perros y gatos.Es una excelente
+referencia si nos interesa atender a clientes que buscan opciones de alimentación de alta calidad y están dispuestos a pagar 
+por productos premium para sus mascotas.
 
 ###### Por la estética que presentan:
 

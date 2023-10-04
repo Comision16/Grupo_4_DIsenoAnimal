@@ -49,7 +49,14 @@ por productos premium para sus mascotas.
 
 ###### Por la estética que presentan:
 
-(aca van los links de Diego)
+https://letrasyfuentes.com : Conversor de letras para copiar y pegar / + 100 tipos de letras y fuentes
+ multiples estilos de tipos de letras
+
+https://fuenty.com : Conversor de FUENTES de letras para copiar y pegar. +50 tipos de letras LINDAS y tipografías bonitas
+ para redes sociales y Apps
+
+ https://conversorletras.com : Conversor de letras, tipografías y 🅽🆄🅴🆅🅰🆂 fuentes para Instagram y redes sociales +1000 tipos
+  diferentes y bonitas para 𝕮𝖔𝖗𝖙𝖆𝖗 𝓎 ℙ𝕖𝕘𝕒𝕣.
 
 ###### Por las funcionalidades implementadas:
 

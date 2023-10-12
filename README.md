@@ -13,7 +13,7 @@ Soy de la provincia de Tucumán, ciudad de Alderetes. Tengo 33 años. Disfruto d
 ##### Mariana Angeles
 Tengo 25 años y soy de Lanús.. El MATE algo infaltable en mi vida. Me gusta disfrutar el tiempo libre junto mi familia al aire libre, Me gusta compartir momentos con ellos  y ver a mis hijos divertirse. 🫶🏽
 ##### Sasha Toledo
-Soy de ,tengo 24 años, me gustan los animales y los videojuegos.
+Soy de La Plata, tengo 24 años, me gustan los animales y los videojuegos.
 ##### Alejandro Elias
 Tengo 46 años, Soy de Lanus y me gusta la tecnología y la musica.
 ##### Diego Alejandro Ocampo

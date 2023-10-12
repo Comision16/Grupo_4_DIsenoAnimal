@@ -1,6 +1,4 @@
 ## CANCAT 
-![Logo Cancat][img] 
-[img]: /design/img/logo.png "Logo Cancat"
 
 **Nos enfocamos en ofrecer productos y servicios de alta calidad para mascotas.
 Ofrecemos alimentos, juguetes, accesorios, productos de higiene y cuidado, ademas de otros artículos.

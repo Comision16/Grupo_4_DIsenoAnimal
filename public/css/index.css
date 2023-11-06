@@ -151,7 +151,92 @@
 .index__body__main__section--promo--texto p {
     color: var(--ColorAmarillo);
     text-align: center;
-    font-size: 36px;
+    font-size: 10vw;
     font-weight: 600;
     padding: 0 20px;
+}
+
+/* tablet */
+
+@media (min-width: 480px) {
+
+    .index__body__main--banner--circulos {
+        bottom: 10px;
+    }
+
+    .index__body__main__section--producto {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        margin-top: 8vh;
+        gap: 10px;
+    }
+    
+    .index__body__main__section--producto * {
+        margin-bottom: 0;
+    }
+    
+    .index__body__main__section--producto--columna1 {
+        position: absolute;
+        bottom: -10px;
+        width: 30%;        
+        margin: 0 20px;
+    }
+
+    .index__body__main__section--producto--columna1 img {
+        width: 17vw;
+    }
+
+    .index__body__main__section--producto--columna2 {
+        width: 35%;
+        margin-left: 18%;
+        padding: 10px 0;
+    }
+
+    .index__body__main__section--producto--columna3 {
+        width: 40%;
+        padding: 10px 0;
+    }
+
+    .index__body__main__section--producto--titulo {
+        font-size: 2.5vw;
+        margin-bottom: 10px;
+    }
+
+    .index__body__main__section--producto--precio {
+        font-size: 3vw;
+        margin-bottom: 10px;
+    }
+
+    .index__body__main__section--producto--agregar {
+        font-size: 2.5vw;
+    }
+
+    .index__body__main__section--producto--descripcion {
+        width: 100%;
+        font-size: 2vw;
+    }
+
+    .index__pedigree {
+        padding-bottom: 15px;
+    }
+
+    .index__body__main__section--producto--titulo {
+        text-align: center;
+    }
+
+    .index__body__main__section--producto--reverse {
+        flex-direction: row-reverse;
+    }
+
+    .index__body__main__section--producto--columna1--reverse{
+        right: -110px;
+    }
+
+    .index__body__main__section--producto--columna2--reverse {
+        width: 35%;
+        margin-left: 0;
+        margin-right: 18%;
+        padding: 10px 0;
+    }
 }

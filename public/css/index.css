@@ -63,15 +63,15 @@
 .index__body__main--banner--texto {
     position: absolute;
     right: 10%;
-    width: 40%;
+    width: 50%;
     text-align: center;
-    font-size: 3vw;
+    font-size: 4vw;
     color: var(--ColorAmarillo);
     text-shadow: 2px 1px 2px black;
 }
 
 .index__body__main__section--titulo {
-    font-size: 16px;
+    font-size: 20px;
     padding: 8px 0;
     background-color: var(--ColorAzul);
     color: var(--ColorAmarillo);

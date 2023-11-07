@@ -163,7 +163,7 @@
 
 /* tablet */
 
-@media (min-width: 480px) and (max-width: 768px) {
+@media (min-width: 480px) and (max-width: 820px) {
 
     .index__body__main--banner--circulos {
         bottom: 10px;

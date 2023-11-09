@@ -7,10 +7,18 @@
   "description": "**Nos enfocamos en ofrecer productos y servicios de alta calidad para mascotas.\r Ofrecemos alimentos, juguetes, accesorios, productos de higiene y cuidado, ademas de otros artículos.\r también brindamos servicios de peluquería y baño.\r Nuestro objetivo es brindar a nuestros clientes una experiencia de compra satisfactoria y asegurarnos de que sus mascotas reciban los mejores productos y servicios.**",
   "version": "1.0.0",
   "main": "app.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarianaBarcena/Grupo_4_DIsenoAnimal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MarianaBarcena/Grupo_4_DIsenoAnimal/issues"
+  },
+  "homepage": "https://github.com/MarianaBarcena/Grupo_4_DIsenoAnimal#readme"
 }

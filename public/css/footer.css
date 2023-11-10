@@ -208,3 +208,80 @@
         padding-bottom: 20px;
     }
 }
+
+/* Desktop */
+
+@media (min-width: 1024px) {
+
+    .footer--content--logo img {
+        width: 40%;
+    }     
+
+    .footer--content--registrate--texto {
+        width: 70%;
+        text-align: center;
+        margin-left: -150px;
+    }
+
+    .footer--content--registrate--texto p {
+        align-self: center;
+        width: 100%;
+        font-size: 26px;        
+    }
+
+
+    .footer--content--nosotros {
+        width: 25%;
+    }
+
+    .footer--content--logo-y-texto {
+        align-items: flex-start;
+        padding-top: 30px;
+    }
+    .footer--content--input {
+        margin-top: -100px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer--content--registrate--input--texto {
+        width: 630px;
+        height: 60px;
+        border-radius: 30px;
+    }
+
+    .footer--content--registrate--input--texto:hover {
+        width: 650px;
+        transition: 300ms;
+    }
+
+    .footer--content--registrate--input--submit {
+        width: 220px;
+        height: 60px;
+    }
+
+    .footer--content--registrate--input--submit:hover {
+        background-color: var(--ColorCeleste);
+        transition: 500ms;
+    }
+
+    .footer--content--ul {
+        width: 32%;
+    }
+
+    .opcion {
+        position: relative;
+    }
+
+    .footer--servicios {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        width: 70%;
+        flex-direction: row;
+    }
+
+    .footer--content--ul-servicios {
+        padding-right: 0;
+    }
+}

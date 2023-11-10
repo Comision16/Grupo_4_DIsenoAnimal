@@ -1,12 +1,13 @@
-      *{
-      color:var(--ColorAzul);
-      font-weight: 600;
-      
-   }
+
   
+    .detail_product * {
+     color:var(--ColorAzul);
+      font-weight: 600;
+    }
     .detail_product {
-     background: var(--ColorGris);
-  }
+      background: var(--ColorGris);
+     }
+     
     .contenedor_div_detail {
       background-color: #fff;
       border-radius: 10px;
@@ -91,6 +92,7 @@
     }
     h2 {
       margin-top: 5px;
+      text-align: center;
     }
                    /* PRECIO  GRANDE PRINCIPAL*/  
     .precio__detailproduct {
@@ -138,7 +140,7 @@
     text-align: center;
     width: 80%;
     box-sizing: border-box;
-    border-radius: 5%;
+    border-radius: 25px;
     box-shadow: 0 4px 8px 2px rgb(95, 95, 95);
     overflow: hidden; /* Evitar que la imagen agrande la tarjeta */
   }
@@ -166,7 +168,7 @@
  }
 
   /* contenedor del precio del producto destacado */
-  .Precio_container {
+    .Precio_container {
     background-color: var(--ColorAzul);
     display: flex;
     justify-content: center;
@@ -177,45 +179,97 @@
      
   }
   
-  .Precio_container * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+    .Precio_container * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+        }
   
   /* PROP ENVIO , select y option /*/
-  .envio {
-    display: flex;
-    align-items: center;
-    padding: 30px;
-    gap: 2px;
-    justify-content: center;
-  }
+       .envio {
+      display: flex;
+      align-items: center;
+      padding: 30px;
+      gap: 2px;
+      justify-content: center;
+        }
   
-  .envio i , .envio span {
-    margin-right: 10px;
-  }
+    .envio i , .envio span {
+     margin-right: 10px;
+      }
   
-  .envio option {
+    .envio option {
     color: var(--ColorAmarillo);
-  }
-  .envio select {
+      }
+    .envio select {
     background-color: var(--ColorAzul);
     color: var(--ColorAmarillo);
     border-radius: 8px;
     border: none;
     padding: 5px;
     width: 50%;
-  }
+        }
   
-  .span {
-    text-align: start;
-    width: 50%;
-  }
+    .span {
+     text-align: start;
+     width: 50%;
+      }
   
   .Carrito_detailproduct  {
     display: inline-block;
     text-decoration: none;
     margin-top: 15px;  
-}
+    }
 
+/* MEDIA QUERY TABLET */
+
+@media (min-width: 768px) {
+
+  .contenedor_div_detail {
+max-width: 89%;
+    justify-content: center;
+   margin-left: 40px;
+   margin-right: 25px;
+  }
+        h2{
+        text-align: center; 
+        padding-bottom: 20px;
+      margin-top: 20px; }
+
+      .select  {
+        padding: 20px;
+      }
+        .productos__destacados{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+          }
+
+        .productos__destacados .item {
+        width:25%; 
+        transition: transform 0.3s ease-in-out;
+              } 
+        .productos__destacados .item:hover {
+         transform: scale(1.1);
+            }
+            
+       .item:last-child{
+        display: none;
+       }
+    /*/ IMAGEN/*/
+    .image-gallery {
+      width: 500px;
+      margin: 0 auto; /* Establece márgenes automáticos a izquierda y derecha para centrar el contenedor */
+      text-align: center; /* Centra el contenido dentro del contenedor */
+      position: relative;
+      }
+      .envio select {
+
+        padding: 5px;
+        width: 25%;
+            }
+                .envio span {
+                  margin-right:20px;
+                }   
+}
+  

@@ -13,41 +13,77 @@
 
 <body>
     <header>
-        <section class="header__section__superior">
-            <img class="header__section__superior-img" src="/img/logo-header.png" alt="imagen de la marca">
-            <div class="header__section__superior--register--login">
-                <i class="fa-solid fa-user-plus"></i>
-                <a class="header__section__superior--register" href="/register.html">Regístrate</a>
-                <a class="header__section__superior--login" href="/login.html">Iniciar Sesion</a>
-            </div>
-        </section>
-        <section class="header__section__inferior">
 
-            <div class="header__section__inferior--menu-hambuerguesa">
-                <i class="fas fa-bars"></i>
-            </div>
+        <img class="header__img" src="/img/logo-header.png" alt="imagen de la marca">
 
-            <form class="header__section__inferior--barra-de-busqueda">
-                <input type="text" placeholder="Busca tus marcas y productos favoritos">
-                <button class="header__section__inferior--button"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
+        <div class="header__div__register--login">
+            <i class="fa-solid fa-user-plus"></i>
+            <a class="header__div__register" href="/register.html">Regístrate</a>
+            <a class="header__div__login" href="/login.html">Iniciar Sesion</a>
+        </div>
 
-            <div class="header__section__inferior--carrito-de-compras">
+        <div class="header__div__menu-hambuerguesa">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <form class="header__form__barra-de-busqueda">
+            <input type="text" placeholder="Busca tus marcas y productos favoritos">
+            <button class="header__form__button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+
+        <div class="header__div__carrito-de-compras">
+            <div class="header__div__carrito-de-compras-icono">
                 <i class="fa-solid fa-cart-plus"></i>
-                <p>4</p>
-                <a href="/productCart.html">Tu compra</a>
-
-                <!-- numero que va sobre el carrito --> 
+                <div class="header__div__carrito-de-compras-numero">
+                    <p>4</p>
+                </div>
             </div>
-            <div class="header__section__inferir--lista">
-                <ul >
-                    <li><a href=""></a> Perros ▼ </li>
-                    <li><a href=""></a> Gatos ▼ </li>
-                    <li><a href=""></a> Animales pequeños ▼ </li>
-                    <li><a href=""></a> Los + vendidos ▼ </li>  
-                </ul>
-           </div>
-        </section>
+
+
+
+            <a href="/productCart.html">Tu compra</a>
+            <!-- numero que va sobre el carrito -->
+        </div>
+
+        <div class="header__div__lista">
+           <ul>
+                <li>
+                    <a href="#">Perros</a>
+                    <!-- <ul>
+                        <li><a href="">Alimento</a></li>
+                        <li><a href="">Accesorios</a></li>
+                        <li><a href="">Cuidado</a></li>
+                        <li><a href="">Corte de pelo y baño</a></li>
+                    </ul> -->
+                </li>
+
+                <li>
+                    <a href="#">Gatos</a>
+                    <!-- <ul>
+                        <li><a href="">Alimento</a></li>
+                        <li><a href="">Accesorios</a></li>
+                        <li><a href="">Cuidado</a></li>
+                        <li><a href="">Baño</a></li>
+                    </ul> -->
+                </li>
+
+                <li>
+                    <a href="#">Animales pequeños</a>
+                    <!-- <ul>
+                        <li><a href="">Aves</a></li>
+                        <li><a href="">Peses</a></li>
+                        <li><a href="">Roedores</a></li>
+                    </ul> -->
+
+                </li>
+
+                <li><a href="">Lo + vendido</a></li>
+
+                <li><a href="">Ofertas</a></li>
+            </ul>
+
+        </div>
+    
     </header>
 </body>
 

@@ -1,0 +1,52 @@
+h1{
+    color: var(--ColorAzul);
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: var(--ColorAmarillo);
+}
+.register_body{
+    background-position: center center;
+    background-image:url(/img/background-login.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.register_form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10%;
+    color: var(--ColorAzul);
+}
+
+.register_form input{
+    padding: 3%;
+    margin: 2% 5%;
+    width: 90%;
+    border: 2px solid var(--ColorAzul);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+input::placeholder{
+    color: var(--ColorAzul);
+    text-align: center;
+    font-weight: bold;
+}
+
+.register_form button{
+    width: 48%;
+    margin-left: 26%;
+    padding: 1%;
+    background-color: var(--ColorAzul);
+    border-radius: 20px;
+    color: var(--ColorAmarillo);
+    font-weight: bold;
+    border-color: var(--ColorAzul);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.register_form button:hover{
+    transform: scale(1.1);
+    box-shadow: 13px 15px 37px black;
+}

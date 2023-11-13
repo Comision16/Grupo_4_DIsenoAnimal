@@ -5,9 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
 
-    <title>Register</title>
+    <title>¡Registrate!</title>
 </head>
-<body>
+<body class="register_body"> 
     
+    <nav>
+        <h1>Registrarse</h1>
+        <form class="register_form" action="/" method="post">
+            <input type="text" name="nombre" placeholder="Nombre y Apellido" required minlength="8" maxlength="30">
+            <input type="email" name="email" placeholder="E-mail" required minlength="8" maxlength="40">
+            <input type="password" name="password" placeholder="Contraseña" required minlength="8" maxlength="12">
+            <input type="password" name="password" placeholder="Confirmar contraseña" required minlength="8" maxlength="12">
+            <button type="submit">Crear cuenta</button>
+        </form>
+    </nav>
 </body>
 </html>

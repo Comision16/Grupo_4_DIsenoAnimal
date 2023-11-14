@@ -1,13 +1,273 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
-
+    <script src="https://kit.fontawesome.com/6e64724991.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/styles.css" type="text/css">
     <title>Product cart </title>
 </head>
+
 <body>
+    <header>
+
+        <img class="header__img" src="/img/logo-header.png" alt="imagen de la marca">
+
+        <div class="header__div__register--login">
+            <i class="fa-solid fa-user-plus"></i>
+            <a class="header__div__register" href="/register.html">Regístrate</a>
+            <a class="header__div__login" href="/login.html">Iniciar Sesion</a>
+        </div>
+
+        <div class="header__div__menu-hambuerguesa">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <form class="header__form__barra-de-busqueda">
+            <input type="text" placeholder="Busca tus marcas y productos favoritos">
+            <button class="header__form__button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+
+        <div class="header__div__carrito-de-compras">
+            <div class="header__div__carrito-de-compras-icono">
+                <i class="fa-solid fa-cart-plus"></i>
+                <div class="header__div__carrito-de-compras-numero">
+                    <p>4</p>
+                </div>
+            </div>
+
+
+
+            <a href="/productCart.html">Tu compra</a>
+            <!-- numero que va sobre el carrito -->
+        </div>
+
+        <div class="header__div__lista">
+           <ul>
+                <li>
+                    <a href="#">Perros</a>
+                    <!-- <ul>
+                        <li><a href="">Alimento</a></li>
+                        <li><a href="">Accesorios</a></li>
+                        <li><a href="">Cuidado</a></li>
+                        <li><a href="">Corte de pelo y baño</a></li>
+                    </ul> -->
+                </li>
+
+                <li>
+                    <a href="#">Gatos</a>
+                    <!-- <ul>
+                        <li><a href="">Alimento</a></li>
+                        <li><a href="">Accesorios</a></li>
+                        <li><a href="">Cuidado</a></li>
+                        <li><a href="">Baño</a></li>
+                    </ul> -->
+                </li>
+
+                <li>
+                    <a href="#">Animales pequeños</a>
+                    <!-- <ul>
+                        <li><a href="">Aves</a></li>
+                        <li><a href="">Peses</a></li>
+                        <li><a href="">Roedores</a></li>
+                    </ul> -->
+
+                </li>
+
+                <li><a href="">Lo + vendido</a></li>
+
+                <li><a href="">Ofertas</a></li>
+            </ul>
+
+        </div>
     
+    </header>
+    
+    <main>
+    <section class="Productos-en-el-carrito">
+        <div>
+            <i class="fa-solid fa-arrow-left"></i>
+            <h5>Seguir Buscando</h5>
+        </div>
+        <article>
+            <div><img src="/img/fotosCarrito/pedigree-adulto.png" alt=""></div>
+            <div>
+                <h5>Balance</h5>
+                <p>Perros adultos 20kg + regalo.</p>
+            </div>
+            <h4>$ 11.600</h4>
+            <img src="/img/fotosCarrito/contador.png" alt="">
+            <i class="fa-solid fa-trash-can"></i>
+        </article>
+        <article>
+            <div><img src="/img/fotosCarrito/pedigree-adulto.png" alt=""></div>
+            <div>
+                <h5>Dogui</h5>
+                <p>Perros cachoros 10kg.</p>
+            </div>
+            <h4>$6.900</h4>
+            <img src="/img/fotosCarrito/contador.png" alt="">
+            <i class="fa-solid fa-trash-can"></i>
+        </article>
+        <article>
+            <div><img src="/img/fotosCarrito/pedigree-adulto.png" alt=""></div>
+            <div>
+                <h5>Balance</h5>
+                <p>Gatos adultos 3kg.</p>
+            </div>
+            <h4>$ 2.550</h4>
+            <img src="/img/fotosCarrito/contador.png" alt="">
+            <i class="fa-solid fa-trash-can"></i>
+        </article>
+        <article>
+            <div><img src="/img/fotosCarrito/pedigree-adulto.png" alt=""></div>
+            <div>
+                <h5>Pedigree</h5>
+                <p>Perros adultos 15kg.</p>
+            </div>
+            <h4>$ 9.300</h4>
+            <img src="/img/fotosCarrito/contador.png" alt="">
+            <i class="fa-solid fa-trash-can"></i>
+        </article>
+    </section>
+
+    <section class="formas-de-pago">
+        <h4> Formas de Pago </h4>
+        <div>
+            <form>
+                <div>
+                    <i class="fa-solid fa-credit-card"></i>
+                    <label for="visa">Visa</label>
+                    <input type="radio" id="visa" name="tarjeta" value="visa">
+                </div>
+                <div>
+                    <i class="fa-solid fa-credit-card"></i>
+                    <label for="master">Master</label>
+                    <input type="radio" id="master" name="tarjeta" value="master">
+                </div>
+                <div>
+                    <i class="fa-solid fa-credit-card"></i>
+                    <label for="american">American</label>
+                    <input type="radio" id="american" name="tarjeta" value="american">
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-credit-card"></i>
+                    <label for="maestro">Maestro</label>
+                    <input type="radio" id="maestro" name="tarjeta" value="maestro">
+                </div>
+            </form>
+            <form>
+                <label for="nombre"></label>
+                <input type="text" placeholder="Nombre completo del titular" id="nombre" name="nombre" required>
+
+                <label for="numero"></label>
+                <input type="text" placeholder="Número de la tarjeta" id="numero" name="numero" pattern="[0-9]{16}"
+                    required>
+
+                <label for="fecha"></label>
+                <input type="text" placeholder="Expiración" id="fecha" name="fecha">
+
+                <label for="cvv"></label>
+                <input type="text" placeholder="CVV" id="cvv" name="cvv" pattern="[0-9]{3}" required>
+
+            </form>
+        </div>
+        <div>
+            <p>Subtotal</p>
+            <p>$11111</p>
+        </div>
+        <div>
+            <label for="numero">Codigo de descuento</label>
+            <input type="text" name="numero" pattern="[0-9]{16}" required>
+        </div>
+        <div>
+            <p>Envio</p>
+            <p>$ 2.300</p>
+        </div>
+        <div>
+            <p>Total</p>
+            <p>Pagar $11111</p>
+        </div>
+
+    </section>
+
+    <section class="productos-similares">
+        <h3>Productos similares</h3>
+        <article>
+            <img src="/img/fotosCarrito/pedigree-adulto.png" alt="imagen del producto">
+            <div>
+                <div>
+                    <h6>PerrOn</h6>
+                    <p>Perros adultos 25kg.</p>
+                </div>
+                <div>
+                    <h5>$15.200</h5>
+                    <i class="fa-solid fa-cart-plus"></i>
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <img src="/img/fotosCarrito/pedigree-adulto.png" alt="imagen del producto">
+            <div>
+                <div>
+                    <h6>Pro Plan</h6>
+                    <p>Perros pequeños 5kg.</p>
+                </div>
+                <div>
+                    <h5>6.200</h5>
+                    <i class="fa-solid fa-cart-plus"></i>
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <img src="/img/fotosCarrito/pedigree-adulto.png" alt="imagen del producto">
+            <div>
+                <div>
+                    <h6>RicoCan</h6>
+                    <p>Perros adultos 10kg.</p>
+                </div>
+                <div>
+                    <h5>$9.100</h5>
+                    <i class="fa-solid fa-cart-plus"></i>
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <img src="/img/fotosCarrito/pedigree-adulto.png" alt="imagen del producto">
+            <div>
+                <div>
+                    <h6>Nature</h6>
+                    <p>Perros adultos 15kg.</p>
+                </div>
+                <div>
+                    <h5>$19.700</h5>
+                    <i class="fa-solid fa-cart-plus"></i>
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <img src="/img/fotosCarrito/pedigree-adulto.png" alt="imagen del producto">
+            <div>
+                <div>
+                    <h6>PerrOn</h6>
+                    <p>Perros adultos 23kg.</p>
+                </div>
+                <div>
+                    <h5>$11.200</h5>
+                    <i class="fa-solid fa-cart-plus"></i>
+                </div>
+            </div>
+        </article>
+
+    </section>
+</main>
 </body>
+
 </html>

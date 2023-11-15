@@ -1,5 +1,6 @@
-h1{
+.register_body h1{
     color: var(--ColorAzul);
+    font-size: 46px;
     text-align: center;
     text-decoration: underline;
     text-decoration-color: var(--ColorAmarillo);
@@ -24,10 +25,10 @@ h1{
     width: 90%;
     border: 2px solid var(--ColorAzul);
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255);
 }
 
-input::placeholder{
+.register_body input::placeholder{
     color: var(--ColorAzul);
     text-align: center;
     font-weight: bold;

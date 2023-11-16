@@ -1,11 +1,12 @@
-.register_body h1{
+.register_main h1{
     color: var(--ColorAzul);
     font-size: 46px;
     text-align: center;
     text-decoration: underline;
     text-decoration-color: var(--ColorAmarillo);
+    padding-top: 5%;
 }
-.register_body{
+.register_main{
     background-position: center center;
     background-image:url(/img/background-login.jpg);
     background-size: cover;
@@ -17,6 +18,7 @@
     flex-direction: column;
     margin-bottom: 10%;
     color: var(--ColorAzul);
+    padding-bottom: 7%;
 }
 
 .register_form input{
@@ -28,7 +30,7 @@
     background-color: rgba(255, 255, 255);
 }
 
-.register_body input::placeholder{
+.register_main input::placeholder{
     color: var(--ColorAzul);
     text-align: center;
     font-weight: bold;

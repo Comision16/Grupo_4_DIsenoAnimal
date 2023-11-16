@@ -413,6 +413,11 @@ main {
 }
 
 }
+@media (min-width:720px){
+    .prod-similares-que-no-s-mostraran{
+        display: none;
+    }
+}
 
 /*============================================================= */
 /*  desktop 1024px */

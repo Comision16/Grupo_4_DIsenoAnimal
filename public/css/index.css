@@ -1,3 +1,39 @@
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: chartreuse;
+}
+
+swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .index__body {
     background-color: var(--ColorGris);
 }
@@ -5,6 +41,11 @@
 .index__body__main {
     padding: 15px;
     margin: 0 auto;
+}
+
+.swiper {
+    width: 600px;
+    height: 300px;
 }
 
 .index__body__main--banner {
@@ -18,48 +59,6 @@
     width: 100%;
 }
 
-.index__body__main--banner--arrow {   
-    display: flex;
-    align-items: center;
-    font-size: 7vw;
-    color: var(--ColorAmarillo);
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--ColorAzul);
-}
-
-.index__fa-chevron-left { 
-    position: absolute;
-    left: 3%;
-}
-
-.index__fa-chevron-right {   
-    position: absolute;
-    right: 3%;
-}
-
-.index__body__main--banner--circulos {
-    position: absolute;
-    font-size: 1.5vw;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 8%;
-    bottom: 5px;
-    right: 42%;
-}
-
-.index__body__main--banner--circulos--medio {
-    font-size: 2vw;
-}
-
-.index__body__main--banner--circulos a {
-    text-decoration: none;
-    color: var(--ColorAmarillo);
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--ColorAzul);
-    padding: 1.5px;
-}
-
 .index__body__main--banner--texto {
     position: absolute;
     right: 10%;
@@ -68,6 +67,14 @@
     font-size: 4vw;
     color: var(--ColorAmarillo);
     text-shadow: 2px 1px 2px black;
+}
+
+.index__body__main--banner--texto--festejo {
+    right: 25%;
+}
+
+.index__body__main--banner--texto--descuentos {
+    right: 5%;
 }
 
 .index__body__main__section--titulo {
@@ -99,7 +106,7 @@
 .index__body__main__section--producto img {
     width: 50%;
     max-height: 400px;
-    
+
 }
 
 .index__body__main__section--producto--titulo {
@@ -133,8 +140,8 @@
     color: var(--ColorAzul);
     margin-bottom: 20px;
     text-decoration: none;
-    font-size: 24px;   
-    gap: 20px; 
+    font-size: 24px;
+    gap: 20px;
 }
 
 .index__body__main__section--promo {
@@ -177,21 +184,21 @@
         gap: 10px;
         padding-right: 20px;
     }
-    
+
     .index__body__main__section--producto * {
         margin-bottom: 0;
     }
-    
+
     .index__body__main__section--producto--columna1 {
         justify-content: flex-start;
         position: absolute;
         left: -30px;
         bottom: 10px;
-        width: 30%;        
+        width: 30%;
         margin: 0 20px;
     }
 
-    .index__body__main__section--producto--columna1--reverse{
+    .index__body__main__section--producto--columna1--reverse {
         position: absolute;
         left: 70%;
     }
@@ -206,8 +213,9 @@
     .index__body__main__section--producto--columna2 {
         width: 35%;
         margin-left: 25%;
-        padding: 20px ;
+        padding: 20px;
     }
+
     .index__body__main__section--producto--columna2--reverse {
         width: 35%;
         margin-left: 0;
@@ -254,8 +262,8 @@
         padding: 0 40px;
     }
 
-    .index__body__main__section--promo--texto p{   
-        margin-bottom: 5%;     
+    .index__body__main__section--promo--texto p {
+        margin-bottom: 5%;
         font-size: 8vw;
     }
 }
@@ -264,7 +272,7 @@
 
 @media (min-width: 1024px) {
 
-    .index__body__main--banner--arrow {   
+    .index__body__main--banner--arrow {
         font-size: 5vw;
     }
 
@@ -298,6 +306,7 @@
         max-height: 200px;
         width: auto;
     }
+
     .index__body__main__section--producto--agregar {
         padding: 10px;
         font-size: 1.5vw;
@@ -309,11 +318,11 @@
 
     .index__body__main__section--promo--texto {
         bottom: 30%;
-        right: 12% ;
+        right: 12%;
         width: 39%;
     }
 
-    .index__body__main__section--promo--texto p{        
+    .index__body__main__section--promo--texto p {
         font-size: 5vw;
     }
 }

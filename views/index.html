@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/d77b7a8887.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
   <link rel="stylesheet" href="/css/styles.css">
 
   <title>index</title>
@@ -13,17 +16,39 @@
 <body class="index__body">
   <main class="index__body__main">
     <div class="index__body__main--banner">
-      <img src="/img/banner1-home.png" alt="banner">
-      <a href="" class="index__body__main--banner--arrow"><i
+
+      <swiper-container class="mySwiper" navigation="true">
+        <swiper-slide>
+
+          <img src="/img/banner1-home.png" alt="banner">
+          <p class="index__body__main--banner--texto">Porque no solo es una mascota, es parte de tu familia.</p>
+
+        </swiper-slide>
+        <swiper-slide>          
+
+          <img src="/img/banner3-home.jpg" alt="banner">
+          <p class="index__body__main--banner--texto index__body__main--banner--texto--festejo">Festeja el cumple de tu mascota con nosotros.</p>
+
+        </swiper-slide>
+        <swiper-slide>
+          
+          <img src="/img/banner4-home.jpg" alt="banner">
+          <p class="index__body__main--banner--texto index__body__main--banner--texto--descuentos">20%, 30%, %40 <br> Los mejores descuentos en nuestra pagina.</p>
+
+        </swiper-slide>
+      </swiper-container>
+
+      <!-- <img src="/img/banner1-home.png" alt="banner">
+      <a href="#" class="index__body__main--banner--arrow"><i
           class="fa-solid fa-chevron-left index__fa-chevron-left"></i></a>
-      <a href="" class="index__body__main--banner--arrow"><i
+      <a href="#" class="index__body__main--banner--arrow"><i
           class="fa-solid fa-chevron-right index__fa-chevron-right"></i></a>
-      <p class="index__body__main--banner--texto">Porque no solo es una mascota, es parte de tu familia.</p>
-      <div class="index__body__main--banner--circulos">
-        <a href=""><i class="fa-solid fa-circle"></i></a>
-        <a href=""><i class="fa-solid fa-circle index__body__main--banner--circulos--medio"></i></a>
-        <a href=""><i class="fa-solid fa-circle"></i></a>
-      </div>
+      <p class= "index__body__main--banner--texto">Porque no solo es una mascota, es parte de tu familia.</p>
+      <div class= "index__body__main--banner--circulos">
+        <a href="#"><i class="fa-solid fa-circle"></i></a>
+        <a href="#"><i class="fa-solid fa-circle index__body__main--banner--circulos--medio"></i></a>
+        <a href="#"><i class="fa-solid fa-circle"></i></a>
+      </div> -->
     </div>
     <section class="index__body__main__section">
 
@@ -53,11 +78,13 @@
 
       <div class="index__body__main__section--producto index__body__main__section--producto--reverse">
 
-        <div class="index__body__main__section--producto--columna1 index__body__main__section--producto--columna1--reverse">
+        <div
+          class="index__body__main__section--producto--columna1 index__body__main__section--producto--columna1--reverse">
           <img src="/img/CanAmor.png" alt="Natural choice">
         </div>
 
-        <div class="index__body__main__section--producto--columna2 index__body__main__section--producto--columna2--reverse">
+        <div
+          class="index__body__main__section--producto--columna2 index__body__main__section--producto--columna2--reverse">
           <h3 class="index__body__main__section--producto--titulo">Lorem ipsum</h3>
           <p class="index__body__main__section--producto--descripcion">Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Duis aliquam.</p>
@@ -95,11 +122,13 @@
 
       <div class="index__body__main__section--producto index__body__main__section--producto--reverse">
 
-        <div class="index__body__main__section--producto--columna1 index__body__main__section--producto--columna1--reverse">
+        <div
+          class="index__body__main__section--producto--columna1 index__body__main__section--producto--columna1--reverse">
           <img src="/img/pedigree.png" alt="Natural choice" class="index__pedigree">
         </div>
 
-        <div class="index__body__main__section--producto--columna2 index__body__main__section--producto--columna2--reverse">
+        <div
+          class="index__body__main__section--producto--columna2 index__body__main__section--producto--columna2--reverse">
           <h3 class="index__body__main__section--producto--titulo">Lorem ipsum</h3>
           <p class="index__body__main__section--producto--descripcion">Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Duis aliquam.</p>
@@ -164,11 +193,13 @@
 
       <div class="index__body__main__section--producto index__body__main__section--producto--reverse">
 
-        <div class="index__body__main__section--producto--columna1 index__body__main__section--producto--columna1--reverse">
+        <div
+          class="index__body__main__section--producto--columna1 index__body__main__section--producto--columna1--reverse">
           <img src="/img/CanAmor.png" alt="Natural choice">
         </div>
 
-        <div class="index__body__main__section--producto--columna2 index__body__main__section--producto--columna2--reverse">
+        <div
+          class="index__body__main__section--producto--columna2 index__body__main__section--producto--columna2--reverse">
           <h3 class="index__body__main__section--producto--titulo">Lorem ipsum</h3>
           <p class="index__body__main__section--producto--descripcion">Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Duis aliquam.</p>
@@ -206,11 +237,13 @@
 
       <div class="index__body__main__section--producto index__body__main__section--producto--reverse">
 
-        <div class="index__body__main__section--producto--columna1 index__body__main__section--producto--columna1--reverse">
+        <div
+          class="index__body__main__section--producto--columna1 index__body__main__section--producto--columna1--reverse">
           <img src="/img/pedigree.png" alt="Natural choice" class="index__pedigree">
         </div>
 
-        <div class="index__body__main__section--producto--columna2 index__body__main__section--producto--columna2--reverse">
+        <div
+          class="index__body__main__section--producto--columna2 index__body__main__section--producto--columna2--reverse">
           <h3 class="index__body__main__section--producto--titulo">Lorem ipsum</h3>
           <p class="index__body__main__section--producto--descripcion">Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Duis aliquam.</p>
@@ -249,7 +282,7 @@
       <div class="index__body__main__section--promo">
         <picture>
           <source srcset="img/banner2-home.png" media="(min-width: 1024px)">
-          <img  src="/img/banner2-mobile.png" alt="imagen principal">
+          <img src="/img/banner2-mobile.png" alt="imagen principal">
         </picture>
         <div class="index__body__main__section--promo--texto">
           <p>2x1</p>
@@ -259,6 +292,31 @@
 
     </section>
   </main>
+
+  <script>
+
+    const swiper = new Swiper('.swiper', {
+      // Optional parameters
+      direction: 'vertical',
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });
+  </script>
 </body>
 
 </html>

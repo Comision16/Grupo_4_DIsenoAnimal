@@ -94,7 +94,8 @@ main {
     justify-content: center;
 }
 
-/* ------------------------------------------------------------- */
+/* ----------------Formas de pago--------------------------------------------- */
+/* ----------------Formas de pago--------------------------------------------- */
 
 .formas-de-pago {
     width: 100%;
@@ -141,7 +142,7 @@ main {
     justify-content: center;
     width: 100%;
     padding-top: 30px;
-
+    max-width: 450px;
 
 }
 
@@ -166,7 +167,7 @@ main {
 
 
 
-
+/* ------------------------------------------------------------------------ */
 
 
 
@@ -195,14 +196,14 @@ main {
 
 
 
-
+/* ---------------------------------------------------- */
 
 
 
 .subtotal {
     width: 90%;
     display: flex;
-
+    max-width: 400px;
     justify-content: space-between;
     padding: 12px 0px;
 }
@@ -218,13 +219,14 @@ main {
 }
 
 
-
+/* ----------------------------------- */
 
 .cod__de__descuento {
     width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 400px;
 }
 
 .cod__de__descuento input {
@@ -240,7 +242,7 @@ main {
 }
 
 
-
+/* ----------------------------------------- */
 
 
 .formas__de__pago__envio {
@@ -248,21 +250,26 @@ main {
     display: flex;
     flex-wrap: wrap;
     margin-top: 10px;
+    max-width: 400px;
 }
 
 .formas__de__pago__envio__izquierza {
     width: 50%;
     text-align: end;
 }
-
 .formas__de__pago__envio__derecha {
     width: 50%;
     text-align: start;
 }
 
 
+
+/* -------------------------------------------- */
+
+
 .formas__de__pago__total--pagar {
     width: 90%;
+    max-width: 400px;
 }
 
 .formas__de__pago__total {
@@ -282,8 +289,8 @@ main {
     border-radius: 10px;
 }
 
-/* --------------------------------------------------- */
-
+/* ----------------------------------------------------------------------- */
+/* -----------------productos similares----------------------------------- */
 
 
 .productos-similares {
@@ -302,6 +309,7 @@ main {
     
 }
 
+/* -------------------------------------------- */
 .productos {
     width: 170px;
     height: 130px;
@@ -320,6 +328,10 @@ main {
     justify-content: center;
     align-items: center;
 }
+
+
+/* -------------------------------------------- */
+
 
 .productos__marca__descripcion__precio__carrito {
     display: flex;
@@ -348,7 +360,7 @@ main {
     
 }
 
-
+/* ------------------------------------------------ */
 
 .productos__precio__carrito {
     display: flex;
@@ -361,6 +373,7 @@ main {
     border-radius: 10px;
 
 }
+
 
 .productos__precio__carrito h5 {
     height: 45%;
@@ -388,6 +401,15 @@ main {
 }
 .productos-similares{
     display: flex;
+}
+
+}
+
+@media (min-width:520px){
+
+
+.formas-de-pago{
+    padding: 0% 15%;
 }
 
 }

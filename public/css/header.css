@@ -12,6 +12,7 @@ header a {
     color: #5FB9E0;
     text-decoration: none;
     font-weight: 700;
+    align-items: center;
 }
 
 .header__img {
@@ -73,15 +74,16 @@ header a {
     width: 60%;
     height: 30px;
     margin-left: 10%;
-    /* margin-top: 10px; */
+   
+
 }
 
 .header__form__barra-de-busqueda input {
     border-radius: 15px;
     border: #5FB9E0 solid 2px;
     font-size: 10px;
-    width: 70%;
-    height: 17px;
+    width: 85%;
+    height: 30px;
     padding: 5px;
     padding-right: 2em;
 
@@ -124,11 +126,11 @@ header a {
 }
 
 .header__div__carrito-de-compras-numero {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
     color: #FFFFFF;
     font-weight: 600;
     background-color: red;
-    padding: 2px;
+    padding: 5px;
     border-radius: 5px;
     width: 6px;
     height: 6px;
@@ -265,6 +267,7 @@ header a {
         order: 1;
         margin-left: 5%;
         padding-bottom: 2%;
+        height: 30px;
     }
 
     .header__form__barra-de-busqueda button {
@@ -273,7 +276,7 @@ header a {
     }
 
     .header__form__barra-de-busqueda input {
-        height: 30px;
+        height: 42px;
         border-radius: 30px;
         font-size: 15px;
         border: #5FB9E0 solid 3px;
@@ -283,7 +286,7 @@ header a {
     }
 
     .header__form__barra-de-busqueda i {
-        font-size: 25px;
+        font-size: 20px;
 
     }
 

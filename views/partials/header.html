@@ -1,13 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/6e64724991.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/styles.css" type="text/css">
 
     <title>header</title>
 </head>
+
 <body>
-    
+    <header>
+        <section class="header__section__superior">
+            <img class="header__section__superior-img" src="/img/logo-header.png" alt="imagen de la marca">
+            <div class="header__section__superior--register--login">
+                <i class="fa-solid fa-user-plus"></i>
+                <a class="header__section__superior--register" href="/register.html">Regístrate</a>
+                <a class="header__section__superior--login" href="/login.html">Iniciar Sesion</a>
+            </div>
+        </section>
+        <section class="header__section__inferior">
+
+            <div class="header__section__inferior--menu-hambuerguesa">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <form class="header__section__inferior--barra-de-busqueda">
+                <input type="text" placeholder="Busca tus marcas y productos favoritos">
+                <button class="header__section__inferior--button"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+
+            <div class="header__section__inferior--carrito-de-compras">
+                <i class="fa-solid fa-cart-plus"></i>
+                <p>4</p>
+                <a href="/productCart.html">Tu compra</a>
+
+                <!-- numero que va sobre el carrito --> 
+            </div>
+            <div class="header__section__inferir--lista">
+                <ul >
+                    <li><a href=""></a> Perros ▼ </li>
+                    <li><a href=""></a> Gatos ▼ </li>
+                    <li><a href=""></a> Animales pequeños ▼ </li>
+                    <li><a href=""></a> Los + vendidos ▼ </li>  
+                </ul>
+           </div>
+        </section>
+    </header>
 </body>
+
 </html>

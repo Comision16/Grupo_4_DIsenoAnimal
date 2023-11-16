@@ -1,0 +1,325 @@
+header {
+    padding: 10px;
+    font-size: 12px;
+    text-decoration: none;
+
+}
+
+/* header, seccion superio (img - registrate - iniciar sesion) */
+
+header a {
+    color: #5FB9E0;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.header__section__superior {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header__section__superior-img {
+    width: 50%;
+
+}
+
+.header__section__superior--register--login {
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+
+}
+
+.header__section__superior--register,
+.header__section__superior--login,
+i {
+    width: 100%;
+    text-align: center;
+
+}
+
+.header__section__superior--register--login i {
+    color: #183561;
+    font-size: 1.5rem;
+    display: none;
+}
+
+/* header inferior (menu hamburguesa - barra de busqueda - carrito) */
+
+/* menu hambuergueza */
+.header__section__inferior {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+
+}
+
+.header__section__inferior--menu-hambuerguesa {
+    width: 25px;
+    height: 25px;
+    background-color: #5FB9E0;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.header__section__inferior--menu-hambuerguesa i {
+    color: #FFFFFF;
+    font-size: 1rem;
+}
+
+/* barra busqueda  */
+
+
+.header__section__inferior--barra-de-busqueda input {
+    border-radius: 15px;
+    border: #5FB9E0 solid 2px;
+    font-size: 10px;
+    width: 150px;
+    padding: 5px 20px 5px 5px;
+    margin-left: 20px;
+}
+
+.header__section__inferior--button {
+    padding: 2px;
+    border: none;
+    background-color: #FFFFFF;
+    color: #5FB9E0;
+    justify-content: center;
+    border-radius: 0px 4px 4px 0px;
+    position: relative;
+    left: -25px;
+}
+
+/* carrito */
+.header__section__inferior--carrito-de-compras {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+
+}
+
+.header__section__inferior--carrito-de-compras i {
+    color: #183561;
+    font-size: 1.5rem;
+    width: 40%;
+}
+
+.header__section__inferior--carrito-de-compras p {
+    font-size: 8px;
+    color: #FFFFFF;
+    font-weight: 600;
+    background-color: red;
+    padding: 2px;
+    border-radius: 5px;
+    width: 6px;
+    height: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -12px;
+    left: 8px;
+}
+
+.header__section__inferior--carrito-de-compras a {
+
+    display: none;
+}
+
+
+/* seccion ul */
+
+.header__section__inferir--lista {
+    display: none;
+    white-space: nowrap;
+}
+
+.header__section__inferir--lista li {
+    list-style-type: none;
+    display: inline;
+}
+
+
+/*------------------------------------------------------------------- */
+/*                              tablet                                */
+/* ------------------------------------------------------------------ */
+@media(min-width: 480px) {
+    header {
+        padding-left: 20px;
+    }
+
+    .header__section__superior--login,
+    .header__section__superior--register,
+    .header__section__superior--register--login i {
+        display: flex;
+        justify-content: center;
+        margin-top: -2px;
+    }
+
+    .header__section__superior--register--login {
+        position: relative;
+        left: -35px;
+    }
+
+    .header__section__inferior--carrito-de-compras {
+        text-align: center;
+        position: relative;
+        top: -120px;
+        left: 180px;
+    }
+
+    .header__section__inferior--carrito-de-compras i {
+        width: 50%;
+        align-items: center;
+    }
+
+    .header__section__inferior--carrito-de-compras a {
+        width: 50%;
+        display: flex;
+        padding-right: 15px;
+        padding-top: 5px;
+    }
+
+    .header__section__inferior {
+        height: 35px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .header__section__inferior--carrito-de-compras p {
+        position: relative;
+        left: -5px;
+    }
+
+
+    .header__section__inferior--menu-hambuerguesa {
+        width: 30px;
+        height: 30px;
+    }
+
+    .header__section__inferior--menu-hambuerguesa i {
+        font-size: 20px;
+    }
+
+    .header__section__inferior--barra-de-busqueda {
+        height: 30px;
+    }
+
+    .header__section__inferior--barra-de-busqueda input {
+        height: 25px;
+        padding: 0%;
+        margin: 0%;
+        width: 350px;
+        padding-left: 10px;
+    }
+
+    /*------------------------------------------------------------------- */
+    /*                              deskpot                               */
+    /* ------------------------------------------------------------------ */
+
+    @media(min-width:1024px) {
+        header{
+            padding-top: 20px;
+            height: 170px;
+        }
+
+        .header__section__superior{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border-bottom: #5FB9E0 solid 1.5px;
+            width: 95%;
+            padding-bottom: 10px;
+            margin-right: 0px;
+            margin-left: 20px;
+        }
+        .header__section__superior-img {
+            width: 300px;
+        }
+        .header__section__superior--register--login{
+            width: 10%;
+            position: relative;
+            left: -110px;
+            top: 15px;
+        }
+
+
+     /* seccion superior */
+
+        .header__section__inferior--menu-hambuerguesa {
+            display: none;
+        }
+
+        .header__section__inferior {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .header__section__inferior--carrito-de-compras{
+            left: 450px;
+            top: -95px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .header__section__inferior--carrito-de-compras a{
+            width: 60px;
+            position: relative;
+            padding: 0%;
+            padding-top: 10px;
+            padding-left: 5px;
+        }
+
+        .header__section__inferior--carrito-de-compras p{
+            position: relative;
+            left: 10px;
+        }
+
+        .header__section__inferior--barra-de-busqueda {
+            margin: 0%;
+            position: relative;
+            left: 340px;
+            top: -85px;
+            
+           
+        }
+
+        .header__section__inferir--lista{
+            display: block;
+            color: #5FB9E0;
+            text-decoration: none;
+            font-weight: 700;
+            position: relative;
+            left: -520px;
+            margin-top: 10px;
+        }
+        .header__section__inferir--lista li{
+            margin-right: 25px;
+            
+        }
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+}

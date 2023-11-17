@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
 
-    <title>login</title>
+    <title>¡Iniciar sesión!</title>
 </head>
-<body>
-    
+<body class="login_body">
+    <h1>Iniciar sesión</h1>
+    <form class="login_form" action="/" method="get">
+        <input type="email" name="email" placeholder="E-mail" required minlength="5" maxlength="40">
+        <input type="password" name="password" placeholder="Contraseña" required minlength="8" maxlength="12">
+        <button type="submit">Ingresar</button>
+    </form>
+    <div >
+        <a class="contraseña_olvidada" href="">¿Olvidaste tu contraseña?</a>
+    </div>
+    <form class="login_form2" action="/register" method="get">
+        <button type="submit">Registrate</button>
+    </form>
 </body>
 </html>

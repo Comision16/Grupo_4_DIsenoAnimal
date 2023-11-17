@@ -1,13 +1,19 @@
-body {
+/* body.cart {
     width: 100%;
+} */
+
+.cart-main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
 }
 
-main {
+.cart-main-box {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
-    justify-content: center;
-
 }
 
 .Productos-en-el-carrito {
@@ -295,16 +301,11 @@ main {
 
 
 .productos-similares {
-    display: none;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
-    margin-bottom: 150px;
+
     background-color: var(--ColorGris);
 }
 
 .productos-similares h3 {
-    width: 100%;
     text-align: center;
     margin-top: 10px;
 
@@ -312,7 +313,7 @@ main {
 
 /* -------------------------------------------- */
 .productos {
-    width: 170px;
+    width: 100%;
     height: 130px;
     display: flex;
 
@@ -401,9 +402,9 @@ main {
         padding: 0%10%;
     }
 
-    .productos-similares {
+  /*   .productos-similares {
         display: flex;
-    }
+    } */
 
 }
 
@@ -425,13 +426,19 @@ main {
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .cart-main-box {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
     }
 
     .Productos-en-el-carrito {
         display: flex;
-        width: 70%;
         align-content: flex-start;
-        height: 300px;
+        height: 350px;
         padding-top: 15px;
 
     }
@@ -461,16 +468,14 @@ main {
 
 
     .formas-de-pago {
-        width: 30%;
         padding: 0%;
-        height: 580px;
+        height: 600px;
+        width: 30%;
     }
 
 
     .productos-similares {
-        width: 70%;
-        position: relative;
-        top: -235px;
+        height: 250px;
         padding: 30px 0px;
     }
 
@@ -479,9 +484,7 @@ main {
         margin-bottom: 10px;
     }
 
-    .productos {
-        width: 23%;
-    }
+
 
     .prod-similares-que-no-s-mostraran {
         display: none;

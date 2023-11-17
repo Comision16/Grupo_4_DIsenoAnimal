@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-body {
+/* body {
     position: relative;
     height: 100%;
 }
@@ -11,7 +10,7 @@ body {
     color: #000;
     margin: 0;
     padding: 0;
-}
+} */
 
 .index__body {
     background-color: var(--ColorGris);
@@ -22,10 +21,10 @@ body {
     margin: 0 auto;
 }
 
-.swiper {
+/* .swiper {
     width: 600px;
     height: 300px;
-}
+} */
 
 .index__body__main--banner {
     height: 100%;
@@ -338,5 +337,3 @@ body {
         font-size: 5vw;
     }
 }
-=======
->>>>>>> c378cdbc1fbb1a4044ac2329eb9b5416ac9da4c7

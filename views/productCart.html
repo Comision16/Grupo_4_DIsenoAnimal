@@ -6,11 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="https://kit.fontawesome.com/6e64724991.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/styles.css" type="text/css">
     <title>Product cart </title>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<style>
+     .swiper-cart {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide-cart {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+</style>
 </head>
 
-<body>
+<body class="cart">
     <header>
 
         <div class="header__img" >
@@ -88,62 +108,196 @@
     </header>
 
     <main class="cart-main">
-        <section class="Productos-en-el-carrito">
-            <div class="Productos-en-el-carrito__seguir-comprando">
-                <i class="fa-solid fa-arrow-left"></i>
-                <h5>Seguir Buscando</h5>
-            </div>
+        <div class="cart-main-box">
+            <section class="Productos-en-el-carrito">
+                <div class="Productos-en-el-carrito__seguir-comprando">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <h5>Seguir Buscando</h5>
+                </div>
+    
+                <article class="producto__agregado">
+                    <img src="/img/fotosCarrito/ProPlan-perros (1).png" alt="">
+                    <div class="Productos-en-el-carrito__div__titulo__descripcion__precio">
+                        <h5 class=".Productos-en-el-carrito__div__titulo">Pro Plan</h5>
+                        <p class="Productos-en-el-carrito__div__descripcion">Perros adultos 20kg + regalo.</p>
+                        <h4 class="Productos-en-el-carrito__div__precio">$ 14.600</h4>
+                    </div>
+                    <div class="Productos-en-el-carrito__div__contador__eliminar">
+                        <img src="/img/fotosCarrito/contador.png" alt="">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                </article>
+                <article class="producto__agregado">
+                    <img src="/img/fotosCarrito/dogui-adulto (1).png" alt="">
+                    <div class="Productos-en-el-carrito__div__titulo__descripcion__precio">
+                        <h5 class=".Productos-en-el-carrito__div__titulo">Dogui</h5>
+                        <p class="Productos-en-el-carrito__div__descripcion">Perros medianos 10kg.</p>
+                        <h4 class="Productos-en-el-carrito__div__precio">$8.900</h4>
+                    </div>
+                    <div class="Productos-en-el-carrito__div__contador__eliminar">
+                        <img src="/img/fotosCarrito/contador.png" alt="">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                </article>
+                <article class="producto__agregado">
+                    <img src="/img/fotosCarrito/gato_adulto (1).png" alt="">
+                    <div class="Productos-en-el-carrito__div__titulo__descripcion__precio">
+                        <h5 class=".Productos-en-el-carrito__div__titulo">Balance</h5>
+                        <p class="Productos-en-el-carrito__div__descripcion">Gatos adultos 3kg.</p>
+                        <h4 class="Productos-en-el-carrito__div__precio">$ 2.550</h4>
+                    </div>
+                    <div class="Productos-en-el-carrito__div__contador__eliminar">
+                        <img src="/img/fotosCarrito/contador.png" alt="">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                </article>
+                <article class="producto__agregado">
+                    <img src="/img/fotosCarrito/pedigree-adulto.png" alt="">
+                    <div class="Productos-en-el-carrito__div__titulo__descripcion__precio">
+                        <h5 class=".Productos-en-el-carrito__div__titulo">Pedigree</h5>
+                        <p class="Productos-en-el-carrito__div__descripcion">Perros pequeños 5kg.</p>
+                        <h4 class="Productos-en-el-carrito__div__precio">$ 6.300</h4>
+                    </div>
+                    <div class="Productos-en-el-carrito__div__contador__eliminar">
+                        <img src="/img/fotosCarrito/contador.png" alt="">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                </article>
+            </section>
+    
+            <section class="productos-similares">
+                <h3>Productos similares</h3>
 
-            <article class="producto__agregado">
-                <img src="/img/fotosCarrito/ProPlan-perros (1).png" alt="">
-                <div class="Productos-en-el-carrito__div__titulo__descripcion__precio">
-                    <h5 class=".Productos-en-el-carrito__div__titulo">Pro Plan</h5>
-                    <p class="Productos-en-el-carrito__div__descripcion">Perros adultos 20kg + regalo.</p>
-                    <h4 class="Productos-en-el-carrito__div__precio">$ 14.600</h4>
-                </div>
-                <div class="Productos-en-el-carrito__div__contador__eliminar">
-                    <img src="/img/fotosCarrito/contador.png" alt="">
-                    <i class="fa-solid fa-trash-can"></i>
-                </div>
-            </article>
-            <article class="producto__agregado">
-                <img src="/img/fotosCarrito/dogui-adulto (1).png" alt="">
-                <div class="Productos-en-el-carrito__div__titulo__descripcion__precio">
-                    <h5 class=".Productos-en-el-carrito__div__titulo">Dogui</h5>
-                    <p class="Productos-en-el-carrito__div__descripcion">Perros medianos 10kg.</p>
-                    <h4 class="Productos-en-el-carrito__div__precio">$8.900</h4>
-                </div>
-                <div class="Productos-en-el-carrito__div__contador__eliminar">
-                    <img src="/img/fotosCarrito/contador.png" alt="">
-                    <i class="fa-solid fa-trash-can"></i>
-                </div>
-            </article>
-            <article class="producto__agregado">
-                <img src="/img/fotosCarrito/gato_adulto (1).png" alt="">
-                <div class="Productos-en-el-carrito__div__titulo__descripcion__precio">
-                    <h5 class=".Productos-en-el-carrito__div__titulo">Balance</h5>
-                    <p class="Productos-en-el-carrito__div__descripcion">Gatos adultos 3kg.</p>
-                    <h4 class="Productos-en-el-carrito__div__precio">$ 2.550</h4>
-                </div>
-                <div class="Productos-en-el-carrito__div__contador__eliminar">
-                    <img src="/img/fotosCarrito/contador.png" alt="">
-                    <i class="fa-solid fa-trash-can"></i>
-                </div>
-            </article>
-            <article class="producto__agregado">
-                <img src="/img/fotosCarrito/pedigree-adulto.png" alt="">
-                <div class="Productos-en-el-carrito__div__titulo__descripcion__precio">
-                    <h5 class=".Productos-en-el-carrito__div__titulo">Pedigree</h5>
-                    <p class="Productos-en-el-carrito__div__descripcion">Perros pequeños 5kg.</p>
-                    <h4 class="Productos-en-el-carrito__div__precio">$ 6.300</h4>
-                </div>
-                <div class="Productos-en-el-carrito__div__contador__eliminar">
-                    <img src="/img/fotosCarrito/contador.png" alt="">
-                    <i class="fa-solid fa-trash-can"></i>
-                </div>
-            </article>
-        </section>
-
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide swiper-slide-cart">
+                        
+                        <article class="productos">
+                            <img src="/img/fotosCarrito/nature_adultos (1).png" alt="imagen del producto">
+            
+                            <div class="productos__marca__descripcion__precio__carrito">
+                                
+                                <div class="productos__marca__descripcion">
+                                    <h6>Nature</h6>
+                                    <p>Perros pequeños 10kg</p>
+                                </div>
+                                
+                                <div class="productos__precio__carrito">
+                                    <h5>$15.200</h5>
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </div>
+                            </div>
+                        </article>
+                      </div>
+                      <div class="swiper-slide swiper-slide-cart">
+                        <article class="productos">
+                            <img src="/img/fotosCarrito/ricocan-perros (1).png" alt="imagen del producto">
+            
+                            <div class="productos__marca__descripcion__precio__carrito">
+                                
+                                <div class="productos__marca__descripcion">
+                                    <h6>Ricocan</h6>
+                                    <p>Perros adultos 15kg.</p>
+                                </div>
+                                
+                                <div class="productos__precio__carrito">
+                                    <h5>$15.200</h5>
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </div>
+                            </div>
+                        </article>
+                      </div>
+                      <div class="swiper-slide swiper-slide-cart">
+                        <article class="productos">
+                            <img src="/img/fotosCarrito/perrOn-25kg-adultos (1).png" alt="imagen del producto">
+            
+                            <div class="productos__marca__descripcion__precio__carrito">
+                                
+                                <div class="productos__marca__descripcion">
+                                    <h6>PerrOn</h6>
+                                    <p>Perros adultos 25kg.</p>
+                                </div>
+                                
+                                <div class="productos__precio__carrito">
+                                    <h5>$15.200</h5>
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </div>
+                            </div>
+                        </article>
+                      </div>
+                      <div class="swiper-slide swiper-slide-cart">
+                        <article class="productos ">
+                            <img src="/img/fotosCarrito/Balance_gato_adulto (1).png" alt="imagen del producto">
+            
+                            <div class="productos__marca__descripcion__precio__carrito">
+                                
+                                <div class="productos__marca__descripcion">
+                                    <h6>Balance</h6>
+                                    <p>Gatos adultos 12kg.</p>
+                                </div>
+                                
+                                <div class="productos__precio__carrito">
+                                    <h5>$15.200</h5>
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </div>
+                            </div>
+                        </article>
+                      </div>
+                      <div class="swiper-slide swiper-slide-cart">
+                        <article class="productos">
+                            <img src="/img/fotosCarrito/Balance_perro_adulto_20kg (1).png" alt="imagen del producto">
+            
+                            <div class="productos__marca__descripcion__precio__carrito">
+                                
+                                <div class="productos__marca__descripcion">
+                                    <h6>Balance</h6>
+                                    <p>Perros adultos 23kg.</p>
+                                </div>
+                                
+                                <div class="productos__precio__carrito">
+                                    <h5>$15.200</h5>
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </div>
+                            </div>
+                        </article>
+                      </div>
+                      <div class="swiper-slide swiper-slide-cart">
+                        <article class="productos">
+                            <img src="/img/fotosCarrito/pedigree-adulto.png" alt="imagen del producto">
+            
+                            <div class="productos__marca__descripcion__precio__carrito">
+                                
+                                <div class="productos__marca__descripcion">
+                                    <h6>Pedigree</h6>
+                                    <p>Perros adultos 15kg.</p>
+                                </div>
+                                
+                                <div class="productos__precio__carrito">
+                                    <h5>$11.200</h5>
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </div>
+                            </div>
+                        </article>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                
+             
+    
+            
+    
+              
+    
+             
+    
+             
+              
+    
+    
+            </section>
+        
+        </div>
         <section class="formas-de-pago">
             <h4> Formas de Pago </h4>
             <div>
@@ -209,113 +363,7 @@
             </div>
 
         </section>
-
-        <section class="productos-similares">
-            <h3>Productos similares</h3>
-            
-            <article class="productos">
-                <img src="/img/fotosCarrito/nature_adultos (1).png" alt="imagen del producto">
-
-                <div class="productos__marca__descripcion__precio__carrito">
-                    
-                    <div class="productos__marca__descripcion">
-                        <h6>Nature</h6>
-                        <p>Perros pequeños 10kg</p>
-                    </div>
-                    
-                    <div class="productos__precio__carrito">
-                        <h5>$15.200</h5>
-                        <i class="fa-solid fa-cart-plus"></i>
-                    </div>
-                </div>
-            </article>
-
-            <article class="productos">
-                <img src="/img/fotosCarrito/ricocan-perros (1).png" alt="imagen del producto">
-
-                <div class="productos__marca__descripcion__precio__carrito">
-                    
-                    <div class="productos__marca__descripcion">
-                        <h6>Ricocan</h6>
-                        <p>Perros adultos 15kg.</p>
-                    </div>
-                    
-                    <div class="productos__precio__carrito">
-                        <h5>$15.200</h5>
-                        <i class="fa-solid fa-cart-plus"></i>
-                    </div>
-                </div>
-            </article>
-
-            <article class="productos">
-                <img src="/img/fotosCarrito/perrOn-25kg-adultos (1).png" alt="imagen del producto">
-
-                <div class="productos__marca__descripcion__precio__carrito">
-                    
-                    <div class="productos__marca__descripcion">
-                        <h6>PerrOn</h6>
-                        <p>Perros adultos 25kg.</p>
-                    </div>
-                    
-                    <div class="productos__precio__carrito">
-                        <h5>$15.200</h5>
-                        <i class="fa-solid fa-cart-plus"></i>
-                    </div>
-                </div>
-            </article>
-
-            <article class="productos ">
-                <img src="/img/fotosCarrito/Balance_gato_adulto (1).png" alt="imagen del producto">
-
-                <div class="productos__marca__descripcion__precio__carrito">
-                    
-                    <div class="productos__marca__descripcion">
-                        <h6>Balance</h6>
-                        <p>Gatos adultos 12kg.</p>
-                    </div>
-                    
-                    <div class="productos__precio__carrito">
-                        <h5>$15.200</h5>
-                        <i class="fa-solid fa-cart-plus"></i>
-                    </div>
-                </div>
-            </article>
-
-            <article class="productos prod-similares-que-no-s-mostraran">
-                <img src="/img/fotosCarrito/Balance_perro_adulto_20kg (1).png" alt="imagen del producto">
-
-                <div class="productos__marca__descripcion__precio__carrito">
-                    
-                    <div class="productos__marca__descripcion">
-                        <h6>Balance</h6>
-                        <p>Perros adultos 23kg.</p>
-                    </div>
-                    
-                    <div class="productos__precio__carrito">
-                        <h5>$15.200</h5>
-                        <i class="fa-solid fa-cart-plus"></i>
-                    </div>
-                </div>
-            </article>
-            <article class="productos prod-similares-que-no-s-mostraran">
-                <img src="/img/fotosCarrito/pedigree-adulto.png" alt="imagen del producto">
-
-                <div class="productos__marca__descripcion__precio__carrito">
-                    
-                    <div class="productos__marca__descripcion">
-                        <h6>Pedigree</h6>
-                        <p>Perros adultos 15kg.</p>
-                    </div>
-                    
-                    <div class="productos__precio__carrito">
-                        <h5>$11.200</h5>
-                        <i class="fa-solid fa-cart-plus"></i>
-                    </div>
-                </div>
-            </article>
-
-
-        </section>
+       
     </main>
 
     <footer class="footer">
@@ -409,6 +457,31 @@
     
         </div>
       </footer>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 5,
+              spaceBetween: 50,
+            },
+          },
+        });
+      </script>
 </body>
 
 </html>

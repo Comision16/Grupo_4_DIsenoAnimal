@@ -11,5 +11,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarianaBarcena/Grupo_4_DIsenoAnimal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MarianaBarcena/Grupo_4_DIsenoAnimal/issues"
+  },
+  "homepage": "https://github.com/MarianaBarcena/Grupo_4_DIsenoAnimal#readme"
 }

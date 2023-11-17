@@ -5,7 +5,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-
+    background-color: white;
 }
 
 header a {
@@ -21,6 +21,10 @@ header a {
     max-width: 55%;
     max-height: 120px;
     padding-bottom: 2%;
+}
+
+.header__img img{
+    max-width:100%;
 }
 
 /* (img - registrate - iniciar sesion) */

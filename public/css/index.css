@@ -47,6 +47,10 @@ body {
     text-shadow: 2px 1px 2px black;
 }
 
+.index__body__main--banner--circulos {
+    font-size: 11px;
+}
+
 .index__fa-chevron-left {
     position: absolute;
     left: 10px;

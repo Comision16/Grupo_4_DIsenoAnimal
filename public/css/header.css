@@ -14,9 +14,11 @@ header a {
     font-weight: 700;
     align-items: center;
 }
-
-.header__img {
-    width: 55%;
+.header__img img{
+    max-width: 100%;
+}
+.header__img  {
+    max-width: 55%;
     max-height: 120px;
     padding-bottom: 2%;
 }

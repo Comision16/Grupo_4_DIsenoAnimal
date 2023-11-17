@@ -12,28 +12,6 @@ body {
     padding: 0;
 }
 
-swiper-container {
-    width: 100%;
-    height: 100%;
-}
-
-swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: chartreuse;
-}
-
-swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .index__body {
     background-color: var(--ColorGris);
 }
@@ -67,6 +45,31 @@ swiper-slide img {
     font-size: 4vw;
     color: var(--ColorAmarillo);
     text-shadow: 2px 1px 2px black;
+}
+
+.index__fa-chevron-left {
+    position: absolute;
+    left: 10px;
+    color: var(--ColorAmarillo);
+    -webkit-text-stroke: 1px var(--ColorAzul);
+}
+
+.index__fa-chevron-right {
+    position: absolute;
+    right: 10px;
+    color: var(--ColorAmarillo);
+    -webkit-text-stroke: 1px var(--ColorAzul);
+}
+
+.index__body__main--banner--circulos {
+    position: absolute;
+    right: 46%;
+    bottom: 10px;
+}
+
+.fa-circle {
+    color: var(--ColorAmarillo);
+    -webkit-text-stroke: 1px var(--ColorAzul);
 }
 
 .index__body__main--banner--texto--festejo {
@@ -174,6 +177,10 @@ swiper-slide img {
 
     .index__body__main--banner--circulos {
         bottom: 10px;
+    }
+
+    .index__body__main--banner--arrow {
+        font-size: 40px;
     }
 
     .index__body__main__section--producto {

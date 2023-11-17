@@ -104,7 +104,7 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     color: #fff;
- 
+
 
 }
 
@@ -257,6 +257,7 @@ main {
     width: 50%;
     text-align: end;
 }
+
 .formas__de__pago__envio__derecha {
     width: 50%;
     text-align: start;
@@ -306,7 +307,7 @@ main {
     width: 100%;
     text-align: center;
     margin-top: 10px;
-    
+
 }
 
 /* -------------------------------------------- */
@@ -314,7 +315,7 @@ main {
     width: 170px;
     height: 130px;
     display: flex;
-    
+
     background-color: #fff;
     border-radius: 10px;
     margin: 5px;
@@ -346,7 +347,7 @@ main {
     width: 100%;
     flex-direction: column;
     height: 50px;
-    
+
 }
 
 .productos__marca__descripcion h6 {
@@ -357,7 +358,7 @@ main {
 .productos__marca__descripcion p {
     text-align: center;
     font-size: 12px;
-    
+
 }
 
 /* ------------------------------------------------ */
@@ -368,7 +369,7 @@ main {
     width: 100%;
     height: 50%;
     background-color: var(--ColorAzul);
-    
+
     text-align: center;
     border-radius: 10px;
 
@@ -393,92 +394,98 @@ main {
 /* tablet 480px */
 /*============================================================= */
 
-@media (min-width:480px){
+@media (min-width:480px) {
 
-.formas-de-pago{
-    width: 100%;
-    padding: 0%10%;
+    .formas-de-pago {
+        width: 100%;
+        padding: 0%10%;
+    }
+
+    .productos-similares {
+        display: flex;
+    }
+
 }
-.productos-similares{
-    display: flex;
-}
 
-}
-
-@media (min-width:520px){
+@media (min-width:520px) {
 
 
-.formas-de-pago{
-    padding: 0% 15%;
-}
+    .formas-de-pago {
+        padding: 0% 15%;
+    }
 
 }
 
 /*============================================================= */
 /*  desktop 1024px */
-/*============================================================= */ 
+/*============================================================= */
 
-@media (min-width:1020px){
-   main{
+@media (min-width:1020px) {
+    .cart-main {
         display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+        justify-content: flex-start;
+        align-items: flex-start;
         position: absolute;
     }
-.Productos-en-el-carrito{
-    display: flex;
-    width: 70%;
-    align-content: flex-start;
-    height: 300px;
-    padding-top: 15px;
-    
-}
 
-.producto__agregado{
-    width: 100%;
-    height: 50px;
-    margin: 0px 5px;
-}
-.Productos-en-el-carrito__div__titulo__descripcion__precio{
-   width: 50%;
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   justify-content: space-between;
-}
+    .Productos-en-el-carrito {
+        display: flex;
+        width: 70%;
+        align-content: flex-start;
+        height: 300px;
+        padding-top: 15px;
 
-.Productos-en-el-carrito__div__contador__eliminar {
-    width: 25%;
-    display: flex;
-    flex-direction:row;
-    justify-content: space-evenly;
-    align-items: center;
-}
+    }
 
+    .producto__agregado {
+        width: 100%;
+        height: 50px;
+        margin: 0px 5px;
+    }
 
+    .Productos-en-el-carrito__div__titulo__descripcion__precio {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-.formas-de-pago{
-    width: 30%;
-    padding: 0%;
-    height: 580px;
-}
+    .Productos-en-el-carrito__div__contador__eliminar {
+        width: 25%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
 
 
-.productos-similares{
-    width: 70%;
-    position: relative;
-    top: -235px;
-    padding:30px 0px;
-}
-.productos-similares h3{
-    margin-top: 0%;
-    margin-bottom: 10px;
-}
-.productos{
-    width: 23%;
-}
-.prod-similares-que-no-s-mostraran{
-    display: none;
-}
+
+    .formas-de-pago {
+        width: 30%;
+        padding: 0%;
+        height: 580px;
+    }
+
+
+    .productos-similares {
+        width: 70%;
+        position: relative;
+        top: -235px;
+        padding: 30px 0px;
+    }
+
+    .productos-similares h3 {
+        margin-top: 0%;
+        margin-bottom: 10px;
+    }
+
+    .productos {
+        width: 23%;
+    }
+
+    .prod-similares-que-no-s-mostraran {
+        display: none;
+    }
 
 }

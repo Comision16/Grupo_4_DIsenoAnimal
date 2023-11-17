@@ -4,9 +4,10 @@
     --ColorBlanco : #FFFFFF;
     --ColorGris : #D6D6D6;
     --ColorAmarillo : #FED700;
+    --FontFamily : 'Roboto Slab'
 }
 * {
-    font-family: 'Roboto Slab', serif;
+    font-family: var(--FontFamily);
     padding: 0;
     margin: 0;
     box-sizing: border-box;

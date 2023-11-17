@@ -1,13 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/6e64724991.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/styles.css" type="text/css">
 
     <title>header</title>
 </head>
+
 <body>
+    <header>
+
+        <div class="header__img" >
+            <a href="/"><img src="/img/logo-header.png" alt="imagen de la marca"></a>
+        </div>
+
+        <div class="header__div__register--login">
+            <i class="fa-solid fa-user-plus"></i>
+            <a class="header__div__register" href="/register.html">Regístrate</a>
+            <a class="header__div__login" href="/login.html">Iniciar Sesion</a>
+        </div>
+
+        <div class="header__div__menu-hambuerguesa">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <form class="header__form__barra-de-busqueda">
+            <input type="text" placeholder="Busca tus marcas y productos favoritos">
+            <button class="header__form__button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+
+        <div class="header__div__carrito-de-compras">
+            <div class="header__div__carrito-de-compras-icono">
+                <i class="fa-solid fa-cart-plus"></i>
+                <div class="header__div__carrito-de-compras-numero">
+                    <p>4</p>
+                </div>
+            </div>
+
+
+
+            <a href="/productCart">Tu compra</a>
+            <!-- numero que va sobre el carrito -->
+        </div>
+
+        <div class="header__div__lista">
+           <ul>
+                <li>
+                    <a href="#">Perros</a>
+                    <!-- <ul>
+                        <li><a href="">Alimento</a></li>
+                        <li><a href="">Accesorios</a></li>
+                        <li><a href="">Cuidado</a></li>
+                        <li><a href="">Corte de pelo y baño</a></li>
+                    </ul> -->
+                </li>
+
+                <li>
+                    <a href="#">Gatos</a>
+                       <li><a href="">Alimento</a></li>
+                      <!-- <ul>
+                       <li><a href="">Accesorios</a></li>
+                        <li><a href="">Cuidado</a></li>
+                        <li><a href="">Baño</a></li>
+                    </ul> -->
+                </li>
+
+                <li>
+                    <a href="#">Animales pequeños</a>
+                    <!-- <ul>
+                        <li><a href="">Aves</a></li>
+                        <li><a href="">Peses</a></li>
+                        <li><a href="">Roedores</a></li>
+                    </ul> -->
+
+                </li>
+
+                <li><a href="">Lo + vendido</a></li>
+
+                <li><a href="">Ofertas</a></li>
+            </ul>
+
+        </div>
     
+    </header>
 </body>
+
 </html>

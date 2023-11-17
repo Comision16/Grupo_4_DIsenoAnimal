@@ -21,6 +21,10 @@ header a {
     padding-bottom: 2%;
 }
 
+.header__img img{
+    max-width: 100%;
+}
+
 /* (img - registrate - iniciar sesion) */
 
 .header__div__register--login {

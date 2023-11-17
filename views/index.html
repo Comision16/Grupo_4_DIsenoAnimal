@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/d77b7a8887.js" crossorigin="anonymous"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <link rel="stylesheet" href="/css/styles.css">
 
-    <title>index</title>
+  <title>index</title>
 </head>
 
 <body class="index__body">
@@ -91,9 +92,34 @@
   </header>
 
   <main class="index__body__main">
+
     <div class="index__body__main--banner">
 
-      <img src="/img/banner1-home.png" alt="banner">
+      <swiper-container class="mySwiper index-swiper-container" navigation="true" pagination="true" keyboard="true"
+        mousewheel="true" css-mode="true">
+        <swiper-slide class="index-swiper-slide">
+          <img src="/img/banner1-home.png" alt="banner">
+          <p class="index__body__main--banner--texto">Porque no solo es una mascota, es parte de tu familia.</p>
+        </swiper-slide>
+        <swiper-slide class="index-swiper-slide">
+          <img src="/img/banner3-home.jpg" alt="banner">
+          <p class="index__body__main--banner--texto index__body__main--banner--texto--festejo">Veni a festejar el cumple de tu mascota con nosotros</p>
+        </swiper-slide>
+        <swiper-slide class="index-swiper-slide">
+          <img src="/img/banner4-home.jpg" alt="banner">
+          <div class="index__body__main--banner--texto index__body__main--banner--texto--descuentos"> <p>20%, 30%, 40%</p>  <p>Los mejores descuentos en nuestra pagina</p></div> 
+        </swiper-slide>
+        <!-- <swiper-slide>Slide 4</swiper-slide>
+        <swiper-slide>Slide 5</swiper-slide>
+        <swiper-slide>Slide 6</swiper-slide>
+        <swiper-slide>Slide 7</swiper-slide>
+        <swiper-slide>Slide 8</swiper-slide>
+        <swiper-slide>Slide 9</swiper-slide> -->
+      </swiper-container>
+
+
+
+      <!-- <img src="/img/banner1-home.png" alt="banner">
       <a href="#" class="index__body__main--banner--arrow"><i
           class="fa-solid fa-chevron-left index__fa-chevron-left"></i></a>
       <a href="#" class="index__body__main--banner--arrow"><i
@@ -103,7 +129,7 @@
         <a href="#"><i class="fa-solid fa-circle"></i></a>
         <a href="#"><i class="fa-solid fa-circle index__body__main--banner--circulos--medio"></i></a>
         <a href="#"><i class="fa-solid fa-circle"></i></a>
-      </div>
+      </div> -->
     </div>
     <section class="index__body__main__section">
 
@@ -460,5 +486,23 @@
     </div>
   </footer>
 
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      cssMode: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
+  </script>
 </body>
+
 </html>

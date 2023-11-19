@@ -32,6 +32,7 @@
     display: flex;
     width: 100%;
     gap: 10px;
+    margin: 8px;
 }
 
 .producto__agregado {
@@ -42,11 +43,13 @@
     justify-content: space-around;
     box-shadow: 0px 0px 5px rgb(100, 100, 100);
     height: 70px;
+    gap: 10px;
 }
 
 .producto__agregado img {
-
-    width: 60px;
+display: flex;
+justify-content: center;
+   max-width: 35px;
 
 }
 
@@ -89,7 +92,7 @@
 }
 
 .Productos-en-el-carrito__div__contador__eliminar img {
-    width: 60px;
+    max-width: 55px;
 
 
 
@@ -110,6 +113,9 @@
     flex-wrap: wrap;
     justify-content: center;
     color: #fff;
+    padding-bottom: 10px;
+  
+    margin-bottom: 30px;
 
 }
 
@@ -167,7 +173,7 @@
     height: 50px;
     background-color: var(--ColorAzul);
     border: #fff solid 2px;
-
+    color: #fff;
 }
 
 
@@ -180,7 +186,7 @@
 .datos__de__tarjeta-fecha-cvv {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 90%;
     justify-content: space-around;
 
 
@@ -188,18 +194,20 @@
 }
 
 .datos__de__tarjeta-fecha-cvv input {
-    width: 40%;
+    width:48%;
     text-align: center;
     height: 50px;
     background-color: var(--ColorAzul);
     border: #fff solid 2px;
-    margin: 10px 15px;
-
-
-
+    color: #fff;
+  
 }
-
-
+.datos__de__tarjeta-fecha{
+    margin-right: 5px;
+}
+.datos__de__tarjeta-cvv{
+margin-left: 5px;
+}
 
 /* ---------------------------------------------------- */
 
@@ -239,6 +247,7 @@
     text-align: end;
     background-color: var(--ColorAzul);
     border: #fff solid 1px;
+    color: #fff;
 }
 
 .cod__de__descuento label {
@@ -290,9 +299,9 @@
     margin-bottom: 10px;
     margin-left: 80px;
     background-color: var(--ColorGris);
-    color: #fff;
+    color: var(--ColorAzul);
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 /* ----------------------------------------------------------------------- */
@@ -307,13 +316,13 @@
 
 .productos-similares h3 {
     text-align: center;
-    margin-top: 10px;
+    margin: 10px;
 
 }
 
 /* -------------------------------------------- */
 .productos {
-    width: 100%;
+    width: 80%;
     height: 130px;
     display: flex;
 
@@ -325,8 +334,10 @@
 }
 
 .productos img {
-    width: 50%;
-    height: auto;
+   max-width: 50%;
+    height: 120px;
+    padding: 5px;
+    padding-top: 10px;
     justify-content: center;
     align-items: center;
 }
@@ -476,6 +487,7 @@
         padding: 0%;
         height: 600px;
         width: 30%;
+        margin-top: 0%;
     }
 
 

@@ -176,7 +176,7 @@ header a {
     max-height: 100px;
     font-weight: 700;
     list-style-type: none;
-    
+    z-index: 10;
 
 }
 
@@ -206,6 +206,9 @@ header a {
     display: none;
     position: absolute;
     min-width: 100px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    width: 50px;
 }
 
 .header__div__lista li:hover>ul {
@@ -273,7 +276,7 @@ header a {
     }
     
     .header__div__menu-hambuerguesa {
-        order: 3;
+      order: 3;
         margin-left: 5%;
         margin-right: 10%;
     }
@@ -331,7 +334,7 @@ header a {
 
     .header__form__barra-de-busqueda {
         width: 60%;
-        order: 0;
+        order:1;
         padding-bottom: 2%;
         height: 30px;
         margin: 0%;
@@ -351,7 +354,7 @@ header a {
         padding-left: 4%;
         align-items: center;
         width: 90%;
-
+        margin-left: 30px;
     }
 
     .header__form__barra-de-busqueda i {
@@ -364,7 +367,7 @@ header a {
         width: 10%;
         padding: 0% 0%;
         margin: 0%;
-        order: 0;
+        order: 2;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -382,7 +385,7 @@ header a {
 
     .header__div__carrito-de-compras{
         width: 10%;
-        order: 0;
+        order: 3;
         margin-right: 0%;
        
     }
@@ -402,6 +405,7 @@ header a {
     border-top: #5FB9E0 solid 1px;
     width: 100%;
     display: inline-flex;
+    order: 4;
    }
 
     .header__div__lista {
@@ -410,7 +414,7 @@ header a {
         justify-content: start;
         margin: 0%;
         width: 100%;
-        order: 0;
+        order:0 ;
         column-gap: 30px;
 
     }

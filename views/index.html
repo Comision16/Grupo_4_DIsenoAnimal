@@ -17,79 +17,79 @@
 
   <header>
 
-    <div class="header__img">
-      <a href="/"><img src="/img/logo-header.png" alt="imagen de la marca"></a>
+    <div class="header__img" >
+        <a href="/"><img src="/img/logo-header.png" alt="imagen de la marca"></a>
     </div>
 
     <div class="header__div__register--login">
-      <i class="fa-solid fa-user-plus"></i>
-      <a class="header__div__register" href="/register">Regístrate</a>
-      <a class="header__div__login" href="/login">Iniciar Sesion</a>
+        <i class="fa-solid fa-user-plus"></i>
+        <a class="header__div__register" href="/register">Regístrate</a>
+        <a class="header__div__login" href="/login">Iniciar Sesion</a>
     </div>
 
     <div class="header__div__menu-hambuerguesa">
-      <i class="fas fa-bars"></i>
+        <i class="fas fa-bars"></i>
     </div>
 
     <form class="header__form__barra-de-busqueda">
-      <input type="text" placeholder="Busca tus marcas y productos favoritos">
-      <button class="header__form__button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <input type="text" placeholder="Busca tus marcas y productos favoritos">
+        <button class="header__form__button"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
 
     <div class="header__div__carrito-de-compras">
-      <div class="header__div__carrito-de-compras-icono">
-        <i class="fa-solid fa-cart-plus"></i>
-        <div class="header__div__carrito-de-compras-numero">
-          <p>4</p>
+        <div class="header__div__carrito-de-compras-icono">
+            <a href="/productCart"><i class="fa-solid fa-cart-plus"></i></a>
+            <div class="header__div__carrito-de-compras-numero">
+                <p>4</p>
+            </div>
         </div>
-      </div>
-
-
-
-      <a href="/productCart">Tu compra</a>
-      <!-- numero que va sobre el carrito -->
+        <div class="header__div__carrito-de-compras-texto">
+          <a href="/productCart"><p>Tu compra</p></a>
+        <!-- numero que va sobre el carrito -->
+        </div>
+        
     </div>
 
-    <div class="header__div__lista">
-      <ul>
-        <li>
-          <a href="#">Perros</a>
-          <!-- <ul>
+    <div class="nav">
+       <ul class="header__div__lista">
+            <li>
+                <a href="#">Perros</a>
+                <ul>
                     <li><a href="">Alimento</a></li>
                     <li><a href="">Accesorios</a></li>
                     <li><a href="">Cuidado</a></li>
                     <li><a href="">Corte de pelo y baño</a></li>
-                </ul> -->
-        </li>
+                </ul>
+            </li>
 
-        <li>
-          <a href="#">Gatos</a>
-        <!-- <li><a href="">Alimento</a></li> -->
-        <!-- <ul>
-                   <li><a href="">Accesorios</a></li>
+            <li>
+                <a href="#">Gatos</a>
+                 <ul>
+                    <!-- <li><a href="">Alimento</a></li> -->
+                    <li><a href="">Accesorios</a></li>
                     <li><a href="">Cuidado</a></li>
                     <li><a href="">Baño</a></li>
-                </ul> -->
-        </li>
+                </ul>
+            </li>
 
-        <li>
-          <a href="#">Animales pequeños</a>
-          <!-- <ul>
+            <li>
+                <a href="#">Animales pequeños</a>
+                <ul>
                     <li><a href="">Aves</a></li>
                     <li><a href="">Peses</a></li>
                     <li><a href="">Roedores</a></li>
-                </ul> -->
+                </ul>
 
-        </li>
+            </li>
 
-        <li><a href="">Lo + vendido</a></li>
+            <li><a href="">Lo + vendido</a></li>
 
-        <li><a href="">Ofertas</a></li>
-      </ul>
+            <li><a href="">Ofertas</a></li>
+        </ul>
 
     </div>
 
-  </header>
+</header>
 
   <main class="index__body__main">
 
@@ -103,11 +103,15 @@
         </swiper-slide>
         <swiper-slide class="index-swiper-slide">
           <img src="/img/banner3-home.jpg" alt="banner">
-          <p class="index__body__main--banner--texto index__body__main--banner--texto--festejo">Veni a festejar el cumple de tu mascota con nosotros</p>
+          <p class="index__body__main--banner--texto index__body__main--banner--texto--festejo">Veni a festejar el
+            cumple de tu mascota con nosotros</p>
         </swiper-slide>
         <swiper-slide class="index-swiper-slide">
           <img src="/img/banner4-home.jpg" alt="banner">
-          <div class="index__body__main--banner--texto index__body__main--banner--texto--descuentos"> <p>20%, 30%, 40%</p>  <p>Los mejores descuentos en nuestra pagina</p></div> 
+          <div class="index__body__main--banner--texto index__body__main--banner--texto--descuentos">
+            <p>20%, 30%, 40%</p>
+            <p>Los mejores descuentos en nuestra pagina</p>
+          </div>
         </swiper-slide>
         <!-- <swiper-slide>Slide 4</swiper-slide>
         <swiper-slide>Slide 5</swiper-slide>

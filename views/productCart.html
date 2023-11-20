@@ -29,7 +29,7 @@
 <body class="cart">
     <header>
 
-        <div class="header__img">
+        <div class="header__img" >
             <a href="/"><img src="/img/logo-header.png" alt="imagen de la marca"></a>
         </div>
 
@@ -40,58 +40,57 @@
         </div>
 
         <div class="header__div__menu-hambuerguesa">
-            <a href=""><i class="fas fa-bars"></i></a>
+            <i class="fas fa-bars"></i>
         </div>
 
         <form class="header__form__barra-de-busqueda">
             <input type="text" placeholder="Busca tus marcas y productos favoritos">
-            <button class="header__form__button"><a href="/login.html"><i
-                        class="fa-solid fa-magnifying-glass"></i></a></button>
+            <button class="header__form__button"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
 
         <div class="header__div__carrito-de-compras">
             <div class="header__div__carrito-de-compras-icono">
-                <i class="fa-solid fa-cart-plus"></i>
+                <a href="/productCart"><i class="fa-solid fa-cart-plus"></i></a>
                 <div class="header__div__carrito-de-compras-numero">
                     <p>4</p>
                 </div>
             </div>
-
-
-
-            <a href="/productCart">Tu compra</a>
+            <div class="header__div__carrito-de-compras-texto">
+              <a href="/productCart"><p>Tu compra</p></a>
             <!-- numero que va sobre el carrito -->
+            </div>
+            
         </div>
 
-        <div class="header__div__lista">
-            <ul>
+        <div class="nav">
+           <ul class="header__div__lista">
                 <li>
                     <a href="#">Perros</a>
-                    <!-- <ul>
+                    <ul>
                         <li><a href="">Alimento</a></li>
                         <li><a href="">Accesorios</a></li>
                         <li><a href="">Cuidado</a></li>
                         <li><a href="">Corte de pelo y baño</a></li>
-                    </ul> -->
+                    </ul>
                 </li>
 
                 <li>
                     <a href="#">Gatos</a>
-                    <!-- <ul>
+                     <ul>
                         <li><a href="">Alimento</a></li>
                         <li><a href="">Accesorios</a></li>
                         <li><a href="">Cuidado</a></li>
                         <li><a href="">Baño</a></li>
-                    </ul> -->
+                    </ul>
                 </li>
 
                 <li>
                     <a href="#">Animales pequeños</a>
-                    <!-- <ul>
+                    <ul>
                         <li><a href="">Aves</a></li>
                         <li><a href="">Peses</a></li>
                         <li><a href="">Roedores</a></li>
-                    </ul> -->
+                    </ul>
 
                 </li>
 
@@ -101,7 +100,7 @@
             </ul>
 
         </div>
-
+    
     </header>
 
     <main class="cart-main">

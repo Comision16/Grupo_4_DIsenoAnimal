@@ -1,3 +1,8 @@
+.header{
+    width: 100%;
+}
+
+
 header {
     padding: 2.5%;
     font-size: 12px;
@@ -6,6 +11,8 @@ header {
     justify-content: space-evenly;
     align-items: center;
     background-color: white;
+    width: 100%;
+
 }
 
 header a {
@@ -14,17 +21,20 @@ header a {
     font-weight: 700;
     align-items: center;
 }
-.header__img img{
+
+.header__img img {
     max-width: 100%;
+
 }
-.header__img  {
+
+.header__img {
     max-width: 55%;
     max-height: 120px;
     padding-bottom: 2%;
 }
 
-.header__img img{
-    max-width:100%;
+.header__img img {
+    max-width: 100%;
 }
 
 /* (img - registrate - iniciar sesion) */
@@ -80,7 +90,7 @@ header a {
     width: 60%;
     height: 30px;
     margin-left: 10%;
-   
+
 
 }
 
@@ -123,7 +133,7 @@ header a {
     position: relative;
 }
 
-.header__div__carrito-de-compras i {
+.header__div__carrito-de-compras-icono i {
     color: #183561;
     font-size: 28px;
     width: 40%;
@@ -148,27 +158,62 @@ header a {
     left: 95%;
 }
 
-.header__div__carrito-de-compras a {
+
+.header__div__carrito-de-compras-texto a p {
     width: 40px;
     text-align: center;
     display: none;
 }
 
-
 /* seccion ul */
+.nav{
+    display: none;
+}
 
 .header__div__lista {
-    display: none;
-    white-space: nowrap;
+    width: 100%;
+    order: 5;
+    max-height: 100px;
+    font-weight: 700;
+    list-style-type: none;
+    
+
 }
 
-.header__div__lista li {
-    list-style-type: none;
+
+.header__div__lista ul li {
     display: inline;
+}
+
+.header__div__lista li a {
+    background-color: var(--ColorBlanco);
+    padding: 5px 15px;
+    display: block;
     color: #5FB9E0;
     text-decoration: none;
-    font-weight: 700;
 }
+
+.header__div__lista li a:hover {
+    background-color: var(--ColorGris);
+}
+
+.header__div__lista>li {
+    float: left;
+
+}
+
+.header__div__lista li ul {
+    display: none;
+    position: absolute;
+    min-width: 100px;
+}
+
+.header__div__lista li:hover>ul {
+    display: block;
+}
+
+
+
 
 /* ------------------------- */
 @media(min-width: 400px) {
@@ -191,6 +236,9 @@ header a {
         text-align: center;
         margin: 2%;
 
+    }
+    .header__div__lista{
+        width: 100%;
     }
 
 
@@ -216,11 +264,14 @@ header a {
     }
 
     .header__div__carrito-de-compras {
-        display: flex;
+       
         order: 2;
         width: 10%;
     }
-
+    .header__div__carrito-de-compras-texto a p {
+        display: block;
+    }
+    
     .header__div__menu-hambuerguesa {
         order: 3;
         margin-left: 5%;
@@ -231,9 +282,10 @@ header a {
         order: 4;
     }
 
-    .header__div__carrito-de-compras a {
+    .header__div__carrito-de-compras a p {
         display: flex;
         margin-top: 5%;
+        order: 0;
     }
 
     .header__form__barra-de-busqueda {
@@ -247,6 +299,11 @@ header a {
 
     }
 
+    .header__div__lista {
+        order: 0;
+        width: 100%;
+    }
+
 }
 
 
@@ -255,25 +312,29 @@ header a {
 /*                              deskpot                               */
 /* ------------------------------------------------------------------ */
 
-@media(min-width:1024px) {
+@media(min-width:1020px) {
     header {
         align-items: center;
         padding: 1%;
-
+        column-gap: 50px;
+        width: 100%;
+        gap: 0px        ;
     }
 
     .header__img {
+        order: 0;
         width: 20%;
         max-height: 200px;
         padding: 0%;
+        margin: 0%;
     }
 
     .header__form__barra-de-busqueda {
-        width: 50%;
-        order: 1;
-        margin-left: 5%;
+        width: 60%;
+        order: 0;
         padding-bottom: 2%;
         height: 30px;
+        margin: 0%;
     }
 
     .header__form__barra-de-busqueda button {
@@ -289,6 +350,8 @@ header a {
         padding: 2%;
         padding-left: 4%;
         align-items: center;
+        width: 90%;
+
     }
 
     .header__form__barra-de-busqueda i {
@@ -300,8 +363,8 @@ header a {
         height: auto;
         width: 10%;
         padding: 0% 0%;
-        margin-left: 0%;
-        order: 2;
+        margin: 0%;
+        order: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -317,38 +380,48 @@ header a {
         height: auto;
     }
 
-    .header__div__carrito-de-compras {
+    .header__div__carrito-de-compras{
         width: 10%;
-        order: 3;
+        order: 0;
         margin-right: 0%;
+       
     }
-
-    .header__div__menu-hambuerguesa {
-        display: none;
-    }
-
-
-
-
-
-    .header__div__lista {
-        display: flex;
-        order: 4;
-        width: 98%;
-        margin-top: 1.5%;
-        border-top: #5FB9E0 solid 1px;
-        padding-top: 1.2%;
+    .header__div__carrito-de-compras-texto a p {
+        width: 40px;
+       
         
     }
-
-    .header__div__lista  ul li{
-        margin: 0px 20px;
-    }
-
-    .header__div__lista ul li ul li a{
-        display: block;
+    .header__div__menu-hambuerguesa {
         display: none;
+        order: 0;
     }
+
+
+   .nav{
+    margin-top: 10px;
+    border-top: #5FB9E0 solid 1px;
+    width: 100%;
+    display: inline-flex;
+   }
+
+    .header__div__lista {
+       
+        border-top: #5FB9E0 solid 1px;
+        justify-content: start;
+        margin: 0%;
+        width: 100%;
+        order: 0;
+        column-gap: 30px;
+
+    }
+    
+
+    .header__div__lista ul li {
+        margin: 0px 20px;
+
+    }
+  
+
 
 
 }

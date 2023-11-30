@@ -47,10 +47,10 @@
 }
 
 .producto__agregado img {
-display: flex;
-justify-content: center;
-   max-width: 35px;
-
+    display: flex;
+    justify-content: center;
+    max-width: 35px;
+    padding: 3px 0px;
 }
 
 
@@ -114,7 +114,7 @@ justify-content: center;
     justify-content: center;
     color: #fff;
     padding-bottom: 10px;
-  
+
     margin-bottom: 30px;
 
 }
@@ -194,19 +194,21 @@ justify-content: center;
 }
 
 .datos__de__tarjeta-fecha-cvv input {
-    width:48%;
+    width: 48%;
     text-align: center;
     height: 50px;
     background-color: var(--ColorAzul);
     border: #fff solid 2px;
     color: #fff;
-  
+
 }
-.datos__de__tarjeta-fecha{
+
+.datos__de__tarjeta-fecha {
     margin-right: 5px;
 }
-.datos__de__tarjeta-cvv{
-margin-left: 5px;
+
+.datos__de__tarjeta-cvv {
+    margin-left: 5px;
 }
 
 /* ---------------------------------------------------- */
@@ -311,7 +313,7 @@ margin-left: 5px;
 .productos-similares {
 
     background-color: var(--ColorGris);
-    order:2;
+    order: 2;
 }
 
 .productos-similares h3 {
@@ -334,7 +336,7 @@ margin-left: 5px;
 }
 
 .productos img {
-   max-width: 50%;
+    max-width: 50%;
     height: 120px;
     padding: 5px;
     padding-top: 10px;
@@ -413,7 +415,7 @@ margin-left: 5px;
         padding: 0%10%;
     }
 
-  /*   .productos-similares {
+    /*   .productos-similares {
         display: flex;
     } */
 
@@ -427,8 +429,9 @@ margin-left: 5px;
     }
 
 }
-@media (min-width:720px){
-    .prod-similares-que-no-s-mostraran{
+
+@media (min-width:720px) {
+    .prod-similares-que-no-s-mostraran {
         display: none;
     }
 }

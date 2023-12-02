@@ -2,12 +2,9 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://kit.fontawesome.com/6e64724991.js" crossorigin="anonymous"></script>
-    <title>Product cart </title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <%- include('./partials/head',{
+        title : "Carrito" 
+      }) %>
 
     <style>
         .swiper-cart {
@@ -27,81 +24,8 @@
 </head>
 
 <body class="cart">
-    <header>
-
-        <div class="header__img" >
-            <a href="/"><img src="/img/logo-header.png" alt="imagen de la marca"></a>
-        </div>
-
-        <div class="header__div__register--login">
-            <i class="fa-solid fa-user-plus"></i>
-            <a class="header__div__register" href="/register">Regístrate</a>
-            <a class="header__div__login" href="/login">Iniciar Sesion</a>
-        </div>
-
-        <div class="header__div__menu-hambuerguesa">
-            <i class="fas fa-bars"></i>
-        </div>
-
-        <form class="header__form__barra-de-busqueda">
-            <input type="text" placeholder="Busca tus marcas y productos favoritos">
-            <button class="header__form__button"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-
-        <div class="header__div__carrito-de-compras">
-            <div class="header__div__carrito-de-compras-icono">
-                <a href="/productCart"><i class="fa-solid fa-cart-plus"></i></a>
-                <div class="header__div__carrito-de-compras-numero">
-                    <p>4</p>
-                </div>
-            </div>
-            <div class="header__div__carrito-de-compras-texto">
-              <a href="/productCart"><p>Tu compra</p></a>
-            <!-- numero que va sobre el carrito -->
-            </div>
-            
-        </div>
-
-        <div class="nav">
-           <ul class="header__div__lista">
-                <li>
-                    <a href="#">Perros</a>
-                    <ul>
-                        <li><a href="">Alimento</a></li>
-                        <li><a href="">Accesorios</a></li>
-                        <li><a href="">Cuidado</a></li>
-                        <li><a href="">Corte de pelo y baño</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="#">Gatos</a>
-                     <ul>
-                        <li><a href="">Alimento</a></li>
-                        <li><a href="">Accesorios</a></li>
-                        <li><a href="">Cuidado</a></li>
-                        <li><a href="">Baño</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="#">Animales pequeños</a>
-                    <ul>
-                        <li><a href="">Aves</a></li>
-                        <li><a href="">Peses</a></li>
-                        <li><a href="">Roedores</a></li>
-                    </ul>
-
-                </li>
-
-                <li><a href="">Lo + vendido</a></li>
-
-                <li><a href="">Ofertas</a></li>
-            </ul>
-
-        </div>
     
-    </header>
+    <%- include('./partials/header') %>
 
     <main class="cart-main">
         <div class="cart-main-box">
@@ -112,50 +36,50 @@
                 </div>
 
                 <article class="producto__agregado">
-                    <img src="/img/fotosCarrito/ProPlan-perros (1).png" alt="">
+                    <img src="/images/fotosCarrito/ProPlan-perros (1).png" alt="">
                     <div class="Productos-en-el-carrito__div__titulo__descripcion__precio">
                         <h5 class=".Productos-en-el-carrito__div__titulo">Pro Plan</h5>
                         <p class="Productos-en-el-carrito__div__descripcion">Perros adultos 20kg + regalo.</p>
                         <h4 class="Productos-en-el-carrito__div__precio">$ 14.600</h4>
                     </div>
                     <div class="Productos-en-el-carrito__div__contador__eliminar">
-                        <img src="/img/fotosCarrito/contador.png" alt="">
+                        <img src="/images/fotosCarrito/contador.png" alt="">
                         <i class="fa-solid fa-trash-can"></i>
                     </div>
                 </article>
                 <article class="producto__agregado">
-                    <img src="/img/fotosCarrito/dogui-adulto (1).png" alt="">
+                    <img src="/images/fotosCarrito/dogui-adulto (1).png" alt="">
                     <div class="Productos-en-el-carrito__div__titulo__descripcion__precio">
                         <h5 class=".Productos-en-el-carrito__div__titulo">Dogui</h5>
                         <p class="Productos-en-el-carrito__div__descripcion">Perros medianos 10kg.</p>
                         <h4 class="Productos-en-el-carrito__div__precio">$8.900</h4>
                     </div>
                     <div class="Productos-en-el-carrito__div__contador__eliminar">
-                        <img src="/img/fotosCarrito/contador.png" alt="">
+                        <img src="/images/fotosCarrito/contador.png" alt="">
                         <i class="fa-solid fa-trash-can"></i>
                     </div>
                 </article>
                 <article class="producto__agregado">
-                    <img src="/img/fotosCarrito/gato_adulto (1).png" alt="">
+                    <img src="/images/fotosCarrito/gato_adulto (1).png" alt="">
                     <div class="Productos-en-el-carrito__div__titulo__descripcion__precio">
                         <h5 class=".Productos-en-el-carrito__div__titulo">Balance</h5>
                         <p class="Productos-en-el-carrito__div__descripcion">Gatos adultos 3kg.</p>
                         <h4 class="Productos-en-el-carrito__div__precio">$ 2.550</h4>
                     </div>
                     <div class="Productos-en-el-carrito__div__contador__eliminar">
-                        <img src="/img/fotosCarrito/contador.png" alt="">
+                        <img src="/images/fotosCarrito/contador.png" alt="">
                         <i class="fa-solid fa-trash-can"></i>
                     </div>
                 </article>
                 <article class="producto__agregado">
-                    <img src="/img/fotosCarrito/alimento-para-perro-adulto-pedigree-saco-carne-21-kg (1).jpg" alt="">
+                    <img src="/images/fotosCarrito/alimento-para-perro-adulto-pedigree-saco-carne-21-kg (1).jpg" alt="">
                     <div class="Productos-en-el-carrito__div__titulo__descripcion__precio">
                         <h5 class=".Productos-en-el-carrito__div__titulo">Pedigree</h5>
                         <p class="Productos-en-el-carrito__div__descripcion">Perros pequeños 5kg.</p>
                         <h4 class="Productos-en-el-carrito__div__precio">$ 6.300</h4>
                     </div>
                     <div class="Productos-en-el-carrito__div__contador__eliminar">
-                        <img src="/img/fotosCarrito/contador.png" alt="">
+                        <img src="/images/fotosCarrito/contador.png" alt="">
                         <i class="fa-solid fa-trash-can"></i>
                     </div>
                 </article>
@@ -169,7 +93,7 @@
                         <div class="swiper-slide swiper-slide-cart">
 
                             <article class="productos">
-                                <img src="/img/fotosCarrito/nature_adultos (1).png" alt="imagen del producto">
+                                <img src="/images/fotosCarrito/nature_adultos (1).png" alt="imagen del producto">
 
                                 <div class="productos__marca__descripcion__precio__carrito">
 
@@ -187,7 +111,7 @@
                         </div>
                         <div class="swiper-slide swiper-slide-cart">
                             <article class="productos">
-                                <img src="/img/fotosCarrito/ricocan-perros (1).png" alt="imagen del producto">
+                                <img src="/images/fotosCarrito/ricocan-perros (1).png" alt="imagen del producto">
 
                                 <div class="productos__marca__descripcion__precio__carrito">
 
@@ -205,7 +129,7 @@
                         </div>
                         <div class="swiper-slide swiper-slide-cart">
                             <article class="productos">
-                                <img src="/img/fotosCarrito/perrOn-25kg-adultos (1).png" alt="imagen del producto">
+                                <img src="/images/fotosCarrito/perrOn-25kg-adultos (1).png" alt="imagen del producto">
 
                                 <div class="productos__marca__descripcion__precio__carrito">
 
@@ -223,7 +147,7 @@
                         </div>
                         <div class="swiper-slide swiper-slide-cart">
                             <article class="productos ">
-                                <img src="/img/fotosCarrito/Balance_gato_adulto (1).png" alt="imagen del producto">
+                                <img src="/images/fotosCarrito/Balance_gato_adulto (1).png" alt="imagen del producto">
 
                                 <div class="productos__marca__descripcion__precio__carrito">
 
@@ -241,7 +165,7 @@
                         </div>
                         <div class="swiper-slide swiper-slide-cart">
                             <article class="productos">
-                                <img src="/img/fotosCarrito/Balance_perro_adulto_20kg (1).png"
+                                <img src="/images/fotosCarrito/Balance_perro_adulto_20kg (1).png"
                                     alt="imagen del producto">
 
                                 <div class="productos__marca__descripcion__precio__carrito">
@@ -260,7 +184,7 @@
                         </div>
                         <div class="swiper-slide swiper-slide-cart">
                             <article class="productos">
-                                <img src="/img/fotosCarrito/alimento-para-perro-adulto-pedigree-saco-carne-21-kg (1).jpg"
+                                <img src="/images/fotosCarrito/alimento-para-perro-adulto-pedigree-saco-carne-21-kg (1).jpg"
                                     alt="imagen del producto">
 
                                 <div class="productos__marca__descripcion__precio__carrito">
@@ -365,98 +289,8 @@
 
     </main>
 
-    <footer class="footer">
-        <div class="footer--content--logo-y-texto">
-            <div class="footer--content--logo">
-                <img src="/img/logo-blanco.png" alt="logo">
-            </div>
-            <div class="footer--content--registrate--texto">
-                <p>Registrate para recibir ofertas, nuevo contenido y mucho mas </p>
-            </div>
-        </div>
-        <div class="opcion">
-            <div class="footer--content--registrate">
+    <%- include('./partials/footer') %>
 
-                <div class="footer--content--nosotros">
-                    <p>Nos enfocamos en ofrecer productos y servicios de alta calidad para mascotas.Ofrecemos alimentos,
-                        juguetes, accesorios, productos de higiene y cuidado, ademas de otros artículos.también
-                        brindamos
-                        servicios de peluquería y baño.Nuestro objetivo es brindar a nuestros clientes una experiencia
-                        de
-                        compra satisfactoria y asegurarnos de que sus mascotas reciban los mejores productos y
-                        servicios.
-                    </p>
-                </div>
-                <div class="footer--content--form">
-                    <form action="/register" class="footer--content--input">
-                        <input class="footer--content--registrate--input--texto" type="text"
-                            placeholder="Ingresa tu email">
-                        <input class="footer--content--registrate--input--submit" type="submit" value="Registrate">
-                    </form>
-
-                    <ul class="footer--content--ul">
-                        <p>No te lo píerdas</p>
-                        <li><a href="">Nuestras mejores ofertas</a></li>
-                        <li><a href="">Promociones</a></li>
-                        <li><a href="">Los mas lindos juquetes para tus mascotass</a></li>
-                        <li><a href="">Los + Vendidos</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="footer--nav">
-                <a href="">
-                    <p>Sobre Nosotros <i class="fa-solid fa-chevron-down"></i></p>
-                </a>
-                <a href="">
-                    <p>No te lo pierdas <i class="fa-solid fa-chevron-down"></i></p>
-                </a>
-                <a href="">
-                    <p>Servicios <i class="fa-solid fa-chevron-down"></i></p>
-                </a>
-
-
-            </div>
-
-            <div class="footer--servicios">
-
-                <ul class="footer--content--ul footer--content--ul-servicios">
-                    <p>Servicios</p>
-                    <li><a href="">Pedí tu turno para baño y corte de pelo</a></li>
-                    <li><a href="">Sobre las vacunas de tus mascotas</a></li>
-                    <li><a href="">Lo que necesitas saber sobre tus mascotas</a></li>
-                </ul>
-
-                <div class="footer--redes-y-medios">
-                    <div class="footer--seguinos">
-                        <p>Seguinos</p>
-                        <div class="footer--iconos--redes">
-                            <a href="https:/www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="https:/www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="https:/www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
-                        </div>
-                    </div>
-
-
-                    <div class="footer--medios-de-pago">
-                        <p>Medios de Pago</p>
-                        <div class="footer--iconos--pagos">
-                            <i class="fa-brands fa-cc-diners-club"></i>
-                            <i class="fa-brands fa-cc-mastercard"></i>
-                            <i class="fa-brands fa-cc-visa"></i>
-                            <img src="/img/mercado-libre-svgrepo-com.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer--copy">
-            <p><i class="fa-regular fa-copyright"></i> 2023 - Diseño Animal - Digital House - Argentina </p>
-
-        </div>
-    </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {

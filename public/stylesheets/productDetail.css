@@ -325,9 +325,11 @@
     margin: 15px;
     width: 25%;
   }
-
+ .contenedor_stars_detail p{
+font-size: 30px;
+ }
   .contenedor_div_detail h1 {
-    font-size: 45px;
+    font-size: 35px;
   }
 
   .image-gallery {

@@ -1,4 +1,4 @@
-![Imagen de Logo "CanCat"](design/img/logo.png)
+[Imagen de Logo "CanCat"](/img/logo-header.png)
 ## CANCAT 
 
 **Nos enfocamos en ofrecer productos y servicios de alta calidad para mascotas.

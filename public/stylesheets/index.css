@@ -1,4 +1,4 @@
- .index-swiper-container{
+  .swiper {
       width: 100%;
       height: 100%;
   }
@@ -31,7 +31,6 @@
   .index__body__main--banner {
       height: 100%;
       position: relative;
-      display: flex;
       align-items: center;
   }
 
@@ -48,35 +47,6 @@
       color: var(--ColorAmarillo);
       text-shadow: 2px 1px 2px black;
   }
-
-  /* .index__body__main--banner--circulos {
-      font-size: 11px;
-  } */
-
-  /* .index__fa-chevron-left {
-      position: absolute;
-      left: 10px;
-      color: var(--ColorAmarillo);
-      -webkit-text-stroke: 1px var(--ColorAzul);
-  } */
-
-  /* .index__fa-chevron-right {
-      position: absolute;
-      right: 10px;
-      color: var(--ColorAmarillo);
-      -webkit-text-stroke: 1px var(--ColorAzul);
-  } */
-
-  /* .index__body__main--banner--circulos {
-      position: absolute;
-      right: 46%;
-      bottom: 10px;
-  } */
-
-  /* .fa-circle {
-      color: var(--ColorAmarillo);
-      -webkit-text-stroke: 1px var(--ColorAzul);
-  } */
 
   .index__body__main--banner--texto--festejo {
       right: 25%;
@@ -126,6 +96,7 @@
 
   .index__body__main__section--producto--descripcion {
       text-align: center;
+      padding: 15px;
       font-size: 20px;
       color: rgb(85, 85, 85);
       font-weight: 500;
@@ -179,7 +150,7 @@
 
   /* tablet */
 
-  @media (min-width: 480px) and (max-width: 1024px) {
+  @media (min-width: 480px) and (max-width: 1230px) {
 
       .index__body__main--banner--circulos {
           bottom: 10px;
@@ -283,7 +254,7 @@
 
   /* desktop */
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1230px) {
 
       .index__body__main--banner--arrow {
           font-size: 5vw;
@@ -310,14 +281,23 @@
       }
 
       .index__body__main__section--producto {
-          width: 19%;
+          width: 20%;
           padding: 0;
           padding-top: 30px;
+          margin: 30px;
+      }
+
+      .index__body__main__section--producto--desktop {
+          display: none;
       }
 
       .index__body__main__section--producto img {
           max-height: 200px;
           width: auto;
+      }
+
+      .index__body__main__section--producto--descripcion {
+          padding: 15px;
       }
 
       .index__body__main__section--producto--agregar {

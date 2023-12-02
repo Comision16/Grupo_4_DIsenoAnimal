@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/d77b7a8887.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <title>index</title>
+</head>
+
+<body class="index__body">
+
+  <header>
+
+    <div class="header__img">
+      <a href="/"><img src="/img/logo-header.png" alt="imagen de la marca"></a>
+    </div>
+
+    <div class="header__div__register--login">
+      <i class="fa-solid fa-user-plus"></i>
+      <a class="header__div__register" href="/register">Regístrate</a>
+      <a class="header__div__login" href="/login">Iniciar Sesion</a>
+    </div>
+
+    <div class="header__div__menu-hambuerguesa">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <form class="header__form__barra-de-busqueda">
+      <input type="text" placeholder="Busca tus marcas y productos favoritos">
+      <button class="header__form__button"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+
+    <div class="header__div__carrito-de-compras">
+      <div class="header__div__carrito-de-compras-icono">
+        <i class="fa-solid fa-cart-plus"></i>
+        <div class="header__div__carrito-de-compras-numero">
+          <p>4</p>
+        </div>
+      </div>
+
+
+
+      <a href="/productCart">Tu compra</a>
+      <!-- numero que va sobre el carrito -->
+    </div>
+
+    <div class="header__div__lista">
+      <ul>
+        <li>
+          <a href="#">Perros</a>
+          <!-- <ul>
+                    <li><a href="">Alimento</a></li>
+                    <li><a href="">Accesorios</a></li>
+                    <li><a href="">Cuidado</a></li>
+                    <li><a href="">Corte de pelo y baño</a></li>
+                </ul> -->
+        </li>
+
+        <li>
+          <a href="#">Gatos</a>
+        <!-- <li><a href="">Alimento</a></li> -->
+        <!-- <ul>
+                   <li><a href="">Accesorios</a></li>
+                    <li><a href="">Cuidado</a></li>
+                    <li><a href="">Baño</a></li>
+                </ul> -->
+        </li>
+
+        <li>
+          <a href="#">Animales pequeños</a>
+          <!-- <ul>
+                    <li><a href="">Aves</a></li>
+                    <li><a href="">Peses</a></li>
+                    <li><a href="">Roedores</a></li>
+                </ul> -->
+
+        </li>
+
+        <li><a href="">Lo + vendido</a></li>
+
+        <li><a href="">Ofertas</a></li>
+      </ul>
+
+    </div>
+
+  </header>
+
+  <main class="index__body__main">
+
+    <div class="index__body__main--banner">
+
+      <swiper-container class="mySwiper index-swiper-container" navigation="true" pagination="true" keyboard="true"
+        mousewheel="true" css-mode="true">
+        <swiper-slide class="index-swiper-slide">
+          <img src="/img/banner1-home.png" alt="banner">
+          <p class="index__body__main--banner--texto">Porque no solo es una mascota, es parte de tu familia.</p>
+        </swiper-slide>
+        <swiper-slide class="index-swiper-slide">
+          <img src="/img/banner3-home.jpg" alt="banner">
+          <p class="index__body__main--banner--texto index__body__main--banner--texto--festejo">Veni a festejar el cumple de tu mascota con nosotros</p>
+        </swiper-slide>
+        <swiper-slide class="index-swiper-slide">
+          <img src="/img/banner4-home.jpg" alt="banner">
+          <div class="index__body__main--banner--texto index__body__main--banner--texto--descuentos"> <p>20%, 30%, 40%</p>  <p>Los mejores descuentos en nuestra pagina</p></div> 
+        </swiper-slide>
+        <!-- <swiper-slide>Slide 4</swiper-slide>
+        <swiper-slide>Slide 5</swiper-slide>
+        <swiper-slide>Slide 6</swiper-slide>
+        <swiper-slide>Slide 7</swiper-slide>
+        <swiper-slide>Slide 8</swiper-slide>
+        <swiper-slide>Slide 9</swiper-slide> -->
+      </swiper-container>
+
+
+
+      <!-- <img src="/img/banner1-home.png" alt="banner">
+      <a href="#" class="index__body__main--banner--arrow"><i
+          class="fa-solid fa-chevron-left index__fa-chevron-left"></i></a>
+      <a href="#" class="index__body__main--banner--arrow"><i
+          class="fa-solid fa-chevron-right index__fa-chevron-right"></i></a>
+      <p class="index__body__main--banner--texto">Porque no solo es una mascota, es parte de tu familia.</p>
+      <div class="index__body__main--banner--circulos">
+        <a href="#"><i class="fa-solid fa-circle"></i></a>
+        <a href="#"><i class="fa-solid fa-circle index__body__main--banner--circulos--medio"></i></a>
+        <a href="#"><i class="fa-solid fa-circle"></i></a>
+      </div> -->
+    </div>
+    <section class="index__body__main__section">
+
+      <h2 class="index__body__main__section--titulo">Las Mejores Ofertas</h2>
+
+      <div class="index__body__main__section--producto">
+
+        <a href="/productDetail">
+          <div class="index__body__main__section--producto--columna1">
+            <img src="/img/NaturalChoice.png" alt="Natural choice">
+          </div>
+        </a>
+
+        <div class="index__body__main__section--producto--columna2">
+          <h3 class="index__body__main__section--producto--titulo">Lorem ipsum</h3>
+          <p class="index__body__main__section--producto--descripcion">Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Duis aliquam.</p>
+        </div>
+
+        <div class="index__body__main__section--producto--columna3">
+          <p class="index__body__main__section--producto--precio">$1999.99</p>
+          <a href="/productCart" class="index__body__main__section--producto--agregar">
+            <p>Agregar al Carrito</p>
+            <i class="fa-solid fa-cart-plus"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="index__body__main__section--producto index__body__main__section--producto--reverse">
+
+        <a href="/productDetail">
+          <div
+            class="index__body__main__section--producto--columna1 index__body__main__section--producto--columna1--reverse">
+            <img src="/img/CanAmor.png" alt="Natural choice">
+          </div>
+        </a>
+
+        <div
+          class="index__body__main__section--producto--columna2 index__body__main__section--producto--columna2--reverse">
+          <h3 class="index__body__main__section--producto--titulo">Lorem ipsum</h3>
+          <p class="index__body__main__section--producto--descripcion">Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Duis aliquam.</p>
+        </div>
+
+        <div class="index__body__main__section--producto--columna3">
+          <p class="index__body__main__section--producto--precio">$899.99</p>
+          <a href="/productCart" class="index__body__main__section--producto--agregar">
+            <p>Agregar al Carrito</p>
+            <i class="fa-solid fa-cart-plus"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="index__body__main__section--producto">
+
+        <a href="/productDetail">
+          <div class="index__body__main__section--producto--columna1">
+            <img src="/img/caniamo.png" alt="Natural choice" class="index__body__main__section--producto--caniamo">
+          </div>
+        </a>
+
+        <div class="index__body__main__section--producto--columna2">
+          <h3 class="index__body__main__section--producto--titulo">Lorem ipsum</h3>
+          <p class="index__body__main__section--producto--descripcion">Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Duis aliquam.</p>
+        </div>
+
+        <div class="index__body__main__section--producto--columna3">
+          <p class="index__body__main__section--producto--precio">$1333.99</p>
+          <a href="/productCart" class="index__body__main__section--producto--agregar">
+            <p>Agregar al Carrito</p>
+            <i class="fa-solid fa-cart-plus"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="index__body__main__section--producto index__body__main__section--producto--reverse">
+
+        <a href="/productDetail">
+          <div
+            class="index__body__main__section--producto--columna1 index__body__main__section--producto--columna1--reverse">
+            <img src="/img/pedigree.png" alt="Natural choice" class="index__pedigree">
+          </div>
+        </a>
+
+        <div
+          class="index__body__main__section--producto--columna2 index__body__main__section--producto--columna2--reverse">
+          <h3 class="index__body__main__section--producto--titulo">Lorem ipsum</h3>
+          <p class="index__body__main__section--producto--descripcion">Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Duis aliquam.</p>
+        </div>
+
+        <div class="index__body__main__section--producto--columna3">
+          <p class="index__body__main__section--producto--precio">$2199.99</p>
+          <a href="/productCart" class="index__body__main__section--producto--agregar">
+            <p>Agregar al Carrito</p>
+            <i class="fa-solid fa-cart-plus"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="index__body__main__section--producto">
+
+        <a href="/productDetail">
+          <div class="index__body__main__section--producto--columna1">
+            <img src="/img/Milk-Bone.png" alt="Natural choice">
+          </div>
+        </a>
+
+        <div class="index__body__main__section--producto--columna2">
+          <h3 class="index__body__main__section--producto--titulo">Lorem ipsum</h3>
+          <p class="index__body__main__section--producto--descripcion">Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Duis aliquam.</p>
+        </div>
+
+        <div class="index__body__main__section--producto--columna3">
+          <p class="index__body__main__section--producto--precio">$3639.99</p>
+          <a href="/productCart" class="index__body__main__section--producto--agregar">
+            <p>Agregar al Carrito</p>
+            <i class="fa-solid fa-cart-plus"></i>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="index__body__main__section">
+
+      <h2 class="index__body__main__section--titulo">Los Productos mas Buscados</h2>
+
+      <div class="index__body__main__section--producto">
+
+        <a href="/productDetail">
+          <div class="index__body__main__section--producto--columna1">
+            <img src="/img/NaturalChoice.png" alt="Natural choice">
+          </div>
+        </a>
+
+        <div class="index__body__main__section--producto--columna2">
+          <h3 class="index__body__main__section--producto--titulo">Lorem ipsum</h3>
+          <p class="index__body__main__section--producto--descripcion">Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Duis aliquam.</p>
+        </div>
+
+        <div class="index__body__main__section--producto--columna3">
+          <p class="index__body__main__section--producto--precio">$1999.99</p>
+          <a href="/productCart" class="index__body__main__section--producto--agregar">
+            <p>Agregar al Carrito</p>
+            <i class="fa-solid fa-cart-plus"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="index__body__main__section--producto index__body__main__section--producto--reverse">
+
+        <a href="/productDetail">
+          <div
+            class="index__body__main__section--producto--columna1 index__body__main__section--producto--columna1--reverse">
+            <img src="/img/CanAmor.png" alt="Natural choice">
+          </div>
+        </a>
+
+        <div
+          class="index__body__main__section--producto--columna2 index__body__main__section--producto--columna2--reverse">
+          <h3 class="index__body__main__section--producto--titulo">Lorem ipsum</h3>
+          <p class="index__body__main__section--producto--descripcion">Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Duis aliquam.</p>
+        </div>
+
+        <div class="index__body__main__section--producto--columna3">
+          <p class="index__body__main__section--producto--precio">$899.99</p>
+          <a href="/productCart" class="index__body__main__section--producto--agregar">
+            <p>Agregar al Carrito</p>
+            <i class="fa-solid fa-cart-plus"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="index__body__main__section--producto">
+
+        <a href="/productDetail">
+          <div class="index__body__main__section--producto--columna1">
+            <img src="/img/caniamo.png" alt="Natural choice" class="index__body__main__section--producto--caniamo">
+          </div>
+        </a>
+
+        <div class="index__body__main__section--producto--columna2">
+          <h3 class="index__body__main__section--producto--titulo">Lorem ipsum</h3>
+          <p class="index__body__main__section--producto--descripcion">Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Duis aliquam.</p>
+        </div>
+
+        <div class="index__body__main__section--producto--columna3">
+          <p class="index__body__main__section--producto--precio">$1333.99</p>
+          <a href="/productCart" class="index__body__main__section--producto--agregar">
+            <p>Agregar al Carrito</p>
+            <i class="fa-solid fa-cart-plus"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="index__body__main__section--producto index__body__main__section--producto--reverse">
+
+        <a href="/productDetail">
+          <div
+            class="index__body__main__section--producto--columna1 index__body__main__section--producto--columna1--reverse">
+            <img src="/img/pedigree.png" alt="Natural choice" class="index__pedigree">
+          </div>
+        </a>
+
+        <div
+          class="index__body__main__section--producto--columna2 index__body__main__section--producto--columna2--reverse">
+          <h3 class="index__body__main__section--producto--titulo">Lorem ipsum</h3>
+          <p class="index__body__main__section--producto--descripcion">Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Duis aliquam.</p>
+        </div>
+
+        <div class="index__body__main__section--producto--columna3">
+          <p class="index__body__main__section--producto--precio">$2199.99</p>
+          <a href="/productCart" class="index__body__main__section--producto--agregar">
+            <p>Agregar al Carrito</p>
+            <i class="fa-solid fa-cart-plus"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="index__body__main__section--producto">
+
+        <a href="/productDetail">
+          <div class="index__body__main__section--producto--columna1">
+            <img src="/img/Milk-Bone.png" alt="Natural choice">
+          </div>
+        </a>
+
+        <div class="index__body__main__section--producto--columna2">
+          <h3 class="index__body__main__section--producto--titulo">Lorem ipsum</h3>
+          <p class="index__body__main__section--producto--descripcion">Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Duis aliquam.</p>
+        </div>
+
+        <div class="index__body__main__section--producto--columna3">
+          <p class="index__body__main__section--producto--precio">$3639.99</p>
+          <a href="/productCart" class="index__body__main__section--producto--agregar">
+            <p>Agregar al Carrito</p>
+            <i class="fa-solid fa-cart-plus"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="index__body__main__section--promo">
+        <picture>
+          <source srcset="img/banner2-home.png" media="(min-width: 1024px)">
+          <img src="/img/banner2-mobile.png" alt="imagen principal">
+        </picture>
+        <div class="index__body__main__section--promo--texto">
+          <p>2x1</p>
+          <p>En baño y corte de pelo</p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer--content--logo-y-texto">
+      <div class="footer--content--logo">
+        <img src="/img/logo-blanco.png" alt="logo">
+      </div>
+      <div class="footer--content--registrate--texto">
+        <p>Registrate para recibir ofertas, nuevo contenido y mucho mas </p>
+      </div>
+    </div>
+    <div class="opcion">
+      <div class="footer--content--registrate">
+
+        <div class="footer--content--nosotros">
+          <p>Nos enfocamos en ofrecer productos y servicios de alta calidad para mascotas.Ofrecemos alimentos,
+            juguetes, accesorios, productos de higiene y cuidado, ademas de otros artículos.también
+            brindamos
+            servicios de peluquería y baño.Nuestro objetivo es brindar a nuestros clientes una experiencia
+            de
+            compra satisfactoria y asegurarnos de que sus mascotas reciban los mejores productos y
+            servicios.
+          </p>
+        </div>
+        <div class="footer--content--form">
+          <form action="/register" class="footer--content--input">
+            <input class="footer--content--registrate--input--texto" type="text" placeholder="Ingresa tu email">
+            <input class="footer--content--registrate--input--submit" type="submit" value="Registrate">
+          </form>
+
+          <ul class="footer--content--ul">
+            <p>No te lo píerdas</p>
+            <li><a href="">Nuestras mejores ofertas</a></li>
+            <li><a href="">Promociones</a></li>
+            <li><a href="">Los mas lindos juquetes para tus mascotass</a></li>
+            <li><a href="">Los + Vendidos</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer--nav">
+        <a href="">
+          <p>Sobre Nosotros <i class="fa-solid fa-chevron-down"></i></p>
+        </a>
+        <a href="">
+          <p>No te lo pierdas <i class="fa-solid fa-chevron-down"></i></p>
+        </a>
+        <a href="">
+          <p>Servicios <i class="fa-solid fa-chevron-down"></i></p>
+        </a>
+
+
+      </div>
+
+      <div class="footer--servicios">
+
+        <ul class="footer--content--ul footer--content--ul-servicios">
+          <p>Servicios</p>
+          <li><a href="">Pedí tu turno para baño y corte de pelo</a></li>
+          <li><a href="">Sobre las vacunas de tus mascotas</a></li>
+          <li><a href="">Lo que necesitas saber sobre tus mascotas</a></li>
+        </ul>
+
+        <div class="footer--redes-y-medios">
+          <div class="footer--seguinos">
+            <p>Seguinos</p>
+            <div class="footer--iconos--redes">
+              <a href="https:/facebook.com"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https:/instagram.com"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https:/twitter.com"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+          </div>
+
+
+          <div class="footer--medios-de-pago">
+            <p>Medios de Pago</p>
+            <div class="footer--iconos--pagos">
+              <i class="fa-brands fa-cc-diners-club"></i>
+              <i class="fa-brands fa-cc-mastercard"></i>
+              <i class="fa-brands fa-cc-visa"></i>
+              <img src="/img/mercado-libre-svgrepo-com.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer--copy">
+      <p><i class="fa-regular fa-copyright"></i> 2023 - Diseño Animal - Digital House - Argentina </p>
+
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      cssMode: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
+  </script>
+</body>
+
+</html>

@@ -5,10 +5,11 @@
     text-decoration: underline;
     text-decoration-color: var(--ColorAmarillo);
     padding-top: 5%;
+    margin-left: 25px;
 }
 .register_main{
     background-position: center center;
-    background-image:url(/img/background-login.jpg);
+    background-image:url(/images/background-login.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -23,11 +24,11 @@
 
 .register_form input{
     padding: 3%;
-    margin: 2% 5%;
-    width: 90%;
+    margin: 2% 24%;
+    width: 52%;
     border: 2px solid var(--ColorAzul);
     border-radius: 10px;
-    background-color: rgba(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .register_main input::placeholder{

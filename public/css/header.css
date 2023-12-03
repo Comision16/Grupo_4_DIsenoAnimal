@@ -1,4 +1,4 @@
-.header{
+.header {
     width: 100%;
 }
 
@@ -166,7 +166,7 @@ header a {
 }
 
 /* seccion ul */
-.nav{
+.nav {
     display: none;
 }
 
@@ -240,7 +240,8 @@ header a {
         margin: 2%;
 
     }
-    .header__div__lista{
+
+    .header__div__lista {
         width: 100%;
     }
 
@@ -267,16 +268,17 @@ header a {
     }
 
     .header__div__carrito-de-compras {
-       
+
         order: 2;
         width: 10%;
     }
+
     .header__div__carrito-de-compras-texto a p {
         display: block;
     }
-    
+
     .header__div__menu-hambuerguesa {
-      order: 3;
+        order: 3;
         margin-left: 5%;
         margin-right: 10%;
     }
@@ -321,7 +323,7 @@ header a {
         padding: 1%;
         column-gap: 50px;
         width: 100%;
-        gap: 0px        ;
+        gap: 0px;
     }
 
     .header__img {
@@ -334,7 +336,7 @@ header a {
 
     .header__form__barra-de-busqueda {
         width: 60%;
-        order:1;
+        order: 1;
         padding-bottom: 2%;
         height: 30px;
         margin: 0%;
@@ -378,53 +380,63 @@ header a {
         height: auto;
     }
 
+    .header__div__register:hover {
+        font-size: 1rem;
+    }
+
     .header__div__login {
         margin-top: 100px;
         height: auto;
     }
 
-    .header__div__carrito-de-compras{
+    .header__div__login:hover {
+        font-size: 1rem;
+    }
+
+    .header__div__carrito-de-compras {
         width: 10%;
         order: 3;
         margin-right: 0%;
-       
+
     }
+
     .header__div__carrito-de-compras-texto a p {
         width: 40px;
-       
-        
+
+
     }
+
     .header__div__menu-hambuerguesa {
         display: none;
         order: 0;
     }
 
 
-   .nav{
-    margin-top: 10px;
-    border-top: #5FB9E0 solid 1px;
-    width: 100%;
-    display: inline-flex;
-    order: 4;
-   }
+    .nav {
+        margin-top: 10px;
+        border-top: #5FB9E0 solid 1px;
+        width: 100%;
+        display: inline-flex;
+        order: 4;
+    }
 
     .header__div__lista {
-       
+
         border-top: #5FB9E0 solid 1px;
         justify-content: start;
         margin: 0%;
         width: 100%;
-        order:0 ;
+        order: 0;
         column-gap: 30px;
 
     }
-    
+
 
     .header__div__lista ul li {
         margin: 0px 20px;
 
     }
-  
+
 
 
 

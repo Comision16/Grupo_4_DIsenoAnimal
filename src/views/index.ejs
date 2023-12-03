@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head',{
+  title : "Cancat" 
+}) %>
+
+<body class="index__body">
+
+  <%- include('./partials/header') %>
+
+  <main class="index__body__main">
+
+    <div class="index__body__main--banner">
+
+      <swiper-container class="mySwiper index-swiper-container" navigation="true" pagination="true" keyboard="true"
+        mousewheel="true" css-mode="true">
+        <swiper-slide class="index-swiper-slide">
+          <img src="/images/banner1-home.png" alt="banner">
+          <p class="index__body__main--banner--texto">Porque no solo es una mascota, es parte de tu familia.</p>
+        </swiper-slide>
+        <swiper-slide class="index-swiper-slide">
+          <img src="/images/banner3-home.jpg" alt="banner">
+          <p class="index__body__main--banner--texto index__body__main--banner--texto--festejo">Veni a festejar el
+            cumple de tu mascota con nosotros</p>
+        </swiper-slide>
+        <swiper-slide class="index-swiper-slide">
+          <img src="/images/banner4-home.jpg" alt="banner">
+          <div class="index__body__main--banner--texto index__body__main--banner--texto--descuentos">
+            <p>20%, 30%, 40%</p>
+            <p>Los mejores descuentos en nuestra pagina</p>
+          </div>
+        </swiper-slide>
+        <!-- <swiper-slide>Slide 4</swiper-slide>
+        <swiper-slide>Slide 5</swiper-slide>
+        <swiper-slide>Slide 6</swiper-slide>
+        <swiper-slide>Slide 7</swiper-slide>
+        <swiper-slide>Slide 8</swiper-slide>
+        <swiper-slide>Slide 9</swiper-slide> -->
+      </swiper-container>
+
+
+
+      <!-- <img src="/img/banner1-home.png" alt="banner">
+      <a href="#" class="index__body__main--banner--arrow"><i
+          class="fa-solid fa-chevron-left index__fa-chevron-left"></i></a>
+      <a href="#" class="index__body__main--banner--arrow"><i
+          class="fa-solid fa-chevron-right index__fa-chevron-right"></i></a>
+      <p class="index__body__main--banner--texto">Porque no solo es una mascota, es parte de tu familia.</p>
+      <div class="index__body__main--banner--circulos">
+        <a href="#"><i class="fa-solid fa-circle"></i></a>
+        <a href="#"><i class="fa-solid fa-circle index__body__main--banner--circulos--medio"></i></a>
+        <a href="#"><i class="fa-solid fa-circle"></i></a>
+      </div> -->
+    </div>
+    <section class="index__body__main__section">
+
+      <% for( let i = 0; i < 6; i++ ) { %>
+
+        <%- include('./partials/productCard.ejs') %>
+      
+      <% } %>
+  </main>
+
+  <%- include('./partials/footer') %>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      cssMode: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
+  </script>
+</body>
+
+</html>

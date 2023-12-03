@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs',{
+        title : "Detalle" 
+      }) %>
+<body class ="detail_product">
+
+    <%- include('../partials/header.ejs') %>
+
+    <ul class="ul_li_detailproduct">
+        <li><a href="#">Home</a>></li>
+        <li><a href="#">Perros</a> > </li>
+        <li><a href="#">Razas Pequeñas</a> > </li>
+        <li><a href="#">Pouch Pedigree Adulto</a></li>
+    </ul>
+<div class="contenedor_div_detail">
+
+    <h1>Pouch Pedigree Adulto</h1>
+
+    <div class="contenedor_stars_detail">
+
+    <i class="fas fa-star star-yellow"></i>
+    <i class="fas fa-star star-yellow" ></i>
+    <i class="fas fa-star star-yellow"></i>
+    <i class="fas fa-star star-yellow"></i>
+    <i class="fas fa-star star-yellow"></i>
+  <p>¡5 CatCan Estrellas!</p>
+</div>
+
+<div class="Imagen_detailproduct">
+  <div class="image-gallery"> 
+    <img src="/images/pedigreepollo.png" alt="pedigree pouch pollo ">
+    <img src="/images/pedigreecarne.png" alt="pedigree pouch carne">
+    </div>
+
+<p class="precio__detailproduct"> $390,00</p>
+  <p>Selecciona tu sabor:</p>
+
+  <form class="sabores__detailproduct">
+    <label>
+      <input type="radio" name="sabores" value="POLLO">POLLO</label>
+    <label>
+<input type="radio" name="sabores" value="CARNE">CARNE</label>
+  </form>
+
+     <p ><a href="#"><u>Ver los medios de pago</u></a></p> <br>
+     <a href="carrito" class="button_comprar__detailproduct">COMPRAR</a>
+    </div>
+
+<p class="envio">
+    <i class="fas fa-truck"></i> <!-- Icono del camión de envíos -->
+  <span> Simular costo de envio </span>  
+    <select class="codigo-postal">
+      <option value="Lanús">Lanús </option>
+      <option value="Lomas">Lomas </option>
+      <option value="San Miguel">San miguel </option>
+      <option value="Ezeiza">Ezeiza </option>
+      <option value="Monte Grande">Monte Grande </option>
+      <option value="Alejandro Korn">Alejandro Korn</option>
+      <option value="Alejandro Korn">Avellaneda</option>
+      <option value="Alejandro Korn">Springfield</option>
+      <option value="Alejandro Korn">Shelbyville</option>
+      <option value="Alejandro Korn">Algun lado</option>
+
+  </select>
+  </p>
+  <div class="descripcion__detailproduct">
+  <p><u>Lo que tenes que saber de este producto</u></p>
+  <ul>
+  <li>Sabor: pollo en salsa.</li>
+  <li>Sabor y nutrición completa para tu mascota.</li>
+  <li>Imagenes Ilustrativas.</li>
+  <li>El paquete puede variar según peso.</li>
+  <li>Recomendado para perro adulto.</li>
+  <li>Formulado especialmente para razas Grandes.</li>
+  <li>Comida húmeda</li>        
+  </ul>
+        
+</div>
+</div>      
+  <h2 class="productos__destacados__h2">PRODUCTOS DESTACADOS </h2>
+
+<section class="productos__destacados">
+    <div class="item ">
+    <img src="/images/caniamo.png" alt="">
+    <h3>Lorem ipsum dolor sit amet.</h3>
+    <p class="p_descripcion"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, voluptates!</p>
+    <p class = Precio_container> $890,00 </p>
+    <a class="Carrito_detailproduct" href="/carrito">Agregar al carrito <i class="fa-solid fa-cart-shopping"></i></a>
+</div>
+<div class="item ">
+    <img src="/images/Milk-Bone.png" alt="">
+    
+    <h3>Lorem ipsum dolor sit amet.</h3>
+    <p class="p_descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, doloribus?</p>
+    <p class = "Precio_container"> $890,00 </p>
+    <a class="Carrito_detailproduct" href="/carrito">Agregar al carrito <i class="fa-solid fa-cart-shopping"></i></a>
+</div>
+<div class="item ">
+    <img src="/images/NaturalChoice.png" alt="">
+<h3>Lorem ipsum dolor sit amet.</h3>  
+  <p class="p_descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, doloribus?</p>
+    <p class = Precio_container> $890,00 </p>
+    <a class="Carrito_detailproduct" href="/carrito">Agregar al carrito <i class="fa-solid fa-cart-shopping"></i></a>
+</div>
+<div class="item">
+  <img src="/images/pedigreecarne.png" alt="">
+  <h3>Lorem ipsum dolor sit amet.</h3>
+  <p class="p_descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, doloribus?</p>
+  <p class = "Precio_container"> $890,00 </p>
+  <a class="Carrito_detailproduct" href="/carrito">Agregar al carrito <i class="fa-solid fa-cart-shopping"></i></a>
+</div>
+</section>
+
+    <%- include('../partials/footer.ejs') %>
+
+</body>
+</html>

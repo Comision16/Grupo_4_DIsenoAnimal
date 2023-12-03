@@ -296,6 +296,10 @@
           width: auto;
       }
 
+      .index__body__main__section--producto--desktop {
+        display: none;
+      }
+
       .index__body__main__section--producto--descripcion {
           padding: 15px;
       }

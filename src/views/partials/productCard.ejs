@@ -2,20 +2,19 @@
 
       <div class="index__body__main__section--producto">
 
-        <a href="./productos/detalle">
+        <a href="/productos/detalle">
           <div class="index__body__main__section--producto--columna1">
             <img src="/images/NaturalChoice.png" alt="Natural choice">
           </div>
         </a>
 
         <div class="index__body__main__section--producto--columna2">
-          <h3 class="index__body__main__section--producto--titulo">Lorem ipsum</h3>
-          <p class="index__body__main__section--producto--descripcion">Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Duis aliquam.</p>
+          <h3 class="index__body__main__section--producto--titulo"><%= nombre %></h3>
+          <p class="index__body__main__section--producto--descripcion"><%= descripcion %></p>
         </div>
 
         <div class="index__body__main__section--producto--columna3">
-          <p class="index__body__main__section--producto--precio">$1999.99</p>
+          <p class="index__body__main__section--producto--precio"><%= precio %></p>
           <a href="/carrito" class="index__body__main__section--producto--agregar">
             <p>Agregar al Carrito</p>
             <i class="fa-solid fa-cart-plus"></i>
@@ -257,3 +256,4 @@
       </div>
 
     </section>
+    

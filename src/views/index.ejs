@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <%- include('./partials/head',{
   title : "Cancat" 
@@ -55,7 +55,13 @@
     </div>
     <section class="index__body__main__section">
 
-        <%- include('./partials/productCard.ejs') %>
+<% productos.forEach(productos => { %>
+  <%- include('./partials/productCard.ejs',{
+    ...productos
+  }) %>
+
+<% }) %>
+      
   </main>
 
   <%- include('./partials/footer') %>

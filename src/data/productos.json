@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "nombre": "Natural Choice",
+        "imagen" : "NaturalChoice.png",
+        "precio" : "$890.00",
+        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam"
+    },
+    {
+        "id": 2,
+        "nombre": "Can Amor",
+        "imagen" : "CanAmor.png",
+        "precio" : "$890.00",
+        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam"
+    },
+    {
+        "id": 3,
+        "nombre": "Cañamo",
+        "imagen" : "caniamo.png",
+        "precio" : "$890.00",
+        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam"
+    },
+    {
+        "id": 4,
+        "nombre": "Pedigree",
+        "imagen" : "pedigree.png",
+        "precio" : "$890.00",
+        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam"
+    }
+]

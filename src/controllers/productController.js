@@ -11,5 +11,8 @@ module.exports = {
     pequenios : (req, res) => {
         return res.render('products/pequenios')
     },
+    Edit : (req, res) => {
+            return res.render('products/product-edit')
+    }
     
 }

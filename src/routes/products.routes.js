@@ -1,5 +1,5 @@
 const express = require('express');
-const {detail, gatos, perros, pequenios} = require('../controllers/productController');
+const {detail, gatos, perros, pequenios, Edit} = require('../controllers/productController');
 const router = express.Router();
 
 /* GET users listing. */
@@ -8,7 +8,7 @@ router
   .get('/gatos', gatos )
   .get('/perros', perros )
   .get('/pequenios', pequenios )
-
+  .get('/editar-articulo',Edit)
 module.exports = router;
 
 

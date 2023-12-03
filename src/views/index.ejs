@@ -55,11 +55,13 @@
     </div>
     <section class="index__body__main__section">
 
-      <% for( let i = 0; i < 6; i++ ) { %>
+<% productos.forEach(productos => { %>
+  <%- include('./partials/productCard.ejs',{
+    ...productos
+  }) %>
 
-        <%- include('./partials/productCard.ejs') %>
+<% }) %>
       
-      <% } %>
   </main>
 
   <%- include('./partials/footer') %>

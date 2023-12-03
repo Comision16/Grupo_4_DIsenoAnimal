@@ -381,7 +381,7 @@ header a {
     }
 
     .header__div__register:hover {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     .header__div__login {
@@ -390,7 +390,7 @@ header a {
     }
 
     .header__div__login:hover {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     .header__div__carrito-de-compras {
@@ -402,6 +402,11 @@ header a {
 
     .header__div__carrito-de-compras-texto a p {
         width: 40px;
+
+
+    }
+    .header__div__carrito-de-compras-texto a p:hover {
+        font-size: 0.8rem;
 
 
     }

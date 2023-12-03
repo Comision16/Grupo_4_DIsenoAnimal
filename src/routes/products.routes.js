@@ -8,7 +8,7 @@ router
   .get('/gatos', gatos )
   .get('/perros', perros )
   .get('/pequenios', pequenios )
-  .get('/editar-articulo',Edit)
+  .get('/editar-articulo', Edit)
 module.exports = router;
 
 

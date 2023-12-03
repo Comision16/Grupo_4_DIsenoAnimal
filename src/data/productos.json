@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "nombre": "cañamo",
+        "imagen" : "caniamo.png",
+        "precio" : 890.00,
+        "descripcion" : "lorem ipsum dolor amet"
+    }
+]

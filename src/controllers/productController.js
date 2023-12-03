@@ -1,3 +1,5 @@
+const {leerJSON} = require("../data")
+
 module.exports = {
     detail : (req, res) => {
         return res.render('products/product-detail')
@@ -13,6 +15,13 @@ module.exports = {
     },
     Edit : (req, res) => {
             return res.render('products/product-edit')
+
+    },
+    Add : (req,res) => {
+        const productos = leerJSON('productos');
+        return res.render('products/product-add', {
+            productos
+        })
     }
     
 }

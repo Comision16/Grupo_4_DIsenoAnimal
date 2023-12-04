@@ -1,30 +1,31 @@
 [
     {
         "id": 1,
-        "nombre": "Natural Choice",
+        "nombre": "Balanceado Natural Choice",
         "imagen" : "NaturalChoice.png",
-        "precio" : "$890.00",
+        "precio" : "$24890.00",
         "descripcion" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam"
     },
     {
         "id": 2,
-        "nombre": "Can Amor",
+        "nombre": "Insecticida Can Amor",
         "imagen" : "CanAmor.png",
-        "precio" : "$890.00",
+        "precio" : "$1890.00",
         "descripcion" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam"
     },
     {
         "id": 3,
-        "nombre": "Cañamo",
+        "nombre": "Producto a base de Cañamo",
         "imagen" : "caniamo.png",
-        "precio" : "$890.00",
+        "precio" : "$8290.00",
         "descripcion" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam"
     },
     {
         "id": 4,
-        "nombre": "Pedigree",
-        "imagen" : "pedigree.png",
-        "precio" : "$890.00",
+        "nombre": "Pedigree Pouch Adulto",
+        "imagen" : "pedigree.png", 
+        "imagen2": "pedigreecarne.png",
+        "precio" : "$920.00",
         "descripcion" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam"
     }
 ]

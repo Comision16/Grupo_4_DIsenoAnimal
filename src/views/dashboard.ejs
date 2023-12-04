@@ -2,42 +2,83 @@
 <html lang="en">
 
 <%- include('./partials/head',{ title : "Dashboard" }) %>
+<%- include('./partials/scritps',{ title : "Dashboard" }) %>
 
-    <body class="dashboard-body">
+  <body class="dashboard-body">
 
-        <%- include('./partials/header-dashboard') %>
+    <%- include('./partials/header-dashboard') %>
 
-            <div class="container my-2">
+      <main class="container mt-3">
+        <section class="row">
+          <div class="col-12 col-md-10 mx-auto">
+            <div class="card shadow rounded">
+              <div class="card-header d-flex justify-content-between">
+                <h4 class="card-title">Productos</h4>
+                <a class="btn btn-outline-primary" href="#">Nuevo Producto</a>
+              </div>
+              <div class="p-3 pb-0">
                 <table class="table table-striped">
-                    <thead class="table-success">
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
+                  <thead class="table-success">
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Descripción</th>
+                      <th scope="col">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+
+                    <% productos.forEach(({id, nombre, descripcion, imagen, precio})=> { %>
+                      <tr>
+                        <th scope="row">
+                          <%= id %>
+                        </th>
+                        <td>
+                          <%= nombre %>
+                        </td>
+                        <td>
+                          <%= descripcion %>
+                        </td>
+
+                        <td>
+                          <div class="d-flex gap-2">
+                            <a class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                              data-bs-target="#exampleModal<%= id %>">
+                              <i class="fa-solid fa-eye"></i></a>
+
+                            <a class="btn btn-sm btn-outline-warning" href=""><i class="fa-solid fa-pencil"></i></a>
+
+                            <a class="btn btn-sm btn-outline-danger" href=""><i class="fa-solid fa-trash"></i></a>
+
+                            <%- include('./partials/modal-product-dashboard',{ id, nombre, descripcion, imagen, precio
+                              }) %>
+                          </div>
+                        </td>
+
+                      </tr>
+
+                      <% }) %>
+
+
+                        <!-- <tr>
+                                            <th scope="row">2</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td colspan="2">Larry the Bird</td>
+                                            <td>@twitter</td>
+                                        </tr> -->
+                  </tbody>
                 </table>
+              </div>
             </div>
-    </body>
+          </div>
+        </section>
+      </main>
+  </body>
 
 </html>

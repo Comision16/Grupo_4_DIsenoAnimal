@@ -4,27 +4,27 @@
         "nombre": "Natural Choice",
         "imagen" : "NaturalChoice.png",
         "precio" : "$890.00",
-        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam"
+        "descripcion" : "Alimento Natural Choice Perros Cachorros 15 Kg"
     },
     {
         "id": 2,
         "nombre": "Can Amor",
         "imagen" : "CanAmor.png",
         "precio" : "$890.00",
-        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam"
+        "descripcion" : "Shampoo CanAmor Insecticida "
     },
     {
         "id": 3,
         "nombre": "Cañamo",
         "imagen" : "caniamo.png",
         "precio" : "$890.00",
-        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam"
+        "descripcion" : "extracto de cáñamo rico en fitocanabinoides "
     },
     {
         "id": 4,
         "nombre": "Pedigree",
         "imagen" : "pedigree.png",
         "precio" : "$890.00",
-        "descripcion" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam"
+        "descripcion" : "Alimento para perros Pedigree sabor pollo, 100gr"
     }
 ]

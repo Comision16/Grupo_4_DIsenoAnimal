@@ -54,6 +54,7 @@
       </div> -->
     </div>
     <section class="index__body__main__section">
+      <h2 class="index__body__main__section--titulo">Las Mejores Ofertas</h2>
 
 <% productos.forEach(productos => { %>
   <%- include('./partials/productCard.ejs',{
@@ -61,7 +62,14 @@
   }) %>
 
 <% }) %>
-      
+<h2 class="index__body__main__section--titulo">Los productos mas buscados</h2>
+<% productos.forEach(productos => { %>
+  <%- include('./partials/productCard.ejs',{
+    ...productos
+  }) %>
+
+<% }) %>
+<%- include('./partials/banner.ejs') %>
   </main>
 
   <%- include('./partials/footer') %>

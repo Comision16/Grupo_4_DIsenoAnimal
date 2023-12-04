@@ -4,13 +4,13 @@ module.exports = {
         return res.render('products/product-detail')
     },
     gatos : (req, res) => {
-        return res.render('products/product-gatos')
+        return res.render('products/gatos')
     },
     perros : (req, res) => {
-        return res.render('products/product-perros')
+        return res.render('products/perros')
     },
     pequenios : (req, res) => {
-        return res.render('products/product-pequenios')
+        return res.render('products/pequenios')
     },
     Edit : (req, res) => {
             return res.render('products/product-edit')

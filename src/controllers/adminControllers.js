@@ -1,6 +1,12 @@
+const { leerJSON } = require('../data')
+
 module.exports = {
     
     dashboard: (req, res) => {
-        return res.render('./dashboard')
+
+        const productos = leerJSON('productos');
+        console.log(productos);
+
+        return res.render('./dashboard', {productos})
     }
 }

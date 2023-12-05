@@ -2,29 +2,80 @@
 <html lang="es">
 
 <head>
-  
+  <%- include('../partials/scritps') %>
       <%- include('../partials/head',{
         title : "agregar-articulos" 
       }) %>
-   
 </head>
-<body>
+<body class="dashboard-body">
 <header>
-    <%- include('../partials/header') %>
+    <%- include('../partials/header-dashboard') %>
 </header>
-<main>
+<main class="container">
+  <section class="row my-5">
+      <div class="col-12 col-md-10 mx-auto">
+          <div class="card">
+              <div class="card-header d-flex justify-content-between">
+                  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/admin/dashboard" class="text-primary">Home Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Agregar Productos</li>
+                      </ol>
+                    </nav>
+              </div>
+              <div class="card-body">
+                  <form action="" class="row">
+                      <h3>Agregar Productos</h3>
+                      <hr>
+                      <div class="col-12 col-md-6 mb-3">
+                          <div class="form-floating ">
+                              <input name="name" type="text" class="form-control" id="name" >
+                              <label for="name">Nombre del articulo</label>
+                            </div>
+                      </div>
+                      <div class="col-12 col-md-6 mb-3">
+                        <div class="form-floating">
+                            <select name="category" class="form-select" id="category" aria-label="Floating label select example">
+                              <option value="" selected hidden></option>
+                              <option value="Perros">Perros</option>
+                              <option value="Gatos">Gatos</option>
+                              <option value="Animales Pequeños">Animales Pequeños</option>
+                              <option value = "Los mas buscados"> Los mas Buscados</option>
+                              <option value = "Ofertas"> Ofertas</option>
+                            </select>
+                            <label for="category">Categoría</label>
+                          </div>
+                      </div>
+                      <div class="col-12 col-md-6 mb-3">
+                        <div class="form-floating">
+                          <input name="address" type="text" class="form-control" id="address">
+                          <label for="address">ID</label>
+                        </div>
+                      </div>
+                     
+                        <div class="col-12 col-md-3 mb-3">
+                            <input name="mainImage" type="file" class="form-control" id="mainImage" hidden>
+                            <label class="btn btn-lg btn-outline-dark w-100" for="mainImage">Imagen nº 1</label>
+                        </div>
+                        <div class="col-12 col-md-3 mb-3">
+                          <input  name="images" type="file" class="form-control" id="images" hidden multiple>
+                          <label class="btn btn-lg btn-outline-dark w-100" for="images">Imagen nº2</label>
+                      </div>
+                      <div class="col-12 mb-3">
+                          <div class="form-floating">
+                              <textarea name="description" class="form-control" id="description" style="height: 150px;"></textarea>
+                              <label for="description">Descripción</label>
+                            </div>
+                      </div>
+                     
+                      <div class="col-12 d-flex justify-content-end">
+                          <button class="btn btn-lg btn-dark">Agregar Producto</button>
+                      </div>
+                  </form>
 
-    <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Email address</label>
+              </div>
+          </div>
       </div>
-      <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Password</label>
-      </div>
-
+  </section>
 </main>
-<footer>
-    <%- include('../partials/footer.ejs') %>
-</footer>
-</body>
+ </body>

@@ -12,6 +12,11 @@ module.exports = {
         
         },
     cart : (req, res) => {
-        return res.render('carrito')
+        const productos = leerJSON('productos');
+/*return res.send(productos)       */ 
+return res.render('carrito',{
+    productos
+})
+
     }
 }

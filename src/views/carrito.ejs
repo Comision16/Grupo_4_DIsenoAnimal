@@ -21,19 +21,13 @@
             <h5>Seguir Buscando</h5>
           </div>
 
-          <article class="producto__agregado">
-            <img src="/images/fotosCarrito/ProPlan-perros (1).png" alt="">
-            <div class="Productos-en-el-carrito__div__titulo__descripcion__precio">
-              <h5 class=".Productos-en-el-carrito__div__titulo">Pro Plan</h5>
-              <p class="Productos-en-el-carrito__div__descripcion">Perros adultos 20kg + regalo.</p>
-              <h4 class="Productos-en-el-carrito__div__precio">$ 14.600</h4>
-            </div>
-            <div class="Productos-en-el-carrito__div__contador__eliminar">
-              <img src="/images/fotosCarrito/contador.png" alt="">
-              <i class="fa-solid fa-trash-can"></i>
-            </div>
-          </article>
-          <article class="producto__agregado">
+          <% productos.forEach(productos => { %>
+            <%- include('./partials/productCardCarrito.ejs',{
+              ...productos
+            }) %>
+          
+          <% }) %>
+          <!-- <article class="producto__agregado">
             <img src="/images/fotosCarrito/dogui-adulto (1).png" alt="">
             <div class="Productos-en-el-carrito__div__titulo__descripcion__precio">
               <h5 class=".Productos-en-el-carrito__div__titulo">Dogui</h5>
@@ -69,7 +63,7 @@
               <i class="fa-solid fa-trash-can"></i>
             </div>
           </article>
-        </section>
+        </section> -->
 
         <section class="productos-similares">
           <h3>Productos similares</h3>

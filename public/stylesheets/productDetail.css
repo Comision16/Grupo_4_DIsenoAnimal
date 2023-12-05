@@ -343,8 +343,8 @@ max-width: 100%;
        
         .contenedor_tarjeta_producto {
          display: flex;
-         justify-content: flex-start;
-         align-items: center;
+         justify-content: center;
+         align-items: start;
          height: 50%;
          flex-direction:row-reverse;
          margin:50px;

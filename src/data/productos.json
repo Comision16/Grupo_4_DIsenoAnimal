@@ -3,6 +3,7 @@
         "id": 1,
         "nombre": "Balanceado Natural Choice",
         "imagen" : "NaturalChoice.png",
+        "imagen2" : "NaturalChoice.png",
         "precio" : "$24890.00",
         "descripcion" : "Alimento Natural Choice Perros Cachorros 15 Kg"
     },
@@ -10,6 +11,7 @@
         "id": 2,
         "nombre": "Insecticida Can Amor",
         "imagen" : "CanAmor.png",
+        "imagen2" : "CanAmor.png",
         "precio" : "$1890.00",
         "descripcion" : "Shampoo CanAmor Insecticida "
     },
@@ -17,6 +19,7 @@
         "id": 3,
         "nombre": "Producto a base de Cañamo",
         "imagen" : "caniamo.png",
+        "imagen2": "caniamo.png",
         "precio" : "$8290.00",
         "descripcion" : "extracto de cáñamo rico en fitocanabinoides "
     },

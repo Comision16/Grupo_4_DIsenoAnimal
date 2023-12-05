@@ -134,6 +134,10 @@ margin-left: 10px;
 }
 
 .productos__destacados .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  
+  align-items: center;
  background-color: white;
  padding: 10px;
  margin: 15px;
@@ -142,6 +146,7 @@ margin-left: 10px;
  box-sizing: border-box;
  border-radius: 25px;
  box-shadow: 0 4px 8px 2px rgb(95, 95, 95);
+ height: 500px;
  overflow: hidden; /* Evitar que la imagen agrande la tarjeta */
 }
 .item img {
@@ -345,6 +350,7 @@ max-width: 100%;
          display: flex;
          justify-content: center;
          align-items: start;
+         gap: 30px;
          height: 50%;
          flex-direction:row-reverse;
          margin:50px;
@@ -352,7 +358,7 @@ max-width: 100%;
        .contenedor_div_detail {
           width: 100%;
          max-width: 890px;
-         margin-top : 5px;
+         margin-top : 0px;
          
          }
          .contenedor_videos {

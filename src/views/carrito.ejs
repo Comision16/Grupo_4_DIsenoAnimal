@@ -5,8 +5,7 @@
     <%- include('./partials/head.ejs',{
         title : "Carrito" 
       }) %>
-
-   
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 
 <body class="cart">
@@ -65,10 +64,117 @@
           </article>
         </section> -->
 
-        <section class="productos-similares">
+        
+
+          <!-- Swiper -->
+  <div class="swiper mySwiper similares">
+        <h3>Productos similares</h3>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><article class="productos">
+        <img src="/images/fotosCarrito/nature_adultos (1).png" alt="imagen del producto">
+
+        <div class="productos__marca__descripcion__precio__carrito">
+
+          <div class="productos__marca__descripcion">
+            <h6>Nature</h6>
+            <p>Perros pequeños 10kg</p>
+          </div>
+
+          <div class="productos__precio__carrito">
+            <h5>$12.400</h5>
+            <i class="fa-solid fa-cart-plus"></i>
+          </div>
+        </div>
+      </article></div>
+      <div class="swiper-slide"><article class="productos">
+        <img src="/images/fotosCarrito/ricocan-perros (1).png" alt="imagen del producto">
+
+        <div class="productos__marca__descripcion__precio__carrito">
+
+          <div class="productos__marca__descripcion">
+            <h6>Ricocan</h6>
+            <p>Perros adultos 15kg.</p>
+          </div>
+
+          <div class="productos__precio__carrito">
+            <h5>$9.900</h5>
+            <i class="fa-solid fa-cart-plus"></i>
+          </div>
+        </div>
+      </article></div>
+      <div class="swiper-slide"><article class="productos">
+        <img src="/images/fotosCarrito/perrOn-25kg-adultos (1).png" alt="imagen del producto">
+
+        <div class="productos__marca__descripcion__precio__carrito">
+
+          <div class="productos__marca__descripcion">
+            <h6>PerrOn</h6>
+            <p>Perros adultos 25kg.</p>
+          </div>
+
+          <div class="productos__precio__carrito">
+            <h5>$18.900</h5>
+            <i class="fa-solid fa-cart-plus"></i>
+          </div>
+        </div>
+      </article></div>
+      <div class="swiper-slide"><article class="productos">
+        <img src="/images/fotosCarrito/Balance_perro_adulto_20kg (1).png" alt="imagen del producto">
+
+        <div class="productos__marca__descripcion__precio__carrito">
+
+          <div class="productos__marca__descripcion">
+            <h6>Balance</h6>
+            <p>Perros adultos 23kg.</p>
+          </div>
+
+          <div class="productos__precio__carrito">
+            <h5>$15.200</h5>
+            <i class="fa-solid fa-cart-plus"></i>
+          </div>
+        </div>
+      </article></div>
+      <div class="swiper-slide"><article class="productos">
+        <img src="/images/fotosCarrito/Balance_perro_adulto_20kg (1).png" alt="imagen del producto">
+
+        <div class="productos__marca__descripcion__precio__carrito">
+
+          <div class="productos__marca__descripcion">
+            <h6>Balance</h6>
+            <p>Perros adultos 23kg.</p>
+          </div>
+
+          <div class="productos__precio__carrito">
+            <h5>$15.200</h5>
+            <i class="fa-solid fa-cart-plus"></i>
+          </div>
+        </div>
+      </article></div>
+      <div class="swiper-slide"><article class="productos">
+        <img src="/images/fotosCarrito/alimento-para-perro-adulto-pedigree-saco-carne-21-kg (1).jpg"
+          alt="imagen del producto">
+
+        <div class="productos__marca__descripcion__precio__carrito">
+
+          <div class="productos__marca__descripcion">
+            <h6>Pedigree</h6>
+            <p>Perros adultos 15kg.</p>
+          </div>
+
+          <div class="productos__precio__carrito">
+            <h5>$11.200</h5>
+            <i class="fa-solid fa-cart-plus"></i>
+          </div>
+        </div>
+      </article></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+        <!-- <section class="productos-similares">
           <h3>Productos similares</h3>
 
-          <div class="swiper mySwiper">
+          <div class="swiper mySwiper similares-swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide swiper-slide-cart">
 
@@ -89,7 +195,7 @@
                   </div>
                 </article>
               </div>
-              <div class="swiper-slide swiper-slide-cart">
+              <div class="swiper-slide swiper-slide-cart ">
                 <article class="productos">
                   <img src="/images/fotosCarrito/ricocan-perros (1).png" alt="imagen del producto">
 
@@ -183,7 +289,7 @@
             </div>
             <div class="swiper-pagination"></div>
           </div>
-        </section>
+        </section> -->
 
       </div>
       <section class="formas-de-pago">
@@ -259,54 +365,21 @@
     <%- include('./partials/footer') %>
 
     
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-          slidesPerView: 1.5,
-          spaceBetween: 10,
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-          breakpoints: {
-            300: {
-              slidesPerView: 1.3,
-              spaceBetween: 10,
-            },
-            320: {
-              slidesPerView: 1.5,
-              spaceBetween: 10,
-            },
-            370: {
-              slidesPerView: 1.7,
-              spaceBetween: 5,
-            },
-            480: {
-              slidesPerView: 2.2,
-              spaceBetween: 5,
-            },
-            580: {
-              slidesPerView: 3.2,
-              spaceBetween: 10,
-            },
-            680: {
-              slidesPerView: 3.8,
-              spaceBetween: 10,
-            },
-            768: {
-              slidesPerView: 4.5,
-              spaceBetween: 5,
-            },
-            868: {
-              slidesPerView: 5,
-              spaceBetween: 5,
-            },
-            1024: {
-              slidesPerView: 4.2,
-              spaceBetween: 4,
-            },
-          },
-        });
-      </script>
+    <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      freeMode: false,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
 </body>
 
 </html>

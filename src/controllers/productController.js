@@ -11,13 +11,22 @@ module.exports = {
             })
     },
     gatos : (req, res) => {
-        return res.render('products/gatos')
+        const productos = leerJSON('productos');
+        return res.render('products/gatos',{
+            productos
+        })
     },
     perros : (req, res) => {
-        return res.render('products/perros')
+        const productos = leerJSON('productos');
+        return res.render('products/perros',{
+            productos
+        })
     },
     pequenios : (req, res) => {
-        return res.render('products/pequenios')
+        const productos = leerJSON('productos');
+        return res.render('products/pequenios',{
+            productos
+        })
     },
     Edit : (req, res) => {
             return res.render('products/product-edit')

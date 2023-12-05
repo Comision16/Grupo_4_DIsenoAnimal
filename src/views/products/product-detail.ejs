@@ -104,18 +104,19 @@
 
 
   <h2 class="productos__destacados__h2">PRODUCTOS DESTACADOS </h2>
-<section class="productos__destacados">
-   
+
+  <section class="productos__destacados">
+
   <% productos.forEach(productos => { %>
-    <%- include('../partials/productCard.ejs',{
+    <%- include('../partials/productCardDetail.ejs',{
       ...productos
     }) %>
   
   <% }) %>
-   
+  </section>
    
 
-</section>
+
 
 <%- include('../partials/footer') %>
 </body>

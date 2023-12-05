@@ -145,8 +145,8 @@ margin-left: 10px;
  overflow: hidden; /* Evitar que la imagen agrande la tarjeta */
 }
 .item img {
- width:50%;
- height: auto;
+ max-width:auto;
+ max-height:40% ;
 
    }
 .productos__destacados img {

@@ -3,7 +3,7 @@
 } */
 
 .similares {
-    padding-top: 120px;
+    padding-top: 15px;
 }
 .similares-swiper{
     width: 100%;
@@ -66,8 +66,9 @@
     background-color: #fff;
     justify-content: space-around;
     box-shadow: 0px 0px 5px rgb(100, 100, 100);
-    height: 70px;
-    gap: 10px;
+    height: 80px;
+    gap: 5px;
+    padding: 3px 2px;
 }
 
 .producto__agregado img {
@@ -83,7 +84,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-
 }
 
 .Productos-en-el-carrito__div__titulo {
@@ -99,7 +99,7 @@
     color: var(--ColorAmarillo);
     border-radius: 5px;
     font-size: 16px;
-    width: 65px;
+    width: 88px;
     text-align: center;
 }
 
@@ -341,28 +341,26 @@
     order: 2;
 }
 
-.productos-similares h3 {
+.swiper_titulo h3 {
     text-align: center;
-    margin: 10px;
-
+    margin: 15px;
 }
 
 /* -------------------------------------------- */
 .productos {
-    width: 80%;
+    width: 100%;
     height: 130px;
     display: flex;
-
     background-color: #fff;
     border-radius: 10px;
     margin: 5px;
     box-shadow: 0px 0px 5px rgb(100, 100, 100);
-
+    gap: 13px;
 }
 
 .productos img {
     max-width: 50%;
-    height: 120px;
+    height: 130px;
     padding: 5px;
     padding-top: 10px;
     justify-content: center;
@@ -397,7 +395,7 @@
 .productos__marca__descripcion p {
     text-align: center;
     font-size: 12px;
-
+   
 }
 
 /* ------------------------------------------------ */
@@ -439,6 +437,9 @@
         width: 100%;
         padding: 0%10%;
     }
+    .similares {
+        padding-top: 20px;
+    }
 
     /*   .productos-similares {
         display: flex;
@@ -452,6 +453,9 @@
     .formas-de-pago {
         padding: 0% 15%;
     }
+    .similares {
+        padding-top: 25px;
+    }
 
 }
 
@@ -459,6 +463,7 @@
     .prod-similares-que-no-s-mostraran {
         display: none;
     }
+  
 }
 
 /*============================================================= */
@@ -482,14 +487,13 @@
     .Productos-en-el-carrito {
         display: flex;
         align-content: flex-start;
-        height: 350px;
+        height: 380px;
         padding-top: 15px;
-
     }
 
     .producto__agregado {
         width: 100%;
-        height: 50px;
+        height: 57px;
         margin: 0px 5px;
     }
 
@@ -534,5 +538,10 @@
     .prod-similares-que-no-s-mostraran {
         display: none;
     }
-
-}
+    .similares {
+        padding-top: 58px;
+    }
+    .productos__marca__descripcion p{
+        margin: 5px 0px;
+    }
+}  

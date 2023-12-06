@@ -76,7 +76,6 @@
 
   .menu a {
     color: white;
-
   }
   
   .menu-item, .menu-open-button {
@@ -84,7 +83,6 @@
     border-radius: 100%;
     width: 50px;
     height: 50px;
-    margin-left: -40px;
     position: absolute;
     top: 20px;
     text-align: center;

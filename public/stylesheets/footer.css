@@ -56,7 +56,7 @@
     align-items: center;
 }
 
-.footer--nav a {
+.footer--nav label {
     width: 100%;
     text-decoration: none;
     color: white;

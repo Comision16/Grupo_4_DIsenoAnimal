@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('./partials/head',{ title : "Cancat" }) %>
+<%- include('./partials/head',{
+  title : "Cancat"
+ }) %>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="icon" type="image/x-icon" href="/images/Favicon-index.png" />
+  <title>CanCat</title>
 
   <body class="index__body">
 
@@ -60,23 +64,23 @@
               </div> --><!-- 
               <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div> -->
-              <div class="swiper-pagination"></div>
+                <div class="swiper-pagination"></div>
+              </div>
+
             </div>
+            <section class="index__body__main__section">
+              <h2 class="index__body__main__section--titulo">Las Mejores Ofertas</h2>
 
-          </div>
-          <section class="index__body__main__section">
-            <h2 class="index__body__main__section--titulo">Las Mejores Ofertas</h2>
+              <% productos.forEach(productos=> { %>
+                <%- include('./partials/productCard.ejs',{ ...productos }) %>
 
-            <% productos.forEach(productos=> { %>
-              <%- include('./partials/productCard.ejs',{ ...productos }) %>
+                  <% }) %>
+                    <h2 class="index__body__main__section--titulo">Los productos mas buscados</h2>
+                    <% productos.forEach(productos=> { %>
+                      <%- include('./partials/productCard.ejs',{ ...productos }) %>
 
-                <% }) %>
-                  <h2 class="index__body__main__section--titulo">Los productos mas buscados</h2>
-                  <% productos.forEach(productos=> { %>
-                    <%- include('./partials/productCard.ejs',{ ...productos }) %>
-
-                      <% }) %>
-                        <%- include('./partials/banner.ejs') %>
+                        <% }) %>
+                          <%- include('./partials/banner.ejs') %>
       </main>
 
       <%- include('./partials/footer') %>

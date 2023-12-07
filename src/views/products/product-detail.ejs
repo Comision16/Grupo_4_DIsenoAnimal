@@ -1,64 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head.ejs',{
-        title : "Detalle" 
-      }) %>
-<body class ="detail_product">
+<%- include('../partials/head.ejs',{ title : "Detalle" }) %>
+
+  <body class="detail_product">
 
     <%- include('../partials/header.ejs') %>
-    <link rel="icon" type="image/x-icon" href="/images/favicon-detalle.png">
-<title>Cancat - detalle de producto</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon-detalle.png">
+      <title>Cancat - detalle de producto</title>
 
-    <ul class="ul_li_detailproduct">
+      <ul class="ul_li_detailproduct">
         <li><a href="/">Home</a>></li>
         <li><a href="/productos/perros">Perros</a> > </li>
         <li><a href="/productos/pequenios">Razas Pequeñas</a> > </li>
-        <li><a href="/detalle/<%= idproducto.id %>"><%= idproducto.nombre %></a></li>
-    </ul>
-   
-   <div class = "contenedor_tarjeta_producto"> 
+        <li><a href="/detalle/<%= idproducto.id %>">
+            <%= idproducto.nombre %>
+          </a></li>
+      </ul>
 
-    <div class = "contenedor_videos">
-   <div class = "container_video1">
+
+
+      <div class="contenedor_tarjeta_producto">
+
+        <div class="contenedor_videos">
+          <div class="container_video1">
+            <video class="productos-videos" width="220" height="240" autoplay loop controls muted>
+              <source src="/images/videos/80690424_2896596637040297_4342256878793785344_n.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="container_video2">
+            <video class="productos-videos" width="220" height="240" autoplay loop controls muted>
+              <source src="/images/videos/275890211_679199206860755_4529459640801485028_n.mp4" type="video/mp4">
+            </video>
+            <div class="container_video3">
               <video class="productos-videos" width="220" height="240" autoplay loop controls muted>
-                  <source src="/images/videos/80690424_2896596637040297_4342256878793785344_n.mp4" type="video/mp4">
-                  </video>
-                  </div>
-                  <div class = "container_video2"> 
-                  <video class="productos-videos" width="220" height="240" autoplay loop controls muted>
-                  <source src = "/images/videos/275890211_679199206860755_4529459640801485028_n.mp4" type="video/mp4">
-              </video> 
-              <div class="container_video3">
-                <video class="productos-videos" width="220" height="240" autoplay loop controls muted>
-                  <source src="/images/videos/406252814_1394877621405820_801436885027233605_n.mp4" type ="video/mp4">
-                  </video>
-                  </div>
-                  </div>
-                </div>
-                
-                  
-<div class="contenedor_div_detail">
- 
-    <h1><%= idproducto.nombre  %></h1>
+                <source src="/images/videos/406252814_1394877621405820_801436885027233605_n.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
 
-    <div class="contenedor_stars_detail">
 
-    <i class="fas fa-star star-yellow"></i>
-    <i class="fas fa-star star-yellow" ></i>
-    <i class="fas fa-star star-yellow"></i>
-    <i class="fas fa-star star-yellow"></i>
-    <i class="fas fa-star star-yellow"></i>
-  <p>¡5 CatCan Estrellas!</p>
-</div>
+        <div class="contenedor_div_detail">
 
-<div class="Imagen_detailproduct">
-  <div class="image-gallery"> 
-    <img src="/images/<%= idproducto.imagen %>" alt="<%= idproducto.nombre %> ">
-    <img src="/images/<%= idproducto.imagen2 %>" alt="<%= idproducto.nombre %>">
-    </div>
-<div class="detail_product_rigth">
-<p class="precio__detailproduct"> <%= idproducto.precio %></p>
-  <!-- <p>Selecciona tu sabor:</p>
+          <h1>
+            <%= idproducto.nombre %>
+          </h1>
+
+          <div class="contenedor_stars_detail">
+
+            <i class="fas fa-star star-yellow"></i>
+            <i class="fas fa-star star-yellow"></i>
+            <i class="fas fa-star star-yellow"></i>
+            <i class="fas fa-star star-yellow"></i>
+            <i class="fas fa-star star-yellow"></i>
+            <p>¡5 CatCan Estrellas!</p>
+          </div>
+
+          <div class="Imagen_detailproduct">
+            <div class="image-gallery">
+              <img src="/images/<%= idproducto.imagen %>" alt="<%= idproducto.nombre %> ">
+              <img src="/images/<%= idproducto.imagen2 %>" alt="<%= idproducto.nombre %>">
+            </div>
+            <div class="detail_product_rigth">
+              <p class="precio__detailproduct">
+                <%= idproducto.precio %>
+              </p>
+              <!-- <p>Selecciona tu sabor:</p>
   <form class="sabores__detailproduct">
     <label>
       <input type="radio" name="sabores" value="POLLO">POLLO</label>
@@ -66,61 +73,77 @@
 <input type="radio" name="sabores" value="CARNE">CARNE</label>
   </form> -->
 
-     <p><a href="#"><u>Ver los medios de pago</u></a></p> <br>
-     <a href="/Carrito" class="button_comprar__detailproduct">COMPRAR</a>
-    </div>
+              <p><a href="#"><u>Ver los medios de pago</u></a></p> <br>
+              <a href="/Carrito" class="button_comprar__detailproduct">COMPRAR</a>
+            </div>
 
-<p class="envio">
-    <i class="fas fa-truck"></i> <!-- Icono del camión de envíos -->
-  <span> Simular costo de envio </span>  
-    <select class="codigo-postal">
-      <option value="Lanús">Lanús </option>
-      <option value="Lomas">Lomas </option>
-      <option value="San Miguel">San miguel </option>
-      <option value="Ezeiza">Ezeiza </option>
-      <option value="Monte Grande">Monte Grande </option>
-      <option value="Alejandro Korn">Alejandro Korn</option>
-      <option value="Alejandro Korn">Avellaneda</option>
-      <option value="Alejandro Korn">Springfield</option>
-      <option value="Alejandro Korn">Shelbyville</option>
-      <option value="Alejandro Korn">Algun lado</option>
+            <p class="envio">
+              <i class="fas fa-truck"></i> <!-- Icono del camión de envíos -->
+              <span> Simular costo de envio </span>
+              <select class="codigo-postal">
+                <option value="Lanús">Lanús </option>
+                <option value="Lomas">Lomas </option>
+                <option value="San Miguel">San miguel </option>
+                <option value="Ezeiza">Ezeiza </option>
+                <option value="Monte Grande">Monte Grande </option>
+                <option value="Alejandro Korn">Alejandro Korn</option>
+                <option value="Alejandro Korn">Avellaneda</option>
+                <option value="Alejandro Korn">Springfield</option>
+                <option value="Alejandro Korn">Shelbyville</option>
+                <option value="Alejandro Korn">Algun lado</option>
 
-  </select>
-  </p>
-</div>
-  <div class="descripcion__detailproduct">
-  <p><u>Lo que tenes que saber de este producto</u></p>
-  <ul>
-  <li>Sabor: pollo en salsa.</li>
-  <li>Sabor y nutrición completa para tu mascota.</li>
-  <li>Imagenes Ilustrativas.</li>
-  <li>El paquete puede variar según peso.</li>
-  <li>Recomendado para perro adulto.</li>
-  <li>Formulado especialmente para razas Grandes.</li>
-  <li>Comida húmeda</li>  
-  <br>      
-  </ul>
-        
-</div>
-</div>
-</div>      
+              </select>
+            </p>
+          </div>
+          <div class="descripcion__detailproduct">
+            <p><u>Lo que tenes que saber de este producto</u></p>
+            <ul>
+              <li>Sabor: pollo en salsa.</li>
+              <li>Sabor y nutrición completa para tu mascota.</li>
+              <li>Imagenes Ilustrativas.</li>
+              <li>El paquete puede variar según peso.</li>
+              <li>Recomendado para perro adulto.</li>
+              <li>Formulado especialmente para razas Grandes.</li>
+              <li>Comida húmeda</li>
+              <br>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="contenedor_videos">
+          <div class="container_video1">
+              <img src="/images/Banner-Nuevos-productos-T_v2-768x628.jpg.webp" alt="" width="240" height="auto">
+          </div>
+          <div class="container_video2">
+              <img src="/images/Local-CanCat.jpg" alt="" width="240" height="auto">
+            </video>
+            <div class="container_video3">
+            <img src="/images/banner-detalle.png" alt="" width="240" height="auto">
+
+            </div>
+          </div>
+        </div>
+
+      </div>
 
 
-  <h2 class="productos__destacados__h2">PRODUCTOS DESTACADOS </h2>
-
-  <section class="productos__destacados">
-
-  <% productos.forEach(productos => { %>
-    <%- include('../partials/productCardDetail.ejs',{
-      ...productos
-    }) %>
-  
-  <% }) %>
-  </section>
-   
 
 
+      <h2 class="productos__destacados__h2">PRODUCTOS DESTACADOS </h2>
 
-<%- include('../partials/footer') %>
-</body>
+      <section class="productos__destacados">
+
+        <% productos.forEach(productos=> { %>
+          <%- include('../partials/productCardDetail.ejs',{ ...productos }) %>
+
+            <% }) %>
+      </section>
+
+
+
+
+      <%- include('../partials/footer') %>
+  </body>
+
 </html>

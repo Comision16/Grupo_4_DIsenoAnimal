@@ -26,6 +26,7 @@
 
 .ul_li_detailproduct a {
   text-decoration: none;
+  color: var(--ColorAzul);
 
 }
 
@@ -252,6 +253,13 @@
 
 .contenedor_videos {
   display: none;
+}
+.p_descripcion a{
+  text-decoration: none;
+color: grey}
+.Carrito_detailproduct{
+  color : var(--ColorAzul);
+
 }
 
 /* MEDIA QUERY TABLET */

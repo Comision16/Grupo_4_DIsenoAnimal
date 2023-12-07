@@ -1,7 +1,8 @@
 <div class="item ">
-    <img src="/images/<%= imagen %>" alt="">
-    <h3 >    <a href="/productos/detalle/<%= id %>"> <%= nombre %></h3>
-    <p class="p_descripcion"> <%= descripcion %></p>
+    <img src="/images/<%= imagen %>" alt="<%= idproducto.nombre %>">
+    <h3> <%= nombre %></h3>
+    <p class="p_descripcion"> <a href="/productos/detalle/<%= id %>">
+        <%= descripcion %></p></a>
     <p class = Precio_container> <%= precio %> </p>
     <a class="Carrito_detailproduct" href="/Carrito">Agregar al carrito <i class="fa-solid fa-cart-shopping"></i></a>
 </div>

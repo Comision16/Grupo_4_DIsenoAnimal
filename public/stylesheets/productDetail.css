@@ -439,7 +439,7 @@ color: grey}
 
   .image-gallery img {
     width: 50%;
-    margin: 91px;
+    margin: 30px 91px 20px;
   }
 
   .productos__destacados {

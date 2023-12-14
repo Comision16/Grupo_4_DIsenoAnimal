@@ -260,6 +260,11 @@ color: grey}
 .Carrito_detailproduct{
   color : var(--ColorAzul);
 
+  .descuento_precio {
+    font-size:30px;
+    margin-bottom: 20px;
+    
+    }
 }
 
 /* MEDIA QUERY TABLET */
@@ -273,6 +278,11 @@ color: grey}
     max-width: 100%;
 
   }
+  .descuento_precio {
+    font-size:30px;
+    margin-bottom: 20px;
+    
+    }
 
   .productos__destacados__h2 {
     text-align: center;
@@ -512,8 +522,11 @@ color: grey}
   .container_video3 {
     flex-direction: column-reverse;
   }
-
-
+  .descuento_precio {
+    font-size:20px;
+    margin-bottom: 20px;
+    
+    }
 
 }
 

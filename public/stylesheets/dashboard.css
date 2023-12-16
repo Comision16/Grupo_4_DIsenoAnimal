@@ -5,6 +5,12 @@
     background-color: #d6d6d6;
 }
 
+.texto-delete {
+    padding-left: 27%;
+    color: red;
+    line-height: 32px;
+}
+
 @media (min-width : 1024px) {
 
     .dashboard-body {

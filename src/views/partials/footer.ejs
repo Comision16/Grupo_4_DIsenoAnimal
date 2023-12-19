@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <body>
     <footer class="footer">
         <div class="footer--content--logo-y-texto">
@@ -42,26 +43,37 @@
             </div>
 
             <div class="footer--nav">
-                <a>
+                <a class="footer--nav--a" onclick="divNosotros()">
                     <p>Sobre Nosotros <i class="fa-solid fa-chevron-down"></i></p>
-                    <div>
-                       <!--  <p>Nos enfocamos en ofrecer productos y servicios de alta calidad para mascotas.Ofrecemos alimentos,
-                            juguetes, accesorios, productos de higiene y cuidado, ademas de otros artículos.también
-                            brindamos
-                            servicios de peluquería y baño.Nuestro objetivo es brindar a nuestros clientes una experiencia
-                            de
-                            compra satisfactoria y asegurarnos de que sus mascotas reciban los mejores productos y
-                            servicios.
-                        </p> -->
+                </a>
+                <div class="footer-desplegable" id="footer-div-nosotros">
+                    <p>Nos enfocamos en ofrecer productos y servicios de alta calidad para mascotas.Ofrecemos alimentos,
+                        juguetes, accesorios, productos de higiene y cuidado, ademas de otros artículos.también
+                        brindamos
+                        servicios de peluquería y baño.Nuestro objetivo es brindar a nuestros clientes una experiencia
+                        de
+                        compra satisfactoria y asegurarnos de que sus mascotas reciban los mejores productos y
+                        servicios.
+                    </p>
+                </div>
+                <a class="footer--nav--a" onclick="divNoTePierdas()">
+                    <p>No te lo pierdas <i class="fa-solid fa-chevron-down"></i></p>
+                    <div class="footer-desplegable" id="footer-div-NoTePierdas">
+
+                        <a class="desplegable--a" href="#">Nuestras mejores ofertas</a>
+                        <a class="desplegable--a" href="#">Promociones</a>
+                        <a class="desplegable--a" href="#">Los mas lindos juquetes para tus mascotass</a>
+                        <a class="desplegable--a" href="#">Los + Vendidos</a>
                     </div>
                 </a>
-                <a href="">
-                    <p>No te lo pierdas <i class="fa-solid fa-chevron-down"></i></p>
-                </a>
-                <a href="">
+                <a class="footer--nav--a" onclick="divServicios()">
                     <p>Servicios <i class="fa-solid fa-chevron-down"></i></p>
+                    <div class="footer-desplegable" id="footer-div-Servicios">
+                        <a class="desplegable--a" href="#">Pedí tu turno para baño y corte de pelo</a>
+                        <a class="desplegable--a" href="#">Sobre las vacunas de tus mascotas</a>
+                        <a class="desplegable--a" href="#">Lo que necesitas saber sobre tus mascotas</a>
+                    </div>
                 </a>
-
 
             </div>
 
@@ -98,10 +110,71 @@
             </div>
         </div>
 
-            <div class="footer--copy">
-                <p><i class="fa-regular fa-copyright"></i> 2023 - Diseño Animal - Digital House - Argentina </p>
-            
+        <div class="footer--copy">
+            <p><i class="fa-regular fa-copyright"></i> 2023 - Diseño Animal - Digital House - Argentina </p>
+
         </div>
+
+        <script>
+            var clic = 1;
+
+            function divNosotros() {
+
+                if (clic == 1) {
+
+                    document.getElementById("footer-div-nosotros").style.display = "block";
+
+                    clic = clic + 1;
+
+                } else {
+
+                    document.getElementById("footer-div-nosotros").style.display = "none";
+
+                    clic = 1;
+
+                }
+
+            }
+
+            function divNoTePierdas() {
+
+                if (clic == 1) {
+
+                    document.getElementById("footer-div-NoTePierdas").style.display = "block";
+
+                    clic = clic + 1;
+
+                } else {
+
+                    document.getElementById("footer-div-NoTePierdas").style.display = "none";
+
+                    clic = 1;
+
+                }
+
+            }
+
+            function divServicios() {
+
+                if (clic == 1) {
+
+                    document.getElementById("footer-div-Servicios").style.display = "block";
+
+                    clic = clic + 1;
+
+                } else {
+
+                    document.getElementById("footer-div-Servicios").style.display = "none";
+
+                    clic = 1;
+
+                }
+
+            }
+
+        </script>
+
     </footer>
 </body>
+
 </html>

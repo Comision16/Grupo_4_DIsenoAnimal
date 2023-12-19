@@ -9,6 +9,16 @@
     padding-left: 27%;
     color: red;
     line-height: 32px;
+    margin-top: -20px;
+    font-size: 14px;
+}
+
+@media (min-width : 768px) {
+    .texto-delete {        
+    margin-top: 0px;
+    font-size: 20px;
+    padding-right: 20px;
+    }
 }
 
 @media (min-width : 1024px) {

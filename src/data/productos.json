@@ -1,1 +1,142 @@
-[{"id":1,"nombre":"Balanceado Natural Choice","imagen":"NaturalChoice.png","imagen2":"NaturalChoice.png","precio":"$24890.00","descuento":"10%","descripcion":"Alimento Natural Choice Perros Cachorros 15 Kg"},{"id":2,"nombre":"Insecticida Can Amor","imagen":"CanAmor.png","imagen2":"CanAmor.png","precio":"$1890.00","descuento":"15%","descripcion":"Shampoo CanAmor Insecticida "},{"id":3,"nombre":"Producto a base de Cañamo","imagen":"caniamo.png","imagen2":"caniamo.png","precio":"$8290.00","descuento":"40%","descripcion":"extracto de cáñamo rico en fitocanabinoides "},{"id":4,"nombre":"Pedigree Pouch Adulto","imagen":"pedigree.png","imagen2":"pedigreecarne.png","precio":"$920.00","descuento":"22%","descripcion":"Alimento para perros Pedigree sabor pollo, 100gr"},{"id":5,"nombre":"Eliminar","imagen":"eliminar1.jpeg","imagen2":"eliminar1.jpg","precio":"$920.00","descuento":"22%","descripcion":"Alimento para perros Pedigree sabor pollo, 100gr"},{"id":6,"nombre":"Eliminar","imagen":"eliminar2.jpeg","imagen2":"eliminar2.jpg","precio":"$920.00","descuento":"22%","descripcion":"Alimento para perros Pedigree sabor pollo, 100gr"},{"id":7,"nombre":"Eliminar","imagen":"eliminar3.jpg","imagen2":"eliminar3.jpg","precio":"$920.00","descuento":"22%","descripcion":"Alimento para perros Pedigree sabor pollo, 100gr"}]
+[
+    {
+        "id": 1,
+        "categoria" : "ofertas",
+        "nombre": "Balanceado Natural Choice",
+        "imagen" : "NaturalChoice.png",
+        "imagen2" : "NaturalChoice.png",
+        "precio" : 24890,
+        "descuento" : 10,
+        "descripcion" : "Alimento Natural Choice Perros Cachorros 15 Kg",
+        "sabores" : "" ,
+        "stock" : "2"
+
+    },
+    {
+        "id": 2,
+        "categoria" : "ofertas",
+        "nombre": "Insecticida Can Amor",
+        "imagen" : "CanAmor.png",
+        "imagen2" : "CanAmor.png",
+        "precio" : 1890,
+        "descuento": 15,
+        "descripcion" : "Shampoo CanAmor Insecticida ",
+        "sabores" : "",
+        "stock" : "2"
+
+
+    },
+    {
+        "id": 3,
+        "categoria":"ofertas",
+        "nombre": "Producto a base de Cañamo",
+        "imagen" : "caniamo.png",
+        "imagen2": "caniamo.png",
+        "precio" : 8290,
+        "descuento" : 40,
+        "descripcion" : "extracto de cáñamo rico en fitocanabinoides ",
+        "sabores" : "",
+        "stock" : "2"
+
+
+    },
+    {
+        "id": 4,
+        "categoria": "visitados",
+        "nombre": "Pedigree Pouch Adulto",
+        "imagen" : "pedigree.png", 
+        "imagen2": "pedigreecarne.png",
+        "precio" : 920,
+        "descuento" : 22,
+        "descripcion" : "Alimento para perros Pedigree sabor pollo, 100gr",
+        "sabores" : "",
+        "stock" : "2"
+
+
+    },
+{
+    "id":5,
+    "categoria": "visitados",
+    "nombre":"Balanceado Natural Choice",
+    "imagen" : "NaturalChoice.png",
+    "imagen2":"NaturalChoice.png",
+    "precio":24890,
+    "descuento":40,
+    "descripcion":"Alimento Natural Choice Perros Cachorros 15 Kg",
+    "sabores" : "",
+    "stock" : "2"
+},
+{
+    "id": 6,
+    "categoria" : "visitados",
+    "nombre": "Insecticida Can Amor",
+    "imagen" : "CanAmor.png",
+    "imagen2" : "CanAmor.png",
+    "precio" : 1890,
+    "descuento": 15,
+    "descripcion" : "Shampoo CanAmor Insecticida ",
+    "sabores" : "",
+    "stock" : "2"
+
+
+},
+{
+    "id":7,
+    "categoria": "",
+    "nombre":"Balanceado Natural Choice",
+    "imagen" : "NaturalChoice.png",
+    "imagen2":"NaturalChoice.png",
+    "precio":24890,
+    "descuento":40,
+    "descripcion":"Alimento Natural Choice Perros Cachorros 15 Kg",
+    "sabores" : "",
+    "stock" : "2"
+},
+{
+    "id": 8,
+    "categoria":"visitados",
+    "nombre": "Producto a base de Cañamo",
+    "imagen" : "caniamo.png",
+    "imagen2": "caniamo.png",
+    "precio" : 8290,
+    "descuento" : 40,
+    "descripcion" : "extracto de cáñamo rico en fitocanabinoides ",
+    "sabores" : "",
+    "stock" : "2"
+
+
+},
+{
+    "id": 9,
+    "categoria": "ofertas",
+    "nombre": "Pedigree Pouch Adulto",
+    "imagen" : "pedigree.png", 
+    "imagen2": "pedigreecarne.png",
+    "precio" : 920,
+    "descuento" : 22,
+    "descripcion" : "Alimento para perros Pedigree sabor pollo, 100gr",
+    "sabores" : "",
+    "stock" : "2"
+
+
+},
+{
+    "id": 10,
+    "categoria" : "perros",
+    "nombre": "Balanceado Natural Choice",
+    "imagen" : "NaturalChoice.png",
+    "imagen2" : "NaturalChoice.png",
+    "precio" : 24890,
+    "descuento" : 10,
+    "descripcion" : "Alimento Natural Choice Perros Cachorros 15 Kg",
+    "sabores" : "" ,
+    "stock" : "2"
+
+}
+
+
+
+
+
+    
+]

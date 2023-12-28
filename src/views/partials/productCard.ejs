@@ -6,7 +6,7 @@
       <h3 class="index__body__main__section--producto--titulo"><%= nombre %></h3>
       <p class="index__body__main__section--producto--descripcion"><%= descripcion %></p></div>
 <div class="index__body__main__section--producto--columna3">
-      <p class="index__body__main__section--producto--precio"><%= precio %></p>
+      <p class="index__body__main__section--producto--precio"> $ <%= Intl.NumberFormat('de-DE').format(precio)%> </p>
       <a href="/carrito" class="index__body__main__section--producto--agregar">
       <p>Agregar al Carrito</p>
       <i class="fa-solid fa-cart-plus"></i></a>

@@ -1,71 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head.ejs',{ title : "Detalle" }) %>
-
   <body class="detail_product">
+    <%- include('../partials/scritps') %>
 
     <%- include('../partials/header.ejs') %>
       <link rel="icon" type="image/x-icon" href="/images/favicon-detalle.png">
-      <title>Cancat - detalle de producto</title>
-
+      <title><%= idproducto.nombre %></title>
+<!-- ul li de donde te encuentras -->
       <ul class="ul_li_detailproduct">
-        <li><a href="/">Home</a>></li>
-        <li><a href="/productos/perros">Perros</a> > </li>
-        <li><a href="/productos/pequenios">Razas Pequeñas</a> > </li>
-        <li><a href="/productos/detalle/<%= idproducto.id %>">
-            <%= idproducto.nombre %>
-          </a></li>
+ <li><a href="/">Home</a>></li>
+ <li><a href="/productos/perros">Perros</a> > </li>
+ <li><a href="/productos/pequenios">Razas Pequeñas</a> > </li>
+ <li><a href="/productos/detalle/<%= idproducto.id %>">
+     <%= idproducto.nombre %>
+   </a></li>
       </ul>
 
-
+<!-- Videos -->
 
       <div class="contenedor_tarjeta_producto">
 
-        <div class="contenedor_videos">
-          <div class="container_video1">
-            <video class="productos-videos" width="220" height="240" autoplay loop controls muted>
-              <source src="/images/videos/80690424_2896596637040297_4342256878793785344_n.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="container_video2">
-            <video class="productos-videos" width="220" height="240" autoplay loop controls muted>
-              <source src="/images/videos/275890211_679199206860755_4529459640801485028_n.mp4" type="video/mp4">
-            </video>
-            <div class="container_video3">
-              <video class="productos-videos" width="220" height="240" autoplay loop controls muted>
-                <source src="/images/videos/406252814_1394877621405820_801436885027233605_n.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
+ <div class="contenedor_videos">
+   <div class="container_video1">
+     <video class="productos-videos" width="220" height="240" autoplay loop controls muted>
+<source src="/images/videos/80690424_2896596637040297_4342256878793785344_n.mp4" type="video/mp4">
+     </video>
+   </div>
+   <div class="container_video2">
+     <video class="productos-videos" width="220" height="240" autoplay loop controls muted>
+<source src="/images/videos/275890211_679199206860755_4529459640801485028_n.mp4" type="video/mp4">
+     </video>
+     <div class="container_video3">
+<video class="productos-videos" width="220" height="240" autoplay loop controls muted>
+  <source src="/images/videos/406252814_1394877621405820_801436885027233605_n.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+</div>
 
 
-        <div class="contenedor_div_detail">
+ <div class="contenedor_div_detail">
 
-          <h1>
-            <%= idproducto.nombre %>
-          </h1>
+   <h1>
+     <%= idproducto.nombre %>
+   </h1>
+<!-- estrellas de votacion proximamente para que el cliente califique-->
+   <div class="contenedor_stars_detail">
 
-          <div class="contenedor_stars_detail">
+     <i class="fas fa-star star-yellow"></i>
+     <i class="fas fa-star star-yellow"></i>
+     <i class="fas fa-star star-yellow"></i>
+     <i class="fas fa-star star-yellow"></i>
+     <i class="fas fa-star star-yellow"></i>
+     <p>¡5 CatCan Estrellas!</p>
+   </div>
+<!-- Imagenes del producto-->
+   <div class="Imagen_detailproduct">
+     <div class="image-gallery">
+<img src="/images/<%= idproducto.imagen %>" alt="<%= idproducto.nombre %> ">
+<img src="/images/<%= idproducto.imagen2 %>" alt="<%= idproducto.nombre %>">
+     </div>
+     <!-- Precio del producto , final , total & cantidad del descuento aplicado -->
+     <div class="detail_product_rigth">
+<%
+const precio = typeof idproducto.precio === 'number' ? idproducto.precio : 0;
+const descuento = typeof idproducto.descuento === 'number' ? idproducto.descuento : 0;
 
-            <i class="fas fa-star star-yellow"></i>
-            <i class="fas fa-star star-yellow"></i>
-            <i class="fas fa-star star-yellow"></i>
-            <i class="fas fa-star star-yellow"></i>
-            <i class="fas fa-star star-yellow"></i>
-            <p>¡5 CatCan Estrellas!</p>
-          </div>
+const precioConDescuento = precio - (descuento * precio) / 100;
+%>
+<p class="precio__detailproduct">
+   <%= new Intl.NumberFormat('de-DE').format(precioConDescuento) %> $
+</p>
+<% if (descuento) { %>
+  <p class="descuento_precio">
+   
+    <%= descuento %> % de descuento
+  </p>
+<% } %>
 
-          <div class="Imagen_detailproduct">
-            <div class="image-gallery">
-              <img src="/images/<%= idproducto.imagen %>" alt="<%= idproducto.nombre %> ">
-              <img src="/images/<%= idproducto.imagen2 %>" alt="<%= idproducto.nombre %>">
-            </div>
-            <div class="detail_product_rigth">
-              <p class="precio__detailproduct">
-                <%= idproducto.precio %>
-              </p><p class="descuento_precio">  - <%= idproducto.descuento %> de descuento !! </p>
-              <!-- <p>Selecciona tu sabor:</p>
+     
+<p class="precio__sin_descuento">
+  Precio sin descuento $<%= new Intl.NumberFormat('de-DE').format(precio) %> 
+</p>
+<br>
+
+ 
+<!-- <p>Selecciona tu sabor:</p>
   <form class="sabores__detailproduct">
     <label>
       <input type="radio" name="sabores" value="POLLO">POLLO</label>
@@ -73,78 +94,92 @@
 <input type="radio" name="sabores" value="CARNE">CARNE</label>
   </form> -->
 
-              <p><a href="#"><u>Ver los medios de pago</u></a></p> <br>
-              <a href="/Carrito" class="button_comprar__detailproduct">COMPRAR</a>
-            </div>
 
-            <p class="envio">
-              <i class="fas fa-truck"></i> <!-- Icono del camión de envíos -->
-              <span> Simular costo de envio </span>
-              <select class="codigo-postal">
-                <option value="Lanús">Lanús </option>
-                <option value="Lomas">Lomas </option>
-                <option value="San Miguel">San miguel </option>
-                <option value="Ezeiza">Ezeiza </option>
-                <option value="Monte Grande">Monte Grande </option>
-                <option value="Alejandro Korn">Alejandro Korn</option>
-                <option value="Alejandro Korn">Avellaneda</option>
-                <option value="Alejandro Korn">Springfield</option>
-                <option value="Alejandro Korn">Shelbyville</option>
-                <option value="Alejandro Korn">Algun lado</option>
+<!-- Modal medios de pago , y linkeables a carrito y direcciones de envio -->
+<p><a href="#" id="verMediosPago"><u>Ver los medios de pago</u></a></p>
 
-              </select>
-            </p>
-          </div>
-          <div class="descripcion__detailproduct">
-            <p><u>Lo que tenes que saber de este producto</u></p>
-            <br>
-            <ul>
-              <li>Lorem ipsum dolor sit.</li>
-              <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
-              <li>Lorem, ipsum.</li>
-              <li>Lorem ipsum dolor sit amet consectetur.</li>
-              <li>Lorem ipsum dolor sit amet.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-              <li>Lorem, ipsum dolor.</li>
-              <br>
-            </ul>
-
-          </div>
-        </div>
-
-        <div class="contenedor_videos">
-          <div class="container_video1">
-              <img src="/images/Banner-Nuevos-productos-T_v2-768x628.jpg.webp" alt="" width="240" height="auto">
-          </div>
-          <div class="container_video2">
-              <img src="/images/Local-CanCat.jpg" alt="" width="240" height="auto">
-            </video>
-            <div class="container_video3">
-            <img src="/images/banner-detalle.png" alt="" width="240" height="auto">
-
-            </div>
-          </div>
-        </div>
-
+<!-- Modal -->
+<div class="modal fade" id="mediosPagoModal" tabindex="-1" role="dialog" aria-labelledby="mediosPagoModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mediosPagoModalLabel">Medios de Pago</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+      <div class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>
+<a href="/Carrito" class="button_comprar__detailproduct">COMPRAR</a>
+     </div>
+
+     <p class="envio">
+<i class="fas fa-truck"></i> <!-- Icono del camión de envíos -->
+<span> Simular costo de envio </span>
+<select class="codigo-postal">
+  <option value="Lanús">Lanús </option>
+  <option value="Lomas">Lomas </option>
+  <option value="San Miguel">San miguel </option>
+  <option value="Ezeiza">Ezeiza </option>
+  <option value="Monte Grande">Monte Grande </option>
+  <option value="Alejandro Korn">Alejandro Korn</option>
+  <option value="Alejandro Korn">Avellaneda</option>
+  <option value="Alejandro Korn">Springfield</option>
+  <option value="Alejandro Korn">Shelbyville</option>
+  <option value="Alejandro Korn">Algun lado</option>
+
+</select>
+     </p>
+   </div>
+   <!-- descripcion del producto-->
+   <div class="descripcion__detailproduct">
+     <p><u>Lo que tenes que saber de este producto</u></p>
+<br>
+<ul>
+      <%= idproducto.descripcion %>
+  </ul>
+  </div>
+  </div>
+<!-- Banner al costado igual que los videos anteriores -->
+   <div class="contenedor_videos">
+   <div class="container_video1">
+<img src="/images/Banner-Nuevos-productos-T_v2-768x628.jpg.webp" alt="" width="240" height="auto">
+</div>
+    <div class="container_video2">
+<img src="/images/Local-CanCat.jpg" alt="" width="240" height="auto">
+</video>
+     <div class="container_video3">
+     <img src="/images/banner-detalle.png" alt="" width="240" height="auto">
+
+</div>
+</div>
+</div>
+</div>
 
 
-
-
+<!-- Productos seccion dde destacados -->
       <h2 class="productos__destacados__h2">PRODUCTOS DESTACADOS </h2>
 
       <section class="productos__destacados">
 
-        <% productos.forEach(productos=> { %>
-          <%- include('../partials/productCardDetail.ejs',{ ...productos }) %>
-
-            <% }) %>
-      </section>
-
-
-
-
-      <%- include('../partials/footer') %>
+ <% productos.filter(productos => productos.categoria === "ofertas").forEach(productos => { %>
+ <%- include('../partials/productCardDetail.ejs',{ ...productos }) %>
+<% }) %>
+  </section>
+  <%- include('../partials/footer') %>
   </body>
-
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const verMediosPago = document.getElementById('verMediosPago');
+      const modalMediosPago = new bootstrap.Modal(document.getElementById('mediosPagoModal'));
+    
+      verMediosPago.addEventListener('click', function(event) {
+        event.preventDefault();
+        modalMediosPago.show();
+      });
+    });
+    </script>
 </html>

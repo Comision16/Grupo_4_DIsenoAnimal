@@ -7,9 +7,9 @@ module.exports = (req, res) => {
 
     const productos = leerJSON("productos")
 
-    const {image} = productos.find(product => product.id == id);
+    const {imagen} = productos.find(product => product.id == id);
 
-    existsSync('public/images/' + image) && unlinkSync('public/images/' + image)
+    existsSync('public/images/' + imagen) && unlinkSync('public/images/' + imagen)
 
     const productoFiltrado = productos.filter(producto => producto.id != id )
 

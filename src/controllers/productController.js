@@ -1,31 +1,28 @@
 const {leerJSON} = require("../data")
+const productos = leerJSON('productos');
 
 module.exports = {
     detail : (req, res) => {
-        const productos = leerJSON('productos');
         const parametrizada = +req.params.id
         const idproducto = productos.find(que => que.id === parametrizada )
             /*return res.send(productos)*/
             return res.render('products/product-detail', {
-                productos,idproducto
+            productos,idproducto 
             })
     },
     gatos : (req, res) => {
-        const productos = leerJSON('productos');
         return res.render('products/gatos',{
-            productos
+            productos, 
         })
     },
     perros : (req, res) => {
-        const productos = leerJSON('productos');
         return res.render('products/perros',{
-            productos
+            productos , 
         })
     },
     pequenios : (req, res) => {
-        const productos = leerJSON('productos');
         return res.render('products/pequenios',{
-            productos
+            productos , 
         })
     },
     Edit : (req, res) => {

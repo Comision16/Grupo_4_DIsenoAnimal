@@ -16,14 +16,14 @@
     <section class="index__body__main__section">
       <h2 class="index__body__main__section--titulo">Perros</h2>
 
-<% productos.forEach(productos => { %>
+<% productos.filter(productos => productos.categoria === "perros").forEach(productos => { %>
   <%- include('../partials/productCard.ejs',{
     ...productos
   }) %>
 
 <% }) %>
 <h2 class="index__body__main__section--titulo">Los recomendados del dia</h2>
-<% productos.forEach(productos => { %>
+<% productos.filter(productos => productos.categoria === "ofertas").forEach(productos => { %>
   <%- include('../partials/productCard.ejs',{
     ...productos
   }) %>

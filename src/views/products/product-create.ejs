@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <%- include('../partials/scritps') %>
+        <%- include('../partials/head',{
+          title : "agregar-articulos" 
+        }) %>
+        <link rel="icon" type="image/x-icon" href="/images/favicon-agregar.png" />
+        <title>CanCat - Agregar Productos</title>
+  </head>
+  <body class="dashboard-body">
+    <header>
+        <%- include('../partials/header-dashboard') %>
+    </header>
+    <main class="create-form">
+      <section class="row my-2">
+          <div class="col-10 col-md-9 mx-auto">
+              <div class="card">
+                  <div class="card-header d-flex justify-content-between">
+                      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                          <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/admin/dashboard" class="text-primary">Home Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Agregar Productos</li>
+                          </ol>
+                        </nav>
+                  </div>
+                  <div class="card-body">
+                      <form action="/productos/store" method="post" class="row d-flex justify-content-center align-items-center" enctype="multipart/form-data">
+                            <h3>Agregar Articulos</h3>
+                            <hr>
+                            <div class="col-12 col-md-6 mb-3">
+                              <div class="form-floating">
+                                <input name="id" type="text" class="form-control" id="id">
+                                <label for="id">ID del producto</label>
+                              </div>
+                            </div>
+                            <div class="col-12 col-md-4 mb-3">
+                                <div class="form-floating ">
+                                    <input name="name" type="text" class="form-control" id="name" >
+                                    <label for="name">Nombre del articulo</label>
+                                  </div>
+                            </div>
+                            <div class="col-8 col-md-3 mb-3">
+                              <input name="images" type="file" class="form-control" id="images" hidden>
+                              <label class="btn btn-lg btn-outline-dark w-80" for="images">Imagen nº 1</label>
+                          </div>
+                          <div class="col-10 col-md-3 mb-3">
+                            <input  name="images" type="file" class="form-control" id="images" hidden multiple>
+                            <label class="btn btn-lg btn-outline-dark w-80" for="images">Imagen nº2</label>
+                          </div>
+                            <div class="col-12 col-md-4 mb-3">
+                              <div class="form-floating">
+                                  <select name="category" class="form-select" id="category" aria-label="Floating label select example">
+                                    <option value="" selected hidden></option>
+                                    <option value="Perros">Perros</option>
+                                    <option value="Gatos">Gatos</option>
+                                    <option value="Animales Pequeños">Animales Pequeños</option>
+                                    <option value = "Los mas buscados"> Los mas Buscados</option>
+                                    <option value = "Ofertas"> Ofertas</option>
+                                  </select>
+                                  <label for="category">Categoría</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4 mb-3">
+                              <div class="form-floating">
+                                  <input name="price" type="number" class="form-control" id="price">
+                                  <label for="price">Precio del producto</label>
+                              </div>
+                            </div>
+                          <div class="col-12 col-md-4 mb-3">
+                            <div class="form-floating">
+                                <input name="stock" type="number" class="form-control" id="stock">
+                                <label for="stock">Cantidad en stock</label>
+                            </div>
+                          </div>
+                              <div class="col-12 col-md-4 mb-3">
+                                <div class="form-floating">
+                                    <select name="flavor" class="form-select" id="flavor" aria-label="Floating label select example">
+                                        <option value="" selected hidden></option>
+                                        <option value="Pescado">Pescado</option>
+                                        <option value="Pollo y Arroz">Pollo y Arroz</option>
+                                        <option value="Carne y Pollo">Carne y Pollo</option>
+                                        <option value="Carne">Carne</option>
+                                        <option value="Leche">Leche</option>
+                                        <option value="Arroz y Pescado">Arroz y Pescado</option>
+                                        <option value="Pescado y Carne">Pescado y Carne</option>
+                                        <!-- Agrega más opciones si es necesario -->
+                                    </select>
+                                    <label for="flavor">Sabores</label>
+                                </div>
+                              </div>
+                            <div class="col-12 col-md-4 mb-3">
+                              <div class="form-floating ">
+                                  <input name="discount" type="number" class="form-control" id="discount" >
+                                  <label  for="discount">Descuento -%</label>
+                              </div>
+                            </div>
+                      
+                          
+                          <div class="col-10 mb-3">
+                              <div class="form-floating">
+                                  <textarea name="description" class="form-control" id="description" style="height: 100px;"></textarea>
+                                  <label for="description">Descripción del producto...</label>
+                                </div>
+                          </div>
+                        
+                          <div class="col-7 d-flex justify-content-end">
+                              <button class="btn btn-lg btn-dark">Agregar Producto</button>
+                          </div>
+                      </form>
+
+                  </div>
+              </div>
+          </div>
+      </section>
+    </main>
+  </body>
+</html>

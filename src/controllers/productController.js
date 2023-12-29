@@ -1,5 +1,9 @@
 const {leerJSON} = require("../data")
 const productos = leerJSON('productos');
+const fs = require('fs');
+
+function pushProducts (parametro){
+	fs.writeFileSync("./src/data/productos.json", JSON.stringify(parametro, null, 3), "utf-8");}
 
 module.exports = {
     detail : (req, res) => {
@@ -29,9 +33,18 @@ module.exports = {
             return res.render('products/product-edit')
 
     },
-    Add : (req,res) => {
-        return res.render('products/product-add')
+    create : (req,res) => {
+        return res.render('products/product-create')
         
+    },
+    store : (req, res) => {
+        const creador = require('../data/creador');
+		const images = req.file;
+		const {name, category, price, stock, flavor, discount, description} = req.body;
+		const nuevoCreador = new creador(name, images, category, price, stock, flavor, discount, description);
+		productos.push(nuevoCreador);
+		pushProducts(productos);
+		return res.redirect("/")
     }
     
 }

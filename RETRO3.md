@@ -1,1 +1,1 @@
-![Descripción de la imagen](/public/images/retro3.png)
+![Descripción de la imagen](/public/images/retro3.jpg)

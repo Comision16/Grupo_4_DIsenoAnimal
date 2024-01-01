@@ -1,5 +1,5 @@
 const express = require('express');
-const {detail, gatos, perros, pequenios, Edit , create, store} = require('../controllers/productController');
+const {detail, gatos, perros, pequenios, Edit , create, store, todos} = require('../controllers/productController');
 const { remove } = require('../controllers/productsController');
 const router = express.Router();
 const upload = require('../middlewares/upload');
@@ -12,6 +12,7 @@ router
   .get('/pequenios', pequenios )
   .get('/editar-articulo', Edit)
   .get('/agregar-articulos', create)
+  .get('/todos', todos)
   .post('/store', upload.single('images'), store)
   .delete("/eliminar/:id", remove)
 module.exports = router;

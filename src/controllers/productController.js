@@ -45,6 +45,8 @@ module.exports = {
 		productos.push(nuevoCreador);
 		pushProducts(productos);
 		return res.redirect("/")
-    }
-    
+    },
+    todos : (req,res) => {
+        res.render('products/todos', {productos})
+    }    
 }

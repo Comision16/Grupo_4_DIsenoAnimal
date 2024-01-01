@@ -11,6 +11,7 @@ module.exports = {
     search: (req, res) => {        
         const productos = leerJSON('productos');
 		const {keywords} = req.query;
+        
 		return res.render('dashboardFilter', {
 			productos : productos.filter(producto => producto.nombre.toLowerCase().includes(keywords.toLowerCase())), 
 			keywords            

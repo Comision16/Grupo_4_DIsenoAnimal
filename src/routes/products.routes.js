@@ -13,6 +13,8 @@ router
   .get('/editar-articulo/:id', edit)
   .put('/update/:id',update)
   .get('/agregar-articulos', create)
+  .get('/todos', todos)
+  .get('/search', search)
   .post('/store', upload.single('images'), store)
   .delete("/eliminar/:id", remove)
 module.exports = router;

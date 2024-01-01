@@ -48,5 +48,13 @@ module.exports = {
     },
     todos : (req,res) => {
         res.render('products/todos', {productos})
-    }    
+    },
+    search: (req, res) => {        
+		const {keywords} = req.query;
+        
+		return res.render('products/product-search', {
+			productos : productos.filter(producto => producto.nombre.toLowerCase().includes(keywords.toLowerCase())), 
+			keywords            
+		})
+	}    
 }

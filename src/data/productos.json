@@ -1,14 +1,14 @@
 [
    {
       "id": 1,
-      "categoria": "ofertas",
+      "categoria": "Ofertas",
       "nombre": "Balanceado Natural Choice",
       "imagen": "NaturalChoice.png",
       "imagen2": "NaturalChoice.png",
       "precio": 24890,
       "descuento": 10,
       "descripcion": "Alimento Natural Choice Perros Cachorros 15 Kg",
-      "sabores": "",
+      "sabores": "Carne",
       "stock": "2"
    },
    {
@@ -73,15 +73,16 @@
    },
    {
       "id": 7,
-      "categoria": "",
-      "nombre": "Balanceado Natural Choice",
-      "imagen": "NaturalChoice.png",
-      "imagen2": "NaturalChoice.png",
-      "precio": 24890,
-      "descuento": 40,
-      "descripcion": "Alimento Natural Choice Perros Cachorros 15 Kg",
-      "sabores": "",
+      "categoria": "visitados",
+      "nombre": "Insecticida Can Amor",
+      "imagen": "CanAmor.png",
+      "imagen2": "CanAmor.png",
+      "precio": 1890,
+      "descuento": 15,
+      "descripcion": "Shampoo CanAmor Insecticida ",
+      "sabores": "Pollo",
       "stock": "2"
+  
    },
    {
       "id": 8,
@@ -130,4 +131,6 @@
       "descuento": 0,
       "descripcion": ""
    }
+      
+      
 ]

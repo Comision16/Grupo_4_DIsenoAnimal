@@ -16,83 +16,109 @@
     <%- include('../partials/header-dashboard') %>
   </header>
 
-  <main class="container">
-  <section class="row my-2">
-      <div class="col-10 col-md-9 mx-auto">
-          <div class="card">
-              <div class="card-header d-flex justify-content-between">
-                  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                      <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/admin/dashboard" class="text-decoration-none text-black">Home Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">editar producto</li>
-                      </ol>
-                    </nav>
-              </div>
-              <div class="card-body">
-                  <form action="" class="row d-flex justify-content-center align-items-center">
-                    <div class=" mb-2">
-                      <h3 class="text-center ">Editando Articulo</h3>
-                    </div>
-                      
-                      <div class="col-12 col-md-4 mb-3">
-                          <div class="form-floating ">
-                              <input name="name" type="text" class="form-control" id="name" >
-                              <label  for="name">Nombre del articulo</label>
+  <main class="create-form">
+    <section class="row my-2">
+        <div class="col-10 col-md-9 mx-auto">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="/admin/dashboard" class="text-primary">Home Dashboard</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Editar articulo</li>
+                        </ol>
+                      </nav>
+                </div>
+                <div class="card-body">
+                    <form action="/productos/update/<%= id %>?_method=PUT" method="POST" class="row d-flex justify-content-center align-items-center" enctype="multipart/form-data">
+                          <h3>Editando:"<%= nombre %>"</h3>
+                          <hr>
+                          <div class="col-12 col-md-6 mb-3">
+                            <div class="form-floating">
+                              <input name="id" type="text" class="form-control" id="id" value="<%= id %>" >
+                              <label for="id">ID</label>
                             </div>
-                      </div>
-                      
-                      <div class="col-8 col-md-3 mb-3">
-                        <input name="mainImage" type="file" class="form-control" id="mainImage" hidden>
-                        <label class="btn btn-lg btn-outline-dark w-80" for="mainImage">Imagen nº 1</label>
-                    </div>
-                    <div class="col-10 col-md-3 mb-3">
-                      <input  name="images" type="file" class="form-control" id="images" hidden multiple>
-                      <label class="btn btn-lg btn-outline-dark w-80" for="images">Imagen nº2</label>
-                  </div>
-                  
-                      <div class="col-12 col-md-4 mb-3">
-                        <div class="form-floating">
-                            <select name="category" class="form-select" id="category" aria-label="Floating label select example">
-                              <option value="" selected hidden></option>
-                              <option value="Perros">Perros</option>
-                              <option value="Gatos">Gatos</option>
-                              <option value="Animales Pequeños">Animales Pequeños</option>
-                              <option value = "Los mas buscados"> Los mas Buscados</option>
-                              <option value = "Ofertas"> Ofertas</option>
-                            </select>
-                            <label for="category">Categoría</label>
                           </div>
-                      </div>
-                      <div class="col-12 col-md-4 mb-3">
-                        <div class="form-floating ">
-                            <input name="name" type="number" class="form-control" id="descount" >
-                            <label  for="descount">Descuento -%</label>
+                          <div class="col-12 col-md-4 mb-3">
+                              <div class="form-floating ">
+                                  <input name="nombre" type="text" class="form-control" id="nombre" value="<%= nombre %>" >
+                                  <label for="nombre">Nombre del articulo</label>
+                                </div>
                           </div>
-                    </div>
-                      <div class="col-12 col-md-6 mb-3">
-                        <div class="form-floating">
-                          <input name="address" type="text" class="form-control" id="address">
-                          <label for="address">ID del producto</label>
+                          <div class="col-8 col-md-3 mb-3">
+                            <input name="images" type="file" class="form-control" id="images" hidden>
+                            <label class="btn btn-lg btn-outline-dark w-80" for="images">Imagen nº 1</label>
                         </div>
-                      </div>
-                     
-                      
-                      <div class="col-10 mb-3">
-                          <div class="form-floating">
-                              <textarea name="description" class="form-control" id="description" style="height: 100px;"></textarea>
-                              <label for="description">Descripción del producto...</label>
+                        <div class="col-10 col-md-3 mb-3">
+                          <input  name="images" type="file" class="form-control" id="images" hidden multiple>
+                          <label class="btn btn-lg btn-outline-dark w-80" for="images">Imagen nº2</label>
+                        </div>
+                          <div class="col-12 col-md-4 mb-3">
+                            <div class="form-floating">
+                                <select name="categoria" class="form-select" id="category" aria-label="Floating label select example">
+                                  <option value="<%= categoria %>" selected hidden></option>
+                                  <option value="Perros"<%= categoria === 'Perros' && 'selected'%>>Perros</option>
+                                  <option value="Gatos" <%= categoria === 'Gatos' && 'selected'%>>Gatos</option>
+                                  <option value="Animales Pequeños" <%= categoria === 'Animales Pequeños' && 'selected'%>>Animales Pequeños</option>
+                                  <option value = "Los mas buscados" <%= categoria === 'Los mas buscados' && 'selected'%>> Los mas Buscados</option>
+                                  <option value = "Ofertas" <%= categoria === 'Ofertas' && 'selected'%>> Ofertas</option>
+                                </select>
+                                <label for="categoria">Categoria</label>
+                              </div>
+                          </div>
+                          <div class="col-12 col-md-4 mb-3">
+                            <div class="form-floating">
+                                <input name="precio" type="number" class="form-control" id="precio" value="<%= precio %>" >
+                                <label for="precio">Precio actual: </label>
                             </div>
-                      </div>
-                     
-                      <div class="col-7 d-flex justify-content-end">
-                          <button class="btn btn-lg bg-primary bg-gradient text-white">Guardar</button>
-                      </div>
-                  </form>
+                          </div>
+                        <div class="col-12 col-md-4 mb-3">
+                          <div class="form-floating">
+                              <input name="stock" type="number" class="form-control" id="stock" value="<%= stock %>">
+                              <label for="stock">Stock actual:</label>
+                          </div>
+                        </div>
+                            <div class="col-12 col-md-4 mb-3">
+                              <div class="form-floating">
+                                  <select name="flavor" class="form-select" id="flavor" aria-label="Floating label select example">
+                                      <option value="" selected hidden></option>
+                                      <option value="Pescado"<%= sabores === 'Pescado' && 'selected'%>>Pescado</option>
+                                      <option value="Pollo y Arroz" <%= sabores === 'Pollo y Arroz' && 'selected'%>>Pollo y Arroz</option>
+                                      <option value="Carne y Pollo" <%= sabores === 'Carne y Pollo' && 'selected'%>>Carne y Pollo</option>
+                                      <option value="Carne" <%= sabores === 'Carne' && 'selected'%>>Carne</option>
+                                      <option value="Leche" <%= sabores === 'Leche' && 'selected'%>>Leche</option>
+                                      <option value="Arroz y Pescado" <%= sabores === 'Arroz y Pescado' && 'selected'%>>Arroz y Pescado</option>
+                                      <option value="Pescado y Carne" <%= sabores === 'Pescado y Carne' && 'selected'%>>Pescado y Carne</option>
+                                      <!-- Agrega más opciones si es necesario -->
+                                  </select>
+                                  <label for="flavor">Sabor</label>
+                              </div>
+                            </div>
+                          <div class="col-12 col-md-4 mb-3">
+                            <div class="form-floating ">
+                                <input name="descuento" type="number" class="form-control" id="descuento" value="<%= descuento %>">
+                                <label  for="descuento">Descuento -% </label>
+                            </div>
+                          </div>
+                    
+                        
+                        <div class="col-10 mb-3">
+                            <div class="form-floating">
+                              
+                                <label for="descripcion"></label>
+                                <textarea name="descripcion" class="form-control" id="descripcion" style="height: 100px;"><%= descripcion %></textarea>
+                                
+                              </div>
+                        </div>
+                      
+                        <div class="col-7 d-flex justify-content-end">
+                            <button type="submit"class="btn btn-lg btn-dark">Guardar Cambios</button>
+                        </div>
+                    </form>
 
-              </div>
-          </div>
-      </div>
-  </section>
-</main>
+                </div>
+            </div>
+        </div>
+    </section>
+  </main>
 </body>
-</div>
+</html>

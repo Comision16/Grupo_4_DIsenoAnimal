@@ -4,35 +4,35 @@
          "Nombre": "Mariana",
          "Apellido": "Barcena",
          "Email": "marixd@gmail.com",
-         "Contraseña": "password",
-         "Categoria": "category",
-         "Imagen": "image"
+         "Contraseña": "*******",
+         "Categoria": "admin",
+         "Imagen": "perfil"
     },
     {
         "Id": 2,
          "Nombre": "Nicolas",
-         "Apellido": "",
-         "Email": "email",
-         "Contraseña": "password",
-         "Categoria": "category",
-         "Imagen": "image"
+         "Apellido": "Oflaerti",
+         "Email": "email@gmail.com",
+         "Contraseña": "******",
+         "Categoria": "admin",
+         "Imagen": "perfil"
     },
     {
         "Id": 3,
-         "Nombre": "firstName",
-         "Apellido": "lastName",
-         "Email": "email",
-         "Contraseña": "password",
-         "Categoria": "category",
-         "Imagen": "image"
+         "Nombre": "Alejandro",
+         "Apellido": "Elias",
+         "Email": "email@gmail.com",
+         "Contraseña": "****",
+         "Categoria": "admin",
+         "Imagen": "perfil"
     },
     {
         "Id": 4,
-         "Nombre": "firstName",
-         "Apellido": "lastName",
-         "Email": "email",
-         "Contraseña": "password",
-         "Categoria": "category",
-         "Imagen": "image"
+         "Nombre": "Sasha",
+         "Apellido": "Toledo",
+         "Email": "example@gmail.com",
+         "Contraseña": "****",
+         "Categoria": "admin",
+         "Imagen": "perfil"
     }
 ]

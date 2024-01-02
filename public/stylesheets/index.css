@@ -274,7 +274,6 @@
 
       .index__body__main__section {
           display: flex;
-          justify-content: space-between;
           flex-wrap: wrap;
       }
 

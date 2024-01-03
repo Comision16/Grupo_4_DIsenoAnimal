@@ -6,7 +6,7 @@ module.exports = {
 
     },
     escribirJSON: (data, json) => {
-        writeFileSync(`./src/data/${json}.json`, JSON.stringify(data), "utf-8", 3)
+        writeFileSync(`./src/data/${json}.json`, JSON.stringify(data,null,3), "utf-8")
         return null
     }
 }

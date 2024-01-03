@@ -47,8 +47,6 @@ module.exports = {
         
     //     const productUpdate = productos.map(product =>  {
     //      if (product.id === +req.params.id) {
-            
-         
     //         product.nombre = nombre.trim(),
     //         product.imagen = imagen,
     //         product.imagen2 = imagen2,
@@ -59,7 +57,6 @@ module.exports = {
     //         product.sabores = sabores,
     //         product.stock =+stock
     //     }
-        
     //     return product
     //  })
 

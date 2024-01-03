@@ -1,14 +1,14 @@
 const crypto = require ('crypto');
 
-function creador(name, images, category, price, stock, flavor, discount, description){
+function creador( nombre, imagen, categoria, precio, stock, sabores, descuento, descripcion){
     this.id = crypto.randomUUID(),
-    this.nombre = name.trim(),
-    this.imagen = images ? images.filename : null,
-    this.categoria = category.trim() ,
-    this.precio = +price.trim(),
+    this.nombre = nombre.trim(),
+    this.imagen = imagen ? imagen.filename : null,
+    this.categoria = categoria.trim() ,
+    this.precio = +precio.trim(),
     this.stock = +stock.trim() ,
-    this.sabores = flavor.trim() ,
-    this.descuento = +discount.trim() ,
-    this.descripcion = description.trim() 
+    this.sabores = sabores.trim() ,
+    this.descuento =  +descuento.trim() ,
+    this.descripcion = descripcion.trim() 
 }
 module.exports = creador;

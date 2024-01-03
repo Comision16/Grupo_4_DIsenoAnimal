@@ -13,8 +13,8 @@ module.exports = {
 		const {keywords} = req.query;
         
 		return res.render('dashboardFilter', {
-			productos : productos.filter(producto => producto.nombre.toLowerCase().includes(keywords.toLowerCase())), 
-			keywords            
+			productos : productos.filter(producto => producto.nombre.toLowerCase().includes(keywords.toLowerCase()) ||  producto.descripcion.toLowerCase().includes(keywords.toLowerCase())), 
+			keywords         
 		})
 	}
 }

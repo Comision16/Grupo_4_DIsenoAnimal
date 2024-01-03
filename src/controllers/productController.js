@@ -7,8 +7,8 @@ function pushProducts (parametro){
 
 module.exports = {
     detail : (req, res) => {
-        const parametrizada = +req.params.id
-        const idproducto = productos.find(que => que.id === parametrizada )
+        const parametrizada = req.params.id
+        const idproducto = productos.find(que => que.id == parametrizada )
             /*return res.send(productos)*/
             return res.render('products/product-detail', {
             productos,idproducto 
@@ -43,25 +43,27 @@ module.exports = {
     },
 
     update: (req,res) => {
-    //     const {categoria, nombre, imagen, imagen2, descuento, descripcion, precio, sabores, stock} = req.body;
+        //const {categoria, nombre, imagen, imagen2, descuento, descripcion, precio, sabores, stock} = req.body;
         
-    //     const productUpdate = productos.map(product =>  {
-    //      if (product.id === +req.params.id) {
-    //         product.nombre = nombre.trim(),
-    //         product.imagen = imagen,
-    //         product.imagen2 = imagen2,
-    //         product.precio = +precio,
-    //         product.descuento = +descuento,
-    //         product.descripcion = descripcion.trim(),
-    //         product.categoria = categoria,
-    //         product.sabores = sabores,
-    //         product.stock =+stock
-    //     }
-    //     return product
-    //  })
+  //const productUpdate = productos.map(product =>  {
+       //  if (product.id == req.params.id) {
+             
+       // product.nombre = nombre.trim(),
+        //   product.imagen = imagen,
+         //   product.imagen2 = imagen2,
+       //    product.precio = +precio,
+       //     product.descuento = +descuento,
+       //      product.descripcion = descripcion.trim(),
+       //     product.categoria = categoria,
+       //     product.sabores = sabores,
+       //     product.stock = +stock
+      //  }
+        
+     //    return product
+     // })
 
     //  fs.writeFileSync("./src/data/productos.json", JSON.stringify(productUpdate, null, 3), "utf-8");
-    //  return res.redirect('/admin/dashboard'+ req.params.id )
+     // return res.redirect('/admin/dashboard'+ req.params.id )
     
     return console.log(req.body);
     },
@@ -74,12 +76,12 @@ module.exports = {
     },
     store : (req, res) => {
         const creador = require('../data/creador');
-		const images = req.file;
-		const {name, category, price, stock, flavor, discount, description} = req.body;
-		const nuevoCreador = new creador(name, images, category, price, stock, flavor, discount, description);
-		productos.push(nuevoCreador);
-		pushProducts(productos);
-		return res.redirect("/")
+	const imagen = req.file;
+	const {nombre, categoria, precio, stock, sabores, descuento, descripcion} = req.body;
+	const nuevoCreador = new creador(nombre, imagen,categoria, precio, stock, sabores, descuento, descripcion);
+	productos.push(nuevoCreador);
+	pushProducts(productos);
+	return res.redirect("/")
     },
     todos : (req,res) => {
         res.render('products/todos', {productos})
@@ -88,7 +90,7 @@ module.exports = {
 		const {keywords} = req.query;
         
 		return res.render('products/product-search', {
-			productos : productos.filter(producto => producto.nombre.toLowerCase().includes(keywords.toLowerCase())), 
+			productos : productos.filter(producto => producto.nombre.toLowerCase().includes(keywords.toLowerCase()) ||  producto.descripcion.toLowerCase().includes(keywords.toLowerCase())), 
 			keywords            
 		})
 	}    

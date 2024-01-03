@@ -16,7 +16,7 @@ router
   .get('/agregar-articulos', create)
   .get('/todos', todos)
   .get('/search', search)
-  .post('/store', upload.single('images'), store)
+  .post('/store', upload.single('imagen'), store)
   .delete("/eliminar/:id", remove)
 module.exports = router;
 

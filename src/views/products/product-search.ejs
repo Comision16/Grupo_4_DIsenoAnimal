@@ -11,11 +11,19 @@
 
 
         <section class="index__body__main__section">
-          <h2 class="index__body__main__section--titulo">Perros</h2>
+          <h2 class="index__body__main__section--titulo">Resultado de la busqueda para: <%= keywords %></h2>
 
+          <% if (productos.length) { %>
           <% productos.forEach(producto => { %>
             <%- include('../partials/productCard.ejs',{ ...producto }) %>
             <% }) %>
+           
+          <% } else { %>
+
+            <img src="/images/busqueda_no_encontrada.jpg" class="search-imagen-busqueda" alt="">
+            
+          <% } %>
+          
             
                 <h2 class="index__body__main__section--titulo">Los recomendados del dia</h2>
                 <% productos.filter(productos=> productos.categoria === "ofertas").forEach(productos => { %>

@@ -486,6 +486,7 @@
         justify-content: flex-start;
         align-items: flex-start;
         flex-wrap: wrap;
+        background-color: var(--ColorGris);
     }
 
     .cart-main-box {
@@ -497,7 +498,6 @@
     .Productos-en-el-carrito {
         display: flex;
         align-content: flex-start;
-        height: 380px;
         padding-top: 15px;
     }
 
@@ -529,7 +529,7 @@
         padding: 0%;
         height: 572px;
         width: 30%;
-        margin-top: 0%;
+        margin-top: 3.5%;
     }
 
 

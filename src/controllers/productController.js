@@ -77,12 +77,12 @@ module.exports = {
     },
     store : (req, res) => {
         const creador = require('../data/creador');
-		const images = req.file;
-		const {name, category, price, stock, flavor, discount, description} = req.body;
-		const nuevoCreador = new creador(name, images, category, price, stock, flavor, discount, description);
-		productos.push(nuevoCreador);
-		pushProducts(productos);
-		return res.redirect("/")
+	const imagen = req.file;
+	const {nombre, categoria, precio, stock, sabores, descuento, descripcion} = req.body;
+	const nuevoCreador = new creador(nombre, imagen,categoria, precio, stock, sabores, descuento, descripcion);
+	productos.push(nuevoCreador);
+	pushProducts(productos);
+	return res.redirect("/")
     },
     todos : (req,res) => {
         res.render('products/todos', {productos})

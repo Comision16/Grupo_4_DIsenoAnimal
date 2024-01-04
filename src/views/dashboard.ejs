@@ -22,7 +22,7 @@
                 <table class="table table-striped">
                   <thead class="table-success">
                     <tr>
-                      <th scope="col">ID</th>
+                      <th scope="col">#</th>
                       <th scope="col">Nombre</th>
                       <th scope="col">Descripción</th>
                       <th scope="col">Acciones</th>
@@ -31,10 +31,10 @@
                   <tbody>
 
 
-                    <% productos.forEach(({id, nombre, descripcion, imagen, precio})=> { %>
+                    <% productos.forEach(({id, nombre, descripcion, imagen, precio}, index)=> { %>
                       <tr>
                         <th scope="row">
-                          <%= id %>
+                          <%= index + 1 %>
                         </th>
                         <td>
                           <%= nombre %>

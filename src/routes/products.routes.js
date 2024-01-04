@@ -3,7 +3,7 @@ const {detail, gatos, perros, pequenios, edit , create, store, update, todos, se
 const { remove } = require('../controllers/productsController');
 const router = express.Router();
 const upload = require('../middlewares/upload');
-const multer = require('multer');
+
 
 /* GET productos listing. */
 router
@@ -12,11 +12,27 @@ router
   .get('/perros', perros )
   .get('/pequenios', pequenios )
   .get('/editar-articulo/:id', edit)
-  .put('/update/:id',update)
+  .put('/update/:id',  upload.fields([
+  {
+    name : 'image1'
+  },
+  {
+    name : 'image2'
+  }
+  ]),update)
+
   .get('/agregar-articulos', create)
   .get('/todos', todos)
   .get('/search', search)
-  .post('/store', upload.single('imagen'), store)
+  .post('/store', upload.fields([
+  {
+    name : 'image1'
+  },
+  {
+    name : 'image2'
+  }
+  ]), store)
+
   .delete("/eliminar/:id", remove)
 module.exports = router;
 

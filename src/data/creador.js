@@ -1,9 +1,10 @@
 const crypto = require ('crypto');
 
-function creador( nombre, imagen, categoria, precio, stock, sabores, descuento, descripcion){
+function creador( nombre, image1, image2, categoria, precio, stock, sabores, descuento, descripcion){
     this.id = crypto.randomUUID();
     this.nombre = nombre ? nombre.trim() : '';
-    this.imagen = imagen ? imagen.filename : null;
+    this.imagen = image1 ? image1[0].filename : null;
+    this.imagen2 = image2 ? image2[0].filename : null;
     this.categoria = categoria ? categoria.trim() : '';
     this.precio = precio ? +precio.trim() : 0;
     this.stock = stock ? +stock.trim() : 0;

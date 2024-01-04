@@ -43,29 +43,29 @@ module.exports = {
     },
 
     update: (req,res) => {
-        //const {categoria, nombre, imagen, imagen2, descuento, descripcion, precio, sabores, stock} = req.body;
+        const {categoria, nombre, descuento, descripcion, precio, sabores, stock} = req.body;
         
-  //const productUpdate = productos.map(product =>  {
-       //  if (product.id == req.params.id) {
+  const productUpdate = productos.map(product =>  {
+        if (product.id == req.params.id) {
              
-       // product.nombre = nombre.trim(),
-        //   product.imagen = imagen,
-         //   product.imagen2 = imagen2,
-       //    product.precio = +precio,
-       //     product.descuento = +descuento,
-       //      product.descripcion = descripcion.trim(),
-       //     product.categoria = categoria,
-       //     product.sabores = sabores,
-       //     product.stock = +stock
-      //  }
+       product.nombre = nombre.trim(),
+          product.imagen = req.file.image1 ? req.file.image1[0].filename :  product.imagen,
+          product.imagen2 = req.file.image2 ? req.file.image2[0].filename :  product.imagen2,
+          product.precio = +precio,
+           product.descuento = +descuento,
+            product.descripcion = descripcion.trim(),
+           product.categoria = categoria,
+           product.sabores = sabores,
+           product.stock = +stock
+       }
         
-     //    return product
-     // })
+        return product
+     })
 
-    //  fs.writeFileSync("./src/data/productos.json", JSON.stringify(productUpdate, null, 3), "utf-8");
-     // return res.redirect('/admin/dashboard'+ req.params.id )
+     fs.writeFileSync("./src/data/productos.json", JSON.stringify(productUpdate, null, 3), "utf-8");
+     return res.redirect('/admin/dashboard')
     
-    return console.log(req.body);
+   
     },
 
 
@@ -76,12 +76,14 @@ module.exports = {
     },
     store : (req, res) => {
         const creador = require('../data/creador');
-	const imagen = req.file;
+	const image1 = req.file.image1;
+	const image2 = req.file.image2;
+
 	const {nombre, categoria, precio, stock, sabores, descuento, descripcion} = req.body;
-	const nuevoCreador = new creador(nombre, imagen,categoria, precio, stock, sabores, descuento, descripcion);
+	const nuevoCreador = new creador(nombre, image1, image2, categoria, precio, stock, sabores, descuento, descripcion);
 	productos.push(nuevoCreador);
 	pushProducts(productos);
-	return res.redirect("/")
+    return res.redirect('/admin/dashboard')
     },
     todos : (req,res) => {
         res.render('products/todos', {productos})

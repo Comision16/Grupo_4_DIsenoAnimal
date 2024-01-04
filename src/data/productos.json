@@ -1,6 +1,7 @@
 [
    {
       "id": 1,
+      "seccion": "visitados",
       "categoria": "ofertas",
       "nombre": "Balanceado Natural Choice",
       "imagen": "NaturalChoice.png",
@@ -37,7 +38,8 @@
    },
    {
       "id": 4,
-      "categoria": "visitados",
+      "seccion": "visitados",
+      "categoria": "perros",
       "nombre": "Pedigree Pouch Adulto",
       "imagen": "pedigree.png",
       "imagen2": "pedigreecarne.png",

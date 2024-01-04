@@ -45,12 +45,12 @@
                                 </div>
                           </div>
                           <div class="col-8 col-md-3 mb-3">
-                            <input name="images" type="file" class="form-control" id="images" hidden>
-                            <label class="btn btn-lg btn-outline-dark w-80" for="images">Imagen nº 1</label>
+                            <input name="image1" type="file" class="form-control" id="image1" hidden>
+                            <label class="btn btn-lg btn-outline-dark w-80" for="image1">Imagen nº 1</label>
                         </div>
                         <div class="col-10 col-md-3 mb-3">
-                          <input  name="images" type="file" class="form-control" id="images" hidden multiple>
-                          <label class="btn btn-lg btn-outline-dark w-80" for="images">Imagen nº2</label>
+                          <input  name="image2" type="file" class="form-control" id="image2" hidden>
+                          <label class="btn btn-lg btn-outline-dark w-80" for="image2">Imagen nº2</label>
                         </div>
                           <div class="col-12 col-md-4 mb-3">
                             <div class="form-floating">
@@ -79,7 +79,7 @@
                         </div>
                             <div class="col-12 col-md-4 mb-3">
                               <div class="form-floating">
-                                  <select name="flavor" class="form-select" id="flavor" aria-label="Floating label select example">
+                                  <select name="sabores" class="form-select" id="sabores" aria-label="Floating label select example">
                                       <option value="" selected hidden></option>
                                       <option value="Pescado"<%= sabores === 'Pescado' && 'selected'%>>Pescado</option>
                                       <option value="Pollo y Arroz" <%= sabores === 'Pollo y Arroz' && 'selected'%>>Pollo y Arroz</option>

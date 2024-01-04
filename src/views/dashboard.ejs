@@ -31,7 +31,7 @@
                   <tbody>
 
 
-                    <% productos.forEach(({id, nombre, descripcion, imagen, precio}, index)=> { %>
+                    <% productos.forEach(({id, nombre, descripcion, image1, image2, precio}, index)=> { %>
                       <tr>
                         <th scope="row">
                           <%= index + 1 %>
@@ -53,7 +53,7 @@
 
                             <button type="button" data-bs-toggle="modal" data-bs-target="#modalDelete<%= id %>" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
                             
-                            <%- include('./partials/modal-product-dashboard',{ id, nombre, descripcion, imagen, precio
+                            <%- include('./partials/modal-product-dashboard',{ id, nombre, descripcion, image1, image2, precio
                               }) %>
 
                             <%- include('./partials/modal-delete-product', { id, nombre }) %>
@@ -64,19 +64,6 @@
                       </tr>
 
                       <% }) %>
-
-
-                        <!-- <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td colspan="2">Larry the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr> -->
                   </tbody>
                 </table>
               </div>

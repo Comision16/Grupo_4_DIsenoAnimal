@@ -76,8 +76,8 @@ module.exports = {
     },
     store : (req, res) => {
         const creador = require('../data/creador');
-	const image1 = req.file.image1;
-	const image2 = req.file.image2;
+	const image1 = req.files.image1;
+	const image2 = req.files.image2;
 
 	const {nombre, categoria, precio, stock, sabores, descuento, descripcion} = req.body;
 	const nuevoCreador = new creador(nombre, image1, image2, categoria, precio, stock, sabores, descuento, descripcion);

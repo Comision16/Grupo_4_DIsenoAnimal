@@ -49,8 +49,8 @@ module.exports = {
         if (product.id == req.params.id) {
              
        product.nombre = nombre.trim(),
-          product.imagen = req.files.image1 ? req.files.image1[0].filename :  product.imagen,
-          product.imagen2 = req.files.image2 ? req.files.image2[0].filename :  product.imagen2,
+          product.image1 = req.files.image1 ? req.files.image1[0].filename :  product.image1,
+          product.image2 = req.files.image2 ? req.files.image2[0].filename :  product.image2,
           product.precio = +precio,
            product.descuento = +descuento,
             product.descripcion = descripcion.trim(),
@@ -76,8 +76,8 @@ module.exports = {
     },
     store : (req, res) => {
         const creador = require('../data/creador');
-	const image1 = req.files.image1;
-	const image2 = req.files.image2;
+	const image1 = req.file.image1;
+	const image2 = req.file.image2;
 
 	const {nombre, categoria, precio, stock, sabores, descuento, descripcion} = req.body;
 	const nuevoCreador = new creador(nombre, image1, image2, categoria, precio, stock, sabores, descuento, descripcion);

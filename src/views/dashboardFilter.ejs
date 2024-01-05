@@ -31,7 +31,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <% productos.forEach(({id, nombre, descripcion, imagen, precio})=> { %>
+                    <% productos.forEach(({id, nombre, descripcion, image1, precio})=> { %>
                       <tr>
                         <th scope="row">
                           <%= id %>
@@ -52,7 +52,7 @@
 
                             <button type="button" data-bs-toggle="modal" data-bs-target="#modalDelete<%= id %>" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
                             
-                            <%- include('./partials/modal-product-dashboard',{ id, nombre, descripcion, imagen, precio
+                            <%- include('./partials/modal-product-dashboard',{ id, nombre, descripcion, image1, precio
                               }) %>
 
                             <%- include('./partials/modal-delete-product', { id, nombre }) %>

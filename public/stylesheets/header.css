@@ -352,9 +352,7 @@
 }
 
 
-.header__div__lista ul li {
-    display: inline;
-}
+
 
 .header__div__lista li a {
     background-color: var(--ColorBlanco);
@@ -376,7 +374,7 @@
 .header__div__lista li ul {
     display: none;
     position: absolute;
-    min-width: 100px;
+    min-width: 130px;
     background-color: #FFFFFF;
     border-radius: 5px;
     width: 50px;
@@ -384,6 +382,7 @@
 
 .header__div__lista li:hover>ul {
     display: block;
+    padding-top: 5px;
 }
 
 
@@ -622,8 +621,10 @@
 
 
     .header__div__lista ul li {
-        margin: 0px 20px;
-
+        margin: 0px 20px 0px 5px;
+        width: 120px;
+        padding-bottom: 10px;
+        list-style-type: none;
     }
 
 

@@ -14,18 +14,20 @@ module.exports = {
             productos,idproducto 
             })
     },
-
     filtrados :(req,res) => {
-        const productos = leerJSON('productos');
+        
         const {categoria} = req.params;
-        const product = productos.filter(product => product.categoria == categoria);
-        // return console.log(req,params);
-        return res.render('products/productFilter', {productos, ...product})
+        const producto = productos.filter(product => product.categoria == categoria);
+       // return console.log(req.params);
+      // console.log(product)
+        return res.render('products/productFilter', {
+            producto })
             
             
     //    return res.send('el producto es' +
-    //             categoria) 
-    },
+    //             categoria) 
+    },
+    
     
 
 

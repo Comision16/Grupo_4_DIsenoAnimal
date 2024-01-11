@@ -8,9 +8,7 @@ const upload = require('../middlewares/upload');
 /* GET productos listing. */
 router
   .get('/detalle/:id?', detail )
-
-  .get('/productos',filtrados)
-
+  .get('/filtrados/:categoria',filtrados)
   
   .get('/editar-articulo/:id', edit)
   .put('/update/:id',  upload.fields([

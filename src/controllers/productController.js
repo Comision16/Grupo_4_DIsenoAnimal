@@ -14,18 +14,22 @@ module.exports = {
             productos,idproducto 
             })
     },
-
-    filtrados :(req,res) => {
-        const productos = leerJSON('productos');
-        const {categoria} = req.params;
-        const product = productos.filter(product => product.categoria == categoria);
-        // return console.log(req,params);
-        return res.render('products/productFilter', {productos, ...product})
-            
-            
-    //    return res.send('el producto es' +
-    //             categoria) 
+    gatos : (req, res) => {
+        return res.render('products/gatos',{
+            productos, 
+        })
     },
+    perros : (req, res) => {
+        return res.render('products/perros',{
+            productos , 
+        })
+    },
+    pequenios : (req, res) => {
+        return res.render('products/pequenios',{
+            productos , 
+        })
+    },
+    
     
 
 
@@ -64,7 +68,7 @@ module.exports = {
    
     },
 
-   
+
 
     create : (req,res) => {
         return res.render('products/product-create')

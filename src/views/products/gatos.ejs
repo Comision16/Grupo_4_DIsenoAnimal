@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head',{
+  title : "Gatos" 
+}) %>
+<link rel="icon" type="image/x-icon" href="/images/Favicon-gato.png" />
+<title>Cancat - Gatos</title>
+
+<body class="index__body">
+
+    
+    <%- include('../partials/header') %>
+
+
+  <main class="index__body__main">
+
+    
+  
+
+      <section class="index__body__main__section">
+        <h2 class="index__body__main__section--titulo">Gatos</h2>
+  
+  <% productos.filter(productos => productos.categoria == "gatos").forEach(productos => { %>
+    <%- include('../partials/productCard.ejs',{
+      ...productos
+    }) %>
+  
+  <% }) %>
+  <h2 class="index__body__main__section--titulo">Los recomendados del dia</h2>
+  <% productos.filter(productos => productos.categoria == "ofertas").forEach(productos => { %>
+    <%- include('../partials/productCard.ejs',{
+      ...productos
+    }) %>
+  
+  <% }) %>
+
+      
+    </section>
+  </main>
+
+  <%- include('../partials/footer') %>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      cssMode: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
+  </script>
+</body>
+
+</html>

@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
+const session = require("express-session");
 
 const indexRouter = require('./routes/index.routes');
 const usersRouter = require('./routes/users.routes');
@@ -29,7 +30,11 @@ app
   /* recursos estaticos */
   .use(express.static(path.join(__dirname, '..' ,'public')));
 
+  /* soporte para metodos PUT, PATCH Y DELETE */
   app.use(methodOverride('_method'))
+
+ /* CONFIGURACION DE SESSION */
+ .use(session({secret : "Diseño Animal"}));
 
   /* rutas */
 app

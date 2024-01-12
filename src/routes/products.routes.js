@@ -1,5 +1,5 @@
 const express = require('express');
-const {detail, gatos, perros, pequenios, edit , create, store, update, todos, search} = require('../controllers/productController');
+const {detail, edit , create, store, update, todos, search, filtrados} = require('../controllers/productController');
 const { remove } = require('../controllers/productsController');
 const router = express.Router();
 const upload = require('../middlewares/upload');

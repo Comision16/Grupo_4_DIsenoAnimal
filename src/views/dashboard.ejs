@@ -2,23 +2,63 @@
 <html lang="en">
 
 <%- include('./partials/head',{ title : "Dashboard" }) %>
-<%- include('./partials/scritps') %>
-<link rel="icon" type="image/x-icon" href="/images/favicon-dashboard.png">
-<title>Cancat - Dashboard</title>
+  <%- include('./partials/scritps') %>
+    <link rel="icon" type="image/x-icon" href="/images/favicon-dashboard.png">
+    <title>Cancat - Dashboard</title>
 
-  <body class="dashboard-body">
+    <body class="dashboard-body">
 
-    <%- include('./partials/header-dashboard') %>
+      <%- include('./partials/header-dashboard') %>
 
-      <main class="container mt-3">
-        <section class="row">
-          <div class="col-12 col-md-10 mx-auto">
-            <div class="card shadow rounded">
+        <main class="container mt-3">
+          <section class="row">
+            <div class="col-12 card-header d-flex justify-content-center mb-4">
+              <h3 class="card-title">Productos</h3>
+
+            </div>
+            <div class="col-1 col-md-10 col-lg-12 d-flex justify-content-center flex-wrap grid gap-3">
+              <% productos.forEach(({id, nombre, descripcion, image1, image2, precio}, index)=> { %>
+                <div class="card col-3 bg-light d-flex flex-xl-column justify-content-between">
+                  <div>
+                    <img class="mx-auto d-block my-3" src="/images/<%= image1 %>" alt=""
+                      style="max-width: 20%; max-height: 20%;">
+                    <div class="col-12">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item"> <strong>Id: </strong>
+                          <%= id %>
+                        </li>
+                        <li class="list-group-item"> <strong>Nombre: </strong>
+                          <%= nombre %>
+                        </li>
+                        <li class="list-group-item"> <strong> Descripcion: </strong>
+                          <%= descripcion %>
+                        </li>
+                        <li class="list-group-item"> <strong>Precio </strong>
+                          <%= precio %>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-around mb-3">
+                    <a class="btn btn-sm btn-info col-4" href="/productos/editar-articulo/<%= id %>">Editar</a>
+
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalDelete<%= id %>"
+                      class="btn btn-sm btn-primary col-4 align-bottom">Eliminar</button>
+                  </div>
+                </div>
+
+
+
+                <% }) %>
+            </div>
+            <!-- <div class="card shadow rounded">
               <div class="card-header d-flex justify-content-between">
                 <h4 class="card-title">Productos</h4>
                 <a class="btn btn-outline-primary" href="/productos/agregar-articulos">Nuevo Producto</a>
               </div>
               <div class="p-3 pb-0 table-responsive">
+
+
                 <table class="table table-striped">
                   <thead class="table-success">
                     <tr>
@@ -49,14 +89,16 @@
                               data-bs-target="#exampleModal<%= id %>">
                               <i class="fa-solid fa-eye"></i></a>
 
-                            <a class="btn btn-sm btn-outline-warning" href="/productos/editar-articulo/<%= id %>"><i class="fa-solid fa-pencil"></i></a>
+                            <a class="btn btn-sm btn-outline-warning" href="/productos/editar-articulo/<%= id %>"><i
+                                class="fa-solid fa-pencil"></i></a>
 
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#modalDelete<%= id %>" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
-                            
-                            <%- include('./partials/modal-product-dashboard',{ id, nombre, descripcion, image1, image2, precio
-                              }) %>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#modalDelete<%= id %>"
+                              class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
 
-                            <%- include('./partials/modal-delete-product', { id, nombre }) %>
+                            <%- include('./partials/modal-product-dashboard',{ id, nombre, descripcion, image1, image2,
+                              precio }) %>
+
+                              <%- include('./partials/modal-delete-product', { id, nombre }) %>
 
                           </div>
                         </td>
@@ -68,9 +110,9 @@
                 </table>
               </div>
             </div>
-          </div>
-        </section>
-      </main>
-  </body>
+            </div> -->
+          </section>
+        </main>
+    </body>
 
 </html>

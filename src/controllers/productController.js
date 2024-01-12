@@ -14,21 +14,19 @@ module.exports = {
             productos,idproducto 
             })
     },
-    gatos : (req, res) => {
-        return res.render('products/gatos',{
-            productos, 
-        })
-    },
-    perros : (req, res) => {
-        return res.render('products/perros',{
-            productos , 
-        })
-    },
-    pequenios : (req, res) => {
-        return res.render('products/pequenios',{
-            productos , 
-        })
-    },
+    filtrados :(req,res) => {
+        
+        const {categoria} = req.params;
+        const producto = productos.filter(product => product.categoria == categoria);
+       // return console.log(req.params);
+      // console.log(product)
+        return res.render('products/productFilter', {
+            producto })
+            
+            
+    //    return res.send('el producto es' +
+    //             categoria) 
+    },
     
     
 

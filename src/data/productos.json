@@ -99,7 +99,7 @@
    },
    {
       "id": 9,
-      "categoria": "ofertas",
+      "categoria": "pequenios",
       "nombre": "Pedigree Pouch Adulto",
       "image1": "pedigree.png",
       "image2": "pedigreecarne.png",
@@ -111,7 +111,7 @@
    },
    {
       "id": 10,
-      "categoria": "perros",
+      "categoria": "gatos",
       "nombre": "Balanceado Natural Choice",
       "image1": "NaturalChoice.png",
       "image2": "NaturalChoice.png",

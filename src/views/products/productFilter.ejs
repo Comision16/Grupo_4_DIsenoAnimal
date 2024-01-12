@@ -1,0 +1,31 @@
+<%- include('../partials/head',{ title : "Perros" }) %>
+
+  <body class="index__body">
+
+    <%- include('../partials/header') %>
+      <link rel="icon" type="image/x-icon" href="/images/favicon-perro.png" />
+      <title>CanCat - productos</title>
+
+
+      <main class="index__body__main">
+
+
+        <section class="index__body__main__section">
+          <h2 class="index__body__main__section--titulo">
+          <% if (producto) { %><%= producto[0].categoria %>
+          <% } else {%> 
+          <%= 'no me gusta nada aca '%>
+            
+           
+          <% } %></h2>
+
+          <% producto.forEach(product => { %>
+          <%- include('../partials/productCard.ejs',{ ...product }) %>
+          <% }) %>
+
+
+                  <%- include('../partials/footer') %>
+
+  </body>
+
+  </html>

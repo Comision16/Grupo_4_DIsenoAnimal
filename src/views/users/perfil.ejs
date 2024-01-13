@@ -1,13 +1,55 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-    
-    <%- include('../partials/head',{
-    title : "Perfil" 
-    }) %>
-    <body>
-        <form action="">
-            
-        </form>
-        <%- include('../partials/footer') %>
+
+<%- include('../partials/head.ejs' ,{ title : "Register" }) %>
+    <link rel="icon" type="image/x-icon" href="/images/favicon-register.png">
+    <title>Cancat - Registro</title>
+
+    <body class="perfil_body">
+
+        <%- include('../partials/header.ejs') %>
+
+            <main class="perfil_main">
+                <section>
+                    <div class="uno">
+                        <div>
+                            <div class="perfil_titulo">
+                                <h2>Perfil</h2>
+                            </div>
+                            <div class="perfil_titulo">
+                                <h2>Nombre del Usuario</h2>
+                            </div>
+                        </div>
+                        <div class="perfil_imagen_content">
+                            <img class="perfil_imagen" src="/images/fotoCeles.jpg" alt="">
+                        </div>
+                    </div>
+                    <form class="perfil_form" action="/" method="get">
+                        <div>
+                            <div class="perfil__form__div">
+                            <input type="text" name="nombre" placeholder="Nombre y Apellido" required minlength="8"
+                                maxlength="30">
+                            <input type="email" name="email" placeholder="Correo electronico" required minlength="5"
+                                maxlength="40">
+                        </div>
+                        <div class="perfil__form__div">
+                            <input type="password" name="password" placeholder="Contraseña" required minlength="8"
+                                maxlength="12">
+                            <input type="password" name="password" placeholder="Confirmar contraseña" required
+                                minlength="8" maxlength="12">
+                        </div>
+                        </div>                        
+                        
+                        <div class="perfil_form_button">
+                            <button type="submit">Cambiar datos</button>
+                        </div>
+
+                    </form>
+                </section>
+            </main>
+
+            <%- include('../partials/footer.ejs') %>
+
     </body>
-</html> -->
+
+</html>

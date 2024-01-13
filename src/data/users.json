@@ -1,38 +1,54 @@
 [
-    {
-        "Id": 1,
-         "Nombre": "Mariana",
-         "Apellido": "Barcena",
-         "Email": "marixd@gmail.com",
-         "Contraseña": "*******",
-         "Categoria": "admin",
-         "Imagen": "perfil"
-    },
-    {
-        "Id": 2,
-         "Nombre": "Nicolas",
-         "Apellido": "Oflaerti",
-         "Email": "email@gmail.com",
-         "Contraseña": "******",
-         "Categoria": "admin",
-         "Imagen": "perfil"
-    },
-    {
-        "Id": 3,
-         "Nombre": "Alejandro",
-         "Apellido": "Elias",
-         "Email": "email@gmail.com",
-         "Contraseña": "****",
-         "Categoria": "admin",
-         "Imagen": "perfil"
-    },
-    {
-        "Id": 4,
-         "Nombre": "Sasha",
-         "Apellido": "Toledo",
-         "Email": "example@gmail.com",
-         "Contraseña": "****",
-         "Categoria": "admin",
-         "Imagen": "perfil"
-    }
+   {
+      "Id": 1,
+      "Nombre": "Mariana",
+      "Apellido": "Barcena",
+      "Email": "marixd@gmail.com",
+      "Contraseña": "*******",
+      "Categoria": "admin",
+      "Imagen": "perfil"
+   },
+   {
+      "Id": 2,
+      "Nombre": "Nicolas",
+      "Apellido": "Oflaerti",
+      "Email": "email@gmail.com",
+      "Contraseña": "******",
+      "Categoria": "admin",
+      "Imagen": "perfil"
+   },
+   {
+      "Id": 3,
+      "Nombre": "Alejandro",
+      "Apellido": "Elias",
+      "Email": "email@gmail.com",
+      "Contraseña": "****",
+      "Categoria": "admin",
+      "Imagen": "perfil"
+   },
+   {
+      "Id": 4,
+      "Nombre": "Sasha",
+      "Apellido": "Toledo",
+      "Email": "example@gmail.com",
+      "Contraseña": "****",
+      "Categoria": "admin",
+      "Imagen": "perfil"
+   },
+   {
+      "id": "68f94765-2dc5-4bb1-b288-db713dd9bac6",
+      "name": "Nicolas Oflaerti",
+      "email": "Nikoofla@gmail.com",
+      "password": "$2a$10$LzPg1KcQij6sCgw2vMVe9u9fTWpmywRsTn/64MY6G6wIG8kKYTXyS",
+      "password2": "res.send(req",
+      "role": "user"
+   },
+   {
+      "id": "b4fc66ff-b4d8-4a29-bc67-ce26749e1ce4",
+      "name": "Nicolas Oflaerti",
+      "email": "Nikooa@gmail.com",
+      "password": "$2a$10$JS6YroVGqtjZC9h1PibQTOO9hFDp2TPPAy66xARL4xz7OnpfpTS3i",
+      "password2": "11111111",
+      "role": "user"
+   }
 ]

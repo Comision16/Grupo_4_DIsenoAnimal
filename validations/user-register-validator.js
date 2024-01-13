@@ -20,7 +20,7 @@ module.exports = [
             return true
         }).withMessage("Email ya registrado"),
     check("password")
-        .notEmpty().withMessage("contraseña obligatoria")
+        .notEmpty().withMessage("Contraseña obligatoria")
         .isLength({
             min: 6,
             max : 12

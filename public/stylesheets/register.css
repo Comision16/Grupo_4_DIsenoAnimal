@@ -1,4 +1,4 @@
-.register_main h1{
+.register_main h1 {
     color: var(--ColorAzul);
     font-size: 46px;
     text-align: center;
@@ -7,14 +7,15 @@
     padding-top: 5%;
     margin-left: 25px;
 }
-.register_main{
+
+.register_main {
     background-position: center center;
-    background-image:url(/images/background-login.jpg);
+    background-image: url(/images/background-login.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.register_form{
+.register_form {
     display: flex;
     flex-direction: column;
     margin-bottom: 10%;
@@ -22,22 +23,22 @@
     padding-bottom: 7%;
 }
 
-.register_form input{
-    padding: 3%;
-    margin: 2% 24%;
-    width: 52%;
+.register_form input {
+    padding: 2%;
+    margin: 1% 25%;
+    width: 50%;
     border: 2px solid var(--ColorAzul);
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-.register_main input::placeholder{
+.register_main input::placeholder {
     color: var(--ColorAzul);
     text-align: center;
     font-weight: bold;
 }
 
-.register_form button{
+.register_form button {
     width: 48%;
     margin-left: 26%;
     padding: 1%;
@@ -50,7 +51,68 @@
     transition: all 0.3s ease-in-out;
 }
 
-.register_form button:hover{
+.register_form button:hover {
     transform: scale(1.1);
     box-shadow: 13px 15px 37px black;
 }
+.box-alert{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.alert {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 150px;
+    color: red;
+    background-color: rgb(255 255 255 / 50%);
+    border-radius: 3px;
+    
+    
+}
+
+.remember {
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    color: #183561;
+    margin: 20px 0px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    grid-gap: 10px;
+ }
+  
+.remember-input{
+    width: 20px;
+    height: 18px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+}
+.remember-label{
+    width: 270px;
+    background-color: rgb(255 255 255 / 80%);
+    border-radius: 3px;
+}
+.alert-condiciones{ 
+   text-align: center;
+   
+
+}
+.alert-condiciones-small{
+    width: 250px;
+  color: red;
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(255 255 255 / 50%);
+    border-radius: 3px;
+}
+
+
+.register_form input[name="name"]:invalid {
+    border-color: red;
+    transition: border-color 0.5s ease-in-out;
+  }
+  

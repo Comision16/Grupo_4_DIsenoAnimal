@@ -51,7 +51,10 @@ module.exports = {
     logout :  (req, res) => {
 
     },
-    profile : (req,res) => {
-        
+    profile : (req,res) => {        
+
+        const usuarios = leerJSON('users')
+
+        return res.render("users/perfil")
     }
 }

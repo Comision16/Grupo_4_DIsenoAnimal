@@ -1,5 +1,5 @@
-.login_main h1{
-    font-size: 46px;
+.login_main h1 {
+    font-size: 48px;
     color: var(--ColorAzul);
     text-align: center;
     text-decoration: underline;
@@ -7,78 +7,113 @@
     padding-top: 5%;
     margin-left: 25px;
 }
-.login_main{
+
+.login_main {
     background-position: center center;
-    background-image:url(/images/background-login.jpg);
+    background-image: url(/images/background-login.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     padding-bottom: 7%;
 }
 
-.login_form{
+.login_form {
     display: flex;
+    font-size: 18px;
     flex-direction: column;
-    margin-bottom: 3%;
+    max-width: 450px;
+    margin: auto;
     color: var(--ColorAzul);
 }
 
-.login_form input{
-    padding: 3%;
-    margin: 2% 24%;
-    width: 52%;
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+}
+
+label {
+    font-size: 20px;
+    color: var(--ColorBlanco);
+    margin-bottom: 8px;
+    display: block;
+}
+
+input {
+    font-size : 18px;
+    padding: 15px;
+    width: calc(100% - 24px);
     border: 2px solid var(--ColorAzul);
-    border-radius: 10px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    font-size: 16px;
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+}
+
+.password-container input {
+    border-radius: 8px 0 0 8px;
+    flex-grow: 1;
+}
+
+.password-toggle {
+    border: 2px solid var(--ColorAzul);
+    border-radius: 0 8px 8px 0;
+    padding: 12px;
+    cursor: pointer;
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-.login_form input::placeholder{
-    color: var(--ColorAzul);
-    text-align: center;
-    font-weight: bold;
-}
-
-.login_form button{
-    width: 48%;
-    margin-left: 26%;
-    padding: 1%;
-    background-color: var(--ColorAzul);
-    border-radius: 20px;
-    color: var(--ColorBlanco);
-    font-weight: bold;
-    border-color: var(--ColorAzul);
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.login_form button:hover{
-    transform: scale(1.1);
-    box-shadow: 13px 15px 37px black;
-}
-
-.contraseña_olvidada{
-    color: #c8deff;
-    margin: 2% 5%;
-    width: 90%;
-    text-shadow: 0 0 8px rgba(0,0,0,0.8);
-    position: relative;
+.remember {
     display: flex;
-    justify-content: space-around;
-    cursor: pointer;
-}    
+    align-items: center;
+    margin-bottom: 20px;
+}
 
-.login_form2 button{
-    width: 48%;
-    margin-left: 26%;
-    padding: 1%;
-    background-color: var(--ColorCeleste);
-    border-radius: 20px;
+.remember label {
+    margin-left: 8px;
+    font-size: 16px;
+    color: var(--ColorBlanco);
+}
+
+.error-msg {
+    font-size: 18px;
+    color: red;
+    margin-top: 10px;
+}
+
+.invalid {
+    border-color: red;
+}
+
+/* Estilo de los dos botones , ingresar & registrate */
+.login_form button,
+.login_form2 button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    background-color: var(--ColorAzul);
+    border: 2px solid var(--ColorAzul);
+    border-radius: 8px;
     color: var(--ColorBlanco);
     font-weight: bold;
-    border-color: var(--ColorAzul);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
-.login_form2 button:hover{
+
+/* Estilo del boton para el hover */
+.login_form2 button:hover {
     transform: scale(1.1);
     box-shadow: 13px 15px 37px black;
+}
+
+/* color del boton de registro (es diferente al de ingresar) */
+.login_form2 button {
+    background-color: var(--ColorCeleste); 
+    border: 2px solid var(--ColorAzul);
 }

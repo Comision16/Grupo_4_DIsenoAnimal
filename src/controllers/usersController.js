@@ -9,7 +9,15 @@ module.exports = {
         
     },
     processLogin : (req, res) => {
-        
+        const errors = validationResult(req);
+        if(errors.isEmpty()){
+            return res.redirect ('/usuarios/perfil')
+
+        }else{
+            return res.render ('users/login', {
+                errors : errors.mapped()
+            })
+        }
     },
 
     register : (req, res) => {
@@ -44,6 +52,6 @@ module.exports = {
 
     },
     profile : (req,res) => {
-        
+        return res.render('users/perfil')
     }
 }

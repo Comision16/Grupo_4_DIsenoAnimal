@@ -1,40 +1,5 @@
 [
-   {
-      "Id": 1,
-      "Nombre": "Mariana",
-      "Apellido": "Barcena",
-      "Email": "marixd@gmail.com",
-      "Contraseña": "*******",
-      "Categoria": "admin",
-      "Imagen": "perfil"
-   },
-   {
-      "Id": 2,
-      "Nombre": "Nicolas",
-      "Apellido": "Oflaerti",
-      "Email": "email@gmail.com",
-      "Contraseña": "******",
-      "Categoria": "admin",
-      "Imagen": "perfil"
-   },
-   {
-      "Id": 3,
-      "Nombre": "Alejandro",
-      "Apellido": "Elias",
-      "Email": "email@gmail.com",
-      "Contraseña": "****",
-      "Categoria": "admin",
-      "Imagen": "perfil"
-   },
-   {
-      "Id": 4,
-      "Nombre": "Sasha",
-      "Apellido": "Toledo",
-      "Email": "example@gmail.com",
-      "Contraseña": "****",
-      "Categoria": "admin",
-      "Imagen": "perfil"
-   },
+  
    {
       "id": "68f94765-2dc5-4bb1-b288-db713dd9bac6",
       "name": "Nicolas Oflaerti",
@@ -49,6 +14,14 @@
       "email": "Nikooa@gmail.com",
       "password": "$2a$10$JS6YroVGqtjZC9h1PibQTOO9hFDp2TPPAy66xARL4xz7OnpfpTS3i",
       "password2": "11111111",
+      "role": "user"
+   },
+   {
+      "id": "0cc92d6c-0f3e-412e-b33c-ef7986bd16e9",
+      "name": "mariana mariana",
+      "email": "mari@example.com",
+      "password": "$2a$10$M9WZLofONSlcisNyWOKWvOR/bLJaTILQsigIMlFEp8xPe2p9sDn36",
+      "password2": "user123456",
       "role": "user"
    }
 ]

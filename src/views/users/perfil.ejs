@@ -17,25 +17,24 @@
                                 <h2>Perfil</h2>
                             </div>
                             <div class="perfil_titulo">
-                                <h2>Nombre del Usuario</h2>
+                                <h2><%= name %></h2>
                             </div>
                         </div>
                         <div class="perfil_imagen_content">
                             <img class="perfil_imagen" src="/images/fotoCeles.jpg" alt="">
                         </div>
                     </div>
-                    <form class="perfil_form" action="/" method="get">
+                    <form class="perfil_form" action="/usuarios/update/<%= id %>?_method=PUT" method="POST">
                         <div>
                             <div class="perfil__form__div">
-                            <input type="text" name="nombre" placeholder="Nombre y Apellido" required minlength="8"
-                                maxlength="30">
+                            <input type="text" name="name" placeholder="Nombre y Apellido" required minlength="8"
+                                maxlength="30" value="<%= name %>" >
                             <input type="email" name="email" placeholder="Correo electronico" required minlength="5"
-                                maxlength="40">
+                                maxlength="40" value="<%= email %>">
                         </div>
                         <div class="perfil__form__div">
-                            <input type="text" name="mascota" placeholder="Nombre Mascota">
-                            <input type="text" name="Especie" placeholder="Tipo de Mascota" required
-                                minlength="8" maxlength="12">
+                            <input type="text" name="mascota" placeholder="Nombre Mascota" value="<%= mascota %>" >
+                            <input type="text" name="especie" placeholder="Tipo de Mascota" value="<%= especie %>">
                         </div>
                         </div>                        
                         

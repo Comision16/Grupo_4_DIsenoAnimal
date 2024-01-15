@@ -10,7 +10,21 @@ module.exports = {
     },
     processLogin : (req, res) => {
         const errors = validationResult(req);
+        const dato = req.body
+
         if(errors.isEmpty()){
+
+            const {id, name, email, mascota, especie} = leerJSON('users').find(user => user.email == dato.email)
+
+            req.session.userLogin = {
+                id,
+                name,
+                email,
+                mascota,
+                especie,
+            }
+
+
             return res.redirect ('/usuarios/perfil')
 
         }else{
@@ -52,9 +66,40 @@ module.exports = {
 
     },
     profile : (req,res) => {        
+        
+        const usuario = req.session.userLogin
 
-        const usuarios = leerJSON('users')
+        return res.render("users/perfil", {
+            ...usuario
+        })
+    },
+    update : (req,res) => {       
 
-        return res.render("users/perfil")
+        const {name, email, mascota, especie} = req.body;
+        const { id } = req.params;
+
+        const usuarios = leerJSON('users');
+
+        const userUpdate = usuarios.map(usuario => {
+
+            if (usuario.id == id) {
+
+            usuario.name = name.trim(),
+            usuario.email = email.trim(),
+            usuario.mascota = mascota.trim(),
+            usuario.especie = especie.trim()                
+            }           
+
+            req.session.userUpdate = usuario
+            return usuario
+        });
+
+        escribirJSON(userUpdate, 'users')    
+        
+        const datosUsuario = req.session.userUpdate
+
+        return res.render("users/perfil", {
+            ...datosUsuario
+        })
     }
 }

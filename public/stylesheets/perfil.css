@@ -91,7 +91,23 @@
     margin-top: 30px;
 }
 
-.perfil_form button{
+.perfil__form__button {
+    width: 180px;
+    height: 35px;
+    padding: 8px;
+    background-color: var(--ColorAzul);
+    border-radius: 20px;
+    color: whitesmoke;
+    font-weight: bold;
+    border-color: var(--ColorAzul);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.perfil_form button {
     width: 150px;
     height: 35px;
     padding: 1%;

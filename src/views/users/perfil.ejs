@@ -17,29 +17,32 @@
                                 <h2>Perfil</h2>
                             </div>
                             <div class="perfil_titulo">
-                                <h2><%= name %></h2>
+                                <h2>
+                                    <%= name %>
+                                </h2>
                             </div>
                         </div>
                         <div class="perfil_imagen_content">
-                            <img class="perfil_imagen" src="/images/fotoCeles.jpg" alt="">
+                            <img class="perfil_imagen" src="/images/<%= imagen %>" alt="">
                         </div>
                     </div>
-                    <form class="perfil_form" action="/usuarios/update/<%= id %>?_method=PUT" method="POST">
+                    <form class="perfil_form" action="/usuarios/update/<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                         <div>
                             <div class="perfil__form__div">
-                            <input type="text" name="name" placeholder="Nombre y Apellido" required minlength="8"
-                                maxlength="30" value="<%= name %>" >
-                            <input type="email" name="email" placeholder="Correo electronico" required minlength="5"
-                                maxlength="40" value="<%= email %>">
+                                <input type="text" name="name" placeholder="Nombre y Apellido" required minlength="8"
+                                    maxlength="30" value="<%= name %>">
+                                <input type="email" name="email" placeholder="Correo electronico" required minlength="5"
+                                    maxlength="40" value="<%= email %>">
+                            </div>
+                            <div class="perfil__form__div">
+                                <input type="text" name="mascota" placeholder="Nombre Mascota" value="<%= mascota %>">
+                                <input type="text" name="especie" placeholder="Tipo de Mascota" value="<%= especie %>">
+                            </div>
                         </div>
-                        <div class="perfil__form__div">
-                            <input type="text" name="mascota" placeholder="Nombre Mascota" value="<%= mascota %>" >
-                            <input type="text" name="especie" placeholder="Tipo de Mascota" value="<%= especie %>">
-                        </div>
-                        </div>                        
-                        
+
                         <div class="perfil_form_button">
-                            <button type="submit">Cambiar Imagen</button>
+                            <input name="imagen" type="file" class="form-control" id="imagen" hidden>
+                            <label class="perfil__form__button" for="imagen">Cambiar Imagen</label>
                             <button type="submit">Cambiar datos</button>
                         </div>
 

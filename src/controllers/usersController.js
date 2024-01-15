@@ -14,7 +14,7 @@ module.exports = {
 
         if(errors.isEmpty()){
 
-            const {id, name, email, mascota, especie} = leerJSON('users').find(user => user.email == dato.email)
+            const {id, name, email, mascota, especie, imagen} = leerJSON('users').find(user => user.email == dato.email)
 
             req.session.userLogin = {
                 id,
@@ -22,6 +22,7 @@ module.exports = {
                 email,
                 mascota,
                 especie,
+                imagen
             }
 
 
@@ -80,6 +81,8 @@ module.exports = {
 
         const usuarios = leerJSON('users');
 
+        console.log(req.file);
+
         const userUpdate = usuarios.map(usuario => {
 
             if (usuario.id == id) {
@@ -87,7 +90,8 @@ module.exports = {
             usuario.name = name.trim(),
             usuario.email = email.trim(),
             usuario.mascota = mascota.trim(),
-            usuario.especie = especie.trim()                
+            usuario.especie = especie.trim(),    
+            usuario.imagen =  req.file ? req.file.filename : usuario.imagen            
             }           
 
             req.session.userUpdate = usuario

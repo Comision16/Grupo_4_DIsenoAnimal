@@ -10,6 +10,7 @@ const indexRouter = require('./routes/index.routes');
 const usersRouter = require('./routes/users.routes');
 const productsRouter = require('./routes/products.routes');
 const adminRouter = require('./routes/admin.routes');
+const transferLocals = require('./middlewares/transferLocals');
 
 const app = express();
 
@@ -35,6 +36,7 @@ app
 
  /* CONFIGURACION DE SESSION */
  .use(session({secret : "Diseño Animal"}));
+ app.use(transferLocals)
 
   /* rutas */
 app

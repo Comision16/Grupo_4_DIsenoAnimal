@@ -2,6 +2,7 @@ const { validationResult } = require("express-validator");
 const User = require("../data/User");
 const { leerJSON, escribirJSON } = require("../data");
 
+
 module.exports = {
     
     login : (req, res) => {

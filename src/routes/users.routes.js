@@ -16,6 +16,7 @@ router
   .get('/perfil', checkUserLogin, profile)
   .get("/salir", checkUserLogin, logout)
   
+  
 module.exports = router;
 
 

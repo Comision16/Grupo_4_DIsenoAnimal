@@ -8,7 +8,7 @@
       "role": "user",
       "mascota": "",
       "especie": "",
-      "imagen": ""
+      "imagen": "defaultUser.jpeg"
    },
    {
       "id": "b4fc66ff-b4d8-4a29-bc67-ce26749e1ce4",
@@ -19,7 +19,7 @@
       "role": "user",
       "mascota": "",
       "especie": "",
-      "imagen": ""
+      "imagen": "defaultUser.jpeg"
    },
    {
       "id": "0cc92d6c-0f3e-412e-b33c-ef7986bd16e9",
@@ -30,7 +30,7 @@
       "role": "user",
       "mascota": "",
       "especie": "",
-      "imagen": ""
+      "imagen": "defaultUser.jpeg"
    },
    {
       "id": "078a362e-c6b6-4512-b08e-b8fcd1856a7b",
@@ -41,14 +41,6 @@
       "role": "user",
       "mascota": "boby",
       "especie": "perro",
-      "imagen": "1705349604955producto.jpg"
-   },
-   {
-      "id": "582b0b81-c635-424b-9f96-0491ca50a71b",
-      "name": "juan",
-      "email": "toledosasha04@gmail.com",
-      "password": "$2a$10$O8Rl6PlOauTRBacVrnU9uuF34lmG.H4rv1FTnBWK1rdnbg6bix22u",
-      "password2": "12345678",
-      "role": "user"
+      "imagen": "1705364401445producto.jpg"
    }
 ]

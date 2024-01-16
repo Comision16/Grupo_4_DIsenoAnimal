@@ -11,6 +11,7 @@ const usersRouter = require('./routes/users.routes');
 const productsRouter = require('./routes/products.routes');
 const adminRouter = require('./routes/admin.routes');
 const transferLocals = require('./middlewares/transferLocals');
+const CheckCookie = require('./middlewares/CheckCookie');
 
 const app = express();
 
@@ -35,7 +36,13 @@ app
   app.use(methodOverride('_method'))
 
  /* CONFIGURACION DE SESSION */
- .use(session({secret : "Diseño Animal"}));
+ .use(session({
+  secret : "Diseño Animal",
+  resave : true,
+  saveUninitialized : true
+}));
+ 
+ app.use(CheckCookie )
  app.use(transferLocals)
 
   /* rutas */

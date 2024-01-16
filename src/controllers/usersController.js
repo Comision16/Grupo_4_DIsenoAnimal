@@ -1,5 +1,6 @@
 const { validationResult } = require("express-validator");
 const User = require("../data/User");
+const { existsSync, unlinkSync } = require('fs');
 const { leerJSON, escribirJSON } = require("../data");
 
 module.exports = {
@@ -24,6 +25,10 @@ module.exports = {
                 especie,
                 imagen
             }
+
+            dato.remember && res.cookie('animalDeUs3r_Cancat', req.session.userLogin, {
+                maxAge : 1000 * 60 * 5
+            })
 
 
             return res.redirect ('/usuarios/perfil')
@@ -67,8 +72,12 @@ module.exports = {
 
     },
     profile : (req,res) => {        
+
+        const {email} = req.session.userLogin
+
+        const users = leerJSON('users');
         
-        const usuario = req.session.userLogin
+        const usuario = users.find( user => user.email == email)
 
         return res.render("users/perfil", {
             ...usuario
@@ -79,13 +88,16 @@ module.exports = {
         const {name, email, mascota, especie} = req.body;
         const { id } = req.params;
 
+        
+        const imagenDelete = req.file.imagen;
+
+        console.log(imagenDelete);
+
         const usuarios = leerJSON('users');
-
-        console.log(req.file);
-
         const userUpdate = usuarios.map(usuario => {
-
             if (usuario.id == id) {
+
+            (imagenDelete && existsSync('public/images/' + usuario.imagen)) && unlinkSync('public/images/' + usuario.imagen)
 
             usuario.name = name.trim(),
             usuario.email = email.trim(),

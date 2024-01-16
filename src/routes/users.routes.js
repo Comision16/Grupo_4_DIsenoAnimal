@@ -16,8 +16,8 @@ router
   .post('/registro',userRegisterValidator, processRegister)
   /* .get('/perfil', profile) */
   .put('/update/:id', upload.single('imagen'), update)
-  .get('/perfil', checkUserLogin, profile)
-  .get("/salir", checkUserLogin, logout)
+  .get('/perfil/', profile)
+  .get("/salir", logout)
   
 module.exports = router;
 

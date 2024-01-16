@@ -16,7 +16,7 @@
 
                 <div class="form-group">
                     <label for="email">Correo electrónico</label>
-                    <input type="text" id="email" name="email" class="<%= locals.errors && errors.email ? 'invalid' : '' %>" value="<%= locals.old && old.email ? old.email : '' %>">
+                    <input class="login-input"  type="text" id="email" name="email" class="<%= locals.errors && errors.email ? 'invalid' : '' %>" value="<%= locals.old && old.email ? old.email : '' %>">
                     <div class="box-alert">
                         <small class="alert"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
                     </div>
@@ -25,7 +25,7 @@
                 <div class="form-group">
                     <label for="password">Contraseña</label>
                     <div class="password-container">
-                        <input type="password" id="password" name="password">
+                        <input class="<%= locals.errors && errors.email ? 'invalid' : '' %>" type="password" id="password" name="password" >
                         <span id="togglePassword" class="password-toggle">&#128065;</span>
                     </div>
                     <div class="box-alert">
@@ -34,18 +34,20 @@
                 </div>
 
                 <div class="remember">
-                    <input type="checkbox" id="remember" name="remember" <%= locals.remember ? 'checked' : '' %>>
+                    <input class="login-input"  type="checkbox" id="remember" name="remember" <%= locals.remember ? 'checked' : '' %>>
                     <label for="remember">Recordar Usuario</label>
                     <small class="alert-condiciones-small"><%= locals.errors && errors.remember ? errors.remember.msg : null %></small>
                 </div>
 
                 <button type="submit">Ingresar</button>
             </form>
-            <div>
+            <div class="new-password">
                 <a class="contraseña_olvidada" href="">¿Olvidaste tu contraseña?</a>
             </div>
             <form class="login_form2" action="/usuarios/registro" method="get">
+                <div class="button-login">
                 <button class ="login_form2" type="submit">Registrate</button>
+                </div>
             </form>
         </nav>
     </main>

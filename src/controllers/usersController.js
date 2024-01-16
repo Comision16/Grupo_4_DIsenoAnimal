@@ -26,12 +26,12 @@ module.exports = {
 
     processRegister : (req,res) => {
         const errors = validationResult(req);
-        const {name, email, password, password2} = req.body;
+        const {name, email, password} = req.body;
 
         if(errors.isEmpty()){
 
             const users = leerJSON('users');
-            const newUser = new User(name, email, password, password2);
+            const newUser = new User(name, email, password);
             
             users.push(newUser);
 

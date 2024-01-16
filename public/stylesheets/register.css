@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 10%;
-    color: var(--ColorAzul);
+    /* color: var(--ColorAzul); */
     padding-bottom: 7%;
 }
 
@@ -64,12 +64,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 150px;
+    width: 191px;
     color: red;
     background-color: rgb(255 255 255 / 50%);
     border-radius: 3px;
-    
-    
 }
 
 .remember {
@@ -95,6 +93,8 @@
     width: 270px;
     background-color: rgb(255 255 255 / 80%);
     border-radius: 3px;
+    height: 20px;
+    color: #183561;
 }
 .alert-condiciones{ 
    text-align: center;
@@ -111,8 +111,6 @@
 }
 
 
-.register_form input[name="name"]:invalid {
+  .invalid{
     border-color: red;
-    transition: border-color 0.5s ease-in-out;
-  }
-  
+ }

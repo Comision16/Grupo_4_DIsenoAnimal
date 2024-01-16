@@ -17,7 +17,7 @@
                 <form class="register_form" action="" method="POST">
                     <label for="name"></label>
                     <input 
-                    type="text" id="name" name="name"
+                    type="text" id="name" name="name" class="<%= locals.errors && errors.email ? 'invalid' : '' %>" 
                     <%= locals.errors && errors.name ? 'invalid' : null %> placeholder="Nombre y Apellido"  minlength="8" maxlength="30"
                     value="<%= locals.old && old.name ? old.name : null %>">
                     <div class="box-alert">    
@@ -44,8 +44,10 @@
                         <small class="alert"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></small>
                     </div>
                     <div class="remember">
-                        <div class="remember-input"><input  type="checkbox" id="remember" value="1"  name="remember"></div>
-                        <div class="remember-label"><label  for="remember">Acepto los términos y condiciones</label></div>
+                        <div class="remember-input">
+                            <input type="checkbox" id="remember" value="1"  name="remember"></div>
+                        <div class="remember-label">
+                            <label for="remember">Acepto los términos y condiciones</label></div>
                         <small class="alert-condiciones-small"><%= locals.errors && errors.remember ? errors.remember.msg : null %></small>
                   </div>
                     

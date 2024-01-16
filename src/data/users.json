@@ -1,5 +1,4 @@
 [
-  
    {
       "id": "68f94765-2dc5-4bb1-b288-db713dd9bac6",
       "name": "Nicolas Oflaerti",
@@ -22,6 +21,13 @@
       "email": "mari@example.com",
       "password": "$2a$10$M9WZLofONSlcisNyWOKWvOR/bLJaTILQsigIMlFEp8xPe2p9sDn36",
       "password2": "user123456",
+      "role": "user"
+   },
+   {
+      "id": "b1851abe-6ad9-478c-b566-bea4fe1cfcce",
+      "name": "new user",
+      "email": "new@gmail.com",
+      "password": "$2a$10$gCY68N1pwmeDzKnGqI/mUOc50NgQaiBM6YRuuuGmEz1yvfvOCBrkG",
       "role": "user"
    }
 ]

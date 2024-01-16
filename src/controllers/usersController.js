@@ -3,6 +3,7 @@ const User = require("../data/User");
 const { existsSync, unlinkSync } = require('fs');
 const { leerJSON, escribirJSON } = require("../data");
 
+
 module.exports = {
     
     login : (req, res) => {

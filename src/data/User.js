@@ -10,7 +10,7 @@ function User(nombre, email, password,password2) {
     this.role = "user";
     this.mascota = "";
     this.especie = "";
-    this.img = "defaultUser.jpeg";
+    this.imagen = "defaultUser.jpeg";
 }
 
 module.exports = User

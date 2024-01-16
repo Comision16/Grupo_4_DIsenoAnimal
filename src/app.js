@@ -43,7 +43,7 @@ app
 }));
  
  app.use(CheckCookie )
- app.use(transferLocals)
+/*  app.use(transferLocals) */
 
   /* rutas */
 app

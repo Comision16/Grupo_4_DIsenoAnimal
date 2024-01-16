@@ -89,7 +89,7 @@ module.exports = {
         const {name, email, mascota, especie} = req.body;
         const { id } = req.params;
         
-        const imagenDelete = req.file.fieldname;
+        const imagenDelete = req.file ? req.file.fieldname : null  ;
 
         const usuarios = leerJSON('users');
         const userUpdate = usuarios.map(usuario => {
@@ -108,9 +108,10 @@ module.exports = {
             return usuario
         });
 
-        escribirJSON(userUpdate, 'users')    
-        
-        const datosUsuario = req.session.userUpdate
+        escribirJSON(userUpdate, 'users')  
+    
+        const datosUsuario = userUpdate.find( user => user.id == id);
+        req.session.userUpdate = datosUsuario
 
         return res.render("users/perfil", {
             ...datosUsuario

@@ -10,12 +10,12 @@ const upload = require('../middlewares/upload');
 
 /* GET users listing. */
 router
-  .get('/ingreso', checkUserLogin, login)
+  .get('/ingreso', checkAuth, login)
   .post("/ingreso",userLogin, processLogin)
   .get('/registro', checkAuth, register)
   .post('/registro',userRegisterValidator, processRegister)
   .put('/update/:id', upload.single('imagen'), update)
-  .get('/perfil/', profile)
+  .get('/perfil/', checkUserLogin, profile)
   .get("/salir", logout)
   
   

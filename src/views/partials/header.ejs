@@ -12,9 +12,14 @@
 
         <div class="header__div__register--login">
             <i class="fa-solid fa-user-plus"></i>
+            <% if (locals.userLogin) { %>
+             <a class="header__div__login" href="/usuarios/perfil">Mi perfil</a> 
+             <a class="header__div__login" href="/usuarios/salir">Cerrar sesión</a> 
+            <% } else { %>
             <a class="header__div__register" href="/usuarios/registro">Regístrate</a>
             <a class="header__div__login" href="/usuarios/ingreso">Iniciar Sesion</a>
-            <a class="header__div__login" href="/usuarios/perfil">Perfil</a>
+            <% } %>
+            
         </div>
 
         <div class="header__div__menu-hambuerguesa">

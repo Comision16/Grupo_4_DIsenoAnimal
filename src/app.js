@@ -41,9 +41,10 @@ app
   resave : true,
   saveUninitialized : true
 }));
+app.use(transferLocals);
  
  app.use(CheckCookie )
-/*  app.use(transferLocals) */
+
 
   /* rutas */
 app

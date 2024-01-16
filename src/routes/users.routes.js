@@ -14,7 +14,6 @@ router
   .post("/ingreso",userLogin, processLogin)
   .get('/registro', checkAuth, register)
   .post('/registro',userRegisterValidator, processRegister)
-  /* .get('/perfil', profile) */
   .put('/update/:id', upload.single('imagen'), update)
   .get('/perfil/', profile)
   .get("/salir", logout)

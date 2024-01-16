@@ -72,9 +72,9 @@ module.exports = {
     logout :  (req, res) => {
 
     },
-    profile : (req,res) => {        
+    profile : (req,res) => {    
 
-        const {email} = req.session.userLogin
+        const {email} = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat
 
         const users = leerJSON('users');
         
@@ -88,11 +88,8 @@ module.exports = {
 
         const {name, email, mascota, especie} = req.body;
         const { id } = req.params;
-
         
-        const imagenDelete = req.file.imagen;
-
-        console.log(imagenDelete);
+        const imagenDelete = req.file.fieldname;
 
         const usuarios = leerJSON('users');
         const userUpdate = usuarios.map(usuario => {

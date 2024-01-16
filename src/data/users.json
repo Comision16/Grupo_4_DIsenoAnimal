@@ -5,7 +5,10 @@
       "email": "Nikoofla@gmail.com",
       "password": "$2a$10$LzPg1KcQij6sCgw2vMVe9u9fTWpmywRsTn/64MY6G6wIG8kKYTXyS",
       "password2": "res.send(req",
-      "role": "user"
+      "role": "user",
+      "mascota": "",
+      "especie": "",
+      "imagen": "defaultUser.jpeg"
    },
    {
       "id": "b4fc66ff-b4d8-4a29-bc67-ce26749e1ce4",
@@ -13,7 +16,10 @@
       "email": "Nikooa@gmail.com",
       "password": "$2a$10$JS6YroVGqtjZC9h1PibQTOO9hFDp2TPPAy66xARL4xz7OnpfpTS3i",
       "password2": "11111111",
-      "role": "user"
+      "role": "user",
+      "mascota": "",
+      "especie": "",
+      "imagen": "defaultUser.jpeg"
    },
    {
       "id": "0cc92d6c-0f3e-412e-b33c-ef7986bd16e9",
@@ -21,13 +27,20 @@
       "email": "mari@example.com",
       "password": "$2a$10$M9WZLofONSlcisNyWOKWvOR/bLJaTILQsigIMlFEp8xPe2p9sDn36",
       "password2": "user123456",
-      "role": "user"
+      "role": "user",
+      "mascota": "",
+      "especie": "",
+      "imagen": "defaultUser.jpeg"
    },
    {
-      "id": "b1851abe-6ad9-478c-b566-bea4fe1cfcce",
-      "name": "new user",
-      "email": "new@gmail.com",
-      "password": "$2a$10$gCY68N1pwmeDzKnGqI/mUOc50NgQaiBM6YRuuuGmEz1yvfvOCBrkG",
-      "role": "user"
+      "id": "078a362e-c6b6-4512-b08e-b8fcd1856a7b",
+      "name": "Alejandro Elias",
+      "email": "alejandroelias25@gmail.com",
+      "password": "$2a$10$zn1JfBaxmo.Cp5VmPkJF8OZVB3aBDqPHixTRyA.fb1aFW5VMr22.a",
+      "password2": "12345678",
+      "role": "user",
+      "mascota": "boby",
+      "especie": "perro",
+      "imagen": "1705419614601producto.jpg"
    }
 ]

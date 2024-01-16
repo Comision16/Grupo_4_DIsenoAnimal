@@ -7,7 +7,9 @@ function User(nombre, email, password) {
     this.email = email.trim();
     this.password = bcryptjs.hashSync(password.trim(), 10);
     this.role = "user";
-
+    this.mascota = "";
+    this.especie = "";
+    this.imagen = "defaultUser.jpeg";
 }
 
 module.exports = User

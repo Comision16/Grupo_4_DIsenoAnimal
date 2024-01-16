@@ -1,6 +1,8 @@
 const { validationResult } = require("express-validator");
 const User = require("../data/User");
+const { existsSync, unlinkSync } = require('fs');
 const { leerJSON, escribirJSON } = require("../data");
+
 
 module.exports = {
     
@@ -10,7 +12,26 @@ module.exports = {
     },
     processLogin : (req, res) => {
         const errors = validationResult(req);
+        const dato = req.body
+
         if(errors.isEmpty()){
+
+            const {id, name, email, mascota, especie, imagen} = leerJSON('users').find(user => user.email == dato.email)
+
+            req.session.userLogin = {
+                id,
+                name,
+                email,
+                mascota,
+                especie,
+                imagen
+            }
+
+            dato.remember && res.cookie('animalDeUs3r_Cancat', req.session.userLogin, {
+                maxAge : 1000 * 60 * 5
+            })
+
+
             return res.redirect ('/usuarios/perfil')
 
         }else{
@@ -51,7 +72,49 @@ module.exports = {
     logout :  (req, res) => {
 
     },
-    profile : (req,res) => {
-        return res.render('users/perfil')
+    profile : (req,res) => {    
+
+        const {email} = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat
+
+        const users = leerJSON('users');
+        
+        const usuario = users.find( user => user.email == email)
+
+        return res.render("users/perfil", {
+            ...usuario
+        })
+    },
+    update : (req,res) => {       
+
+        const {name, email, mascota, especie} = req.body;
+        const { id } = req.params;
+        
+        const imagenDelete = req.file ? req.file.fieldname : null  ;
+
+        const usuarios = leerJSON('users');
+        const userUpdate = usuarios.map(usuario => {
+            if (usuario.id == id) {
+
+            (imagenDelete && existsSync('public/images/' + usuario.imagen)) && unlinkSync('public/images/' + usuario.imagen)
+
+            usuario.name = name.trim(),
+            usuario.email = email.trim(),
+            usuario.mascota = mascota.trim(),
+            usuario.especie = especie.trim(),    
+            usuario.imagen =  req.file ? req.file.filename : usuario.imagen            
+            }           
+
+            req.session.userUpdate = usuario
+            return usuario
+        });
+
+        escribirJSON(userUpdate, 'users')  
+    
+        const datosUsuario = userUpdate.find( user => user.id == id);
+        req.session.userUpdate = datosUsuario
+
+        return res.render("users/perfil", {
+            ...datosUsuario
+        })
     }
 }

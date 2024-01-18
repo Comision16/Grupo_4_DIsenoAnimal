@@ -16,7 +16,7 @@ module.exports = {
 
         if(errors.isEmpty()){
 
-            const {id, name, email, mascota, especie, imagen} = leerJSON('users').find(user => user.email == dato.email)
+            const {id, name, email, mascota, especie, imagen, role} = leerJSON('users').find(user => user.email == dato.email)
 
             req.session.userLogin = {
                 id,
@@ -24,7 +24,8 @@ module.exports = {
                 email,
                 mascota,
                 especie,
-                imagen
+                imagen,
+                role
             }
 
             dato.remember && res.cookie('animalDeUs3r_Cancat', req.session.userLogin, {
@@ -70,7 +71,9 @@ module.exports = {
 
     },
     logout :  (req, res) => {
+        req.session.destroy()
 
+        return res.redirect("/")
     },
     profile : (req,res) => {    
 
@@ -86,8 +89,11 @@ module.exports = {
     },
     update : (req,res) => {       
 
+        const errors = validationResult(req);
         const {name, email, mascota, especie} = req.body;
         const { id } = req.params;
+
+        if(errors.isEmpty()) {
         
         const imagenDelete = req.file ? req.file.fieldname : null  ;
 
@@ -115,6 +121,16 @@ module.exports = {
 
         return res.render("users/perfil", {
             ...datosUsuario
+            
         })
+
+        }else {
+            datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
+            return res.render('users/perfil',{
+                ...datosUsuario,
+                old : req.body,
+                errors : errors.mapped()
+            })
+        }
     }
 }

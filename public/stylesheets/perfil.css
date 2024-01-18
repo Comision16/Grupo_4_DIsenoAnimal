@@ -72,10 +72,23 @@
 .perfil_form input{
     padding: 1%;
     margin: 3%;
-    width: 56%;
+    width: 250px;
     border: 2px solid var(--ColorAzul);
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.8);
+    margin-left: 20px;
+}
+
+.perfil_alert {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 191px;
+    color: red;
+    background-color: rgb(255 255 255 / 50%);
+    border-radius: 3px;
+    margin-left: 25px;
+    text-align: start;
 }
 
 .perfil_main input::placeholder{

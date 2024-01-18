@@ -12,10 +12,14 @@
 
         <div class="header__div__register--login">
             <i class="fa-solid fa-user-plus"></i>
+            <% if (locals.userLogin) { %>             
+            <a class="header__div__login" href="/usuarios/perfil">Perfil</a>
+            <a class="header__div__login" href="/usuarios/salir">Cerrar sesión</a>
+            <% } else { %>  
             <a class="header__div__register" href="/usuarios/registro">Regístrate</a>
             <a class="header__div__login" href="/usuarios/ingreso">Iniciar Sesion</a>
-            <a class="header__div__login" href="/usuarios/perfil">Perfil</a>
-        </div>
+            <% } %>  
+        </div>     
 
         <div class="header__div__menu-hambuerguesa">
             <!-- <i class="fas fa-bars"></i> -->
@@ -119,7 +123,12 @@
 
                 <li><a href="/productos/filtrados/ofertas">Ofertas</a></li>
                 <li><a href="/productos/todos">Todos los Productos</a></li>
-                <li><a href="/admin/dashboard">Dashboard</a></li>
+                <% if (locals.userLogin) { %>                 
+                    <% if (userLogin.role === "admin") { %>
+                     
+                    <li><a href="/admin/dashboard">Dashboard</a></li>
+                    <% } %>
+                <% } %>
 
             </ul>
 

@@ -38,9 +38,9 @@
       "email": "alejandroelias25@gmail.com",
       "password": "$2a$10$zn1JfBaxmo.Cp5VmPkJF8OZVB3aBDqPHixTRyA.fb1aFW5VMr22.a",
       "password2": "12345678",
-      "role": "user",
-      "mascota": "boby",
-      "especie": "perro",
-      "imagen": "1705419614601producto.jpg"
+      "role": "admin",
+      "mascota": "toto",
+      "especie": "Gato",
+      "imagen": "1705547794239producto.png"
    }
 ]

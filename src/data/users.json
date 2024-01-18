@@ -4,11 +4,11 @@
       "name": "Nicolas Oflaerti",
       "email": "Nikoofla@gmail.com",
       "password": "$2a$10$LzPg1KcQij6sCgw2vMVe9u9fTWpmywRsTn/64MY6G6wIG8kKYTXyS",
-      "password2": "res.send(req",
-      "role": "user",
-      "mascota": "",
-      "especie": "",
-      "imagen": "defaultUser.jpeg"
+      
+      "role": "admin",
+      "mascota": "lola",
+      "especie": "gato",
+      "imagen": "1705589081426producto.png"
    },
    {
       "id": "b4fc66ff-b4d8-4a29-bc67-ce26749e1ce4",
@@ -16,7 +16,7 @@
       "email": "Nikooa@gmail.com",
       "password": "$2a$10$JS6YroVGqtjZC9h1PibQTOO9hFDp2TPPAy66xARL4xz7OnpfpTS3i",
       "password2": "11111111",
-      "role": "user",
+      "role": "admin",
       "mascota": "",
       "especie": "",
       "imagen": "defaultUser.jpeg"

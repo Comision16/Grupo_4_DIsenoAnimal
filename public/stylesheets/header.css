@@ -42,11 +42,10 @@
 
 .header__div__register--login {
     width: 45%;
-
     display: flex;
     flex-direction: column;
     height: auto;
-    align-items: end;
+    align-items: center;
     padding: 5% 0px;
 
 
@@ -64,6 +63,15 @@
     color: #183561;
     font-size: 1.5rem;
     display: none;
+}
+
+.header_imagen_content {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid white;
+    padding: 3px;
+    background-color: var(--ColorAzul);
 }
 
 /* (menu hamburguesa - barra de busqueda - carrito) */
@@ -303,6 +311,13 @@
 .header__div__carrito-de-compras-icono {
     position: relative;
 }
+
+.header_imagen_y_nombre {
+    height: 50px;
+    width: 50px;
+}
+
+
 
 .header__div__carrito-de-compras-icono i {
     color: #183561;

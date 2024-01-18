@@ -11,7 +11,7 @@
     border-left: none;
 }
 
-.uno {
+.Perfil_imagen_y_titulo {
     display: flex;
     flex-direction: row;
     justify-content: space-between;

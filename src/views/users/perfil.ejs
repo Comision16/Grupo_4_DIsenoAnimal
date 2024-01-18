@@ -31,37 +31,47 @@
                         <div>
                             <div class="perfil__form__div">
                                 <div>
-                                <input type="text" name="name" placeholder="Nombre y Apellido" minlength="8"
-                                    maxlength="30" value="<%= locals.old && old.name ? old.name : name %>">
+                                    <label class="perfil_form_div_label" for="name">Nombre y Apellido</label>
+                                    <input type="text" name="name" id="name" placeholder="Nombre y Apellido" minlength="8"
+                                        maxlength="30" value="<%= locals.old && old.name ? old.name : name %>">
 
-                                    <small class="perfil_alert" class="perfil_alert"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
-                                    
+                                    <small class="perfil_alert" class="perfil_alert">
+                                        <%= locals.errors && errors.name ? errors.name.msg : null %>
+                                    </small>
+
                                 </div>
                                 <div class="perfil___form__div">
+                                  <label class="perfil_form_div_label" for="email">Correo electronico</label>
+                                    <input type="email" name="email" id="email" placeholder="Correo electronico" minlength="5"
+                                        maxlength="40" value="<%= locals.old && old.email ? old.email : email %>">
 
-                                <input type="email" name="email" placeholder="Correo electronico" minlength="5"
-                                    maxlength="40" value="<%= locals.old && old.email ? old.email : email %>">
-
-                                    <small class="perfil_alert" class="perfil_alert"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
+                                    <small class="perfil_alert" class="perfil_alert">
+                                        <%= locals.errors && errors.email ? errors.email.msg : null %>
+                                    </small>
 
                                 </div>
 
                             </div>
                             <div class="perfil__form__div">
                                 <div>
-                                    <input type="text" name="mascota" placeholder="Nombre Mascota"
-                                    value="<%= locals.old && old.mascota ? old.mascota : mascota %>">
+                                  <label class="perfil_form_div_label" for="mascota">Nombre de Mascota</label>
+                                    <input type="text" name="mascota" id="mascota" placeholder="Nombre Mascota"
+                                        value="<%= locals.old && old.mascota ? old.mascota : mascota %>">
 
-                                    <small class="perfil_alert" class="perfil_alert"><%= locals.errors && errors.mascota ? errors.mascota.msg : null %></small>
+                                    <small class="perfil_alert" class="perfil_alert">
+                                        <%= locals.errors && errors.mascota ? errors.mascota.msg : null %>
+                                    </small>
 
                                 </div>
 
                                 <div>
+                                  <label class="perfil_form_div_label" for="especie">Tipo de Mascota</label>
+                                    <input type="text" name="especie" id="especie" placeholder="Tipo de Mascota"
+                                        value="<%= locals.old && old.especie ? old.especie : especie %>">
 
-                                    <input type="text" name="especie" placeholder="Tipo de Mascota"
-                                    value="<%= locals.old && old.especie ? old.especie : especie %>">
-
-                                    <small class="perfil_alert" class="perfil_alert"><%= locals.errors && errors.especie ? errors.especie.msg : null %></small>
+                                    <small class="perfil_alert" class="perfil_alert">
+                                        <%= locals.errors && errors.especie ? errors.especie.msg : null %>
+                                    </small>
 
                                 </div>
                             </div>
@@ -70,7 +80,7 @@
                         <div class="perfil_form_button">
                             <input name="imagen" type="file" class="form-control" id="imagen" hidden>
                             <label class="perfil__form__button" for="imagen">Cambiar Imagen</label>
-                            <button type="submit">Cambiar datos</button>
+                            <button type="submit">Actualizar datos</button>
                         </div>
 
                     </form>

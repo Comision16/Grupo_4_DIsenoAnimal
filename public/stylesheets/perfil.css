@@ -5,7 +5,7 @@
 .perfil_titulo {
     background-color: var(--ColorAzul);
     width: fit-content;
-    border-radius: 0 20px 20px 0;   
+    border-radius: 0 20px 20px 0;
     padding: 0 25px;
     margin: 10px 0;
     border-left: none;
@@ -28,24 +28,25 @@
     background-color: var(--ColorAzul);
 }
 
-.perfil_imagen {    
+.perfil_imagen {
     border-radius: 50%;
     object-fit: cover;
     object-position: center center;
     width: 100%;
-    height: 100%;  
+    height: 100%;
 }
 
-.perfil_main h2{
+.perfil_main h2 {
     color: whitesmoke;
     font-size: 20px;
     padding: 5px 0;
     margin: 0 1px;
     text-wrap: nowrap;
 }
-.perfil_main{
+
+.perfil_main {
     background-position: center;
-    background-image:url(/images/background-login.jpg);
+    background-image: url(/images/background-login.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 10px;
@@ -54,7 +55,7 @@
     border-radius: 5px;
 }
 
-.perfil_form{
+.perfil_form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,10 +67,21 @@
 
 .perfil__form__div {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
-.perfil_form input{
+.perfil_form_div_label {
+    font-size: 14px;
+    background-color: var(--ColorAzul);
+    width: 150px;
+    padding: 2px 2px 4px;
+    margin-left: 25px;
+    margin-bottom: -9px;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+}
+
+.perfil_form input {
     padding: 1%;
     margin: 3%;
     width: 250px;
@@ -91,7 +103,7 @@
     text-align: start;
 }
 
-.perfil_main input::placeholder{
+.perfil_main input::placeholder {
     color: var(--ColorAzul);
     text-align: center;
     font-weight: bold;
@@ -134,15 +146,20 @@
     margin-right: 10px;
 }
 
-.perfil_form button:hover{
+.perfil_form button:hover {
     transform: scale(1.1);
     box-shadow: 13px 15px 37px black;
 }
 
 @media (min-width: 480px) {
     .perfil_main {
-        box-shadow: 6px 8px 20px -6px rgba(0,0,0,0.8);
-        -webkit-box-shadow: 6px 8px 20px -6px rgba(0,0,0,0.8);
-        -moz-box-shadow: 6px 8px 20px -6px rgba(0,0,0,0.8);
+        box-shadow: 6px 8px 20px -6px rgba(0, 0, 0, 0.8);
+        -webkit-box-shadow: 6px 8px 20px -6px rgba(0, 0, 0, 0.8);
+        -moz-box-shadow: 6px 8px 20px -6px rgba(0, 0, 0, 0.8);
+    }
+
+    .perfil__form__div {
+        display: flex;
+        flex-direction: row;
     }
 }

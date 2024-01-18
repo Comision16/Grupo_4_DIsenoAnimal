@@ -4,6 +4,7 @@ const userRegisterValidator = require('../../validations/user-register-validator
 const userLogin = require('../../validations/userLogin');
 const checkUserLogin = require('../middlewares/checkUserLogin');
 const checkAuth = require('../middlewares/checkAuth');
+const perfilValidations = require('../../validations/perfilValidations')
 
 const router = express.Router();
 const upload = require('../middlewares/upload');
@@ -11,7 +12,7 @@ const userPerfil = require('../../validations/userPerfil');
 
 /* GET users listing. */
 router
-  .get('/ingreso', checkUserLogin, login)
+  .get('/ingreso', checkAuth, login)
   .post("/ingreso",userLogin, processLogin)
   .get('/registro', checkAuth, register)
   .post('/registro',userRegisterValidator, processRegister)

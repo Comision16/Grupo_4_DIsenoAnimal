@@ -6,9 +6,10 @@ const inscribiteJSON = leerJSON('inscribite');
 module.exports = {
 
     index : (req,res) => {
+        console.log(req.session.userLogin)
         /*return res.send(productos)*/
         return res.render('index', {
-            productos , 
+            productos  
         })
         
         },

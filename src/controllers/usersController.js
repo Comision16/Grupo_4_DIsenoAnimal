@@ -71,7 +71,10 @@ module.exports = {
 
     },
     logout :  (req, res) => {
-        req.session.destroy()
+        req.session.destroy();
+        res.cookie('animalDeUs3r_Cancat',null,{
+            maxAge : -1
+        })
 
         return res.redirect("/")
     },

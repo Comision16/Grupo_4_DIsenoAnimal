@@ -11,7 +11,18 @@
         </div>
 
         <div class="header__div__register--login">
-            <i class="fa-solid fa-user-plus"></i>
+            <% if (locals.userLogin) { %>
+                <div class="header_imagen_y_nombre">
+                    <div class="header_imagen_content">
+                <img class="perfil_imagen" src="/images/<%= imagen %>" alt="">
+            </div>
+                </div>
+             
+            <% } else {  %>
+                <i class="fa-solid fa-user-plus"></i>
+            <% } %>
+            
+            
             <% if (locals.userLogin) { %>             
             <a class="header__div__login" href="/usuarios/perfil">Perfil</a>
             <a class="header__div__login" href="/usuarios/salir">Cerrar sesión</a>

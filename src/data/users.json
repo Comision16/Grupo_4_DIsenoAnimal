@@ -4,7 +4,6 @@
       "name": "Nicolas Oflaerti",
       "email": "Nikoofla@gmail.com",
       "password": "$2a$10$LzPg1KcQij6sCgw2vMVe9u9fTWpmywRsTn/64MY6G6wIG8kKYTXyS",
-      
       "role": "admin",
       "mascota": "lola",
       "especie": "gato",
@@ -41,6 +40,6 @@
       "role": "admin",
       "mascota": "toto",
       "especie": "Gato",
-      "imagen": "1705547794239producto.png"
+      "imagen": "1705619248838producto.png"
    }
 ]

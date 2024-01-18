@@ -6,10 +6,11 @@ const inscribiteJSON = leerJSON('inscribite');
 module.exports = {
 
     index : (req,res) => {
-        console.log(req.session.userLogin)
+        datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
         /*return res.send(productos)*/
         return res.render('index', {
-            productos  
+            productos, 
+            datosUsuario 
         })
         
         },

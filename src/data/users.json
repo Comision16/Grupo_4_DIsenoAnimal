@@ -26,10 +26,10 @@
       "email": "mari@example.com",
       "password": "$2a$10$M9WZLofONSlcisNyWOKWvOR/bLJaTILQsigIMlFEp8xPe2p9sDn36",
       "password2": "user123456",
-      "role": "user",
-      "mascota": "",
-      "especie": "",
-      "imagen": "defaultUser.jpeg"
+      "role": "admin",
+      "mascota": "Negra",
+      "especie": "Perro",
+      "imagen": "1705673684287producto.jpg"
    },
    {
       "id": "078a362e-c6b6-4512-b08e-b8fcd1856a7b",

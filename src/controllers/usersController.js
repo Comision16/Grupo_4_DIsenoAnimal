@@ -5,7 +5,6 @@ const { leerJSON, escribirJSON } = require("../data");
 
 
 module.exports = {
-    
     login : (req, res) => {
         return res.render('users/login')
         
@@ -36,14 +35,17 @@ module.exports = {
             return res.redirect ('/usuarios/perfil')
 
         }else{
+            datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
             return res.render ('users/login', {
-                errors : errors.mapped()
+                errors : errors.mapped(),
+                datosUsuario
             })
         }
     },
 
     register : (req, res) => {
-        return res.render('users/register')
+        return res.render('users/register', {
+        })
     },
 
     processRegister : (req,res) => {
@@ -63,9 +65,11 @@ module.exports = {
             
 
         }else{
+            datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
             return res.render('users/register',{
                 old : req.body,
-                errors : errors.mapped()
+                errors : errors.mapped(),
+                datosUsuario
             })
         }
 
@@ -80,6 +84,8 @@ module.exports = {
     },
     profile : (req,res) => {    
 
+        datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
+
         const {email} = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat
 
         const users = leerJSON('users');
@@ -87,7 +93,8 @@ module.exports = {
         const usuario = users.find( user => user.email == email)
 
         return res.render("users/perfil", {
-            ...usuario
+            ...usuario,
+            datosUsuario
         })
     },
     update : (req,res) => {       
@@ -117,13 +124,16 @@ module.exports = {
             return usuario
         });
 
+        datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
+
         escribirJSON(userUpdate, 'users')  
     
         const datosUsuario = userUpdate.find( user => user.id == id);
         req.session.userUpdate = datosUsuario
 
         return res.render("users/perfil", {
-            ...datosUsuario
+            ...datosUsuario,
+            datosUsuario
             
         })
 

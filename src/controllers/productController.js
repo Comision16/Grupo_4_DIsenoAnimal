@@ -7,21 +7,28 @@ function pushProducts (parametro){
 
 module.exports = {
     detail : (req, res) => {
+        datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
         const parametrizada = req.params.id
         const idproducto = productos.find(que => que.id == parametrizada )
             /*return res.send(productos)*/
             return res.render('products/product-detail', {
-            productos,idproducto 
+            productos,
+            idproducto,
+            datosUsuario
             })
     },
     filtrados :(req,res) => {
+
+        datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
         
         const {categoria} = req.params;
         const producto = productos.filter(product => product.categoria == categoria);
        // return console.log(req.params);
       // console.log(product)
         return res.render('products/productFilter', {
-            producto })
+            producto,
+            datosUsuario
+         })
             
             
     //    return res.send('el producto es' +
@@ -32,11 +39,13 @@ module.exports = {
 
 
     edit : (req, res) => {
+        datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
         const {id} = req.params;
         const product = productos.find(product => product.id == id);
         
         return res.render('products/product-edit', {
-            ...product
+            ...product,
+            datosUsuario
         }) 
     },
 
@@ -84,7 +93,11 @@ module.exports = {
     return res.redirect('/admin/dashboard')
     },
     todos : (req,res) => {
-        res.render('products/todos', {productos})
+        datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
+        res.render('products/todos', {
+            productos,
+            datosUsuario
+        })
     },
     search: (req, res) => {        
 		const {keywords} = req.query;

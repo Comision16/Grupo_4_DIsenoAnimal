@@ -46,12 +46,12 @@
                           </div>
                           <div class="col-8 col-md-3 mb-3">
                             <input name="image1" type="file" class="form-control" id="image1" hidden>
-                            <img src="/images/<%= image1 %>" alt="" class="img-thumbnail" id="miniatura1" style="max-width: 200px; max-height: 500px;">
+                            <img src="/images/<%= image1 %>" alt="" class="img-thumbnail" id="miniatura1" style="max-width: 120px; max-height: 200px; min-width: 120px; max-height: 200px;">
                             <label class="btn btn-lg btn-outline-dark w-80" for="image1">cambiar imagen</label>
                         </div>
                         <div class="col-10 col-md-3 mb-3">
                           <input  name="image2" type="file" class="form-control" id="image2" hidden>
-                          <img src="/images/<%= image2 %>" alt="" class="img-thumbnail" id="miniatura2" style="max-width: 200px; max-height: 500px;">
+                          <img src="/images/<%= image2 %>" alt="" class="img-thumbnail" id="miniatura2" style="max-width: 120px; max-height: 200px; min-width: 120px; max-height: 200px;">
                           <label class="btn btn-lg btn-outline-dark w-80" for="image2">cambiar imagen</label>
                         </div>
                           <div class="col-12 col-md-4 mb-3">
@@ -122,34 +122,6 @@
         </div>
     </section>
   </main>
-  <script>
-    const input1 = document.querySelector('input[name="image1"]');
-    const miniatura1 = document.querySelector('#miniatura1');
-  
-    input1.addEventListener('change', () => {
-      const file = input1.files[0];
-      const reader = new FileReader();
-  
-      reader.addEventListener('load', () => {
-        miniatura1.src = reader.result;
-      });
-  
-      reader.readAsDataURL(file);
-    });
-  
-    const input2 = document.querySelector('input[name="image2"]');
-    const miniatura2 = document.querySelector('#miniatura2');
-  
-    input2.addEventListener('change', () => {
-      const file = input2.files[0];
-      const reader = new FileReader();
-  
-      reader.addEventListener('load', () => {
-        miniatura2.src = reader.result;
-      });
-  
-      reader.readAsDataURL(file);
-    });
-  </script>
+  <%- include('../partials/script-edit-product') %>
 </body>
 </html>

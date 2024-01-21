@@ -26,28 +26,19 @@
                         </nav>
                   </div>
                   <div class="card-body">
-                      <form action="/productos/store" method="post" class="row d-flex justify-content-center align-items-center" enctype="multipart/form-data">
+                      <form action="/productos/store" method="post" style="background-color: rgb(245, 245, 245);" class="row d-flex justify-content-between align-items-center " enctype="multipart/form-data">
                             <h3>Agregar Articulos</h3>
                             <hr>
-                            <div class="col-12 col-md-4 mb-3">
-                                <div class="form-floating ">
-                                    <input name="nombre" type="text" class="form-control" id="nombre" >
-                                    <label for="nombre">Nombre del articulo</label>
-                                  </div>
-                            </div>
-                            <div class="col-8 col-md-3 mb-3">
-                              <input name="image1" type="file" class="form-control" id="image1" hidden >
-                              <img src="/images/new-product.default.png" alt="Primera imagen de la lista" class="img-thumbnail" id="miniatura1" style="max-width: 200px; max-height: 400px;">
-                              <label class="btn btn-lg btn-outline-dark w-80" for="image1">Imagen nº 1</label>
-                          </div>
-                          <div class="col-10 col-md-3 mb-3">
-                            <input  name="image2" type="file" class="form-control" id="image2" hidden>
-                            <img src="/images/new-product.default.png" alt="Segunda imagen de la lista" class="img-thumbnail" id="miniatura2" style="max-width: 200px; max-height: 400px;">
-                            <label class="btn btn-lg btn-outline-dark w-80" for="image2">Imagen nº2</label>
-                          </div>
-                            <div class="col-12 col-md-4 mb-3">
-                              <div class="form-floating">
-                                  <select name="categoria" class="form-select" id="categoria" aria-label="Floating label select example">
+                            <div class="row d-flex gap-5 justify-content-center" >
+                              <div class="col-12 col-md-4 mb-3">
+                                <div class="form-floating">
+                                  <input name="nombre" type="text" class="form-control " id="nombre" style="width:auto; border-color: rgb(10, 99, 150);">
+                                  <label for="nombre">Nombre del articulo</label>
+                                </div>
+                              </div>
+                              <div class="col-12 col-md-4 mb-3">
+                                <div class="form-floating">
+                                  <select name="categoria" class="form-select" id="categoria" aria-label="Floating label select example" style="width:auto; border-color: rgb(10, 99, 150);">
                                     <option value="" selected hidden></option>
                                     <option value="Perros">Perros</option>
                                     <option value="Gatos">Gatos</option>
@@ -57,22 +48,41 @@
                                   </select>
                                   <label for="categoria">Categoría</label>
                                 </div>
+                              </div>
                             </div>
+                            
+                            <div class="row d-flex flex-wrap justify-content-center mr-4 align-items-center mb-3 w-100">
+                              
+                              <div class="row d-flex justify-content-center align-items-center gap-2 w-50">
+                              <input name="image1" type="file" class="form-control" id="image1" hidden >
+                              <img src="/images/new-product.default.png" alt="Primera imagen de la lista" class="img-thumbnail" id="miniatura1" style="max-width: 100px; max-height: 120px; " >
+                              <label class="btn btn-lg btn-outline-dark w-80" for="image1" style="width:auto; height: auto; border-color: rgb(10, 99, 150);">Agregar imagen</label>
+                              </div>
+                          
+                              <div class="row d-flex justify-content-center align-items-center gap-2 w-50">
+                              <input  name="image2" type="file" class="form-control" id="image2" hidden>
+                              <img src="/images/new-product.default.png" alt="Segunda imagen de la lista" class="img-thumbnail" id="miniatura2" style="max-width: 100px; max-height: 120px;">
+                              <label class="btn btn-lg btn-outline-dark w-80" for="image2" style="width:auto; height: auto; border-color: rgb(10, 99, 150);">Agregar imagen</label>
+                              </div>
+
+                          </div>
+                         
+                          <div class="row justify-content-center gap-5 align-items-center">
                             <div class="col-12 col-md-4 mb-3">
                               <div class="form-floating">
-                                  <input name="precio" type="number" class="form-control" id="precio">
+                                  <input name="precio" type="number" class="form-control" id="precio" style="width:auto; border-color: rgb(10, 99, 150);">
                                   <label for="precio">Precio del producto</label>
                               </div>
                             </div>
                           <div class="col-12 col-md-4 mb-3">
                             <div class="form-floating">
-                                <input name="stock" type="number" class="form-control" id="stock">
+                                <input name="stock" type="number" class="form-control" id="stock" style="width:auto; border-color: rgb(10, 99, 150);">
                                 <label for="stock">Cantidad en stock</label>
                             </div>
                           </div>
                               <div class="col-12 col-md-4 mb-3">
                                 <div class="form-floating">
-                                    <select name="sabores" class="form-select" id="sabores" aria-label="Floating label select example">
+                                    <select name="sabores" class="form-select" id="sabores" aria-label="Floating label select example" style="width:100%; border-color: rgb(10, 99, 150);">
                                         <option value="" selected hidden></option>
                                         <option value="Pescado">Pescado</option>
                                         <option value="Pollo y Arroz">Pollo y Arroz</option>
@@ -86,24 +96,28 @@
                                     <label for="sabores">Sabores</label>
                                 </div>
                               </div>
-                            <div class="col-12 col-md-4 mb-3">
+                            <div class="col-12 col-md-4 mb-3" >
                               <div class="form-floating ">
-                                  <input name="descuento" type="number" class="form-control" id="descuento" >
+                                  <input name="descuento" type="number" class="form-control" id="descuento" style="width:auto; border-color: rgb(10, 99, 150);" >
                                   <label  for="descuento">Descuento -%</label>
                               </div>
                             </div>
                       
                           
-                          <div class="col-10 mb-3">
-                              <div class="form-floating">
-                                  <textarea name="descripcion" class="form-control" id="descripcion" style="height: 100px;"></textarea>
-                                  <label for="descripcion">Descripción del producto...</label>
+                          <div class="col-10 mb-5 " >
+                              <div class="form-floating ">
+                                <textarea name="descripcion" class="form-control overflow text-break" id="descripcion" style=" width:100% ;height: 100px; border-color: rgb(10, 99, 150); "></textarea>
+                                <label for="descripcion">Descripción...</label>
                                 </div>
                           </div>
-                        
-                          <div class="col-7 d-flex justify-content-center">
+                        </div>
+                          <div class="col-7 d-flex justify-content-center" style="width: 100%; transition: all 0.01s;">
                               <button class="btn btn-lg btn-dark">Agregar Producto</button>
-                          </div>
+                            
+                              <!-- efecto del boton -->
+                          <style>.btn:hover {transform: scale(1.01);}</style>
+
+                     </div>
                       </form>
 
                   </div>
@@ -111,34 +125,6 @@
           </div>
       </section>
     </main>
-    <script>
-      const input1 = document.querySelector('input[name="image1"]');
-      const miniatura1 = document.querySelector('#miniatura1');
-    
-      input1.addEventListener('change', () => {
-        const file = input1.files[0];
-        const reader = new FileReader();
-    
-        reader.addEventListener('load', () => {
-          miniatura1.src = reader.result;
-        });
-    
-        reader.readAsDataURL(file);
-      });
-    
-      const input2 = document.querySelector('input[name="image2"]');
-      const miniatura2 = document.querySelector('#miniatura2');
-    
-      input2.addEventListener('change', () => {
-        const file = input2.files[0];
-        const reader = new FileReader();
-    
-        reader.addEventListener('load', () => {
-          miniatura2.src = reader.result;
-        });
-    
-        reader.readAsDataURL(file);
-      });
-    </script>
+    <%- include('../partials/script-create-product') %>
   </body>
 </html>

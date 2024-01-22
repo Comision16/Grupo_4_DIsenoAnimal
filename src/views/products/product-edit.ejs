@@ -29,34 +29,44 @@
                       </nav>
                 </div>
                 <div class="card-body">
-                    <form action="/productos/update/<%= id %>?_method=PUT" method="POST" class="row d-flex justify-content-center align-items-center" enctype="multipart/form-data">
-                          <h3>Editando:"<%= nombre %>"</h3>
-                          <hr>
-                          <div class="col-12 col-md-6 mb-3">
-                            <div class="form-floating">
-                              <input name="id" type="text" class="form-control" id="id" value="<%= id %>" >
-                              <label for="id">ID</label>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-4 mb-3">
-                              <div class="form-floating ">
-                                  <input name="nombre" type="text" class="form-control" id="nombre" value="<%= nombre %>" >
+                    <form action="/productos/update/<%= id %>?_method=PUT" method="POST" style=" background-color: rgb(245, 245, 245);" class="row d-flex justify-content-center align-items-center " enctype="multipart/form-data">
+                          <h3>Editando:   "<%= nombre %>"</h3>
+                          
+                          <div class="row justify-content-center gap-3 align-items-center" >
+                          <div class="col-12 col-md-4 mb-3 ">
+                              <div class="form-floating p-1">
+                                  <input name="nombre" type="text" class="form-control" id="nombre" value="<%= nombre %>" style=" height: auto;border-color: rgb(10, 99, 150);">
                                   <label for="nombre">Nombre del articulo</label>
                                 </div>
                           </div>
-                          <div class="col-8 col-md-3 mb-3">
-                            <input name="image1" type="file" class="form-control" id="image1" hidden>
-                            <img src="/images/<%= image1 %>" alt="" class="img-thumbnail" id="miniatura1" style="max-width: 120px; max-height: 200px; min-width: 120px; max-height: 200px;">
-                            <label class="btn btn-lg btn-outline-dark w-80" for="image1">cambiar imagen</label>
-                        </div>
-                        <div class="col-10 col-md-3 mb-3">
-                          <input  name="image2" type="file" class="form-control" id="image2" hidden>
-                          <img src="/images/<%= image2 %>" alt="" class="img-thumbnail" id="miniatura2" style="max-width: 120px; max-height: 200px; min-width: 120px; max-height: 200px;">
-                          <label class="btn btn-lg btn-outline-dark w-80" for="image2">cambiar imagen</label>
-                        </div>
                           <div class="col-12 col-md-4 mb-3">
-                            <div class="form-floating">
-                                <select name="categoria" class="form-select" id="category" aria-label="Floating label select example">
+                            <div class="form-floating p-1">
+                                <input name="precio" style=" height: auto; border-color: rgb(10, 99, 150);" type="number" class="form-control" id="precio" value="<%= precio %>" >
+                                <label for="precio">Precio actual: </label>
+                            </div>
+                          </div>
+                          </div>
+
+                          <div class="row d-flex flex-wrap justify-content-center mr-4 align-items-center mb-3 w-100">
+
+                          <div class="row d-flex justify-content-center align-items-center gap-2 w-50">
+                            <input name="image1" type="file" style="border-color: rgb(10, 99, 150);" class="form-control" id="image1" hidden >
+                            <img src="/images/<%= image1 %>" alt="" class="img-thumbnail" id="miniatura1" style="max-width: 100px; max-height: 120px; ">
+                            <label class="btn btn-lg btn-outline-dark w-80" for="image1" style="width:auto; height: auto; border-color: rgb(10, 99, 150);">cambiar imagen</label>
+                        </div>
+
+                        <div class="row d-flex justify-content-center align-items-center gap-2 w-50">
+                          <input  name="image2" type="file" style="border-color: rgb(10, 99, 150);" class="form-control" id="image2" hidden >
+                          <img src="/images/<%= image2 %>" alt="" class="img-thumbnail" id="miniatura2" style="max-width: 100px; max-height: 120px; ">
+                          <label class="btn btn-lg btn-outline-dark w-80" for="image2" style="width:auto; height: auto; border-color: rgb(10, 99, 150);">cambiar imagen</label>
+                        </div>
+                        
+                        </div>
+                      <div class="row justify-content-center gap-4  align-items-center">
+                        
+                          <div class="col-12 col-md-4 mb-3">
+                            <div class="form-floating p-1">
+                                <select name="categoria" class="form-select" id="category" aria-label="Floating label select example" style="height: auto; border-color: rgb(10, 99, 150);">
                                   <option value="<%= categoria %>" selected hidden></option>
                                   <option value="Perros"<%= categoria === 'Perros' && 'selected'%>>Perros</option>
                                   <option value="Gatos" <%= categoria === 'Gatos' && 'selected'%>>Gatos</option>
@@ -67,21 +77,18 @@
                                 <label for="categoria">Categoria</label>
                               </div>
                           </div>
-                          <div class="col-12 col-md-4 mb-3">
-                            <div class="form-floating">
-                                <input name="precio" type="number" class="form-control" id="precio" value="<%= precio %>" >
-                                <label for="precio">Precio actual: </label>
-                            </div>
-                          </div>
+                       
                         <div class="col-12 col-md-4 mb-3">
-                          <div class="form-floating">
-                              <input name="stock" type="number" class="form-control" id="stock" value="<%= stock %>">
+                          <div class="form-floating p-1">
+                              <input name="stock" style="height: auto; border-color: rgb(10, 99, 150);" type="number" class="form-control" id="stock" value="<%= stock %>">
                               <label for="stock">Stock actual:</label>
                           </div>
                         </div>
+                      </div>
+                      <div class="row justify-content-center gap-4  align-items-center">
                             <div class="col-12 col-md-4 mb-3">
-                              <div class="form-floating">
-                                  <select name="sabores" class="form-select" id="sabores" aria-label="Floating label select example">
+                              <div class="form-floating p-1" >
+                                  <select name="sabores" class="form-select" id="sabores" style="height: auto; border-color: rgb(10, 99, 150);" aria-label="Floating label select example">
                                       <option value="" selected hidden></option>
                                       <option value="Pescado"<%= sabores === 'Pescado' && 'selected'%>>Pescado</option>
                                       <option value="Pollo y Arroz" <%= sabores === 'Pollo y Arroz' && 'selected'%>>Pollo y Arroz</option>
@@ -96,25 +103,28 @@
                               </div>
                             </div>
                           <div class="col-12 col-md-4 mb-3">
-                            <div class="form-floating ">
-                                <input name="descuento" type="number" class="form-control" id="descuento" value="<%= descuento %>">
-                                <label  for="descuento">Descuento -% </label>
+                            <div class="form-floating p-1">
+                                <input name="descuento" type="number" style="height: auto; border-color: rgb(10, 99, 150);" class="form-control" id="descuento" value="<%= descuento %>">
+                                <label  for="descuento" >Descuento -% </label>
                             </div>
                           </div>
-                    
+                        </div>
                         
                         <div class="col-10 mb-3">
-                            <div class="form-floating">
+                            <div class="form-floating p-1">
                               
                                 <label for="descripcion"></label>
-                                <textarea name="descripcion" class="form-control" id="descripcion" style="height: 100px;"><%= descripcion %></textarea>
+                                <textarea name="descripcion" class="form-control p-2" id="descripcion" style=" height:100px; border-color: rgb(10, 99, 150);" ><%= descripcion %></textarea>
                                 
                               </div>
                         </div>
-                      
-                        <div class="col-7 d-flex justify-content-end">
-                            <button type="submit"class="btn btn-lg btn-dark">Guardar Cambios</button>
-                        </div>
+                        <div class="col-7 d-flex justify-content-center" style=" transition: all 0.01s;">
+                          <button class="btn btn-lg btn-dark mb-3">Guardar cambios</button>
+                        
+                          <!-- efecto del boton -->
+                      <style>.btn:hover {transform: scale(1.01);}</style>
+
+                 </div>
                     </form>
 
                 </div>

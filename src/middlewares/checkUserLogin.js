@@ -1,8 +1,7 @@
-module.exports = (req,res,next) => {
-    if (req.session.userLogin) {
-        res.locals.userLogin = req.session.userLogin       
-    } else if (req.cookies.animalDeUs3r_Cancat) {
-        res.locals.userLogin = req.cookies.animalDeUs3r_Cancat
+module.exports = (req,res, next) => {
+    if(req.session.userLogin){
+        return next()
     }
-    next()
+
+    return res.redirect('/usuarios/ingreso')
 }

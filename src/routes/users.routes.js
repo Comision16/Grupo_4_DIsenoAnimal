@@ -17,7 +17,7 @@ router
   .get('/registro', checkAuth, register)
   .post('/registro',userRegisterValidator, processRegister)
   .put('/update/:id', upload.single('imagen'), userPerfil, update)
-  .get('/perfil/', profile)
+  .get('/perfil/', checkUserLogin, profile)
   .get("/salir", logout)
   
   

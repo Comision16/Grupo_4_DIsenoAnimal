@@ -18,16 +18,13 @@ module.exports = {
             })
     },
     filtrados :(req,res) => {
-
-        datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
         
         const {categoria} = req.params;
         const producto = productos.filter(product => product.categoria == categoria);
        // return console.log(req.params);
       // console.log(product)
         return res.render('products/productFilter', {
-            producto,
-            datosUsuario
+            producto
          })
             
             
@@ -39,13 +36,11 @@ module.exports = {
 
 
     edit : (req, res) => {
-        datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
         const {id} = req.params;
         const product = productos.find(product => product.id == id);
         
         return res.render('products/product-edit', {
-            ...product,
-            datosUsuario
+            ...product
         }) 
     },
 
@@ -93,10 +88,8 @@ module.exports = {
     return res.redirect('/admin/dashboard')
     },
     todos : (req,res) => {
-        datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
         res.render('products/todos', {
-            productos,
-            datosUsuario
+            productos
         })
     },
     search: (req, res) => {        

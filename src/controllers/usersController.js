@@ -2,6 +2,7 @@ const { validationResult } = require("express-validator");
 const User = require("../data/User");
 const { existsSync, unlinkSync } = require('fs');
 const { leerJSON, escribirJSON } = require("../data");
+const { request } = require("http");
 
 
 module.exports = {
@@ -37,10 +38,8 @@ module.exports = {
             return res.redirect ('/usuarios/perfil')
 
         }else{
-            datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
             return res.render ('users/login', {
-                errors : errors.mapped(),
-                datosUsuario
+                errors : errors.mapped()
             })
         }
     },
@@ -67,11 +66,9 @@ module.exports = {
             
 
         }else{
-            datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
             return res.render('users/register',{
                 old : req.body,
-                errors : errors.mapped(),
-                datosUsuario
+                errors : errors.mapped()
             })
         }
 
@@ -86,8 +83,6 @@ module.exports = {
     },
     profile : (req,res) => {    
 
-        datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
-
         const {email} = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat
 
         const users = leerJSON('users');
@@ -95,8 +90,7 @@ module.exports = {
         const usuario = users.find( user => user.email == email)
 
         return res.render("users/perfil", {
-            ...usuario,
-            datosUsuario
+            ...usuario
         })
     },
     update : (req,res) => {       
@@ -129,7 +123,11 @@ module.exports = {
 
         const datosUpdate = leerJSON('users').find(user => user.email == email)
 
+        console.log(datosUpdate);
+
         req.session.userLogin = datosUpdate
+
+        console.log(req.session.userLogin);
 
         return res.redirect("/usuarios/perfil")
 

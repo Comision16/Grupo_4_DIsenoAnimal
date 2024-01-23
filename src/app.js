@@ -45,7 +45,6 @@ app
 app.use(transferLocals);
  
  app.use(CheckCookie )
- app.use(checkUserLogin)
 
   /* rutas */
 app

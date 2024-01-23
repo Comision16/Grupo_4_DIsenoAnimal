@@ -8,22 +8,15 @@ module.exports = {
 
     index: (req, res) => {
 
-        datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
-
-        console.log(datosUsuario);
-
         return res.render('index', {
-            productos,
-            datosUsuario
+            productos
         })
 
     },
     cart: (req, res) => {
         /*return res.send(productos)       */
-        datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
         return res.render('carrito', {
-            productos,
-            datosUsuario
+            productos
         })
 
     },

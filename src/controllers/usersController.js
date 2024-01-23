@@ -124,8 +124,6 @@ module.exports = {
             return usuario
         });
 
-        datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
-
         escribirJSON(userUpdate, 'users')  
     
         const datosUsuario = userUpdate.find( user => user.id == id);
@@ -145,5 +143,8 @@ module.exports = {
                 errors : errors.mapped()
             })
         }
+    },
+    dashboardUsuarios: (req,res) => {
+       return res.render('users/dashboardUsuarios')
     }
 }

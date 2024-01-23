@@ -5,9 +5,13 @@ const inscribiteJSON = leerJSON('inscribite');
 
 module.exports = {
 
+
     index: (req, res) => {
+
         datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
-        /*return res.send(productos)*/
+
+        console.log(datosUsuario);
+
         return res.render('index', {
             productos,
             datosUsuario

@@ -12,7 +12,6 @@ const productsRouter = require('./routes/products.routes');
 const adminRouter = require('./routes/admin.routes');
 const transferLocals = require('./middlewares/transferLocals');
 const CheckCookie = require('./middlewares/CheckCookie');
-const checkUserLogin = require('./middlewares/checkUserLogin');
 
 const app = express();
 

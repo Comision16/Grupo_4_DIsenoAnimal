@@ -1,11 +1,12 @@
-const { leerJSON, escribirJSON } = require("../data")
+const { locals } = require("../app");
+const { leerJSON, escribirJSON } = require("../data");
+const transferLocals = require("../middlewares/transferLocals");
 const productos = leerJSON('productos');
 const inscribiteJSON = leerJSON('inscribite');
 
 
 module.exports = {
-
-
+    
     index: (req, res) => {
 
         return res.render('index', {

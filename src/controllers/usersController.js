@@ -28,8 +28,6 @@ module.exports = {
                 role
             }
 
-            console.log(req.session.userLogin);
-
             dato.remember && res.cookie('animalDeUs3r_Cancat', req.session.userLogin, {
                 maxAge : 1000 * 60 * 5
             })
@@ -121,20 +119,16 @@ module.exports = {
 
         escribirJSON(userUpdate, 'users')  
 
-        const datosUpdate = leerJSON('users').find(user => user.email == email)
+        const users = leerJSON('users');
+        
+        const usuario = users.find( user => user.email == email)
 
-        console.log(datosUpdate);
-
-        req.session.userLogin = datosUpdate
-
-        console.log(req.session.userLogin);
-
-        return res.redirect("/usuarios/perfil")
+        return res.render("users/perfil", {
+            ...usuario
+        })
 
         }else {
-            datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
             return res.render('users/perfil',{
-                ...datosUsuario,
                 old : req.body,
                 errors : errors.mapped()
             })

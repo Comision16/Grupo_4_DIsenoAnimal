@@ -2,7 +2,6 @@ const { validationResult } = require("express-validator");
 const User = require("../data/User");
 const { existsSync, unlinkSync } = require('fs');
 const { leerJSON, escribirJSON } = require("../data");
-const { request } = require("http");
 
 
 module.exports = {
@@ -133,5 +132,34 @@ module.exports = {
                 errors : errors.mapped()
             })
         }
+    },
+    dashboardUsuarios : (req, res) => {
+        const users = leerJSON('users');
+
+        return res.render('dashboardUser', {
+            users
+        });
+    },
+    gerarquia : (req, res) => {
+        const { id } = req.params;
+        
+        const users = leerJSON('users');
+
+        const userUpdate = users.map(usuario => {
+            if (usuario.id == id) {
+                if (req.body.admin) {
+                    usuario.role = "admin"                    
+                } else {
+                    usuario.role = "user"
+                }
+            }
+            return usuario
+        });
+
+        escribirJSON(userUpdate, 'users')  
+
+        return res.render('dashboardUser', {
+            users
+        });
     }
 }

@@ -15,7 +15,7 @@
       "email": "Nikooa@gmail.com",
       "password": "$2a$10$JS6YroVGqtjZC9h1PibQTOO9hFDp2TPPAy66xARL4xz7OnpfpTS3i",
       "password2": "11111111",
-      "role": "admin",
+      "role": "user",
       "mascota": "",
       "especie": "",
       "imagen": "defaultUser.jpeg"

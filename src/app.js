@@ -11,7 +11,7 @@ const usersRouter = require('./routes/users.routes');
 const productsRouter = require('./routes/products.routes');
 const adminRouter = require('./routes/admin.routes');
 const transferLocals = require('./middlewares/transferLocals');
-const CheckCookie = require('./middlewares/CheckCookie');
+const cookieCheck = require('./middlewares/cookieCheck');
 
 const app = express();
 
@@ -30,20 +30,22 @@ app
 
 
   /* recursos estaticos */
-  .use(express.static(path.join(__dirname, '..' ,'public')));
+  .use(express.static(path.join(__dirname, '..' ,'public')))
 
   /* soporte para metodos PUT, PATCH Y DELETE */
-  app.use(methodOverride('_method'))
+  .use(methodOverride('_method'));
 
  /* CONFIGURACION DE SESSION */
- .use(session({
-  secret : "Diseño Animal",
+app
+  .use(session({
+  secret : 'Kitchening forever!!',
   resave : true,
   saveUninitialized : true
-}));
-app.use(transferLocals);
- 
- app.use(CheckCookie )
+}))
+
+.use(cookieCheck)
+
+.use(transferLocals);
 
   /* rutas */
 app

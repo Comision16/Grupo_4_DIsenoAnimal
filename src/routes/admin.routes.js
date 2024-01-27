@@ -6,6 +6,6 @@ const router = express.Router();
 /* admin */
 router
   .get('/dashboard', checkAdmin, dashboard)
-  .get('/search', search)
+  .get('/search',checkAdmin, search)
 
 module.exports = router;

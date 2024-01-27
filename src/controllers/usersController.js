@@ -11,9 +11,12 @@ module.exports = {
     },
     processLogin : (req, res) => {
         const errors = validationResult(req);
-        const dato = req.body
 
         if(errors.isEmpty()){
+
+        const dato = req.body
+
+        console.log(dato);
 
             const {id, name, email, mascota, especie, imagen, role} = leerJSON('users').find(user => user.email == dato.email)
 
@@ -30,7 +33,6 @@ module.exports = {
             dato.remember && res.cookie('animalDeUs3r_Cancat', req.session.userLogin, {
                 maxAge : 1000 * 60 * 5
             })
-
 
             return res.redirect ('/usuarios/perfil')
 
@@ -80,7 +82,7 @@ module.exports = {
     },
     profile : (req,res) => {    
 
-        const {email} = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat
+        const {email} = req.session.userLogin
 
         const users = leerJSON('users');
         
@@ -91,10 +93,10 @@ module.exports = {
         })
     },
     update : (req,res) => {       
-
-        const errors = validationResult(req);
         const {name, email, mascota, especie} = req.body;
         const { id } = req.params;
+
+        const errors = validationResult(req);
 
         if(errors.isEmpty()) {
         
@@ -113,23 +115,30 @@ module.exports = {
             usuario.imagen =  req.file ? req.file.filename : usuario.imagen            
             }           
 
+            req.session.userUpdate = usuario
+
             return usuario
         });
 
         escribirJSON(userUpdate, 'users')  
 
-        const users = leerJSON('users');
-        
-        const usuario = users.find( user => user.email == email)
+        const datosUsuario = req.session.userUpdate
+
+        console.log(datosUsuario);
 
         return res.render("users/perfil", {
-            ...usuario
+            ...datosUsuario
         })
 
-        }else {
+        } else {
+            const datosUsuario = req.session.userLogin
+
+            console.log(datosUsuario);
+
             return res.render('users/perfil',{
                 old : req.body,
-                errors : errors.mapped()
+                errors : errors.mapped(),
+                ...datosUsuario
             })
         }
     },

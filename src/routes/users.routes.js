@@ -4,7 +4,6 @@ const userRegisterValidator = require('../../validations/user-register-validator
 const userLogin = require('../../validations/userLogin');
 const checkUserLogin = require('../middlewares/checkUserLogin');
 const checkAuth = require('../middlewares/checkAuth');
-const perfilValidations = require('../../validations/perfilValidations')
 
 const router = express.Router();
 const upload = require('../middlewares/upload');
@@ -16,8 +15,8 @@ router
   .post("/ingreso",userLogin, processLogin)
   .get('/registro', checkAuth, register)
   .post('/registro',userRegisterValidator, processRegister)
-  .put('/update/:id', upload.single('imagen'), userPerfil, update)
-  .get('/perfil/', checkUserLogin, perfilValidations, profile)
+  .get('/perfil/', checkUserLogin, profile)
+  .put('/update/:id', upload.single('imagen'), userPerfil , update)
   .get("/salir", logout)
   .get("/dashboardUsuarios", dashboardUsuarios)
   .put("/dashboardUsuarios/:id", gerarquia)

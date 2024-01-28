@@ -2,7 +2,6 @@ const { leerJSON, escribirJSON } = require("../../data");
 const { existsSync, unlinkSync } = require('fs')
 
 module.exports = (req, res) => {
-    datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
 
     const {id} = req.params;
 
@@ -19,7 +18,5 @@ module.exports = (req, res) => {
     escribirJSON(productoFiltrado, "productos")
 
 
-    return res.redirect('/admin/dashboard', {
-        datosUsuario
-    })
+    return res.redirect('/admin/dashboard')
 }

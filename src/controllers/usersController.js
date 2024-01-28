@@ -145,8 +145,6 @@ module.exports = {
     dashboardUsuarios : (req, res) => {
         const users = leerJSON('users');
 
-        const usuario = users.find( user => user.email == email)
-
         return res.render('dashboardUser', {
             users
         });

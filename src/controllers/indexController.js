@@ -7,8 +7,6 @@ module.exports = {
     
     index: (req, res) => {
 
-        console.log(req.session.userLogin);
-
         return res.render('index', {
             productos
         })

@@ -38,8 +38,18 @@
       "password": "$2a$10$zn1JfBaxmo.Cp5VmPkJF8OZVB3aBDqPHixTRyA.fb1aFW5VMr22.a",
       "password2": "12345678",
       "role": "admin",
-      "mascota": "toto",
-      "especie": "Gato",
-      "imagen": "1706321102508producto.png"
+      "mascota": "pinpon",
+      "especie": "lagarto",
+      "imagen": "1706328694948producto.png"
+   },
+   {
+      "id": "158abca8-b8d1-4f7d-bf4b-7e4e0a4bd2c2",
+      "name": "Mariano Elias",
+      "email": "mariano@gmail.com",
+      "password": "$2a$10$dw.ahQjfT05SvYXRlTh7WOk/kf1DS0K.Kxx3J345C51TadrU9joJ6",
+      "role": "admin",
+      "mascota": "pepo",
+      "especie": "loro",
+      "imagen": "1706398701140producto.png"
    }
 ]

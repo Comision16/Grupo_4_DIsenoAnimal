@@ -122,12 +122,12 @@ module.exports = {
 
         escribirJSON(userUpdate, 'users')  
 
-        const datosUsuario = req.session.userUpdate
+        const users = leerJSON('users');
 
-        console.log(datosUsuario);
+        const usuario = users.find( user => user.id == id)
 
         return res.render("users/perfil", {
-            ...datosUsuario
+            ...usuario
         })
 
         } else {
@@ -144,6 +144,8 @@ module.exports = {
     },
     dashboardUsuarios : (req, res) => {
         const users = leerJSON('users');
+
+        const usuario = users.find( user => user.email == email)
 
         return res.render('dashboardUser', {
             users

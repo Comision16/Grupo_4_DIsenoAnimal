@@ -33,14 +33,14 @@
    },
    {
       "id": "078a362e-c6b6-4512-b08e-b8fcd1856a7b",
-      "name": "Alejandro",
+      "name": "Alejandro Elias",
       "email": "alejandroelias25@gmail.com",
       "password": "$2a$10$zn1JfBaxmo.Cp5VmPkJF8OZVB3aBDqPHixTRyA.fb1aFW5VMr22.a",
       "password2": "12345678",
       "role": "admin",
       "mascota": "pinpon",
       "especie": "perro",
-      "imagen": "1706469268854producto.png"
+      "imagen": "1706476651927producto.png"
    },
    {
       "id": "158abca8-b8d1-4f7d-bf4b-7e4e0a4bd2c2",

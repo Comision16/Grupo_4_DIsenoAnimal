@@ -7,15 +7,30 @@ module.exports = {
     
     index: (req, res) => {
 
+        const {id} = req.session.userLogin ? req.session.userLogin : 1
+
+        const users = leerJSON('users');
+
+        const usuario = users.find( user => user.id == id)
+
         return res.render('index', {
-            productos
+            productos,
+            usuario
         })
 
     },
     cart: (req, res) => {
+
+        const {id} = req.session.userLogin ? req.session.userLogin : 1
+
+        const users = leerJSON('users');
+
+        const usuario = users.find( user => user.id == id)
+
         /*return res.send(productos)       */
         return res.render('carrito', {
-            productos
+            productos,
+            usuario
         })
 
     },

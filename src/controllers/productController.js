@@ -7,30 +7,45 @@ function pushProducts (parametro){
 
 module.exports = {
     detail : (req, res) => {
-        datosUsuario = req.session.userLogin ? req.session.userLogin : req.cookies.animalDeUs3r_Cancat;
+
+        const {id} = req.session.userLogin ? req.session.userLogin : 1
+
+        const users = leerJSON('users');
+
+        const usuario = users.find( user => user.id == id)
+        
+
         const parametrizada = req.params.id
         const idproducto = productos.find(que => que.id == parametrizada )
             /*return res.send(productos)*/
             return res.render('products/product-detail', {
             productos,
             idproducto,
-            datosUsuario
+            usuario
             })
     },
     filtrados :(req,res) => {
+
+        const {id} = req.session.userLogin ? req.session.userLogin : 1
+
+        const users = leerJSON('users');
+
+        const usuario = users.find( user => user.id == id)
+        
         
         const {categoria} = req.params;
         const producto = productos.filter(product => product.categoria == categoria);
        // return console.log(req.params);
       // console.log(product)
         return res.render('products/productFilter', {
-            producto
+            producto,
+            usuario
          })
             
             
     //    return res.send('el producto es' +
     //             categoria) 
-    },
+},
     
     
 
@@ -88,8 +103,17 @@ module.exports = {
     return res.redirect('/admin/dashboard')
     },
     todos : (req,res) => {
+
+        const {id} = req.session.userLogin ? req.session.userLogin : 1
+
+        const users = leerJSON('users');
+
+        const usuario = users.find( user => user.id == id)
+        
+        
         res.render('products/todos', {
-            productos
+            productos,
+            usuario
         })
     },
     search: (req, res) => {        

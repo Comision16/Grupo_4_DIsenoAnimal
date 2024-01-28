@@ -51,5 +51,15 @@
       "mascota": "pepo",
       "especie": "loro",
       "imagen": "1706398701140producto.png"
+   },
+   {
+      "id": "6d4fdd30-f84e-44d4-8394-ac87e71abdc8",
+      "name": "Cosme Fulanito",
+      "email": "CosmeFulanito@gmail.com",
+      "password": "$2a$10$DEUaBOlTUQYizl8zQJMgJeQHHrcMHbDA5gLTJ/7BO80IqdINOj01i",
+      "role": "user",
+      "mascota": "Enviado de Santa",
+      "especie": "perro",
+      "imagen": "1706468436309producto.png"
    }
 ]

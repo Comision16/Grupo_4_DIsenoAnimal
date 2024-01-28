@@ -9,7 +9,7 @@ function User(nombre, email, password) {
     this.role = "user";
     this.mascota = "";
     this.especie = "";
-    this.imagen = "";
+    this.imagen = "vacio";
 }
 
 module.exports = User

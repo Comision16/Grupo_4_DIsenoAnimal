@@ -31,7 +31,7 @@ module.exports = {
             }
 
             dato.remember && res.cookie('animalDeUs3r_Cancat', req.session.userLogin, {
-                maxAge : 1000 * 60 * 5
+                maxAge : 1000 * 60 * 60
             })
 
             return res.redirect ('/usuarios/perfil')
@@ -119,8 +119,6 @@ module.exports = {
             usuario.especie = especie.trim(),    
             usuario.imagen =  req.file ? req.file.filename : usuario.imagen            
             }           
-
-            req.session.userUpdate = usuario
 
             return usuario
         });        

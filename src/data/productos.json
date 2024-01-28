@@ -132,5 +132,17 @@
       "sabores": "Leche",
       "descuento": 3,
       "descripcion": "nuevo producto de prueba2"
+   },
+   {
+      "id": "4ab97e04-c5b4-4f10-a288-bcd4bfbbafb9",
+      "nombre": "Cama Perro Estampado Moises",
+      "image1": "1706478298678producto.webp",
+      "image2": null,
+      "categoria": "Perros",
+      "precio": 26799,
+      "stock": 1,
+      "sabores": "",
+      "descuento": 10,
+      "descripcion": "Puede ubicarse en cualquier habitación y proporcionará un espacio para que las mascotas descansen cómodamente."
    }
 ]

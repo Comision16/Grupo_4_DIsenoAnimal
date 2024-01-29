@@ -144,5 +144,89 @@
       "sabores": "",
       "descuento": 10,
       "descripcion": "Puede ubicarse en cualquier habitación y proporcionará un espacio para que las mascotas descansen cómodamente."
+   },
+   {
+      "id": "17f10aea-98ce-4977-85cd-304f0d0998c1",
+      "nombre": "sdfadsfasd",
+      "image1": "1706548812866producto.jpg",
+      "image2": null,
+      "categoria": "perros",
+      "precio": 545,
+      "stock": 6564,
+      "sabores": "",
+      "descuento": 5454,
+      "descripcion": "asdasdasdasd"
+   },
+   {
+      "id": "7ced6d85-fb76-4a47-8c54-8fb7f1219935",
+      "nombre": "gfsfadf",
+      "image1": "1706548957534producto.jpg",
+      "image2": null,
+      "categoria": "Los mas buscados",
+      "precio": 155,
+      "stock": 45454,
+      "sabores": "",
+      "descuento": 5454,
+      "descripcion": "asdasdd"
+   },
+   {
+      "id": "fecc4912-2cc6-4848-a429-18459d94c30d",
+      "nombre": "PRUEBA PARA LOS+BUSCADOS",
+      "image1": "1706549094148producto.jpg",
+      "image2": null,
+      "categoria": "los mas buscados",
+      "precio": 545,
+      "stock": 44545,
+      "sabores": "",
+      "descuento": 54545,
+      "descripcion": "ASDASDSD"
+   },
+   {
+      "id": "1674ecce-cd95-477e-9824-372c3932377f",
+      "nombre": "PRUEBA PARA PEQUENIOS",
+      "image1": "1706549122893producto.jpg",
+      "image2": null,
+      "categoria": "pequenios",
+      "precio": 6464,
+      "stock": 545454,
+      "sabores": "",
+      "descuento": 5454,
+      "descripcion": "ASDASDD"
+   },
+   {
+      "id": "0696a785-bcf2-490c-9793-c399fbc8b069",
+      "nombre": "PUREBA PARA GATOS",
+      "image1": "1706549149972producto.jpg",
+      "image2": null,
+      "categoria": "gatos",
+      "precio": 544545,
+      "stock": 45454,
+      "sabores": "",
+      "descuento": 45454,
+      "descripcion": "ASDASDD"
+   },
+   {
+      "id": "d61d60ef-15b8-43a6-b163-3fe6389cfcd8",
+      "nombre": "PUREBA PARA OFERTAS",
+      "image1": "1706549172679producto.jpeg",
+      "image2": null,
+      "categoria": "ofertas",
+      "precio": 664545,
+      "stock": 454545,
+      "sabores": "",
+      "descuento": 455454,
+      "descripcion": "ASDASD"
+   },
+   {
+      "id": "e81bdd1c-41dc-43c7-a56c-3420f6318089",
+      "nombre": "pureba para los+buscados",
+      "image1": "1706549273215producto.jpg",
+      "image2": null,
+      "categoria": "visitados",
+      "precio": 1212,
+      "stock": 2123,
+      "sabores": "",
+      "descuento": 3123213,
+      "descripcion": "sdasdasd"
    }
 ]

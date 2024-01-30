@@ -38,7 +38,7 @@ app
  /* CONFIGURACION DE SESSION */
 app
   .use(session({
-  secret : 'Kitchening forever!!',
+  secret : 'Cancat!!',
   resave : true,
   saveUninitialized : true
 }))

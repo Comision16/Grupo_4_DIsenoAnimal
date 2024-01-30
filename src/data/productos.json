@@ -2,7 +2,7 @@
    {
       "id": 1,
       "seccion": "visitados",
-      "categoria": "Perros",
+      "categoria": "perros",
       "nombre": "Balanceado Natural Choice",
       "image1": "NaturalChoice.png",
       "image2": "1705959921323producto.png",
@@ -75,7 +75,7 @@
    },
    {
       "id": 7,
-      "categoria": "Gatos",
+      "categoria": "gatos",
       "nombre": "Balanceado Natural Choice",
       "image1": "NaturalChoice.png",
       "image2": "NaturalChoice.png",
@@ -126,7 +126,7 @@
       "nombre": "new product edit",
       "image1": "1705959783399producto.png",
       "image2": "1705959783425producto.png",
-      "categoria": "Gatos",
+      "categoria": "gatos",
       "precio": 15150,
       "stock": 200,
       "sabores": "Leche",
@@ -138,7 +138,7 @@
       "nombre": "Cama Perro Estampado Moises",
       "image1": "1706478298678producto.webp",
       "image2": null,
-      "categoria": "Perros",
+      "categoria": "perros",
       "precio": 26799,
       "stock": 1,
       "sabores": "",
@@ -194,39 +194,27 @@
       "descripcion": "ASDASDD"
    },
    {
-      "id": "0696a785-bcf2-490c-9793-c399fbc8b069",
-      "nombre": "PUREBA PARA GATOS",
-      "image1": "1706549149972producto.jpg",
+      "id": "7c290558-4368-43c4-908c-715f0c280574",
+      "nombre": "Juguete Catnip Para Gatos Pared Hierba Gatera",
+      "image1": "1706551490583producto.webp",
       "image2": null,
       "categoria": "gatos",
-      "precio": 544545,
-      "stock": 45454,
+      "precio": 6850,
+      "stock": 1,
       "sabores": "",
-      "descuento": 45454,
-      "descripcion": "ASDASDD"
+      "descuento": 10,
+      "descripcion": "Catnip con forma de cangrejo para pegar en la pared o en el piso, con hierba para que tu amigo gatuno se divierta"
    },
    {
-      "id": "d61d60ef-15b8-43a6-b163-3fe6389cfcd8",
-      "nombre": "PUREBA PARA OFERTAS",
-      "image1": "1706549172679producto.jpeg",
+      "id": "e660ce9e-9848-429a-8b15-8ba37c0c9aa1",
+      "nombre": "Rascador Para Gatos De Sisal Con Base Y Colgante Zootec",
+      "image1": "1706552554659producto.webp",
       "image2": null,
       "categoria": "ofertas",
-      "precio": 664545,
-      "stock": 454545,
+      "precio": 15300,
+      "stock": 1,
       "sabores": "",
-      "descuento": 455454,
-      "descripcion": "ASDASD"
-   },
-   {
-      "id": "e81bdd1c-41dc-43c7-a56c-3420f6318089",
-      "nombre": "pureba para los+buscados",
-      "image1": "1706549273215producto.jpg",
-      "image2": null,
-      "categoria": "visitados",
-      "precio": 1212,
-      "stock": 2123,
-      "sabores": "",
-      "descuento": 3123213,
-      "descripcion": "sdasdasd"
+      "descuento": 20,
+      "descripcion": "El Rascador de poste para Gatos ZOOTEC es el juguete ideal para su gato"
    }
 ]

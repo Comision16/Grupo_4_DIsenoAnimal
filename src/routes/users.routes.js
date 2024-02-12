@@ -1,5 +1,5 @@
 const express = require('express');
-const {login, register, processRegister, processLogin, logout, profile, update, dashboardUsuarios, gerarquia} = require('../controllers/usersController');
+const {login, register, processRegister, processLogin, logout, profile, update, dashboardUsuarios, gerarquia, reserva, reservar} = require('../controllers/usersController');
 const userRegisterValidator = require('../../validations/user-register-validator');
 const userLogin = require('../../validations/userLogin');
 const checkUserLogin = require('../middlewares/checkUserLogin');
@@ -20,6 +20,8 @@ router
   .get("/salir", logout)
   .get("/dashboardUsuarios", dashboardUsuarios)
   .put("/dashboardUsuarios/:id", gerarquia)
+  .get("/reserva", reserva)
+  .post("/reserva", reservar)
   
   
 module.exports = router;

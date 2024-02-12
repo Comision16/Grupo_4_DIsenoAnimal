@@ -1,5 +1,6 @@
 const { validationResult } = require("express-validator");
 const User = require("../data/User");
+const Reserva = require("../data/reserva")
 const { existsSync, unlinkSync } = require('fs');
 const { leerJSON, escribirJSON } = require("../data");
 
@@ -173,5 +174,41 @@ module.exports = {
         return res.render('dashboardUser', {
             users
         });
+    },
+    reserva : (req, res) => {
+
+        const imagenUser = req.session.userLogin
+        
+
+        const {email} = req.session.userLogin
+
+        const users = leerJSON('users');
+        
+        const usuario = users.find( user => user.email == email)
+
+        res.render("users/reserva", {
+            ...usuario,
+            imagenUser
+        })
+    },
+    reservar :(req, res) => {
+        const {name, email, mascota, especie, fecha, hora } = req.body;
+
+
+        const reserva = leerJSON('reserva');
+        const newBooking = new Reserva(name, email,  mascota, especie, fecha, hora);
+        
+        reserva.push(newBooking);
+
+        escribirJSON(reserva, 'reserva')
+
+        const {id} = req.session.userLogin ? req.session.userLogin : 1
+
+        const users = leerJSON('users');
+
+        const usuario = users.find( user => user.id == id)
+        
+
+        return res.render("users/reservado", {...usuario} )
     }
 }

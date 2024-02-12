@@ -81,7 +81,11 @@
 
                 <ul class="footer--content--ul footer--content--ul-servicios">
                     <p>Servicios</p>
-                    <li><a href="">Pedí tu turno para baño y corte de pelo</a></li>
+                    <% if (locals.userLogin) { %>                     
+                    <li><a href="/usuarios/reserva">Pedí tu turno para baño y corte de pelo</a></li>
+                    <% } else { %>
+                        <li><a href="/usuarios/ingreso">Pedí tu turno para baño y corte de pelo</a></li>
+                    <% } %>
                     <li><a href="">Sobre las vacunas de tus mascotas</a></li>
                     <li><a href="">Lo que necesitas saber sobre tus mascotas</a></li>
                 </ul>

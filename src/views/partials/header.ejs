@@ -134,6 +134,11 @@
 
                 <li><a href="/productos/filtrados/ofertas">Ofertas</a></li>
                 <li><a href="/productos/todos">Todos los Productos</a></li>
+
+                <% if (locals.userLogin) { %>
+                <li><a href="/usuarios/reserva">Resevar Turno</a></li>
+                 
+                <% } %>
                 <% if (locals.userLogin) { %>                 
                     <% if (userLogin.role === "admin") { %>
                      

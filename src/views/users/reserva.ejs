@@ -67,8 +67,15 @@
 
                                 <div>
                                     <label class="perfil_form_div_label" for="especie">Tipo de Mascota</label>
-                                    <input type="text" name="especie" id="especie" placeholder="Tipo de Mascota"
-                                        value="<%= locals.old && old.especie ? old.especie : especie %>">
+                                    <select name="especie" class="form-select" id="especie">
+                                     <option value="" selected hidden></option>
+ 
+                                     <% especies.forEach(item => { %>
+ 
+                                      <option value="<%= item %>" <%= (especie && especie == item) && "selected" %> ><%= item %></option>
+                                      
+                                     <% }) %>
+                                   </select>
 
                                     <small class="perfil_alert" class="perfil_alert">
                                         <%= locals.errors && errors.especie ? errors.especie.msg : null %>

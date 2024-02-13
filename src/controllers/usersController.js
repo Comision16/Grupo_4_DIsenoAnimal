@@ -92,9 +92,12 @@ module.exports = {
         
         const usuario = users.find( user => user.email == email)
 
+        const especies = leerJSON("especie")
+
         return res.render("users/perfil", {
             ...usuario,
-        imagenUser
+        imagenUser,
+        especies
         })
     },
     update : (req,res) => {       
@@ -117,7 +120,7 @@ module.exports = {
             usuario.name = name.trim(),
             usuario.email = email.trim(),
             usuario.mascota = mascota.trim(),
-            usuario.especie = especie.trim(),    
+            usuario.especie = especie,    
             usuario.imagen =  req.file ? req.file.filename : usuario.imagen            
             }           
 
@@ -130,8 +133,12 @@ module.exports = {
 
         const usuario = users.find( user => user.id == id)
 
+        const especies = leerJSON("especie")
+
         return res.render("users/perfil", {
-            ...usuario
+            old : req.body,
+            ...usuario,
+            especies
         })
 
         } else {
@@ -177,8 +184,7 @@ module.exports = {
     },
     reserva : (req, res) => {
 
-        const imagenUser = req.session.userLogin
-        
+        const imagenUser = req.session.userLogin        
 
         const {email} = req.session.userLogin
 
@@ -186,14 +192,17 @@ module.exports = {
         
         const usuario = users.find( user => user.email == email)
 
+        const especies = leerJSON("especie")
+
         res.render("users/reserva", {
+            old : req.body,
             ...usuario,
-            imagenUser
+            imagenUser,
+            especies
         })
     },
     reservar :(req, res) => {
         const {name, email, mascota, especie, fecha, hora } = req.body;
-
 
         const reserva = leerJSON('reserva');
         const newBooking = new Reserva(name, email,  mascota, especie, fecha, hora);

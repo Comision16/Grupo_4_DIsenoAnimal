@@ -11,7 +11,12 @@ module.exports = {
       },
       paymentMethodsId: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+          model : {
+            tableName: "Payment_methods"
+          }
+        }
       },
       createdAt: {
         allowNull: false,

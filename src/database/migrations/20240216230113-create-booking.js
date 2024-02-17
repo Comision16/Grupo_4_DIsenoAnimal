@@ -16,13 +16,28 @@ module.exports = {
         type: Sequelize.DATE
       },
       petId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model : {
+            tableName: "Pets"
+          }
+        }
       },
       saleId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model : {
+            tableName: "Sales"
+          }
+        }
       },
       serviceId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model : {
+            tableName: "Services"
+          }
+        }
       },
       createdAt: {
         allowNull: false,

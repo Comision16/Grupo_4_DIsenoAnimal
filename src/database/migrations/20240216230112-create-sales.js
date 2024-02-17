@@ -13,13 +13,28 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       ticketId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model : {
+            tableName: "Tickets"
+          }
+        }
       },
       userId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model : {
+            tableName: "Users"
+          }
+        }
       },
       statusId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model : {
+            tableName: "Statuses"
+          }
+        }
       },
       createdAt: {
         allowNull: false,

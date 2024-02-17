@@ -16,11 +16,21 @@ module.exports = {
       },
       specieId: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+          model : {
+            tableName: "Species"
+          }
+        }
       },
       userId: {
         type: Sequelize.INTEGER,        
-        allowNull: false
+        allowNull: false,
+        references: {
+          model : {
+            tableName: "Users"
+          }
+        }
       },
       createdAt: {
         allowNull: false,

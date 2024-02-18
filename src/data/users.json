@@ -61,5 +61,25 @@
       "mascota": "Enviado de Santa",
       "especie": "perro",
       "imagen": "1706482665639producto.png"
+   },
+   {
+      "id": "3e392bd7-61ac-4ac8-8604-5d197dd4c607",
+      "name": "Digital House",
+      "email": "admin@gmail.com",
+      "password": "$2a$10$rABJIBvXpHZa0aj5EYOi6Ob/HqAjI0q7VsFpLgzUHsKYYKn/bWVfO",
+      "role": "admin",
+      "mascota": "Catch",
+      "especie": "gato",
+      "imagen": "1708217378172producto.png"
+   },
+   {
+      "id": "3c597639-5142-4799-abee-deb701101a4b",
+      "name": "Digital House",
+      "email": "user@gmail.com",
+      "password": "$2a$10$GzMDc7PKY58C/4C7IhNl4.wEWXF6FSoBuHGm4fz4tSdmHhLjWEmTW",
+      "role": "user",
+      "mascota": "Catch",
+      "especie": "gato",
+      "imagen": "1708217705535producto.png"
    }
 ]

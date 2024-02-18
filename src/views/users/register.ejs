@@ -32,14 +32,14 @@
                     </div>
 
                     <label for="password"></label>
-                    <input type="password" id="password" name="password"value="<%= locals.errors && errors.password ? 'invalid' : null %>" placeholder="Contraseña"  minlength="8" maxlength="12">
+                    <input type="password" id="password" name="password"value="<%= locals.errors && errors.password ? 'invalid' : null %>" placeholder="Contraseña"  minlength="6" maxlength="12">
                     <div class="box-alert">
                         <small class="alert"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
                     </div>
 
                     <label for="password2"></label>
                     <input type="password" id="password2" name="password2" 
-                    value="<%= locals.errors && errors.password2 ? 'invalid' : null %>" placeholder="Confirmar contraseña"  minlength="8" maxlength="12">
+                    value="<%= locals.errors && errors.password2 ? 'invalid' : null %>" placeholder="Confirmar contraseña"  minlength="6" maxlength="12">
                     <div class="box-alert">
                         <small class="alert"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></small>
                     </div>

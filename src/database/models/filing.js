@@ -14,12 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Filing.init({
-    value: {
-      type :  
-        DataTypes.INTEGER,
-        allowNull: false,
-    },
-
+    value: DataTypes.INTEGER,
     measure: DataTypes.STRING
   }, {
     sequelize,

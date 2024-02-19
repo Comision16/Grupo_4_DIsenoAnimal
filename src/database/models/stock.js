@@ -14,12 +14,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   stock.init({
-    flavorId: DataTypes.INTEGER,
-    productId: DataTypes.INTEGER,
-    amount: DataTypes.INTEGER
+    flavorId: { type: DataTypes.INTEGER, allowNull: false },
+    productId: { type: DataTypes.INTEGER, allowNull: false },
+    amount: { type: DataTypes.INTEGER, allowNull: false },  
   }, {
     sequelize,
     modelName: 'stock',
+    timestamps: true,
   });
   return stock;
 };

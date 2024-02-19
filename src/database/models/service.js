@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  service.init({
+  Service.init({
     name: {
       types: DataTypes.STRING,
       allowNull : false

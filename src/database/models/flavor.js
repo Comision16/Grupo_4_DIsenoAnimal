@@ -5,8 +5,8 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Flavor extends Model {
     static associate(models) {
-      Flavor.hasMany(models.Product, {foreignKey: 'flavorId'});
-      Flavor.hasMany(models.Stock, {foreignKey: 'flavorId'});
+      
+     
     }
   };
   Flavor.init({

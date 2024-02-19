@@ -39,7 +39,7 @@ module.exports = {
           key: 'id'
         }
       },
-      flingId: {
+      filingId: {
         type: Sequelize.INTEGER,
         allowNull: true,
         references: {

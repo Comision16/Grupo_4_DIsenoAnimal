@@ -2,8 +2,9 @@
 
 const productsJSON = require("../../data/productos.json");
 
-const stockDB = productsJSON.map((product, index) => {
+const stockDB = productsJSON.map((product) => {
   return {
+    
     flavorId: product.flavor == "Pescado" ? 1 : product.flavor == "Pollo y Arroz" ? 2 : product.flavor == "Carne y Pollo" ? 3  : product.flavor == "Carne" ? 4 : product.flavor == "Leche" ? 5 : product.flavor == "Arroz y Pescado" ? 6 : product.flavor == "Pescado y Carne" ? 7 : 8,
     productId: product.id,
     amount: product.stock,

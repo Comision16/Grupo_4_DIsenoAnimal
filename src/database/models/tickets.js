@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Tickets.init({
     paymentMethodsId:{
-      types : DataTypes.INTEGER,
+      type : DataTypes.INTEGER,
       allowNull: false
     } 
   }, {

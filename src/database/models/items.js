@@ -15,15 +15,15 @@ module.exports = (sequelize, DataTypes) => {
   }
   Items.init({
     amount: {
-      types : DataTypes.INTEGER,
+      type : DataTypes.INTEGER,
       allowNull: false
     },
     productId: {
-      types : DataTypes.INTEGER,
+      type : DataTypes.INTEGER,
       allowNull: false,
     },
     saleId: {
-      types : DataTypes.INTEGER,
+      type : DataTypes.INTEGER,
       allowNull: false
     }
   }, {

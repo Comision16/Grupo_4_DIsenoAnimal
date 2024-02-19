@@ -4,6 +4,7 @@ const Reserva = require("../data/reserva")
 const { existsSync, unlinkSync } = require('fs');
 const { leerJSON, escribirJSON } = require("../data");
 
+const db = require("../database/models")
 
 module.exports = {
     login : (req, res) => {
@@ -11,6 +12,7 @@ module.exports = {
         
     },
     processLogin : (req, res) => {
+        
         const errors = validationResult(req);
 
         if(errors.isEmpty()){

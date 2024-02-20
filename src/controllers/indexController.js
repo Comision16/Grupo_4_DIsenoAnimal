@@ -20,7 +20,7 @@ module.exports = {
               ]
         })
             .then( products =>{
-                //    return res.send(products)
+             return res.send(products)   //    
                    return res.render('index', {
             products,
             usuario  

@@ -129,46 +129,77 @@ module.exports = {
 
     update: (req, res) => {
         const { name, email, mascota, especie } = req.body;
-        const { id } = req.params;
-
         const errors = validationResult(req);
+
+        console.log(req.body);
 
         if (errors.isEmpty()) {
 
             const imagenDelete = req.file ? req.file.fieldname : null;
 
-            const usuarios = leerJSON('users');
+            db.User.findByPk(req.params.id, {
+                include : ["pet"]
+            })
+            .then((user) => {
+                (imagenDelete && existsSync('public/images/' + user.image)) && 
+                unlinkSync('public/images/' + user.image)
 
-            const userUpdate = usuarios.map(usuario => {
-                if (usuario.id == id) {
-
-                    (imagenDelete && existsSync('public/images/' + usuario.imagen)) && unlinkSync('public/images/' + usuario.imagen)
-
-                    usuario.name = name.trim(),
-                        usuario.email = email.trim(),
-                        usuario.mascota = mascota.trim(),
-                        usuario.especie = especie,
-                        usuario.imagen = req.file ? req.file.filename : usuario.imagen
-                }
-
-                return usuario
-            });
-
-            escribirJSON(userUpdate, 'users')
-
-            const users = leerJSON('users');
-
-            const usuario = users.find(user => user.id == id)
-
-            const especies = leerJSON("especie")
-
-            return res.render("users/perfil", {
-                old: req.body,
-                ...usuario,
-                especies
+                db.User.update({
+                    name,
+                    email,                    
+                    image : req.file ? req.file.filename : User.image
+                },
+                {
+                    where : {
+                        id
+                    }
+                })
+                .then (() => {
+                    return db.Pet.update({
+                        name : mascota,
+                        specieId : especie
+                    },
+                    {
+                        where : {
+                            userId : id
+                        }
+                    })
+                })
             })
 
-        } else {
+        var imagenUser = req.session.userLogin
+        const {id} = req.session.userLogin
+
+        const usuario = db.User.findByPk(id, {
+            include : ["pet"]
+        })
+
+        const especies = db.Specie.findAll()
+
+        console.log(especies.dataValues);
+
+        const mascotas = db.Pet.findOne({
+            where: {
+                userId: id
+            },
+            include: ["user"]
+        })
+
+        Promise.all([usuario, especies, mascotas])
+
+            .then(([usuario, especies, mascotas]) => {
+
+                console.log(mascotas);
+                
+                return res.render("users/perfil", {
+                    ...usuario.dataValues,
+                    ...imagenUser,
+                    mascotas,
+                    especies
+                })
+            })
+            .catch(error => console.log(error))
+    } else {
             const datosUsuario = req.session.userLogin
 
             console.log(datosUsuario);
@@ -180,6 +211,8 @@ module.exports = {
             })
         }
     },
+
+
     dashboardUsuarios: (req, res) => {
         const users = leerJSON('users');
 

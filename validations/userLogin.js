@@ -19,9 +19,9 @@ module.exports = [
                 }
             })
             .then(user => {
-                if(!user || compareSync(value, user.password)) {
+                if(!user || !compareSync(value, user.password)) {
                     return Promise.reject()
-                } 
+                }  
             })
             .catch(error => {
                 console.log(error);

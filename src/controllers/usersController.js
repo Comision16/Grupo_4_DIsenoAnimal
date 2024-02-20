@@ -62,16 +62,16 @@ module.exports = {
             db.User.create({
                 name,
                 email,
-                password : bcryptjs.hashSync(password.trim(), 10),
-                roleId : 1,
-                mascota : "",
-                especie : "",
-                imagen : ""
+                password: bcryptjs.hashSync(password.trim(), 10),
+                roleId: 1,
+                mascota: "",
+                especie: "",
+                imagen: ""
             })
-            .then(user => {
-                console.log(user);
-            return res.redirect('/usuarios/ingreso')                
-            })
+                .then(user => {
+                    console.log(user);
+                    return res.redirect('/usuarios/ingreso')
+                })
 
 
 
@@ -93,22 +93,40 @@ module.exports = {
     },
     profile: (req, res) => {
 
-        const imagenUser = req.session.userLogin
+        var imagenUser = req.session.userLogin
+        const { id } = req.session.userLogin
 
-        const { email } = req.session.userLogin
-
-        const users = leerJSON('users');
-
-        const usuario = users.find(user => user.email == email)
-
-        const especies = leerJSON("especie")
-
-        return res.render("users/perfil", {
-            ...usuario,
-            ...imagenUser,
-            especies
+        const usuario = db.User.findByPk(id, {
+            include : ["pet"]
         })
+
+        const especies = db.Specie.findAll()
+
+        console.log(especies.dataValues);
+
+        const mascotas = db.Pet.findOne({
+            where: {
+                userId: id
+            },
+            include: ["user"]
+        })
+
+        Promise.all([usuario, especies, mascotas])
+
+            .then(([usuario, especies, mascotas]) => {
+
+                console.log(mascotas);
+                
+                return res.render("users/perfil", {
+                    ...usuario.dataValues,
+                    ...imagenUser,
+                    mascotas,
+                    especies
+                })
+            })
+            .catch(error => console.log(error))
     },
+
     update: (req, res) => {
         const { name, email, mascota, especie } = req.body;
         const { id } = req.params;

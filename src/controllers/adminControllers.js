@@ -1,13 +1,21 @@
 const { leerJSON } = require('../data')
-
+const db = require('../database/models');
 module.exports = {
     
     dashboard: (req, res) => {
-
-        const productos = leerJSON('productos');
-
-        return res.render('./dashboard', {productos})
+        db.Product.findAll({
+            include: [
+                "image_product",
+                          ]
+        })
+        .then( products =>{
+             return res.send(products)     
+            return res.render('./dashboard', {products})
+     })
+     .catch(error => console.log(error))
     },
+
+
     search: (req, res) => {        
         const productos = leerJSON('productos');
 		const {keywords} = req.query;

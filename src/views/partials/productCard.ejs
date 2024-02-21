@@ -1,12 +1,12 @@
 <div class="index__body__main__section--producto">
-    <a href="/productos/detalle/<%= id %>">
+    <a href="/productos/detalle/<%= product.id %>">
     <div class="index__body__main__section--producto--columna1">
-      <img src="/images/<%= Image_products[0].file %>" alt="imagen del producto"></div></a>
+      <img src="/images/<%= product.image_product[0].file %>" alt="imagen del producto"></div></a>
 <div class="index__body__main__section--producto--columna2">
-      <h3 class="index__body__main__section--producto--titulo"><%= name %></h3>
-      <p class="index__body__main__section--producto--descripcion"><%= description %></p></div>
+      <h3 class="index__body__main__section--producto--titulo"><%= product.name %></h3>
+      <p class="index__body__main__section--producto--descripcion"><%= product.description %></p></div>
 <div class="index__body__main__section--producto--columna3">
-      <p class="index__body__main__section--producto--precio"> $ <%= Intl.NumberFormat('de-DE').format(price)%> </p>
+      <p class="index__body__main__section--producto--precio"> $ <%= Intl.NumberFormat('de-DE').format(product.price)%> </p>
       <a href="/carrito" class="index__body__main__section--producto--agregar">
       <p>Agregar al Carrito</p>
       <i class="fa-solid fa-cart-plus"></i></a>

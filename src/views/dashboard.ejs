@@ -18,7 +18,7 @@
             </div>
 
             <div class="dashboard_group_card gap-3">
-              <% productos.forEach(({id, nombre, descripcion, image1, image2, precio, categoria})=> { %>
+              <% productos.forEach(({id, name, description, price,})=> { %>
                 <div class=" carDashboar card  bg-light justify-content-between ">
                   <div >
                     <img class="mx-auto d-block my-3" src="/images/<%= image1 %>" alt=""
@@ -26,16 +26,16 @@
                     <div class="col-12">
                       <ul class="list-group list-group-flush">
                         <li class="list-group-item"> <strong>Id: </strong>
-                          <%= id %>
+                          <%= product.id %>
                         </li>
                         <li class="list-group-item"> <strong>Nombre: </strong>
-                          <%= nombre %>
+                          <%= product.name %>
                         </li>
                         <li class="list-group-item"> <strong> Descripcion: </strong>
-                          <%= descripcion %>
+                          <%= product.description %>
                         </li>
                         <li class="list-group-item"> <strong>Precio </strong>
-                          <%= precio %>
+                          <%= product.price %>
                         </li>
                         </li>
                         <li class="list-group-item mb-2"> <strong>Categoria </strong>

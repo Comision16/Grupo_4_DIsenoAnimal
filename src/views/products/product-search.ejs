@@ -15,7 +15,7 @@
 
           <% if (productos.length) { %>
           <% productos.forEach(producto => { %>
-            <%- include('../partials/productCard.ejs',{ ...producto }) %>
+            <%- include('../partials/productCard.ejs',{ ...producto.dataValues }) %>
             <% }) %>
            
           <% } else { %>

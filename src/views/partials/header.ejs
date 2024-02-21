@@ -14,7 +14,7 @@
             <% if (locals.userLogin) { %>
                 <div class="header_imagen_y_nombre">
                     <div class="header_imagen_content">
-                <img class="perfil_imagen" src="/images/<%= imagen || "default.jpeg" %>" alt="">
+                <img class="perfil_imagen" src="/images/<%= image %>" alt="">
             </div>
                 </div>
              
@@ -140,7 +140,7 @@
                  
                 <% } %>
                 <% if (locals.userLogin) { %>                 
-                    <% if (userLogin.role === "admin") { %>
+                    <% if (userLogin.role == 1 ) { %>
                      
                     <li><a href="/admin/dashboard">Dashboard</a></li>
                     <% } %>

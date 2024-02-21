@@ -31,16 +31,16 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <% productos.forEach(({id, nombre, descripcion, image1, precio})=> { %>
+                    <% productos.forEach(({id, name, description, Image_products, price})=> { %>
                       <tr>
                         <th scope="row">
                           <%= id %>
                         </th>
                         <td>
-                          <%= nombre %>
+                          <%= name %>
                         </td>
                         <td>
-                          <%= descripcion %>
+                          <%= description %>
                         </td>
                         <td>
                           <div class="d-flex gap-2">
@@ -52,10 +52,10 @@
 
                             <button type="button" data-bs-toggle="modal" data-bs-target="#modalDelete<%= id %>" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
                             
-                            <%- include('./partials/modal-product-dashboard',{ id, nombre, descripcion, image1, precio
+                            <%- include('./partials/modal-product-dashboard',{ id, name, description,Image_products, price
                               }) %>
 
-                            <%- include('./partials/modal-delete-product', { id, nombre }) %>
+                            <%- include('./partials/modal-delete-product', { id, name }) %>
 
                           </div>
                         </td>

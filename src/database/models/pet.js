@@ -1,16 +1,17 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Pet extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
+      Pet.belongsTo(models.User, {
+        as: "user",
+        foreignKey: "userId"
+      });
+      Pet.belongsTo(models.Specie, {
+        as: "especie",
+        foreignKey: "specieId"
+      })
     }
   }
   Pet.init({
@@ -24,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     userId: {
-      type: DataTypes.INTEGER,        
+      type: DataTypes.INTEGER,
       allowNull: false
     }
   }, {

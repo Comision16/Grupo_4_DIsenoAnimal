@@ -18,10 +18,10 @@
             </div>
 
             <div class="dashboard_group_card gap-3">
-              <% productos.forEach(({id, name, description, price,})=> { %>
+              <% productos.forEach(({id, name, description, Image_products, price, product_species})=> { %>
                 <div class=" carDashboar card  bg-light justify-content-between ">
                   <div >
-                    <img class="mx-auto d-block my-3" src="/images/<%= image1 %>" alt=""
+                    <img class="mx-auto d-block my-3" src="/images/<%= Image_products[0].file || "ProductDefault.jpeg" %>" alt=""
                       style="max-width: 20%; max-height: 20%;">
                     <div class="col-12">
                       <ul class="list-group list-group-flush">
@@ -29,17 +29,17 @@
                           <%= product.id %>
                         </li>
                         <li class="list-group-item"> <strong>Nombre: </strong>
-                          <%= product.name %>
+                          <%= name %>
                         </li>
                         <li class="list-group-item"> <strong> Descripcion: </strong>
-                          <%= product.description %>
+                          <%= description %>
                         </li>
                         <li class="list-group-item"> <strong>Precio </strong>
-                          <%= product.price %>
+                          <%= price %>
                         </li>
                         </li>
                         <li class="list-group-item mb-2"> <strong>Categoria </strong>
-                          <%= categoria %>
+                          <%= product_species.name %>
                         </li>
                       </ul>
                     </div>
@@ -53,7 +53,7 @@
 
                   </div>
                 </div>
-                      <%- include('./partials/modal-delete-product', { id, nombre }) %>
+                      <%- include('./partials/modal-delete-product', { id, name }) %>
             </div>
 
                 </div>

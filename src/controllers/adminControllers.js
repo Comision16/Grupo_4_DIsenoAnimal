@@ -1,28 +1,43 @@
+const { Op } = require('sequelize');
 const { leerJSON } = require('../data')
-const db = require('../database/models');
+const db = require("../database/models")
+
 module.exports = {
-    
+
     dashboard: (req, res) => {
+
         db.Product.findAll({
             include: [
-                "image_product",
-                          ]
+                "Image_products" , "product_species"
+              ]
         })
-        .then( products =>{
-             return res.send(products)     
-            return res.render('./dashboard', {products})
-     })
-     .catch(error => console.log(error))
+            .then(productos => {
+                /* return res.send(productos) */
+                return res.render('./dashboard', { productos })
+            })
+            .catch(error => console.log(error))
+
     },
-
-
-    search: (req, res) => {        
-        const productos = leerJSON('productos');
-		const {keywords} = req.query;
-        
-		return res.render('dashboardFilter', {
-			productos : productos.filter(producto => producto.nombre.toLowerCase().includes(keywords.toLowerCase()) ||  producto.descripcion.toLowerCase().includes(keywords.toLowerCase())), 
-			keywords         
-		})
-	}
+    search: (req, res) => {
+        const { keywords } = req.query;
+    
+        db.Product.findAll({
+            where: {
+                name: {
+                    [Op.substring]: keywords
+                }
+            },
+            include: [
+                "Image_products" 
+            ]
+        })
+        .then(productos => {
+            /* return res.send(productos) */
+            return res.render('dashboardFilter', {
+                productos,
+                keywords
+            });
+        })
+        .catch(error => console.log(error));
+    }
 }

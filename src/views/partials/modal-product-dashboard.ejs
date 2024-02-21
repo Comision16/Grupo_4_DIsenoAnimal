@@ -7,17 +7,17 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <h4><%= nombre %></h4>
+          <h4><%= name %></h4>
           <div class="row">
             <div class="col-12 col-md-6">
-              <img class="mx-auto d-block my-3" src="/images/<%= image1 %>" alt="" style="max-width: 40%; height: auto;">
+              <img class="mx-auto d-block my-3" src="/images/<%= Image_products[0].file %>" alt="" style="max-width: 40%; height: auto;">
             </div>
             <div class="col-12 col-md-6">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item"> <strong>Id: </strong><%= id %></li>
-                <li class="list-group-item"> <strong>Nombre: </strong><%= nombre %></li>
-                <li class="list-group-item"> <strong> Descripcion: </strong><%= descripcion %></li>
-                <li class="list-group-item"> <strong>Precio </strong><%= precio %></li>
+                <li class="list-group-item"> <strong>Nombre: </strong><%= name %></li>
+                <li class="list-group-item"> <strong> Descripcion: </strong><%= description %></li>
+                <li class="list-group-item"> <strong>Precio </strong><%= price %></li>
               </ul>
             </div>
           </div>

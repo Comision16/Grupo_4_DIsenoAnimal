@@ -1,22 +1,35 @@
-
-
-
+const db = require("../../database/models")
+const { Op } = require('sequelize');
 
 module.exports = (req, res) =>  {
         
     const {id} = req.session.userLogin ? req.session.userLogin : 1
 
-        const users = leerJSON('users');
+    const { keywords } = req.query;
+    
+        const productos = db.Product.findAll({
+            where: {
+                name: {
+                    [Op.substring]: keywords
+                }
+            },
+            include: [
+                "Image_products" 
+            ]
+        })
 
-        const usuario = users.find( user => user.id == id)
+        const usuario = db.User.findByPk(id)
 
-        const productos = leerJSON('productos')
+        Promise.all([productos, usuario])
+        .then(([productos, usuario]) => {
+            /* return res.send(productos) */
+            return res.render('products/product-search', {
+                productos,
+                keywords,
+                usuario            
+            })
+        })
+        .catch(error => console.log(error));
+    }
 
-		const {keywords} = req.query;
-        
-		return res.render('products/product-search', {
-			productos : productos.filter(producto => producto.nombre.toLowerCase().includes(keywords.toLowerCase()) ||  producto.descripcion.toLowerCase().includes(keywords.toLowerCase()) || producto.categoria.toLowerCase().includes(keywords.toLowerCase())), 
-			keywords,
-            usuario            
-		})
-    } 
+  

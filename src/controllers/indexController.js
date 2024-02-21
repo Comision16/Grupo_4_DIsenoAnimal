@@ -8,7 +8,7 @@ module.exports = {
     
     index: (req, res) => {
 
-        const {id} = req.session.userLogin ? req.session.userLogin : 1
+        const {id} = req.session.userLogin ? req.session.userLogin : 0
 
         const users = leerJSON('users');
 
@@ -22,7 +22,7 @@ module.exports = {
               ]
         })
             .then( products =>{
-            //  return res.send(products)     
+                //    return res.send(products)
                    return res.render('index', {
                     
             products,

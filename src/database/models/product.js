@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
         as : "image_product",
         foreignKey : "productId"
       })
+<<<<<<< HEAD
       Product.belongsTo(models.Specie,{
       as : "product_specie",
      foreignKey : "specieId"
@@ -24,6 +25,13 @@ module.exports = (sequelize, DataTypes) => {
       as : "product_filing",
       foreignKey : "filingId"
     });
+=======
+
+      Product.belongsTo(models.Specie,{
+        as : "product_species",
+        foreignKey : "specieId"
+      })
+>>>>>>> 606fe8aac1a1b53cae7b78eb28aa5b28f0465a57
     }
   }
   

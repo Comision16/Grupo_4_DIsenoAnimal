@@ -9,6 +9,11 @@ module.exports = (sequelize, DataTypes) => {
         as : "Image_products",
         foreignKey : "productId"
       })
+
+      Product.belongsTo(models.Specie,{
+        as : "product_species",
+        foreignKey : "specieId"
+      })
     }
   }
   

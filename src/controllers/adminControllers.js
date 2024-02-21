@@ -6,8 +6,13 @@ module.exports = {
 
     dashboard: (req, res) => {
 
-        db.Product.findAll()
+        db.Product.findAll({
+            include: [
+                "Image_products" , "product_species"
+              ]
+        })
             .then(productos => {
+                /* return res.send(productos) */
                 return res.render('./dashboard', { productos })
             })
             .catch(error => console.log(error))
@@ -15,22 +20,24 @@ module.exports = {
     },
     search: (req, res) => {
         const { keywords } = req.query;
-
+    
         db.Product.findAll({
             where: {
                 name: {
                     [Op.substring]: keywords
                 }
-            }
+            },
+            include: [
+                "Image_products" 
+            ]
         })
-            .then(productos => {
-                return res.render('dashboardFilter', {
-                    productos,
-                    keywords
-                })
-
-            })
-            .catch(error => console.log(error))
-
+        .then(productos => {
+            /* return res.send(productos) */
+            return res.render('dashboardFilter', {
+                productos,
+                keywords
+            });
+        })
+        .catch(error => console.log(error));
     }
 }

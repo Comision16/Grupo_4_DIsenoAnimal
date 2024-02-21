@@ -13,6 +13,11 @@ module.exports = (sequelize, DataTypes) => {
       Species.hasMany(models.Pet , {
         as : "mascota",
         foreignKey : "specieId"
+      })
+       
+      Species.hasMany(models.Product , {
+        as : "species_product",
+        foreignKey : "specieId"
       }) 
     }
   }

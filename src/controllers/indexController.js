@@ -1,5 +1,6 @@
 const { leerJSON, escribirJSON } = require("../data");
-const productos = leerJSON('productos');
+const db = require('../database/models');
+const image_product = require("../database/models/image_product");
 const inscribiteJSON = leerJSON('inscribite');
 
 
@@ -12,12 +13,20 @@ module.exports = {
         const users = leerJSON('users');
 
         const usuario = users.find( user => user.id == id)
-
-        return res.render('index', {
-            productos,
-            usuario
+        
+        db.Product.findAll({
+            include: [
+                "Image_products"
+              ]
         })
-
+            .then( products =>{
+             return res.send(products)   //    
+                   return res.render('index', {
+            products,
+            usuario  
+        })
+     })
+     .catch(error => console.log(error))
     },
     cart: (req, res) => {
 

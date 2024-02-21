@@ -1,22 +1,68 @@
-
-
+const db = require("../../database/models")
 
 module.exports = 
 (req, res) => {
-    const {id} = req.session.userLogin ? req.session.userLogin : 1
 
-    const users = leerJSON('users');
+    if (req.session.userLogin) {
+        
+    const params = req.params.id
+    const {id} = req.session.userLogin 
 
-    const usuario = users.find( user => user.id == id)
-    
+    const productos = db.Product.findAll({ 
+        include: [
+            "Image_products" 
+        ]
+    })
 
-    const parametrizada = req.params.id
-    const idproducto = productos.find(que => que.id == parametrizada )
-        /*return res.send(productos)*/
+    const idproducto = db.Product.findByPk(params,{
+        include: [
+            "Image_products" 
+        ]
+    })
+
+    const usuario = db.User.findByPk(id)
+
+    Promise.all([productos, usuario, idproducto])
+    .then(([productos, usuario, idproducto]) => {
+        /* return res.send(productos) */
         return res.render('products/product-detail', {
-        productos,
-        idproducto,
-        usuario
+            productos,
+            idproducto,             
+            usuario        
         })
+    })
+    .catch(error => console.log(error));
 
-  }
+    } else {
+        const params = req.params.id
+
+    const productos = db.Product.findAll({ 
+        include: [
+            "Image_products" 
+        ]
+    })
+
+    const idproducto = db.Product.findByPk(params,{
+        include: [
+            "Image_products" 
+        ]
+    })
+
+   /*  return res.send(idproducto) */
+
+    const usuario = {}
+
+    Promise.all([productos, usuario, idproducto])
+    .then(([productos, usuario, idproducto,]) => {
+        /* return res.send(productos) */
+        return res.render('products/product-detail', {
+            productos,
+            idproducto,             
+            usuario        
+        })
+    })
+    .catch(error => console.log(error));
+    }
+
+    
+}

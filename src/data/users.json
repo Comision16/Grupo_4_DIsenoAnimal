@@ -7,7 +7,7 @@
       "role": "admin",
       "mascota": "lola",
       "especie": "gato",
-      "imagen": "1705843356056producto.png"
+      "image": "1705843356056producto.png"
    },
    {
       "id": "2",
@@ -18,7 +18,7 @@
       "role": "user",
       "mascota": "",
       "especie": "",
-      "imagen": "defaultUser.jpeg"
+      "image": "defaultUser.jpeg"
    },
    {
       "id": "3",
@@ -29,7 +29,7 @@
       "role": "admin",
       "mascota": "Negra",
       "especie": "perro",
-      "imagen": "1705673684287producto.jpg"
+      "image": "1705673684287producto.jpg"
    },
    {
       "id": "4",
@@ -40,7 +40,7 @@
       "role": "admin",
       "mascota": "boby",
       "especie": "gato",
-      "imagen": "1706552663753producto.jpg"
+      "image": "1706552663753producto.jpg"
    },
    {
       "id": "5",
@@ -50,7 +50,7 @@
       "role": "admin",
       "mascota": "pepo",
       "especie": "loro",
-      "imagen": "1706398701140producto.png"
+      "image": "1706398701140producto.png"
    },
    {
       "id": "6",
@@ -60,7 +60,7 @@
       "role": "user",
       "mascota": "Enviado de Santa",
       "especie": "perro",
-      "imagen": "1706482665639producto.png"
+      "image": "1706482665639producto.png"
    },
    {
       "id": "7",
@@ -70,7 +70,7 @@
       "role": "admin",
       "mascota": "Catch",
       "especie": "gato",
-      "imagen": "1708217378172producto.png"
+      "image": "1708217378172producto.png"
    },
    {
       "id": "8",
@@ -80,6 +80,6 @@
       "role": "user",
       "mascota": "Catch",
       "especie": "gato",
-      "imagen": "1708217705535producto.png"
+      "image": "1708217705535producto.png"
    }
 ]

@@ -4,15 +4,15 @@
   <body class="detail_product">
     <%- include('../partials/scritps') %>
 
-    <%- include('../partials/header.ejs', {...usuario}) %>
+    <%- include('../partials/header.ejs', {...usuario.dataValues}) %>
       <link rel="icon" type="image/x-icon" href="/images/favicon-detalle.png">
-      <title><%= idproducto.nombre %></title>
+      <title><%= idproducto.name %></title>
 <!-- ul li de donde te encuentras -->
       <ul class="ul_li_detailproduct">
  <li><a href="/">Home</a>></li>
  <li><a href="/productos/todos"><%= idproducto.categoria %></a> > </li>
  <li><a href="/productos/detalle/<%= idproducto.id %>">
-     <%= idproducto.nombre %>
+     <%= idproducto.name %>
    </a></li>
       </ul>
 
@@ -42,7 +42,7 @@
  <div class="contenedor_div_detail">
 
    <h1>
-     <%= idproducto.nombre %>
+     <%= idproducto.name %>
    </h1>
 <!-- estrellas de votacion proximamente para que el cliente califique-->
    <div class="contenedor_stars_detail">
@@ -57,14 +57,14 @@
 <!-- Imagenes del producto-->
    <div class="Imagen_detailproduct">
      <div class="image-gallery">
-<img src="/images/<%= idproducto.image1 %>" alt="<%= idproducto.nombre %> ">
-<img src="/images/<%= idproducto.image2 %>" alt="<%= idproducto.nombre %>">
+<img src="/images/<%= idproducto.Image_products[0].file %>" alt="<%= idproducto.name %> ">
+<img src="/images/<%= idproducto.Image_products[1].file %>" alt="<%= idproducto.name %>">
      </div>
      <!-- Precio del producto , final , total & cantidad del descuento aplicado -->
      <div class="detail_product_rigth">
 <%
-const precio = typeof idproducto.precio === 'number' ? idproducto.precio : 0;
-const descuento = typeof idproducto.descuento === 'number' ? idproducto.descuento : 0;
+const precio = typeof idproducto.price === 'number' ? idproducto.price : 0;
+const descuento = typeof idproducto.discount === 'number' ? idproducto.discount : 0;
 
 const precioConDescuento = precio - (descuento * precio) / 100;
 %>

@@ -1,20 +1,36 @@
+const { Op } = require('sequelize');
 const { leerJSON } = require('../data')
+const db = require("../database/models")
 
 module.exports = {
-    
+
     dashboard: (req, res) => {
 
-        const productos = leerJSON('productos');
+        db.Product.findAll()
+            .then(productos => {
+                return res.render('./dashboard', { productos })
+            })
+            .catch(error => console.log(error))
 
-        return res.render('./dashboard', {productos})
     },
-    search: (req, res) => {        
-        const productos = leerJSON('productos');
-		const {keywords} = req.query;
-        
-		return res.render('dashboardFilter', {
-			productos : productos.filter(producto => producto.nombre.toLowerCase().includes(keywords.toLowerCase()) ||  producto.descripcion.toLowerCase().includes(keywords.toLowerCase())), 
-			keywords         
-		})
-	}
+    search: (req, res) => {
+        const { keywords } = req.query;
+
+        db.Product.findAll({
+            where: {
+                name: {
+                    [Op.substring]: keywords
+                }
+            }
+        })
+            .then(productos => {
+                return res.render('dashboardFilter', {
+                    productos,
+                    keywords
+                })
+
+            })
+            .catch(error => console.log(error))
+
+    }
 }

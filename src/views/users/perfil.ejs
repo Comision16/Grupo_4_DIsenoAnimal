@@ -7,7 +7,7 @@
 
     <body class="perfil_body">
 
-        <%- include('../partials/header.ejs', {image}) %>
+        <%- include('../partials/header.ejs', {imagen : image}) %>
 
             <main class="perfil_main">
                 <section>
@@ -59,7 +59,7 @@
                                         value="<%= mascotas.name %>">
 
                                     <small class="perfil_alert" class="perfil_alert">
-                                        <%= locals.errors && errors.pet ? errors.pet.msg : null %>
+                                        <%= locals.errors && errors.mascota ? errors.mascota.msg : null %>
                                     </small>
 
                                 </div>

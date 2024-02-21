@@ -7,7 +7,7 @@
 
     <body class="perfil_body">
 
-        <%- include('../partials/header.ejs', {imagen}) %>
+        <%- include('../partials/header.ejs', {imagen : image}) %>
 
             <main class="perfil_main">
                 <section>
@@ -23,7 +23,7 @@
                             </div>
                         </div>
                         <div class="perfil_imagen_content">
-                            <img class="perfil_imagen" src="/images/<%= imagen || " default.jpeg" %>" alt="">
+                            <img class="perfil_imagen" src="/images/<%= image || " default.jpeg" %>" alt="">
                         </div>
                     </div>
                     <form class="perfil_form" action="" method="POST">
@@ -56,8 +56,8 @@
                             <div class="perfil__form__div">
                                 <div>
                                     <label class="perfil_form_div_label" for="mascota">Nombre de Mascota</label>
-                                    <input type="text" name="mascota" id="mascota" placeholder="Nombre Mascota"
-                                        value="<%= locals.old && old.mascota ? old.mascota : mascota %>">
+                                    <input type="text" name="mascota" id="mascota" placeholder="Nombre Mascota" value="<%= mascotas.name %>">
+                                    <input type="text" name="petId" id="petId" placeholder="Nombre Mascota" value="<%= mascotas.id %>" hidden >
 
                                     <small class="perfil_alert" class="perfil_alert">
                                         <%= locals.errors && errors.mascota ? errors.mascota.msg : null %>
@@ -67,18 +67,18 @@
 
                                 <div>
                                     <label class="perfil_form_div_label" for="especie">Tipo de Mascota</label>
-                                    <select name="especie" class="form-select" id="especie">
-                                     <option value="" selected hidden></option>
- 
-                                     <% especies.forEach(item => { %>
- 
-                                      <option value="<%= item %>" <%= (especie && especie == item) && "selected" %> ><%= item %></option>
-                                      
-                                     <% }) %>
-                                   </select>
+                                  <select name="especie" class="form-select" id="especie">
+                                    <option value="" selected hidden></option>
 
-                                    <small class="perfil_alert" class="perfil_alert">
-                                        <%= locals.errors && errors.especie ? errors.especie.msg : null %>
+                                    <% especies.forEach(item => { %>
+
+                                     <option value="<%= item.id %>" <%= (item.id && mascotas.specieId == item.id) && "selected" %> ><%= item.name %></option>
+                                     
+                                    <% }) %>
+                                  </select>
+
+                                    <small class="perfil_alert">
+                                        <%= locals.errors && errors.especies ? errors.especies.msg : null %>
                                     </small>
 
                                 </div>

@@ -69,7 +69,6 @@ module.exports = {
                 imagen: ""
             })
                 .then(user => {
-                    console.log(user);
                     return res.redirect('/usuarios/ingreso')
                 })
 
@@ -97,12 +96,10 @@ module.exports = {
         const { id } = req.session.userLogin
 
         const usuario = db.User.findByPk(id, {
-            include : ["pet"]
+            include: ["pet"]
         })
 
         const especies = db.Specie.findAll()
-
-        console.log(especies.dataValues);
 
         const mascotas = db.Pet.findOne({
             where: {
@@ -115,8 +112,6 @@ module.exports = {
 
             .then(([usuario, especies, mascotas]) => {
 
-                console.log(mascotas);
-                
                 return res.render("users/perfil", {
                     ...usuario.dataValues,
                     ...imagenUser,
@@ -131,52 +126,146 @@ module.exports = {
         const { name, email, mascota, especie } = req.body;
         const errors = validationResult(req);
 
-        console.log(req.body);
-
         if (errors.isEmpty()) {
 
             const imagenDelete = req.file ? req.file.fieldname : null;
-
             db.User.findByPk(req.params.id, {
-                include : ["pet"]
+                include: ["pet"]
             })
-            .then((user) => {
-                (imagenDelete && existsSync('public/images/' + user.image)) && 
-                unlinkSync('public/images/' + user.image)
+                .then((user) => {
+                    (imagenDelete && existsSync('public/images/' + user.image)) &&
+                        unlinkSync('public/images/' + user.image)
 
-                db.User.update({
-                    name,
-                    email,                    
-                    image : req.file ? req.file.filename : User.image
-                },
-                {
-                    where : {
-                        id
-                    }
-                })
-                .then (() => {
-                    return db.Pet.update({
-                        name : mascota,
-                        specieId : especie
+                    db.User.update({
+                        name,
+                        email,
+                        image: req.file ? req.file.filename : User.image
                     },
-                    {
-                        where : {
-                            userId : id
-                        }
+                        {
+                            where: {
+                                id
+                            }
+                        })
+                        .then(() => {
+                            return db.Pet.update({
+                                name: mascota,
+                                specieId: especie
+                            },
+                                {
+                                    where: {
+                                        userId: id
+                                    }
+                                })
+                        })
+                })
+
+            var imagenUser = req.session.userLogin
+            const { id } = req.session.userLogin
+
+            const usuario = db.User.findByPk(id, {
+                include: ["pet"]
+            })
+
+            const especies = db.Specie.findAll()
+
+            const mascotas = db.Pet.findOne({
+                where: {
+                    userId: id
+                },
+                include: ["user"]
+            })
+
+            Promise.all([usuario, especies, mascotas])
+
+                .then(([usuario, especies, mascotas]) => {
+
+                    return res.render("users/perfil", {
+                        ...usuario.dataValues,
+                        ...imagenUser,
+                        mascotas,
+                        especies
                     })
                 })
+                .catch(error => console.log(error))
+        } else {
+            const datosUsuario = req.session.userLogin
+
+            var imagenUser = req.session.userLogin
+            const { id } = req.session.userLogin
+
+            const usuario = db.User.findByPk(id, {
+                include: ["pet"]
             })
 
+            const especies = db.Specie.findAll()
+
+            const mascotas = db.Pet.findOne({
+                where: {
+                    userId: id
+                },
+                include: ["user"]
+            })
+
+            Promise.all([usuario, especies, mascotas])
+
+                .then(([usuario, especies, mascotas]) => {
+
+                    return res.render('users/perfil', {
+                        old: req.body,
+                        errors: errors.mapped(),
+                        ...datosUsuario,
+                        usuario,
+                        mascotas,
+                        especies
+                    })
+                })
+                .catch(error => console.log(error))
+        }
+    },
+
+
+    dashboardUsuarios: (req, res) => {
+
+        db.User.findAll()
+            .then(users => {
+                return res.render('dashboardUser', {
+                    users
+                });
+            })
+
+
+    },
+
+    gerarquia: (req, res) => {
+        const { id } = req.params;
+
+        db.User.update({
+            roleId: req.body.admin ? 1 : 2
+        },
+            {
+                where: {
+                    id
+                }
+            })
+
+        db.User.findAll()
+            .then(users => {
+                return res.render('dashboardUser', {
+                    users
+                });
+            })
+    },
+
+    reserva: (req, res) => {
+
         var imagenUser = req.session.userLogin
-        const {id} = req.session.userLogin
+        const { id } = req.session.userLogin
 
         const usuario = db.User.findByPk(id, {
-            include : ["pet"]
+            include: ["pet"]
         })
 
         const especies = db.Specie.findAll()
-
-        console.log(especies.dataValues);
 
         const mascotas = db.Pet.findOne({
             where: {
@@ -189,9 +278,7 @@ module.exports = {
 
             .then(([usuario, especies, mascotas]) => {
 
-                console.log(mascotas);
-                
-                return res.render("users/perfil", {
+                return res.render("users/reserva", {
                     ...usuario.dataValues,
                     ...imagenUser,
                     mascotas,
@@ -199,85 +286,24 @@ module.exports = {
                 })
             })
             .catch(error => console.log(error))
-    } else {
-            const datosUsuario = req.session.userLogin
-
-            console.log(datosUsuario);
-
-            return res.render('users/perfil', {
-                old: req.body,
-                errors: errors.mapped(),
-                ...datosUsuario
-            })
-        }
     },
 
-
-    dashboardUsuarios: (req, res) => {
-        const users = leerJSON('users');
-
-        return res.render('dashboardUser', {
-            users
-        });
-    },
-    gerarquia: (req, res) => {
-        const { id } = req.params;
-
-        const users = leerJSON('users');
-
-        const userUpdate = users.map(usuario => {
-            if (usuario.id == id) {
-                if (req.body.admin) {
-                    usuario.role = "admin"
-                } else {
-                    usuario.role = "user"
-                }
-            }
-            return usuario
-        });
-
-        escribirJSON(userUpdate, 'users')
-
-        return res.render('dashboardUser', {
-            users
-        });
-    },
-    reserva: (req, res) => {
-
-        const imagenUser = req.session.userLogin
-
-        const { email } = req.session.userLogin
-
-        const users = leerJSON('users');
-
-        const usuario = users.find(user => user.email == email)
-
-        const especies = leerJSON("especie")
-
-        res.render("users/reserva", {
-            old: req.body,
-            ...usuario,
-            imagenUser,
-            especies
-        })
-    },
     reservar: (req, res) => {
-        const { name, email, mascota, especie, fecha, hora } = req.body;
 
-        const reserva = leerJSON('reserva');
-        const newBooking = new Reserva(name, email, mascota, especie, fecha, hora);
+        const { id } = req.session.userLogin
 
-        reserva.push(newBooking);
+        const { name, email, mascota, especie, fecha, hora, petId } = req.body;
 
-        escribirJSON(reserva, 'reserva')
+        db.Booking.create({
+            name: mascota,
+            date_and_time: fecha,
+            petId
+        })
 
-        const { id } = req.session.userLogin ? req.session.userLogin : 1
+        db.User.findByPk(id)
+            .then(usuario => {
+                return res.render("users/reservado", { ...usuario.dataValues })
+            })
 
-        const users = leerJSON('users');
-
-        const usuario = users.find(user => user.id == id)
-
-
-        return res.render("users/reservado", { ...usuario })
     }
 }

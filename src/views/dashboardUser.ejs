@@ -28,7 +28,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <% users.forEach(({id, name, email, role})=> { %>
+                    <% users.forEach(({id, name, email, roleId})=> { %>
                       <tr>
                         <th scope="row">
                           <%= name %>
@@ -37,7 +37,7 @@
                           <%= email %>
                         </td>
                         <td>
-                          <%= role %>
+                          <%= roleId == 1 ? "Admin" : "User" %>
                         </td>
                         <td>
                           <div class="d-flex gap-2 justify-content-center p-1">

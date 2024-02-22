@@ -5,19 +5,18 @@ const db = require('../../database/models');
 
 
 module.exports = (req, res) =>  {
+
+    /* return res.send(req.params) */
         
     
-    const {id} = req.session.userLogin ? req.session.userLogin : 1
+    const {id} = req.session.userLogin ? req.session.userLogin : 0
 
         const users = leerJSON('users');
 
-        const usuario = users.find( user => user.id == id)
-    
-              
-        
+        const usuario = users.find( user => user.id == id)        
         
 
-        const {nameSpecie} = req.params
+        const {categoria} = req.params
 
         db.Product.findAll({
             include: [
@@ -27,7 +26,7 @@ module.exports = (req, res) =>  {
         })
         .then(productos => {
             
-            const productosFiltrados = productos.filter(producto => producto.product_species.name == nameSpecie);
+            const productosFiltrados = productos.filter(producto => producto.product_species.name == categoria);
     
             // return res.send(nameSpecie)
     

@@ -1,21 +1,39 @@
 const { leerJSON, escribirJSON } = require("../../data");
 const { existsSync, unlinkSync } = require('fs')
+const db = require("../../database/models")
 
 module.exports = (req, res) => {
 
-    const {id} = req.params;
+    const { id } = req.params;
 
-    const productos = leerJSON("productos")
+    db.Product.findByPk(id, {
+        include: ["Image_products", "product_stock"]
+    })
+        .then((producto) => {
 
-    const {image1, image2} = productos.find(product => product.id == id);
+            existsSync('public/images/' + producto.Image_products[0].file) && unlinkSync('public/images/' + producto.Image_products[0].file)
 
-    existsSync('public/images/' + image1) && unlinkSync('public/images/' + image1)
+            existsSync('public/images/' + producto.Image_products[1].file) && unlinkSync('public/images/' + producto.Image_products[1].file)
 
-    existsSync('public/images/' + image2) && unlinkSync('public/images/' + image2)
+            db.Image_products.destroy({
+                where : {
+                    productId : producto.id
+                }
+            })
 
-    const productoFiltrado = productos.filter(producto => producto.id != id )
+            db.stock.destroy({
+                where : {
+                    productId : producto.id
+                }
+            })
 
-    escribirJSON(productoFiltrado, "productos")
+            db.Product.destroy({
+                where : {
+                    id
+                }
+            })
+
+        })
 
 
     return res.redirect('/admin/dashboard')

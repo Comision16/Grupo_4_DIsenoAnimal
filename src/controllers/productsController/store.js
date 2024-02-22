@@ -9,7 +9,7 @@ module.exports = (req, res) => {
     const image1 = req.files ? req.files.image1 : null
     const image2 = req.files ? req.files.image2 : null
 
-    db.Product.create({
+    db.Product.update({
         name : nombre.trim(),
         price : precio,
         discount : +descuento,
@@ -17,7 +17,7 @@ module.exports = (req, res) => {
         specieId : +categoria        
     })
     .then(producto => {
-        db.stock.create({
+        db.stock.update({
             amount : +stock,
             flavorId : +sabores,
             productId : producto.id

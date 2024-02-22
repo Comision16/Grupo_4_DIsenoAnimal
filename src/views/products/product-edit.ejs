@@ -81,7 +81,7 @@
                        
                         <div class="col-12 col-md-4 mb-3">
                           <div class="form-floating p-1">
-                              <input name="stock" style="height: auto; border-color: rgb(10, 99, 150);" type="number" class="form-control" id="stock" value="<%= product_stock.amount %>">
+                              <input name="stock" style="height: auto; border-color: rgb(10, 99, 150);" type="number" class="form-control" id="stock" value="<%= product_stock[0].amount %>">
                               <label for="stock">Stock actual:</label>
                           </div>
                         </div>
@@ -94,7 +94,7 @@
 
                                     <% sabores.forEach(item => { %>
 
-                                     <option value="<%= item.id %>" <%= (item.id && product_stock.flavorId == item.id) && "selected" %> ><%= item.name %></option>
+                                     <option value="<%= item.id %>" <%= (item.id && product_stock[0].flavorId == item.id) && "selected" %> ><%= item.name %></option>
                                      
                                     <% }) %>
                                       <!-- Agrega más opciones si es necesario -->

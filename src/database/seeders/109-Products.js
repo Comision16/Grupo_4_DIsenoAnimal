@@ -23,7 +23,7 @@ module.exports = {
       discount: product.discount,
       description: product.description,
       brandId: getForeignKey(product.brand, brands[0]),
-      specieId: product.species == "perro" ? 1 : product.flavor == "gato" ? 2 : product.flavor == "ave" ? 3  : product.flavor == "pez" ? 4 : product.flavor == "roedor" ? 5 :  6,
+      specieId: product.species == "perro" ? 1 : product.species == "gato" ? 2 : product.species == "ave" ? 3  : product.species == "pez" ? 4 : product.species == "roedor" ? 5 :  6,
       filingId: getForeignKey(product.measure, filings[0]),
       createdAt: new Date(),
       updatedAt: new Date()

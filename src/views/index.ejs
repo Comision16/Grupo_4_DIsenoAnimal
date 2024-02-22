@@ -41,13 +41,13 @@
             <section class="index__body__main__section">
               <h2 class="index__body__main__section--titulo">Las Mejores Ofertas</h2>
 
-              <% products.filter(product =>  product.specieId  = "1" ).forEach(product=> { %>
-                <%- include('./partials/productCard.ejs',{ ...product.dataValues }) %>
+              <% products.filter(product =>  product.product_species.name === "perro" ).forEach(product=> { %>
+                <%- include('./partials/productCard.ejs',{ product }) %>
 
                   <% }) %>
                     <h2 class="index__body__main__section--titulo">Los productos mas buscados</h2>
-                    <% products.filter(product => product.flavorId = "2" ).forEach(product=> { %>
-                      <%- include('./partials/productCard.ejs',{ ...product.dataValues }) %>
+                    <% products.filter(product => product.product_flavor.name === "Pescado" ).forEach(product=> { %>
+                      <%- include('./partials/productCard.ejs',{ product }) %>
 
                         <% }) %>
                           <%- include('./partials/banner.ejs') %>

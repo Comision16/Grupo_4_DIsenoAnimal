@@ -15,13 +15,13 @@
         <section class="index__body__main__section">
           <h2 class="index__body__main__section--titulo">Todos los productos</h2>
 
-          <% productos.forEach(producto => { %>
-          <%- include('../partials/productCard.ejs',{ ...producto.dataValues }) %>
+          <% productos.forEach(product => { %>
+          <%- include('../partials/productCard.ejs',{ product }) %>
           <% }) %>
 
             <h2 class="index__body__main__section--titulo">Los recomendados del dia</h2>
             <% productos.filter(productos=> productos.categoria === "ofertas").forEach(productos => { %>
-              <%- include('../partials/productCard.ejs',{ ...productos }) %>
+              <%- include('../partials/productCard.ejs',{ product }) %>
 
                 <% }) %>
 

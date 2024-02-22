@@ -16,8 +16,8 @@ module.exports = {
         
         db.Product.findAll({
             include: [
-                "image_product",
-                "product_specie",
+                "Image_products",
+                "product_species",
                 "product_flavor"
               ]
         })

@@ -5,12 +5,11 @@ module.exports = (sequelize, DataTypes) => {
   class Product extends Model {
     static associate(models) {
       Product.hasMany(models.Image_products,{
-        as : "image_product",
+        as : "Image_products",
         foreignKey : "productId"
       })
-<<<<<<< HEAD
       Product.belongsTo(models.Specie,{
-      as : "product_specie",
+      as : "product_species",
      foreignKey : "specieId"
       })
       Product.belongsTo(models.Flavor,{
@@ -25,13 +24,6 @@ module.exports = (sequelize, DataTypes) => {
       as : "product_filing",
       foreignKey : "filingId"
     });
-=======
-
-      Product.belongsTo(models.Specie,{
-        as : "product_species",
-        foreignKey : "specieId"
-      })
->>>>>>> 606fe8aac1a1b53cae7b78eb28aa5b28f0465a57
     }
   }
   

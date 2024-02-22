@@ -12,15 +12,16 @@
 
         <section class="index__body__main__section">
           <h2 class="index__body__main__section--titulo">
-          <% if (producto) { %><%= producto[0].categoria %>
-          <% } else {%> 
+            <% if (productos && productos.length > 0) { %>
+              <%= productos[0].product_species.name %>
+            <% } else { %>
           <%= 'no me gusta nada aca '%>
             
            
           <% } %></h2>
 
-          <% producto.forEach(product => { %>
-          <%- include('../partials/productCard.ejs',{ ...product }) %>
+          <% productos.forEach(product => { %>
+          <%- include('../partials/productCard.ejs',{ product }) %>
           <% }) %>
 
 

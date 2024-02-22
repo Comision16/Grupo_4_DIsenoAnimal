@@ -41,7 +41,7 @@
             <section class="index__body__main__section">
               <h2 class="index__body__main__section--titulo">Las Mejores Ofertas</h2>
 
-              <% products.filter(product =>  product.product_specie.name === "perro" ).forEach(product=> { %>
+              <% products.filter(product =>  product.product_species.name === "perro" ).forEach(product=> { %>
                 <%- include('./partials/productCard.ejs',{ product }) %>
 
                   <% }) %>

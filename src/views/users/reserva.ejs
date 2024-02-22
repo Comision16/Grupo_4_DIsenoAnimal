@@ -7,7 +7,7 @@
 
     <body class="perfil_body">
 
-        <%- include('../partials/header.ejs', {imagen : image}) %>
+        <%- include('../partials/header.ejs', {usuario}) %>
 
             <main class="perfil_main">
                 <section>
@@ -18,12 +18,12 @@
                             </div>
                             <div class="perfil_titulo">
                                 <h2>
-                                    <%= locals.old && old.name ? old.name : name %>
+                                    <%= locals.old && old.name ? old.name : usuario.name %>
                                 </h2>
                             </div>
                         </div>
                         <div class="perfil_imagen_content">
-                            <img class="perfil_imagen" src="/images/<%= image || " default.jpeg" %>" alt="">
+                            <img class="perfil_imagen" src="/images/<%= usuario.image || " default.jpeg" %>" alt="">
                         </div>
                     </div>
                     <form class="perfil_form" action="" method="POST">
@@ -33,7 +33,7 @@
                                     <label class="perfil_form_div_label" for="name">Nombre y Apellido</label>
                                     <input type="text" name="name" id="name" placeholder="Nombre y Apellido"
                                         minlength="8" maxlength="30"
-                                        value="<%= locals.old && old.name ? old.name : name %>">
+                                        value="<%= locals.old && old.name ? old.name : usuario.name %>">
 
                                     <small class="perfil_alert" class="perfil_alert">
                                         <%= locals.errors && errors.name ? errors.name.msg : null %>
@@ -44,7 +44,7 @@
                                     <label class="perfil_form_div_label" for="email">Correo electronico</label>
                                     <input type="email" name="email" id="email" placeholder="Correo electronico"
                                         minlength="5" maxlength="40"
-                                        value="<%= locals.old && old.email ? old.email : email %>">
+                                        value="<%= locals.old && old.email ? old.email : usuario.email %>">
 
                                     <small class="perfil_alert" class="perfil_alert">
                                         <%= locals.errors && errors.email ? errors.email.msg : null %>

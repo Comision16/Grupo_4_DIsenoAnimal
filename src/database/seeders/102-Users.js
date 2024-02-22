@@ -2,12 +2,12 @@
 
 const usersJSON = require("../../data/users.json")
 
-const usersDB = usersJSON.map(({name, email, password, imagen, role }) => {
+const usersDB = usersJSON.map(({name, email, password, image, role }) => {
   return {
     name,
     email,
     password,
-    image : imagen, 
+    image,
     roleId : role == "admin" ? 1 : 2,
     createdAt : new Date(),
     updatedAt : new Date() 

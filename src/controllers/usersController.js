@@ -92,7 +92,7 @@ module.exports = {
     },
     profile: (req, res) => {
 
-        var imagenUser = req.session.userLogin
+        /* var imagenUser = req.session.userLogin */
         const { id } = req.session.userLogin
 
         const usuario = db.User.findByPk(id, {
@@ -113,8 +113,7 @@ module.exports = {
             .then(([usuario, especies, mascotas]) => {
 
                 return res.render("users/perfil", {
-                    ...usuario.dataValues,
-                    ...imagenUser,
+                    usuario,
                     mascotas,
                     especies
                 })
@@ -258,7 +257,6 @@ module.exports = {
 
     reserva: (req, res) => {
 
-        var imagenUser = req.session.userLogin
         const { id } = req.session.userLogin
 
         const usuario = db.User.findByPk(id, {
@@ -279,8 +277,7 @@ module.exports = {
             .then(([usuario, especies, mascotas]) => {
 
                 return res.render("users/reserva", {
-                    ...usuario.dataValues,
-                    ...imagenUser,
+                    usuario,
                     mascotas,
                     especies
                 })

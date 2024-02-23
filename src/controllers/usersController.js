@@ -121,7 +121,7 @@ module.exports = {
             .catch(error => console.log(error))
     },
 
-    update: (req, res) => {
+    update:  (req, res) => {
         const { name, email, mascota, especie } = req.body;
         const errors = validationResult(req);
 
@@ -158,7 +158,6 @@ module.exports = {
                         })
                 })
 
-            var imagenUser = req.session.userLogin
             const { id } = req.session.userLogin
 
             const usuario = db.User.findByPk(id, {
@@ -178,9 +177,10 @@ module.exports = {
 
                 .then(([usuario, especies, mascotas]) => {
 
+                    console.log(usuario);
+
                     return res.render("users/perfil", {
-                        ...usuario.dataValues,
-                        ...imagenUser,
+                        usuario,
                         mascotas,
                         especies
                     })

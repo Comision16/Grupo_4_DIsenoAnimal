@@ -16,7 +16,7 @@ router
   .get('/registro', checkAuth, register)
   .post('/registro',userRegisterValidator, processRegister)
   .get('/perfil/', checkUserLogin, profile)
-  .put('/update/:id', upload.single('imagen') , update)
+  .put('/update/:id', upload.single('imagen') ,userPerfil, update)
   .get("/salir", logout)
   .get("/dashboardUsuarios", dashboardUsuarios)
   .put("/dashboardUsuarios/:id", gerarquia)

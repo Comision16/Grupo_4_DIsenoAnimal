@@ -5,45 +5,59 @@ const inscribiteJSON = leerJSON('inscribite');
 
 
 module.exports = {
-    
+
     index: (req, res) => {
 
-        const {id} = req.session.userLogin ? req.session.userLogin : 0
+        const { id } = req.session.userLogin ? req.session.userLogin : 0
 
-        const users = leerJSON('users');
+        const usuario = db.User.findByPk(id)
 
-        const usuario = users.find( user => user.id == id)
+        const products = db.Product.findAll({
+            include: [
+                "Image_products",
+                "product_species"
+            ]
+        })
+
         
-        db.Product.findAll({
+
+        Promise.all( [usuario, products] )
+
+
+            .then(( [usuario, products] ) => {
+                //  return res.send(stocks)  
+                return res.render('index', {
+                    products,
+                    usuario
+                })
+            })
+            .catch(error => console.log(error))
+    },
+    cart: (req, res) => {
+
+        const { id } = req.session.userLogin ? req.session.userLogin : 0
+
+        const usuario = db.User.findByPk(id)
+
+        const productos = db.Product.findAll({
             include: [
                 "Image_products",
                 "product_species",
                 "product_flavor"
-              ]
+            ]
         })
-            .then( products =>{
+
+        Promise.all( [usuario, productos] )
+
+            .then(( [usuario, productos] ) => {
                 //    return res.send(products)
-                   return res.render('index', {
-                    
-            products,
-            usuario  
-        })
-     })
-     .catch(error => console.log(error))
-    },
-    cart: (req, res) => {
+                return res.render('carrito', {
 
-        const {id} = req.session.userLogin ? req.session.userLogin : 1
-
-        const users = leerJSON('users');
-
-        const usuario = users.find( user => user.id == id)
-
-        /*return res.send(productos)       */
-        return res.render('carrito', {
-            productos,
-            usuario
-        })
+                    productos,
+                    usuario
+                })
+            })
+            .catch(error => console.log(error))
 
     },
     inscribite: (req, res) => {

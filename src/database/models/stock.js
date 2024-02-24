@@ -6,18 +6,15 @@ module.exports = (sequelize, DataTypes) => {
   class stock extends Model {
    
     static associate(models) {
-      stock.belongsTo(models.flavor,{
-        as : "stock_flavor",
+      stock.belongsTo(models.Flavor,{
+        as : "stock_flavors",
         foreignKey : "flavorId"
       })  
-  }
-    static associate(models) {
       stock.belongsTo(models.Product,{
         as : "stock_product",
         foreignKey : "productId"
       })  
-  }
-    
+     }
   }
   stock.init({
     flavorId: { type: DataTypes.INTEGER, allowNull: false },

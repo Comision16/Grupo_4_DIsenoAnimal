@@ -124,7 +124,7 @@ module.exports = {
     update:  (req, res) => {
         const { name, email, mascota, especie } = req.body;
         const errors = validationResult(req);
-
+            
         if (errors.isEmpty()) {
 
             const imagenDelete = req.file ? req.file.fieldname : null;
@@ -176,8 +176,6 @@ module.exports = {
             Promise.all([usuario, especies, mascotas])
 
                 .then(([usuario, especies, mascotas]) => {
-
-                    console.log(usuario);
 
                     return res.render("users/perfil", {
                         usuario,

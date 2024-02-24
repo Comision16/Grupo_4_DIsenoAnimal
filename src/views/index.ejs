@@ -10,7 +10,7 @@
 
   <body class="index__body">
 
-    <%- include('./partials/header', {...usuario}) %>
+    <%- include('./partials/header', {usuario}) %>
 
       <main class="index__body__main">
 
@@ -46,7 +46,7 @@
 
                   <% }) %>
                     <h2 class="index__body__main__section--titulo">Los productos mas buscados</h2>
-                    <% products.filter(product => product.product_flavor.name === "Pescado" ).forEach(product=> { %>
+                    <% products.filter(product => product.product_species.name === "gato" ).forEach(product=> { %>
                       <%- include('./partials/productCard.ejs',{ product }) %>
 
                         <% }) %>

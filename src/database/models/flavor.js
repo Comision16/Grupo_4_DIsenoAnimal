@@ -9,10 +9,6 @@ module.exports = (sequelize, DataTypes) => {
         as : "flavor_stock",
         foreignKey : "flavorId"
       })
-      Flavor.hasMany(models.Product, {
-        as : "flavor_product",
-        foreignKey : "brandId"
-      });
     }
   };
   Flavor.init({

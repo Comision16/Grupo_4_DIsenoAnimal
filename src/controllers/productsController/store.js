@@ -6,8 +6,6 @@ module.exports = (req, res) => {
 
     const { nombre, categoria, precio, stock, sabores, descuento, descripcion } = req.body;
 
-    return res.send(req.body)
-
     const image1 = req.files.image1 == undefined ? "null" : req.files.image1
     const image2 = req.files.image2 == undefined ? "null" : req.files.image2
 

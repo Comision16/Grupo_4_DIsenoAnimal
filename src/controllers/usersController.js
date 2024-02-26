@@ -121,10 +121,11 @@ module.exports = {
             .catch(error => console.log(error))
     },
 
-    update:  (req, res) => {
+    update: (req, res) => {
         const { name, email, mascota, especie } = req.body;
         const errors = validationResult(req);
-            
+        const {id} = req.params
+
         if (errors.isEmpty()) {
 
             const imagenDelete = req.file ? req.file.fieldname : null;
@@ -142,11 +143,11 @@ module.exports = {
                     },
                         {
                             where: {
-                                id
+                                id : req.params.id
                             }
                         })
                         .then(() => {
-                            return db.Pet.update({
+                            db.Pet.update({
                                 name: mascota,
                                 specieId: especie
                             },
@@ -155,34 +156,37 @@ module.exports = {
                                         userId: id
                                     }
                                 })
+                                .then(() => {
+                                    const { id } = req.session.userLogin
+
+                                    const usuario = db.User.findByPk(id, {
+                                        include: ["pet"]
+                                    })
+
+                                    const especies = db.Specie.findAll()
+
+                                    const mascotas = db.Pet.findOne({
+                                        where: {
+                                            userId: id
+                                        },
+                                        include: ["user"]
+                                    })
+
+                                    Promise.all([usuario, especies, mascotas])
+
+                                        .then(([usuario, especies, mascotas]) => {
+
+                                            return res.render("users/perfil", {
+                                                usuario,
+                                                mascotas,
+                                                especies
+                                            })
+                                        })
+                                })
                         })
                 })
 
-            const { id } = req.session.userLogin
 
-            const usuario = db.User.findByPk(id, {
-                include: ["pet"]
-            })
-
-            const especies = db.Specie.findAll()
-
-            const mascotas = db.Pet.findOne({
-                where: {
-                    userId: id
-                },
-                include: ["user"]
-            })
-
-            Promise.all([usuario, especies, mascotas])
-
-                .then(([usuario, especies, mascotas]) => {
-
-                    return res.render("users/perfil", {
-                        usuario,
-                        mascotas,
-                        especies
-                    })
-                })
                 .catch(error => console.log(error))
         } else {
             const datosUsuario = req.session.userLogin

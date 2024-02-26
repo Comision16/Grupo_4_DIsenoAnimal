@@ -9,7 +9,7 @@ module.exports = (req, res) => {
     /* return res.send(req.params) */
 
 
-    const { id } = req.session.userLogin 
+    const { id } = req.session.userLogin ? req.session.userLogin : 0
 
     const usuario = db.User.findByPk(id)
 

@@ -16,25 +16,27 @@ module.exports = (req, res) => {
             existsSync('public/images/' + producto.Image_products[1].file) && unlinkSync('public/images/' + producto.Image_products[1].file)
 
             db.Image_products.destroy({
-                where : {
-                    productId : producto.id
+                where: {
+                    productId: producto.id
                 }
             })
 
             db.stock.destroy({
-                where : {
-                    productId : producto.id
+                where: {
+                    productId: producto.id
                 }
             })
 
             db.Product.destroy({
-                where : {
+                where: {
                     id
                 }
             })
+                .then(() => {
+                    return res.redirect('/admin/dashboard')
+                })
 
         })
 
 
-    return res.redirect('/admin/dashboard')
 }

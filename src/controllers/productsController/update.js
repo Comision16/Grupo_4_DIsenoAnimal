@@ -28,8 +28,8 @@ module.exports = (req, res) => {
             id: producto.id
           }
         })
-
-      db.stock.update({
+        .then(() => {
+          db.stock.update({
         amount: +stock,
         flavorId: +sabores,
         productId: producto.id
@@ -59,4 +59,7 @@ module.exports = (req, res) => {
 
       return res.redirect('/admin/dashboard')
     })
+        })
+
+      
 }  

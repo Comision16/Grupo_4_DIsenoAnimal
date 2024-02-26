@@ -185,9 +185,8 @@ module.exports = {
                                 })
                         })
                 })
-
-
                 .catch(error => console.log(error))
+                
         } else {
             const datosUsuario = req.session.userLogin
 

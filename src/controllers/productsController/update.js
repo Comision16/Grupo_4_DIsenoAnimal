@@ -1,16 +1,12 @@
 
 const fs = require('fs');
 const db = require("../../database/models")
+const { existsSync, unlinkSync } = require('fs');
 
 module.exports = (req, res) => {
 
   const { id } = req.params
   const { nombre, categoria, precio, stock, sabores, descuento, descripcion } = req.body;
-
-  const image1 = req.files.image1 == undefined ? "null" : req.files.image1
-  const image2 = req.files.image2 == undefined ? "null" : req.files.image2
-
-
 
   db.Product.findByPk(id, {
     include: ["Image_products"]
@@ -30,36 +26,55 @@ module.exports = (req, res) => {
         })
         .then(() => {
           db.stock.update({
-        amount: +stock,
-        flavorId: +sabores,
-        productId: producto.id
-      }, {
-        where: {
-          productId: producto.id
-        }
-      })
+            amount: +stock,
+            flavorId: +sabores,
+          }, {
+            where: {
+              productId: producto.id
+            }
+          })
 
-      db.Image_products.update({
-        file: req.files.image1 == undefined ? producto.Image_products[0].file : req.files.image1[0].filename,
-        productId: producto.id
-      }, {
-        where: {
-          productId: producto.id
-        }
-      })
-
-      db.Image_products.update({
-        file: req.files.image2 == undefined ? producto.Image_products[1].file : req.files.image2[0].filename,
-        productId: producto.id
-      }, {
-        where: {
-          productId: producto.id
-        }
-      })
-
-      return res.redirect('/admin/dashboard')
-    })
         })
+        .then(() => {
 
-      
+          if (req.files.image1) {
+
+            existsSync('public/images/' + producto.Image_products[0].file) &&
+              unlinkSync('public/images/' + producto.Image_products[0].file)
+
+            db.Image_products.update({
+              file: req.files.image1[0].filename
+            }, {
+              where: {
+                productId: producto.id,
+                primary: 1
+              }
+            })
+          } else {
+            return Promise.resolve()
+          }
+        })
+        .then(() => {
+
+          if (req.files.image2) {
+
+            existsSync('public/images/' + producto.Image_products[1].file) &&
+              unlinkSync('public/images/' + producto.Image_products[1].file)
+
+            db.Image_products.update({
+              file: req.files.image2[0].filename
+            }, {
+              where: {
+                productId: producto.id,
+                primary: 2
+              }
+            })
+          } else {
+            return Promise.resolve()
+          }
+        })
+        .then (() => {          
+            return res.redirect('/admin/dashboard')
+        })
+    })
 }  

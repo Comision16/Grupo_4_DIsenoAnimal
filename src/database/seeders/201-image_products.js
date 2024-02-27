@@ -4,12 +4,14 @@ const productsJSON = require("../../data/productos.json");
 
 const imagesDB = productsJSON.flatMap((product, index) => [
   {
+    primary : 1,
     file: product.image1,
     productId: index + 1, 
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
+    primary : 2,
     file: product.image2,
     productId: index + 1,
     createdAt: new Date(),

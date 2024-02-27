@@ -13,7 +13,11 @@ module.exports = (sequelize, DataTypes) => {
   };
   Image_product.init({
     file: DataTypes.STRING,
-    productId: DataTypes.INTEGER
+    productId: DataTypes.INTEGER,
+    primary : {
+      type : DataTypes.BOOLEAN,
+      allowNull : false            
+    },
   }, {
     sequelize,
     modelName: 'Image_products',

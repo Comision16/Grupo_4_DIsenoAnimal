@@ -9,6 +9,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      primary : {
+        type : Sequelize.BOOLEAN,
+        allowNull : false            
+      },
       file: {
         type: Sequelize.STRING,
         defaultValue: 'new-product.default.png'

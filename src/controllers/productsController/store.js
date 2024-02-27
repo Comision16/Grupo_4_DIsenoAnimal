@@ -23,15 +23,23 @@ module.exports = (req, res) => {
             productId : producto.id
         })
 
-        db.Image_products.create({
+        if (image1) {
+            db.Image_products.create({
             file : image1[0].filename,
-            productId : producto.id
+            productId : producto.id,
+            primary : 1
         })
-
-        db.Image_products.create({
+        } else if (image2) {
+            db.Image_products.create({
             file : image2[0].filename,
-            productId : producto.id
+            productId : producto.id,
+            primary : 2
         })
+        }
+
+        
+
+        
 
         return res.redirect('/')
     })

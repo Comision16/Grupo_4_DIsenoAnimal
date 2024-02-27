@@ -14,8 +14,8 @@
           <h2 class="index__body__main__section--titulo">Resultado de la busqueda para: <%= keywords %></h2>
 
           <% if (productos.length) { %>
-          <% productos.forEach(producto => { %>
-            <%- include('../partials/productCard.ejs',{ ...producto.dataValues }) %>
+          <% productos.forEach(product => { %>
+            <%- include('../partials/productCard.ejs',{ product }) %>
             <% }) %>
            
           <% } else { %>

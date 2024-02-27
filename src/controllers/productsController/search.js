@@ -14,7 +14,7 @@ module.exports = (req, res) =>  {
                 }
             },
             include: [
-                "Image_products" 
+                "Image_products", "product_species"
             ]
         })
 

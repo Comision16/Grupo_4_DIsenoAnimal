@@ -1,7 +1,7 @@
 <div class="index__body__main__section--producto">
     <a href="/productos/detalle/<%= product.id %>">
     <div class="index__body__main__section--producto--columna1">
-      <img src="/images/<%= product.Image_products.length ? product.Image_products[0].file : "ProductDefault.jpeg" %>" alt="imagen del producto"></div></a>
+      <img src="/images/<%= product.Image_products ? product.Image_products[0].file : "new-product.default.png" %>" alt="imagen del producto"></div></a>
 <div class="index__body__main__section--producto--columna2">
       <h3 class="index__body__main__section--producto--titulo"><%= product.name %></h3>
       <p class="index__body__main__section--producto--descripcion"><%= product.description %></p></div>

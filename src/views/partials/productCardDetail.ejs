@@ -1,5 +1,5 @@
 <div class="item ">
-    <img src="/images/<%= image1 %>" alt="<%= idproducto.nombre %>">
+    <img src="/images/<%= product.Image_products.length ? product.Image_products[0].file : "new-product.default.png" %>" alt="<%= idproducto.nombre %>">
     <h3> <%= nombre %></h3>
     <p class="p_descripcion"> <a href="/productos/detalle/<%= id %>">
         <%= descripcion %></p></a>

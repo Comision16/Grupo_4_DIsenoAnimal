@@ -24,6 +24,10 @@ module.exports = (sequelize, DataTypes) => {
       as : "product_filing",
       foreignKey : "filingId"
     });
+    Product.belongsTo(models.Brand, {
+      as : "product_brand",
+      foreignKey : "BrandId"
+    });
     }
   }
   

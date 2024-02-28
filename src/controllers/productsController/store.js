@@ -4,18 +4,30 @@ const db = require("../../database/models")
 
 module.exports = (req, res) => {
 
-    const { nombre, categoria, precio, stock, sabores, descuento, descripcion } = req.body;
+    const { nombre, categoria, precio, stock, sabores, descuento, descripcion, brand, measure, value } = req.body;
 
     const image1 = req.files.image1 == undefined ? "null" : req.files.image1
     const image2 = req.files.image2 == undefined ? "null" : req.files.image2
 
-    db.Product.create({
-        name : nombre.trim(),
-        price : precio,
-        discount : +descuento,
-        description : descripcion.trim(),
-        specieId : +categoria        
-    })
+    db.Brand.create({
+        name: brand
+    
+    }).then(brand => {
+        
+        db.Filing.create({
+            value: value,
+            measure: measure
+        }).then(filing => {
+            
+            db.Product.create({
+                name : nombre.trim(),
+                price : precio,
+                discount : +descuento,
+                description : descripcion.trim(),
+                specieId : +categoria,
+                brandId: brand.id, 
+                filingId: filing.id, 
+            })
     .then(producto => {
         db.stock.create({
             amount : +stock,
@@ -43,4 +55,6 @@ module.exports = (req, res) => {
 
         return res.redirect('/')
     })
+})
+})
 }

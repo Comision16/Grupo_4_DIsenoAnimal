@@ -87,7 +87,7 @@
                         </div>
                       </div>
                       <div class="row justify-content-center gap-4  align-items-center">
-                            <div class="col-12 col-md-4 mb-3">
+                            <div class="col-12 col-md-4 mb-3 w-20">
                               <div class="form-floating p-1" >
                                   <select name="sabores" class="form-select" id="sabores" style="height: auto; border-color: rgb(10, 99, 150);" aria-label="Floating label select example">
                                     <option value="" selected hidden></option>
@@ -102,15 +102,52 @@
                                   <label for="flavor">Sabor</label>
                               </div>
                             </div>
-                          <div class="col-12 col-md-4 mb-3">
+                          <div class="col-12 col-md-4 mb-3 w-20">
                             <div class="form-floating p-1">
                                 <input name="descuento" type="number" style="height: auto; border-color: rgb(10, 99, 150);" class="form-control" id="descuento" value="<%= discount %>">
                                 <label  for="descuento" >Descuento -% </label>
                             </div>
                           </div>
                         </div>
+                         <!-- nuevo -->
+                         <div class="row d-flex justify-content-end  align-items-center w-50">
+                          <!-- kg-alto-largo -->
+                             <div class="col-12 col-md-5 mb-3 w-50">  
+                             <div class="form-floating p-1 ">
+                                       <select name="measure" class="form-select" id="measure" aria-label="Floating label select example" style="width:100%; border-color: rgb(10, 99, 150);">
+                                           <option value="" selected hidden></option>
+
+                                           <% filing.forEach(fili => { %>
+                                            <option value="<%= fili.measure %>" <%= product_filing.measure == fili.measure ? 'selected' : '' %>><%= fili.measure %></option>
+                                          <% }) %>
+
+                                       </select>
+                                       <label for="measure">kg</label>
+                                   </div>
+                                 </div>
+                           
+                             
+                                 <!-- valor -->
+                                 <div class="col-12 col-md-5 mb-3 w-20">
+                                   <div class="form-floating p-1">
+                                     <input name="value" type="number" class="form-control" id="value" style="width: 60%;;border-color: rgb(10, 99, 150);" value="<%= product_filing.value %>" >
+                                     <label  for="value"> valor</label>
+                                 </div>
+                               </div>
+                             </div>
+                             
+                             <!-- marca -->
+                             <div class="row d-flex justify-content-start col-12 col-md-5 mb-3 w-20">
+                               <div class="form-floating p-1">
+                                 <input name="flavor" type="text" class="form-control " id="flavor" style=" width: 85%; height: auto;border-color: rgb(10, 99, 150)" value="<%= product_brand.name %>">
+                                 <label for="flavor">Marca</label>
+                               </div>
+                             </div>
+   
+                               <!-- fin-- nuevo  -->
+   
                         
-                        <div class="col-10 mb-3">
+                        <!-- <div class="col-10 mb-3"> -->
                             <div class="form-floating p-1">
                               
                                 <label for="descripcion"></label>

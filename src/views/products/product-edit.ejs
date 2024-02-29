@@ -33,6 +33,7 @@
                           <h3>Editando:   "<%= name %>"</h3>
                           
                           <div class="row justify-content-center gap-3 align-items-center" >
+                            
                           <div class="col-12 col-md-4 mb-3 ">
                               <div class="form-floating p-1">
                                   <input name="nombre" type="text" class="form-control" id="nombre" value="<%= name %>" style=" height: auto;border-color: rgb(10, 99, 150);">
@@ -75,7 +76,7 @@
                                      
                                     <% }) %>
                                 </select>
-                                <label for="categoria">Categoria</label>
+                                <label for="categoria">Especie</label>
                               </div>
                           </div>
                        
@@ -86,6 +87,7 @@
                           </div>
                         </div>
                       </div>
+
                       <div class="row justify-content-center gap-4  align-items-center">
                             <div class="col-12 col-md-4 mb-3 w-20">
                               <div class="form-floating p-1" >
@@ -97,7 +99,7 @@
                                      <option value="<%= item.id %>" <%= (item.id && product_stock[0].flavorId == item.id) && "selected" %> ><%= item.name %></option>
                                      
                                     <% }) %>
-                                      <!-- Agrega más opciones si es necesario -->
+                                    
                                   </select>
                                   <label for="flavor">Sabor</label>
                               </div>
@@ -108,10 +110,11 @@
                                 <label  for="descuento" >Descuento -% </label>
                             </div>
                           </div>
-                        </div>
-                         <!-- nuevo -->
+                      </div>
+
+                         
                          <div class="row d-flex justify-content-end  align-items-center w-50">
-                          <!-- kg-alto-largo -->
+                          
                              <div class="col-12 col-md-5 mb-3 w-50">  
                              <div class="form-floating p-1 ">
                                        <select name="measure" class="form-select" id="measure" aria-label="Floating label select example" style="width:100%; border-color: rgb(10, 99, 150);">
@@ -127,27 +130,22 @@
                                  </div>
                            
                              
-                                 <!-- valor -->
                                  <div class="col-12 col-md-5 mb-3 w-20">
                                    <div class="form-floating p-1">
-                                     <input name="value" type="number" class="form-control" id="value" style="width: 60%;;border-color: rgb(10, 99, 150);" value="<%= product_filing.value %>" >
+                                     <input name="value" type="number" class="form-control" id="value" style="width: 60%;border-color: rgb(10, 99, 150);" value="<%= product_filing.value %>" >
                                      <label  for="value"> valor</label>
                                  </div>
                                </div>
                              </div>
                              
-                             <!-- marca -->
-                             <div class="row d-flex justify-content-start col-12 col-md-5 mb-3 w-20">
+                              <div class="row d-flex justify-content-start col-12 col-md-5 mb-3 w-20">
                                <div class="form-floating p-1">
-                                 <input name="flavor" type="text" class="form-control " id="flavor" style=" width: 85%; height: auto;border-color: rgb(10, 99, 150)" value="<%= product_brand.name %>">
-                                 <label for="flavor">Marca</label>
+                                 <input name="brand" type="text" class="form-control " id="brand" style=" width: 85%; height: auto; border-color: rgb(10, 99, 150)" value="<%= product_brand.name %>">
+                                 <label for="brand">Marca</label>
                                </div>
                              </div>
-   
-                               <!-- fin-- nuevo  -->
-   
-                        
-                        <!-- <div class="col-10 mb-3"> -->
+
+                        <div class="col-10 mb-3">
                             <div class="form-floating p-1">
                               
                                 <label for="descripcion"></label>

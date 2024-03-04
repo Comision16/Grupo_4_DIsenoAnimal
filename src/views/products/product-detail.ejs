@@ -57,7 +57,7 @@
 <!-- Imagenes del producto-->
    <div class="Imagen_detailproduct">
      <div class="image-gallery">
-<img src="/images/<%= idproducto.Image_products[0] ? idproducto.Image_products[0].file : "new-product.default.png" %>" ">
+<img src="/images/<%= idproducto.Image_products[0] ? idproducto.Image_products[0].file : "new-product.default.png" %>" >
 <img src="/images/<%= idproducto.Image_products[1] ? idproducto.Image_products[1].file : "new-product.default.png" %>">
      </div>
      <!-- Precio del producto , final , total & cantidad del descuento aplicado -->
@@ -164,8 +164,8 @@ const precioConDescuento = precio - (descuento * precio) / 100;
 
       <section class="productos__destacados">
 
- <% productos.filter(productos => productos.categoria == "ofertas").forEach(productos => { %>
- <%- include('../partials/productCardDetail.ejs',{ ...productos }) %>
+ <% productos.forEach(product => { %>
+ <%- include('../partials/productCardDetail.ejs',{ product }) %>
 <% }) %>
   </section>
   <%- include('../partials/footer') %>

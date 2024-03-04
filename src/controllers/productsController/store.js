@@ -40,6 +40,6 @@ module.exports = (req, res) => {
 
         
 
-        return res.redirect('/')
+        return res.redirect('/admin/dashboard')
     })
 }

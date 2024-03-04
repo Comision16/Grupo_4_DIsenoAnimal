@@ -11,6 +11,8 @@ const indexRouter = require('./routes/index.routes');
 const usersRouter = require('./routes/users.routes');
 const productsRouter = require('./routes/products.routes');
 const adminRouter = require('./routes/admin.routes');
+const usersApiRouter = require('./routes/api/users.routes');
+
 const transferLocals = require('./middlewares/transferLocals');
 const cookieCheck = require('./middlewares/cookieCheck');
 
@@ -52,6 +54,7 @@ app
 app
   .use('/', indexRouter)
   .use('/usuarios', usersRouter)
+  .use('/api', usersApiRouter)
   .use('/productos', productsRouter)
   .use('/admin', adminRouter);
 

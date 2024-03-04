@@ -56,7 +56,7 @@
                                 <div>
                                   <label class="perfil_form_div_label" for="mascota">Nombre de Mascota</label>
                                     <input type="text" name="mascota" id="mascota" placeholder="Nombre Mascota"
-                                        value="<%= mascotas.name %>">
+                                        value="<%= mascotas && mascotas.name ? mascotas.name : "" %>">
 
                                     <small class="perfil_alert" class="perfil_alert">
                                         <%= locals.errors && errors.mascota ? errors.mascota.msg : null %>
@@ -67,11 +67,11 @@
                                 <div>
                                   <label class="perfil_form_div_label" for="especie">Tipo de Mascota</label>
                                   <select name="especie" class="form-select" id="especie">
-                                    <option value="" selected hidden></option>
+                                    <option value="" selected hidden>Elija el tipo de mascota</option>
 
                                     <% especies.forEach(item => { %>
 
-                                     <option value="<%= item.id %>" <%= (item.id && mascotas.specieId == item.id) && "selected" %> ><%= item.name %></option>
+                                     <option value="<%= item.id %>" <%= (item.id && mascotas && mascotas.specieId == item.id) && "selected" %> ><%= item.name %></option>
                                      
                                     <% }) %>
                                   </select>

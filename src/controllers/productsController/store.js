@@ -9,37 +9,51 @@ module.exports = (req, res) => {
     const image2 = req.files.image2 == undefined ? "null" : req.files.image2
 
     db.Product.create({
-        name : nombre.trim(),
-        price : precio,
-        discount : +descuento,
-        description : descripcion.trim(),
-        specieId : +categoria        
+        name: nombre.trim(),
+        price: precio,
+        discount: +descuento,
+        description: descripcion.trim(),
+        specieId: +categoria
     })
-    .then(producto => {
-        db.stock.create({
-            amount : +stock,
-            flavorId : +sabores,
-            productId : producto.id
+        .then(producto => {
+            db.stock.create({
+                amount: +stock,
+                flavorId: +sabores,
+                productId: producto.id
+            })
+
+            if (image1) {
+                db.Image_products.create({
+                    file: image1[0].filename,
+                    productId: producto.id,
+                    primary: 1
+                })
+            } else {
+                db.Image_products.create({
+                    file: null,
+                    productId: producto.id,
+                    primary: 1
+                })
+            }
+
+            if (image2) {
+                db.Image_products.create({
+                    file: image2[0].filename,
+                    productId: producto.id,
+                    primary: 2
+                })
+            } else {
+                db.Image_products.create({
+                    file: null,
+                    productId: producto.id,
+                    primary: 2
+                })
+            }
+
+
+
+
+
+            return res.redirect('/admin/dashboard')
         })
-
-        if (image1) {
-            db.Image_products.create({
-            file : image1[0].filename,
-            productId : producto.id,
-            primary : 1
-        })
-        } else if (image2) {
-            db.Image_products.create({
-            file : image2[0].filename,
-            productId : producto.id,
-            primary : 2
-        })
-        }
-
-        
-
-        
-
-        return res.redirect('/admin/dashboard')
-    })
 }

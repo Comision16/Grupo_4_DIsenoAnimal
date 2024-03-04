@@ -24,7 +24,7 @@ module.exports =
 
     Promise.all([productos, usuario, idproducto])
     .then(([productos, usuario, idproducto]) => {
-        /* return res.send(productos) */
+        /* return res.send(idproducto) */
         return res.render('products/product-detail', {
             productos,
             idproducto,             

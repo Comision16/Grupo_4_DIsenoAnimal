@@ -10,9 +10,27 @@ module.exports = (req, res) => {
     })
         .then((producto) => {
 
-            (producto.Image_products[0].length && existsSync('public/images/' + producto.Image_products[0].file)) && unlinkSync('public/images/' + producto.Image_products[0].file)
+            if (producto.Image_products[0] && existsSync('public/images/' + producto.Image_products[0].file)) {
+                unlinkSync('public/images/' + producto.Image_products[0].file)
 
-            (producto.Image_products[1].length && existsSync('public/images/' + producto.Image_products[1].file)) && unlinkSync('public/images/' + producto.Image_products[1].file)
+                db.Image_products.destroy({
+                    where: {
+                        productId: producto.id,
+                        primary: 1
+                    }
+                })
+            }
+
+            if (producto.Image_products[1] && existsSync('public/images/' + producto.Image_products[1].file)) {
+                unlinkSync('public/images/' + producto.Image_products[1].file)
+
+                db.Image_products.destroy({
+                    where: {
+                        productId: producto.id,
+                        primary: 2
+                    }
+                })
+            }
 
             db.Image_products.destroy({
                 where: {
@@ -36,6 +54,6 @@ module.exports = (req, res) => {
                 })
 
         })
-
+        .catch(error => console.log(error))
 
 }

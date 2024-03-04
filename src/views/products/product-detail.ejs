@@ -57,8 +57,8 @@
 <!-- Imagenes del producto-->
    <div class="Imagen_detailproduct">
      <div class="image-gallery">
-<img src="/images/<%= idproducto.Image_products.length ? idproducto.Image_products[0].file : "new-product.default.png" %>" ">
-<img src="/images/<%= idproducto.Image_products.length ? idproducto.Image_products[1].file : "new-product.default.png" %>">
+<img src="/images/<%= idproducto.Image_products[0] ? idproducto.Image_products[0].file : "new-product.default.png" %>" ">
+<img src="/images/<%= idproducto.Image_products[1] ? idproducto.Image_products[1].file : "new-product.default.png" %>">
      </div>
      <!-- Precio del producto , final , total & cantidad del descuento aplicado -->
      <div class="detail_product_rigth">

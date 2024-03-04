@@ -1,5 +1,3 @@
-const { leerJSON } = require("../../data")
-
 const db = require('../../database/models');
 
 

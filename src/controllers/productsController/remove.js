@@ -1,4 +1,3 @@
-const { leerJSON, escribirJSON } = require("../../data");
 const { existsSync, unlinkSync } = require('fs')
 const db = require("../../database/models")
 

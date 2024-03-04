@@ -1,8 +1,7 @@
 const { validationResult } = require("express-validator");
-const User = require("../data/User");
-const Reserva = require("../data/reserva")
+/* const User = require("../data/User"); */
+/* const Reserva = require("../data/reserva") */
 const { existsSync, unlinkSync } = require('fs');
-const { leerJSON, escribirJSON } = require("../data");
 const db = require("../database/models")
 const bcryptjs = require('bcryptjs')
 
@@ -63,7 +62,7 @@ module.exports = {
                 name,
                 email,
                 password: bcryptjs.hashSync(password.trim(), 10),
-                roleId: 1,
+                roleId: 2,
                 mascota: "",
                 especie: "",
                 imagen: ""

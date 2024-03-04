@@ -1,5 +1,4 @@
 
-const fs = require('fs');
 const db = require("../../database/models")
 const { existsSync, unlinkSync } = require('fs');
 

@@ -14,7 +14,7 @@
             <% if (locals.userLogin) { %>
                 <div class="header_imagen_y_nombre">
                     <div class="header_imagen_content">
-                <img class="perfil_imagen" src="/images/<%= usuario.image.lenght? usuario.image : "user_default.jpeg" %>" alt="">
+                <img class="perfil_imagen" src="/images/<%= usuario.image != "defalut.jpeg" ? usuario.image : "user_default.jpeg" %>" alt="">
             </div>
                 </div>
              

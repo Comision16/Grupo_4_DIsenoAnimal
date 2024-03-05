@@ -23,7 +23,7 @@
                             </div>
                         </div>
                         <div class="perfil_imagen_content">
-                            <img class="perfil_imagen" src="/images/<%= usuario.image.lenght || "user_default.jpeg" %>" alt="">
+                            <img class="perfil_imagen" src="/images/<%=  usuario.image != "defalut.jpeg" ? usuario.image : "user_default.jpeg" %>" alt="">
                         </div>
                     </div>
                     <form class="perfil_form" action="/usuarios/update/<%= usuario.id %>?_method=PUT" method="POST"

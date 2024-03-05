@@ -115,6 +115,7 @@ module.exports = {
         Promise.all([usuario, especies, mascotas])
 
             .then(([usuario, especies, mascotas]) => {
+                /* return res.send(usuario) */
 
                 return res.render("users/perfil", {
                     usuario,

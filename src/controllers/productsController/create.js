@@ -1,9 +1,19 @@
-
-const fs = require('fs');
-
-function pushProducts (parametro){
-fs.writeFileSync("./src/data/productos.json", JSON.stringify(parametro, null, 3), "utf-8");}
+const db = require('../../database/models')
 
     module.exports = (req, res) =>  {
-            return res.render('products/product-create')
+        const flavors = db.Flavor.findAll({
+            order : ['name']
+        });
+        const species = db.Specie.findAll({
+            order : ['id']
+        });
+
+        Promise.all([flavors, species])
+            .then(([flavors, species]) => {
+                return res.render('products/product-create',{
+                    flavors,
+                    species
+                })
+            })
+            .catch(error => console.log(error))
         }

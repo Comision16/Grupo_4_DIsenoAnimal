@@ -18,7 +18,7 @@ module.exports = (req, res) => {
         },
         include: ["user"]
     })
-    const marca = db.Brand.findAll()
+    const brand = db.Brand.findAll()
 
     const filing = db.Filing.findAll()
 
@@ -26,15 +26,15 @@ module.exports = (req, res) => {
 
     const sabores = db.Flavor.findAll()
 
-    Promise.all([product, especies, mascotas, sabores, marca, filing])
-        .then(([product, especies, mascotas, sabores, marca, filing]) => {
+    Promise.all([product, especies, mascotas, sabores, brand, filing])
+        .then(([product, especies, mascotas, sabores, brand, filing]) => {
             
             return res.render('products/product-edit', {
                 ...product.dataValues,
                 especies,
                 mascotas,
                 sabores,
-                marca,
+                brand,
                 filing
             })
         })

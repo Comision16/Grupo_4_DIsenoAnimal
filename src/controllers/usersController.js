@@ -48,8 +48,16 @@ module.exports = {
     },
 
     register: (req, res) => {
-        return res.render('users/register', {
+
+        db.Specie.findAll()
+        .then(especies => {
+            return res.render('users/register', {
+            especies
         })
+        })
+
+        
+        
     },
 
     processRegister: (req, res) => {

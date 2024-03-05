@@ -60,7 +60,32 @@ const oneUser = async (req, res) => {
     }
 }
 
+const crearUsuario = async (req, res) => {
+
+    try {
+    const { name, email, password } = req.body;
+
+        db.User.create({
+            name,
+            email,
+            password: bcryptjs.hashSync(password.trim(), 10),
+            roleId: 2,
+            mascota: "",
+            especie: "",
+            imagen: ""
+        })
+            .then(user => {
+                return res.redirect('/usuarios/ingreso')
+            })
+
+            
+    } catch (error) {
+        
+    }
+}
+
 module.exports = {
     listUser,
-    oneUser
+    oneUser,
+    crearUsuario
 }

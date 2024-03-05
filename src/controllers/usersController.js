@@ -63,11 +63,16 @@ module.exports = {
                 email,
                 password: bcryptjs.hashSync(password.trim(), 10),
                 roleId: 2,
-                mascota: "",
-                especie: "",
-                imagen: ""
+                mascota: ""
             })
-                .then(user => {
+                .then((user) => {
+
+                    db.Pet.create({
+                        name : "",
+                        specieId : 6,
+                        userId : user.id
+                    })
+
                     return res.redirect('/usuarios/ingreso')
                 })
 
@@ -138,7 +143,7 @@ module.exports = {
                     db.User.update({
                         name,
                         email,
-                        image: req.file ? req.file.filename : User.image
+                        image: req.file ? req.file.filename : user.image
                     },
                         {
                             where: {

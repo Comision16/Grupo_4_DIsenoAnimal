@@ -48,13 +48,19 @@ module.exports = {
     },
 
     register: (req, res) => {
-        return res.render('users/register', {
+
+        db.Specie.findAll()
+        .then(especies => {
+            return res.render('users/register', {
+            especies
         })
+        })      
+        
     },
 
     processRegister: (req, res) => {
         const errors = validationResult(req);
-        const { name, email, password } = req.body;
+        const { name, email, password, mascota, especie } = req.body;
 
         if (errors.isEmpty()) {
 
@@ -63,25 +69,31 @@ module.exports = {
                 email,
                 password: bcryptjs.hashSync(password.trim(), 10),
                 roleId: 2,
-                mascota: ""
+                imagen: ""
             })
-                .then((user) => {
-
-                    db.Pet.create({
-                        name : "",
-                        specieId : 6,
-                        userId : user.id
-                    })
-
+            .then(usuario => {
+                db.Pet.create({
+                    name : mascota,
+                    specieId : especie,
+                    userId : usuario.id
+                })
+            })
+                .then(user => {
                     return res.redirect('/usuarios/ingreso')
                 })
 
 
 
         } else {
+
+            db.Specie.findAll()
+            .then((especies) => {               
+            
             return res.render('users/register', {
                 old: req.body,
-                errors: errors.mapped()
+                errors: errors.mapped(),
+                especies
+            })
             })
         }
 

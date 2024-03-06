@@ -1,4 +1,7 @@
 const db = require("../../database/models")
+const createError = require("http-errors")
+
+const bcryptjs = require('bcryptjs')
 
 const listUser = async (req, res) => {
     try {
@@ -65,24 +68,33 @@ const crearUsuario = async (req, res) => {
     try {
         const { name, email, password, mascota, especie } = req.body;
 
+        if ([name, email, password, mascota, especie].includes(" " || undefined)) throw createError(400, "Todos los campos son obligatorios")
+
         const usuario = await db.User.create({
             name,
             email,
             password: bcryptjs.hashSync(password.trim(), 10),
-            roleId: 2,
-            imagen: null
+            roleId: 2
         })
-            .then(usuario => {
-                db.Pet.create({
-                    name: mascota ? mascota : null,
-                    specieId: especie ? especie : null,
-                    userId: usuario.id
-                })
-            })
+        const pet = await db.Pet.create({
+            name: mascota,
+            specieId: especie,
+            userId: usuario.id
+        })
 
+        const user = {
+            ...usuario.dataValues,
+            password: "***",
+            ...pet.dataValues
+        }
 
+        return res.status(200).json({
+            ok: true,
+            data: user
+        })        
     } catch (error) {
-
+        console.error('Error al procesar la solicitud:', error);
+        return res.status(500).json({ ok: false, error: 'Error interno del servidor' });
     }
 }
 

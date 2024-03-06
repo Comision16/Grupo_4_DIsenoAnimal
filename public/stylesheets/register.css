@@ -57,6 +57,10 @@
     text-align: left;
 }
 
+#especie {
+    text-align: center;
+}
+
 .register_main input::placeholder {
     color: var(--ColorAzul);
     text-align: center;

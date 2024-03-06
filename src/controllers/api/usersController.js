@@ -3,18 +3,18 @@ const db = require("../../database/models")
 const listUser = async (req, res) => {
     try {
         const { count, rows } = await db.User.findAndCountAll({
-            include : [{
-                association : "pet",
-                attributes : ["name"]
+            include: [{
+                association: "pet",
+                attributes: ["name"]
             }],
-            attributes : ["id", "name", "email", "image"]
+            attributes: ["id", "name", "email", "image"]
         })
 
         const usuarios = rows.map(usuario => {
             return {
                 ...usuario.dataValues,
-                pet : usuario.pet[0].name,
-                detail : `${req.protocol}://${req.get("host")}/api/users/${usuario.id}`
+                pet: usuario.pet[0].name,
+                detail: `${req.protocol}://${req.get("host")}/api/users/${usuario.id}`
             }
 
         })
@@ -35,17 +35,17 @@ const oneUser = async (req, res) => {
     try {
 
         const usuario = await db.User.findByPk(req.params.id, {
-            include : [{
-                association : "pet",
-                attributes : ["name"]
+            include: [{
+                association: "pet",
+                attributes: ["name"]
             }],
-            attributes : ["id", "name", "email", "image"]
+            attributes: ["id", "name", "email", "image"]
         })
 
         const customUser = {
             ...usuario.dataValues,
-            image : `${req.protocol}://${req.get('host')}/images/${usuario.image}`,
-            pet : usuario.pet[0].name
+            image: `${req.protocol}://${req.get('host')}/images/${usuario.image}`,
+            pet: usuario.pet[0].name
         }
 
         return res.status(200).json({
@@ -53,7 +53,7 @@ const oneUser = async (req, res) => {
             data: customUser
         })
 
-        
+
     } catch (error) {
         console.error('Error al procesar la solicitud:', error);
         return res.status(500).json({ ok: false, error: 'Error interno del servidor' });
@@ -63,24 +63,26 @@ const oneUser = async (req, res) => {
 const crearUsuario = async (req, res) => {
 
     try {
-    const { name, email, password } = req.body;
+        const { name, email, password, mascota, especie } = req.body;
 
-        db.User.create({
+        const usuario = await db.User.create({
             name,
             email,
             password: bcryptjs.hashSync(password.trim(), 10),
             roleId: 2,
-            mascota: "",
-            especie: "",
-            imagen: ""
+            imagen: null
         })
-            .then(user => {
-                return res.redirect('/usuarios/ingreso')
+            .then(usuario => {
+                db.Pet.create({
+                    name: mascota ? mascota : null,
+                    specieId: especie ? especie : null,
+                    userId: usuario.id
+                })
             })
 
-            
+
     } catch (error) {
-        
+
     }
 }
 

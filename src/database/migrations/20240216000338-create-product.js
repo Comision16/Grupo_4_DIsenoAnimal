@@ -23,6 +23,9 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false
       },
+      value: {
+        type: Sequelize.INTEGER
+      },
       brandId: {
         type: Sequelize.INTEGER,
         allowNull: true,

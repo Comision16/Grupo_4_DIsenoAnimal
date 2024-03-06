@@ -29,6 +29,7 @@ module.exports = (req, res) => {
     Promise.all([product, especies, mascotas, sabores, marca, filing])
         .then(([product, especies, mascotas, sabores, marca, filing]) => {
             
+            // return res.send(filing)
             return res.render('products/product-edit', {
                 ...product.dataValues,
                 especies,

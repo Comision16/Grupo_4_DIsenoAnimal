@@ -1,5 +1,4 @@
 
-const fs = require('fs');
 const db = require("../../database/models")
 
 module.exports = (req, res) => {
@@ -37,16 +36,30 @@ module.exports = (req, res) => {
 
         if (image1) {
             db.Image_products.create({
-            file : image1[0].filename,
-            productId : producto.id,
-            primary : 1
-        })
-        } else if (image2) {
+                file: image1[0].filename,
+                productId: producto.id,
+                primary: 1
+            })
+        } else {
             db.Image_products.create({
-            file : image2[0].filename,
-            productId : producto.id,
-            primary : 2
-        })
+                file: null,
+                productId: producto.id,
+                primary: 1
+            })
+        }
+
+        if (image2) {
+            db.Image_products.create({
+                file: image2[0].filename,
+                productId: producto.id,
+                primary: 2
+            })
+        } else {
+            db.Image_products.create({
+                file: null,
+                productId: producto.id,
+                primary: 2
+            })
         }
 
         

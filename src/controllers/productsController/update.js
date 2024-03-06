@@ -1,23 +1,44 @@
 
-const fs = require('fs');
 const db = require("../../database/models")
 const { existsSync, unlinkSync } = require('fs');
 
 module.exports = (req, res) => {
 
   const { id } = req.params
-  const { nombre, categoria, precio, stock, sabores, descuento, descripcion } = req.body;
+  const { nombre, categoria, precio, stock, sabores, descuento, descripcion, brand, measure, value } = req.body;
 
   db.Product.findByPk(id, {
-    include: ["Image_products"]
+    include: [
+      "Image_products", "product_stock",
+              "product_filing", "product_brand"
+  ]
   })
     .then(producto => {
-      db.Product.update({
+
+      db.Brand.update({
+        name: brand
+    }, {
+        where: { id: producto.product_brand.id }
+    
+      }).then(() => {
+        
+        db.Filing.update({
+            value: value,
+            measure: measure
+        }, {
+            where: { id: producto.product_filing.id }
+        
+          }).then(() => {
+      
+            db.Product.update({
         name: nombre.trim(),
         price: precio,
         discount: +descuento,
         description: descripcion.trim(),
-        specieId: +categoria
+        specieId: +categoria,
+        brandId: producto.product_brand.id,
+        filingId: producto.product_filing.id, 
+           
       },
         {
           where: {
@@ -39,7 +60,7 @@ module.exports = (req, res) => {
 
           if (req.files.image1) {
 
-            existsSync('public/images/' + producto.Image_products[0].file) &&
+            producto.Image_products[0] && existsSync('public/images/' + producto.Image_products[0].file) &&
               unlinkSync('public/images/' + producto.Image_products[0].file)
 
             db.Image_products.update({
@@ -58,7 +79,7 @@ module.exports = (req, res) => {
 
           if (req.files.image2) {
 
-            existsSync('public/images/' + producto.Image_products[1].file) &&
+            producto.Image_products[1] && existsSync('public/images/' + producto.Image_products[1].file) &&
               unlinkSync('public/images/' + producto.Image_products[1].file)
 
             db.Image_products.update({
@@ -77,4 +98,6 @@ module.exports = (req, res) => {
             return res.redirect('/admin/dashboard')
         })
     })
-}  
+})
+    })
+  } 

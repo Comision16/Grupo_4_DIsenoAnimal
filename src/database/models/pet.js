@@ -16,13 +16,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   Pet.init({
     name: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.STRING
 
     },
     specieId: {
-      type: DataTypes.INTEGER,
-      allowNull: false
+      type: DataTypes.INTEGER
     },
     userId: {
       type: DataTypes.INTEGER,

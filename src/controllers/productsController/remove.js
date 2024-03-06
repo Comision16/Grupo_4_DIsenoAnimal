@@ -1,4 +1,3 @@
-const { leerJSON, escribirJSON } = require("../../data");
 const { existsSync, unlinkSync } = require('fs')
 const db = require("../../database/models")
 
@@ -7,13 +6,32 @@ module.exports = (req, res) => {
     const { id } = req.params;
 
     db.Product.findByPk(id, {
-        include: ["Image_products", "product_stock"]
+        include: ["Image_products", "product_stock",
+        "product_filing", "product_brand"]
     })
         .then((producto) => {
 
-            existsSync('public/images/' + producto.Image_products[0].file) && unlinkSync('public/images/' + producto.Image_products[0].file)
+            if (producto.Image_products[0] && existsSync('public/images/' + producto.Image_products[0].file)) {
+                unlinkSync('public/images/' + producto.Image_products[0].file)
 
-            existsSync('public/images/' + producto.Image_products[1].file) && unlinkSync('public/images/' + producto.Image_products[1].file)
+                db.Image_products.destroy({
+                    where: {
+                        productId: producto.id,
+                        primary: 1
+                    }
+                })
+            }
+
+            if (producto.Image_products[1] && existsSync('public/images/' + producto.Image_products[1].file)) {
+                unlinkSync('public/images/' + producto.Image_products[1].file)
+
+                db.Image_products.destroy({
+                    where: {
+                        productId: producto.id,
+                        primary: 2
+                    }
+                })
+            }
 
             db.Image_products.destroy({
                 where: {
@@ -24,6 +42,16 @@ module.exports = (req, res) => {
             db.stock.destroy({
                 where: {
                     productId: producto.id
+                }
+            })
+            db.Filing.destroy({
+                where: {
+                    id: producto.product_filing.id
+                }
+            })
+            db.Brand.destroy({
+                where: {
+                    id: producto.product_brand.id
                 }
             })
 
@@ -37,6 +65,6 @@ module.exports = (req, res) => {
                 })
 
         })
-
+        .catch(error => console.log(error))
 
 }

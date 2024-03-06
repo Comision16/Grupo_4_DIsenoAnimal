@@ -1,5 +1,5 @@
 <article class="producto__agregado">
-    <img src="/images/<%= productos.Image_products[0].file %>" alt="">
+    <img src="/images/<%= productos.Image_products.length ? productos.Image_products[0].file : "new-product.default.png" %>" alt="">
     <div class="Productos-en-el-carrito__div__titulo__descripcion__precio">
       <h5 class=".Productos-en-el-carrito__div__titulo"><%= productos.name %></h5>
       <p class="Productos-en-el-carrito__div__descripcion"><%= productos.description %></p>

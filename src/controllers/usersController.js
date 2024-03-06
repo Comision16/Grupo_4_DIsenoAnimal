@@ -1,8 +1,7 @@
 const { validationResult } = require("express-validator");
-const User = require("../data/User");
-const Reserva = require("../data/reserva")
+/* const User = require("../data/User"); */
+/* const Reserva = require("../data/reserva") */
 const { existsSync, unlinkSync } = require('fs');
-const { leerJSON, escribirJSON } = require("../data");
 const db = require("../database/models")
 const bcryptjs = require('bcryptjs')
 
@@ -63,12 +62,17 @@ module.exports = {
                 name,
                 email,
                 password: bcryptjs.hashSync(password.trim(), 10),
-                roleId: 1,
-                mascota: "",
-                especie: "",
-                imagen: ""
+                roleId: 2,
+                mascota: ""
             })
-                .then(user => {
+                .then((user) => {
+
+                    db.Pet.create({
+                        name : "",
+                        specieId : 6,
+                        userId : user.id
+                    })
+
                     return res.redirect('/usuarios/ingreso')
                 })
 
@@ -111,6 +115,7 @@ module.exports = {
         Promise.all([usuario, especies, mascotas])
 
             .then(([usuario, especies, mascotas]) => {
+                /* return res.send(usuario) */
 
                 return res.render("users/perfil", {
                     usuario,
@@ -139,7 +144,7 @@ module.exports = {
                     db.User.update({
                         name,
                         email,
-                        image: req.file ? req.file.filename : User.image
+                        image: req.file ? req.file.filename : user.image
                     },
                         {
                             where: {

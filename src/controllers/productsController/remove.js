@@ -44,17 +44,7 @@ module.exports = (req, res) => {
                     productId: producto.id
                 }
             })
-            db.Filing.destroy({
-                where: {
-                    id: producto.product_filing.id
-                }
-            })
-            db.Brand.destroy({
-                where: {
-                    id: producto.product_brand.id
-                }
-            })
-
+           
             db.Product.destroy({
                 where: {
                     id

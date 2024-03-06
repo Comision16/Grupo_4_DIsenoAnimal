@@ -8,24 +8,22 @@ module.exports = (req, res) => {
     const image1 = req.files.image1 == undefined ? "null" : req.files.image1
     const image2 = req.files.image2 == undefined ? "null" : req.files.image2
 
+
+
     db.Brand.create({
         name: brand
     
     }).then(brand => {
-        
-        db.Filing.create({
-            value: value,
-            measure: measure
-        }).then(filing => {
-            
+         
             db.Product.create({
                 name : nombre.trim(),
                 price : precio,
                 discount : +descuento,
                 description : descripcion.trim(),
                 specieId : +categoria,
+                value: value,
                 brandId: brand.id, 
-                filingId: filing.id, 
+                filingId: measure, 
             })
     .then(producto => {
         db.stock.create({
@@ -68,6 +66,5 @@ module.exports = (req, res) => {
 
         return res.redirect('/admin/dashboard')
     })
-})
 })
 }

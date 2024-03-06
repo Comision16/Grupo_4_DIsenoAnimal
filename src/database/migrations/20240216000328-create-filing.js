@@ -9,9 +9,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      value: {
-        type: Sequelize.INTEGER
-      },
       measure: {
         type: Sequelize.STRING
       },

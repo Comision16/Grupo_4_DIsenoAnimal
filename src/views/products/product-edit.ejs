@@ -52,7 +52,7 @@
 
                           <div class="row d-flex justify-content-center align-items-center gap-2 w-50">
                             <input name="image1" type="file" style="border-color: rgb(10, 99, 150);" class="form-control" id="image1" hidden >
-                            <img src="/images/<%= Image_products.length ? Image_products[0].file : "new-product.default.png" %>" alt="" class="img-thumbnail" id="miniatura1" style="max-width: 100px; max-height: 120px; ">
+                            <img src="/images/<%= Image_products? Image_products[0].file : "new-product.default.png" %>" alt="" class="img-thumbnail" id="miniatura1" style="max-width: 100px; max-height: 120px; ">
                             <label class="btn btn-lg btn-outline-dark w-80" for="image1" style="width:auto; height: auto; border-color: rgb(10, 99, 150);">cambiar imagen</label>
                         </div>
 
@@ -132,7 +132,7 @@
                              
                                  <div class="col-12 col-md-5 mb-3 w-20">
                                    <div class="form-floating p-1">
-                                     <input name="value" type="number" class="form-control" id="value" style="width: 60%;border-color: rgb(10, 99, 150);" value="<%= product_filing.value %>" >
+                                     <input name="value" type="number" class="form-control" id="value" style="width: 60%;border-color: rgb(10, 99, 150);" value="<%= value %>" >
                                      <label  for="value"> valor</label>
                                  </div>
                                </div>

@@ -56,7 +56,7 @@ app
   .use('/api', usersApiRouter)
   .use('/productos', productsRouter)
   .use('/admin', adminRouter)
-  .use('/apis', apisRouter)
+  
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

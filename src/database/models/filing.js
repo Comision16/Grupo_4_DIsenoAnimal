@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Filing.init({
-    value: DataTypes.INTEGER,
+    
     measure: DataTypes.STRING
   }, {
     sequelize,

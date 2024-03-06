@@ -23,7 +23,7 @@ module.exports = (req, res) => {
       }).then(() => {
         
         db.Filing.update({
-            value: value,
+            
             measure: measure
         }, {
             where: { id: producto.product_filing.id }
@@ -35,6 +35,7 @@ module.exports = (req, res) => {
         price: precio,
         discount: +descuento,
         description: descripcion.trim(),
+        value: value,
         specieId: +categoria,
         brandId: producto.product_brand.id,
         filingId: producto.product_filing.id, 

@@ -91,7 +91,89 @@ const crearUsuario = async (req, res) => {
         return res.status(200).json({
             ok: true,
             data: user
-        })        
+        })
+    } catch (error) {
+        console.error('Error al procesar la solicitud:', error);
+        return res.status(500).json({ ok: false, error: 'Error interno del servidor' });
+    }
+}
+
+const editarUsuario = async (req, res) => {
+
+    try {
+        const { name, email, mascota, especie } = req.body;
+        const { id } = req.params
+
+        if (isNaN(req.params.id)) throw createError(404, "no se el usuario")
+        if ([name, email, mascota, especie].includes("" || undefined)) throw createError(400, "Todos los campos son obligatorios")
+
+        const usuario = await db.User.findByPk(id)
+
+        if (!usuario) throw createError(404, "no se encientra el usuario")
+
+        usuario.name = name?.trim() || usuario.name
+        usuario.email = email?.trim() || usuario.email
+
+        usuario.save()
+
+        const mascotas = await db.Pet.findOne({
+            where: {
+                userId: id
+            }
+        })
+
+        mascotas.name = mascota?.trim() || mascotas.name
+        mascotas.specieId = especie || mascotas.specieId
+        mascotas.userId = usuario.id || mascotas.userId
+
+        mascotas.save()
+
+        const user = {
+            ...usuario.dataValues,
+            ...mascotas.dataValues
+        }
+
+        return res.status(200).json({
+            ok: true,
+            data: user
+        })
+
+    } catch (error) {
+        console.error('Error al procesar la solicitud:', error);
+        return res.status(500).json({ ok: false, error: 'Error interno del servidor' });
+    }
+
+
+
+}
+
+const borrarUsuario = async (req, res) => {
+    try {
+
+        const { id } = req.params
+
+        const mascotas = await db.Pet.destroy({
+            where : {
+                userId : id
+            }
+        })
+
+        const usuario = await db.User.destroy({
+            where : {
+                id
+            }
+        })
+
+        const user = {
+            ...usuario.dataValues,
+            ...mascotas.dataValues
+        }
+
+        return res.status(200).json({
+            ok: true,
+            data: user
+        })
+
     } catch (error) {
         console.error('Error al procesar la solicitud:', error);
         return res.status(500).json({ ok: false, error: 'Error interno del servidor' });
@@ -101,5 +183,7 @@ const crearUsuario = async (req, res) => {
 module.exports = {
     listUser,
     oneUser,
-    crearUsuario
+    crearUsuario,
+    editarUsuario,
+    borrarUsuario
 }

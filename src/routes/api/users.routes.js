@@ -1,5 +1,5 @@
 const express = require('express');
-const { listUser, oneUser, crearUsuario } = require('../../controllers/api/usersController');
+const { listUser, oneUser, crearUsuario, editarUsuario, borrarUsuario } = require('../../controllers/api/usersController');
 
 const router = express.Router();
 
@@ -8,6 +8,8 @@ router
   .get('/users', listUser)
   .get('/users/:id', oneUser )
   .post('/users/create', crearUsuario )
+  .put('/users/:id', editarUsuario )
+  .delete('/users/:id', borrarUsuario )
   
   
 module.exports = router;

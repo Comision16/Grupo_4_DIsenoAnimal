@@ -59,11 +59,6 @@ module.exports = (req, res) => {
                 primary: 2
             })
         }
-
-        
-
-        
-
         return res.redirect('/admin/dashboard')
     })
 })

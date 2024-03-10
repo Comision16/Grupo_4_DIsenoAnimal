@@ -1,4 +1,4 @@
-
+const paginate = require("express-paginate")
 const db = require('../../database/models');
 const { existsSync, unlinkSync } = require('fs');
 
@@ -20,8 +20,14 @@ const getAllProducts = async (req,res) => {
 
                 }
             ],
-            attributes : ['id', 'name']
-        })
+            attributes : ['id', 'name'],
+            limit : req.query.limit,
+            offset : req.skip
+        });
+        const pagesCount = Math.ceil(count/req.query.limit); 
+        const currentPage = req.query.page;  
+        const pages = paginate.getArrayPages(req)(pagesCount, pagesCount,req.query.page); 
+
 
         const products = rows.map(product => {
             return {
@@ -32,7 +38,14 @@ const getAllProducts = async (req,res) => {
 
         return res.status(200).json({
             ok : true,
-            count,
+            meta :{
+                total : count,
+                count : products.length,
+                pages,
+                currentPage
+
+            },
+            
             products
         })
         
@@ -90,64 +103,106 @@ const getAllProducts = async (req,res) => {
          })
      }
 }
-  const   createProduct = async (req, res) => {
-    
-        try {
-            const { nombre, categoria, precio, stock, sabores, descuento, descripcion, brand, measure, value } = req.body;
-    
-            const image1 = req.files && req.files.image1 ? req.files.image1 : null;
-            const image2 = req.files && req.files.image2 ? req.files.image2 : null;
-    
-            const brandCreated = await db.Brand.create({
-                name: brand
+const createProduct = async (req, res) => {
+    try {
+        const { nombre, categoria, precio, stock, sabores, descuento, descripcion, brand, measure, value } = req.body;
+
+        const image1 = req.files && req.files.image1 ? req.files.image1 : null;
+        const image2 = req.files && req.files.image2 ? req.files.image2 : null;
+
+        if (Object.keys(req.body).length === 0) {
+            return res.status(400).json({
+                ok: false,
+                msg: 'No se proporcionaron datos para crear el producto'
             });
-    
-            const producto = await db.Product.create({
-                name : nombre.trim(),
-                price : precio,
-                discount : +descuento,
-                description : descripcion.trim(),
-                specieId : +categoria,
-                value: value,
-                brandId: brandCreated.id, 
-                filingId: measure, 
+        }
+
+        let brandCreated = await db.Brand.findOne({ where: { name: brand } });
+
+        if (!brandCreated) {
+            brandCreated = await db.Brand.create({ name: brand });
+        }
+
+        const producto = await db.Product.create({
+            name: nombre.trim(),
+            price: precio,
+            discount: +descuento,
+            description: descripcion.trim(),
+            specieId: +categoria,
+            value: value,
+            brandId: brandCreated.id,
+            filingId: measure,
+        });
+
+        await db.stock.create({
+            amount: +stock,
+            flavorId: +sabores,
+            productId: producto.id
+        });
+
+        if (image1) {
+            const imageToUpdate = await db.Image_products.findOne({
+                where: {
+                    productId: producto.id,
+                    primary: 1
+                }
             });
-    
-            await db.stock.create({
-                amount : +stock,
-                flavorId : +sabores,
-                productId : producto.id
-            });
-    
-            if (image1) {
+
+            if (imageToUpdate) {
+                existsSync('public/images/' + imageToUpdate.file) &&
+                    unlinkSync('public/images/' + imageToUpdate.file)
+
+                await imageToUpdate.update({
+                    file: image1[0].filename,
+                });
+            } else {
                 await db.Image_products.create({
                     file: image1[0].filename,
                     productId: producto.id,
                     primary: 1
                 });
             }
-    
-            if (image2) {
+        }
+
+        if (image2) {
+            const imageToUpdate = await db.Image_products.findOne({
+                where: {
+                    productId: producto.id,
+                    primary: 2
+                }
+            });
+
+            if (imageToUpdate) {
+                existsSync('public/images/' + imageToUpdate.file) &&
+                    unlinkSync('public/images/' + imageToUpdate.file)
+
+                await imageToUpdate.update({
+                    file: image2[0].filename,
+                });
+            } else {
                 await db.Image_products.create({
                     file: image2[0].filename,
                     productId: producto.id,
                     primary: 2
                 });
             }
-    
-            res.status(201).json({
-                ok : true,
-                msg : "Producto creado con éxito",
-                product : producto
-            });
-        } catch (error) {
-            console.error(error);
-            res.status(500).json({
-                ok : false,
-                msg : 'Hubo un error al crear el producto'
-            });
         }
+
+        return res.status(201).json({
+            ok: true,
+            msg: 'Producto creado con éxito',
+            product: producto
+        });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({
+            ok: false,
+            msg: 'Hubo un error al crear el producto'
+        });
+    }
 }
+
+
 const updateProduct = async (req, res) => {
     try {
         const { id } = req.params;
@@ -158,6 +213,13 @@ const updateProduct = async (req, res) => {
         const image1 = req.files && req.files.image1 ? req.files.image1 : null;
         const image2 = req.files && req.files.image2 ? req.files.image2 : null;
 
+        if (Object.keys(req.body).length === 0) {
+            return res.status(400).json({
+                ok: false,
+                msg: 'No se proporcionaron datos para actualizar el producto'
+            });
+        }
+
         const productToUpdate = await db.Product.findByPk(id);
 
         if (!productToUpdate) {
@@ -167,11 +229,12 @@ const updateProduct = async (req, res) => {
             });
         }
 
-        // Busca la marca por su nombre
         let brandToUpdate = await db.Brand.findOne({ where: { name: brand } });
 
-        // Si la marca no existe, crea una nueva
-        if (!brandToUpdate) {
+        if (brandToUpdate) {
+            await brandToUpdate.update({ name: brand });
+        } else {
+
             brandToUpdate = await db.Brand.create({ name: brand });
         }
 
@@ -208,10 +271,10 @@ const updateProduct = async (req, res) => {
             });
 
             if (imageToUpdate) {
-                // Elimina el archivo de imagen existente del sistema de archivos
+                
                 fs.unlinkSync(path.join(__dirname, '/ruta/a/tus/imagenes/', imageToUpdate.file));
 
-                // Actualiza la entrada en la base de datos con la nueva imagen
+               
                 await imageToUpdate.update({
                     file: image1[0].filename,
                 });
@@ -227,10 +290,10 @@ const updateProduct = async (req, res) => {
             });
 
             if (imageToUpdate) {
-                // Elimina el archivo de imagen existente del sistema de archivos
+                
                 fs.unlinkSync(path.join(__dirname, '/ruta/a/tus/imagenes/', imageToUpdate.file));
 
-                // Actualiza la entrada en la base de datos con la nueva imagen
+              
                 await imageToUpdate.update({
                     file: image2[0].filename,
                 });

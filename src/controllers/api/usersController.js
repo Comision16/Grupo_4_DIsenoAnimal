@@ -1,5 +1,6 @@
 const db = require("../../database/models")
 const createError = require("http-errors")
+const paginate = require('express-paginate')
 
 const bcryptjs = require('bcryptjs')
 
@@ -10,21 +11,32 @@ const listUser = async (req, res) => {
                 association: "pet",
                 attributes: ["name"]
             }],
-            attributes: ["id", "name", "email", "image"]
+            attributes: ["id", "name", "email", "image"],
+            limit: req.query.limit,
+            offset : req.skip
         })
+
+        const pegeCount = Math.ceil(count / req.query.limit)
+        const currentPage  = req.query.page
+        const pages = paginate.getArrayPages(req)(pegeCount, pegeCount,req.query.page)
 
         const usuarios = rows.map(usuario => {
             return {
                 ...usuario.dataValues,
                 pet: usuario.pet[0].name,
-                detail: `${req.protocol}://${req.get("host")}/api/users/${usuario.id}`
+                detail: `${req.protocol}://${req.get("host")}/api/users`
             }
 
         })
 
         return res.status(200).json({
             ok: true,
-            cantidad: count,
+            meta : {
+                total: count,
+                count :  usuarios.length ,
+                pages,
+                currentPage                          
+            },
             data: usuarios
         })
 
@@ -53,7 +65,8 @@ const oneUser = async (req, res) => {
 
         return res.status(200).json({
             ok: true,
-            data: customUser
+            data: customUser,
+            detail: `${req.protocol}://${req.get("host")}/api/users/${usuario.id}`
         })
 
 
@@ -90,7 +103,8 @@ const crearUsuario = async (req, res) => {
 
         return res.status(200).json({
             ok: true,
-            data: user
+            data: user,
+            detail: `${req.protocol}://${req.get("host")}/api/users`
         })
     } catch (error) {
         console.error('Error al procesar la solicitud:', error);
@@ -135,7 +149,8 @@ const editarUsuario = async (req, res) => {
 
         return res.status(200).json({
             ok: true,
-            data: user
+            data: user,
+            detail: `${req.protocol}://${req.get("host")}/api/users/${usuario.id}`
         })
 
     } catch (error) {
@@ -171,7 +186,8 @@ const borrarUsuario = async (req, res) => {
 
         return res.status(200).json({
             ok: true,
-            data: user
+            data: user,
+            detail: `${req.protocol}://${req.get("host")}/api/users/${usuario.id}`
         })
 
     } catch (error) {

@@ -52,13 +52,13 @@
 
                           <div class="row d-flex justify-content-center align-items-center gap-2 w-50">
                             <input name="image1" type="file" style="border-color: rgb(10, 99, 150);" class="form-control" id="image1" hidden >
-                            <img src="/images/<%= Image_products? Image_products[0].file : "new-product.default.png" %>" alt="" class="img-thumbnail" id="miniatura1" style="max-width: 100px; max-height: 120px; ">
+                            <img src="/images/<%= Image_products && Image_products[0] && Image_products[0].file ? Image_products[0].file : "new-product.default.png" %>" alt="" class="img-thumbnail" id="miniatura1" style="max-width: 100px; max-height: 120px; ">
                             <label class="btn btn-lg btn-outline-dark w-80" for="image1" style="width:auto; height: auto; border-color: rgb(10, 99, 150);">cambiar imagen</label>
                         </div>
 
                         <div class="row d-flex justify-content-center align-items-center gap-2 w-50">
                           <input  name="image2" type="file" style="border-color: rgb(10, 99, 150);" class="form-control" id="image2" hidden >
-                          <img src="/images/<%= Image_products.length > 1 ? Image_products[1].file : "new-product.default.png" %>" alt="" class="img-thumbnail" id="miniatura2" style="max-width: 100px; max-height: 120px; ">
+                          <img src="/images/<%= Image_products && Image_products.length > 1 && Image_products[1].file ? Image_products[1].file : "new-product.default.png" %>" alt="" class="img-thumbnail" id="miniatura2" style="max-width: 100px; max-height: 120px; ">
                           <label class="btn btn-lg btn-outline-dark w-80" for="image2" style="width:auto; height: auto; border-color: rgb(10, 99, 150);">cambiar imagen</label>
                         </div>
                         

@@ -107,8 +107,9 @@ const createProduct = async (req, res) => {
     try {
         const { nombre, categoria, precio, stock, sabores, descuento, descripcion, brand, measure, value } = req.body;
 
-        const image1 = req.files && req.files.image1 ? req.files.image1 : null;
-        const image2 = req.files && req.files.image2 ? req.files.image2 : null;
+        const image1 = req.files?.image1?.[0]?.filename ?? null;
+        const image2 = req.files?.image2?.[0]?.filename ?? null;
+        
 
         if (Object.keys(req.body).length === 0) {
             return res.status(400).json({
@@ -117,7 +118,7 @@ const createProduct = async (req, res) => {
             });
         }
 
-        let brandCreated = await db.Brand.findOne({ where: { name: brand } });
+        const brandCreated = await db.Brand.findOne({ where: { name: brand } });
 
         if (!brandCreated) {
             brandCreated = await db.Brand.create({ name: brand });
@@ -140,53 +141,66 @@ const createProduct = async (req, res) => {
             productId: producto.id
         });
 
-        if (image1) {
-            const imageToUpdate = await db.Image_products.findOne({
-                where: {
-                    productId: producto.id,
-                    primary: 1
-                }
-            });
-
-            if (imageToUpdate) {
-                existsSync('public/images/' + imageToUpdate.file) &&
-                    unlinkSync('public/images/' + imageToUpdate.file)
-
-                await imageToUpdate.update({
-                    file: image1[0].filename,
-                });
-            } else {
-                await db.Image_products.create({
-                    file: image1[0].filename,
-                    productId: producto.id,
-                    primary: 1
-                });
-            }
+       if (image1) {
+    const imageToUpdate = await db.Image_products.findOne({
+        where: {
+            productId: producto.id,
+            primary: 1
         }
+    });
 
-        if (image2) {
-            const imageToUpdate = await db.Image_products.findOne({
-                where: {
-                    productId: producto.id,
-                    primary: 2
-                }
-            });
+    if (imageToUpdate) {
+        existsSync('public/images/' + imageToUpdate.file) &&
+            unlinkSync('public/images/' + imageToUpdate.file)
 
-            if (imageToUpdate) {
-                existsSync('public/images/' + imageToUpdate.file) &&
-                    unlinkSync('public/images/' + imageToUpdate.file)
+        await imageToUpdate.update({
+            file: image1,
+        });
+    } else {
+        await db.Image_products.create({
+            file: image1,
+            productId: producto.id,
+            primary: 1
+        });
+    }
+} else {
+    await db.Image_products.create({
+        file: null,
+        productId: producto.id,
+        primary: 1
+    });
+}
 
-                await imageToUpdate.update({
-                    file: image2[0].filename,
-                });
-            } else {
-                await db.Image_products.create({
-                    file: image2[0].filename,
-                    productId: producto.id,
-                    primary: 2
-                });
-            }
+if (image2) {
+    const imageToUpdate = await db.Image_products.findOne({
+        where: {
+            productId: producto.id,
+            primary: 2
         }
+    });
+
+    if (imageToUpdate) {
+        existsSync('public/images/' + imageToUpdate.file) &&
+            unlinkSync('public/images/' + imageToUpdate.file)
+
+        await imageToUpdate.update({
+            file: image2,
+        });
+    } else {
+        await db.Image_products.create({
+            file: image2,
+            productId: producto.id,
+            primary: 2
+        });
+    }
+} else {
+    await db.Image_products.create({
+        file: null,
+        productId: producto.id,
+        primary: 2
+    });
+}
+
 
         return res.status(201).json({
             ok: true,

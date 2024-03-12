@@ -21,8 +21,8 @@
               <% productos.forEach(({id, name, description, Image_products, price, product_species})=> { %>
                 <div class=" carDashboar card  bg-light justify-content-between ">
                   <div >
-                    <img class="mx-auto d-block my-3" src="/images/<%= Image_products.length ? Image_products[0].file : "new-product.default.png" %>" alt=""
-                      style="max-width: 20%; max-height: 20%;">
+                    <img class="mx-auto d-block my-3" src="/images/<%= Image_products && Image_products[0] && Image_products[0].file ? Image_products[0].file : "new-product.default.png" %>" alt="" style="max-width: 20%; max-height: 20%;">
+
                     <div class="col-12">
                       <ul class="list-group list-group-flush">
                         <li class="list-group-item"> <strong>Id: </strong>

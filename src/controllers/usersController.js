@@ -69,16 +69,16 @@ module.exports = {
                 email,
                 password: bcryptjs.hashSync(password.trim(), 10),
                 roleId: 2,
-                imagen: ""
+                mascota: ""
             })
-            .then(usuario => {
-                db.Pet.create({
-                    name : mascota,
-                    specieId : especie,
-                    userId : usuario.id
-                })
-            })
-                .then(user => {
+                .then((user) => {
+
+                    db.Pet.create({
+                        name : "",
+                        specieId : 6,
+                        userId : user.id
+                    })
+
                     return res.redirect('/usuarios/ingreso')
                 })
 
@@ -127,6 +127,7 @@ module.exports = {
         Promise.all([usuario, especies, mascotas])
 
             .then(([usuario, especies, mascotas]) => {
+                /* return res.send(usuario) */
 
                 return res.render("users/perfil", {
                     usuario,
@@ -155,7 +156,7 @@ module.exports = {
                     db.User.update({
                         name,
                         email,
-                        image: req.file ? req.file.filename : User.image
+                        image: req.file ? req.file.filename : user.image
                     },
                         {
                             where: {

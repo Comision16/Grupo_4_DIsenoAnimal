@@ -38,7 +38,7 @@ module.exports = (req, res) => {
 
           if (req.files.image1) {
 
-            existsSync('public/images/' + producto.Image_products[0].file) &&
+            producto.Image_products[0] && existsSync('public/images/' + producto.Image_products[0].file) &&
               unlinkSync('public/images/' + producto.Image_products[0].file)
 
             db.Image_products.update({
@@ -57,7 +57,7 @@ module.exports = (req, res) => {
 
           if (req.files.image2) {
 
-            existsSync('public/images/' + producto.Image_products[1].file) &&
+            producto.Image_products[1] && existsSync('public/images/' + producto.Image_products[1].file) &&
               unlinkSync('public/images/' + producto.Image_products[1].file)
 
             db.Image_products.update({

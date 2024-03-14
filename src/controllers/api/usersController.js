@@ -1,6 +1,7 @@
 const db = require("../../database/models")
 const createError = require("http-errors")
 const paginate = require('express-paginate')
+const { existsSync, unlinkSync } = require('fs');
 
 const bcryptjs = require('bcryptjs')
 
@@ -13,12 +14,12 @@ const listUser = async (req, res) => {
             }],
             attributes: ["id", "name", "email", "image"],
             limit: req.query.limit,
-            offset : req.skip
+            offset: req.skip
         })
 
         const pegeCount = Math.ceil(count / req.query.limit)
-        const currentPage  = req.query.page
-        const pages = paginate.getArrayPages(req)(pegeCount, pegeCount,req.query.page)
+        const currentPage = req.query.page
+        const pages = paginate.getArrayPages(req)(pegeCount, pegeCount, req.query.page)
 
         const usuarios = rows.map(usuario => {
             return {
@@ -31,11 +32,11 @@ const listUser = async (req, res) => {
 
         return res.status(200).json({
             ok: true,
-            meta : {
+            meta: {
                 total: count,
-                count :  usuarios.length ,
+                count: usuarios.length,
                 pages,
-                currentPage                          
+                currentPage
             },
             data: usuarios
         })
@@ -87,7 +88,8 @@ const crearUsuario = async (req, res) => {
             name,
             email,
             password: bcryptjs.hashSync(password.trim(), 10),
-            roleId: 2
+            roleId: 2,
+            image: ""
         })
         const pet = await db.Pet.create({
             name: mascota,
@@ -123,10 +125,16 @@ const editarUsuario = async (req, res) => {
 
         const usuario = await db.User.findByPk(id)
 
+        const imagenDelete = req.file ? req.file.fieldname : null;
+
+        (imagenDelete && existsSync('public/images/' + usuario.image)) &&
+            unlinkSync('public/images/' + usuario.image)
+
         if (!usuario) throw createError(404, "no se encientra el usuario")
 
         usuario.name = name?.trim() || usuario.name
         usuario.email = email?.trim() || usuario.email
+        usuario.image = req.file ? req.file.filename : user.image
 
         usuario.save()
 
@@ -168,13 +176,13 @@ const borrarUsuario = async (req, res) => {
         const { id } = req.params
 
         const mascotas = await db.Pet.destroy({
-            where : {
-                userId : id
+            where: {
+                userId: id
             }
         })
 
         const usuario = await db.User.destroy({
-            where : {
+            where: {
                 id
             }
         })

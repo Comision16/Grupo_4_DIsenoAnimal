@@ -6,7 +6,9 @@ module.exports = (req, res) => {
 
     const product = db.Product.findByPk(params.id, {
         include: [
-            "Image_products", "product_stock"
+            "Image_products", "product_stock",
+            "product_filing", "product_brand"
+            
         ]
     })
 
@@ -16,18 +18,25 @@ module.exports = (req, res) => {
         },
         include: ["user"]
     })
+    const brand = db.Brand.findAll()
+
+    const filing = db.Filing.findAll()
 
     const especies = db.Specie.findAll()
 
     const sabores = db.Flavor.findAll()
 
-    Promise.all([product, especies, mascotas, sabores])
-        .then(([product, especies, mascotas, sabores]) => {
+    Promise.all([product, especies, mascotas, sabores, brand, filing])
+        .then(([product, especies, mascotas, sabores, brand, filing]) => {
+            
+            // return res.send(filing)
             return res.render('products/product-edit', {
                 ...product.dataValues,
                 especies,
                 mascotas,
-                sabores
+                sabores,
+                brand,
+                filing
             })
         })
 }

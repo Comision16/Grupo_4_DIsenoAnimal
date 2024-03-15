@@ -19,12 +19,12 @@
 
             <div class="dashboard_group_card gap-3">
               <% productos.forEach(({id, name, description, Image_products, price, product_species})=> { %>
-                <div class="carDashboar card d-flex flex-row justify-content-between bg-light  w-100" style="margin: -5px 150px;" >
-                  <div class="d-flex col-8 flex-row" style="height: 90px;">
-                    <img class="mx-auto d-block my-3" src="/images/<%= Image_products.length ? Image_products[0].file : "new-product.default.png" %>" alt=""
-                      style="max-width: 20%; max-height: 0%; padding-left: 10px">
-                    <div class="col-12 d-flex flex-direction-row mt-2">
-                      <ul class="">
+                <div class=" carDashboar card  bg-light justify-content-between ">
+                  <div >
+                    <img class="mx-auto d-block my-3" src="/images/<%= Image_products && Image_products[0] && Image_products[0].file ? Image_products[0].file : "new-product.default.png" %>" alt="" style="max-width: 20%; max-height: 20%;">
+
+                    <div class="col-12">
+                      <ul class="list-group list-group-flush">
                         <li class="list-group-item"> <strong>Id: </strong>
                           <%= id %>
                         </li>

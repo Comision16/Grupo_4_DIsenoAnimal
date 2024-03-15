@@ -17,7 +17,7 @@
       <section class="row my-2">
           <div class="col-10 col-md-9 mx-auto">
               <div class="card">
-                  <div class="card-header d-flex justify-content-between">
+                <div class="card-header d-flex justify-content-between">
                       <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                           <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/admin/dashboard" class="text-primary">Home Dashboard</a></li>
@@ -26,36 +26,27 @@
                         </nav>
                   </div>
                   <div class="card-body">
-                      <form action="/productos/store" method="post" style="background-color: rgb(245, 245, 245);" class="row d-flex justify-content-between align-items-center " enctype="multipart/form-data">
+                      <form action="/productos/store" method="post" style="background-color: rgb(245, 245, 245);" class="row d-flex justify-content-center align-items-center" enctype="multipart/form-data">
                             <h3>Agregar Articulos</h3>
                             
-
-                            <div class="row d-flex gap-2 justify-content-center mt-2" >
+                            <div class="row justify-content-center gap-3 align-items-center" >
                               
                               <div class="col-12 col-md-4 mb-3">
-                                <div class="form-floating">
-                                  <input name="nombre" type="text" class="form-control " id="nombre" style=" border-color: rgb(10, 99, 150);">
+                                <div class="form-floating p-1">
+                                  <input name="nombre" type="text" class="form-control " id="nombre" style=" height: auto;border-color: rgb(10, 99, 150);">
                                   <label for="nombre">Nombre del articulo</label>
                                 </div>
                               </div>
 
-                              <div class="col-12 col-md-4 mb-3">
-                                <div class="form-floating">
-                                  <select name="categoria" class="form-select" id="categoria" aria-label="Floating label select example" style=" border-color: rgb(10, 99, 150);">
-                                    <option value="" selected hidden></option>
-                                    <option value="1">perros</option>
-                                    <option value="2">gatos</option>
-                                    <option value="3">Aves</option>
-                                    <option value = "4">Peces</option>
-                                    <option value ="5">roedores</option>
-                                    <option value ="6">otros</option>
-                                  </select>
-                                  <label for="categoria">Categoría</label>
+                                <div class="col-12 col-md-4 mb-3">
+                                  <div class="form-floating p-1">
+                                      <input name="precio" type="number" class="form-control" id="precio" style=" height: auto; border-color: rgb(10, 99, 150);">
+                                      <label for="precio">Precio del producto</label>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
                             
-                            <div class="row d-flex flex-wrap justify-content-center mr-4 align-items-center mb-3 w-100">
+                              <div class="row d-flex flex-wrap justify-content-center mr-4 align-items-center mb-3 w-100">
                               
                               <div class="row d-flex justify-content-center align-items-center gap-2 w-50">
                               <input name="image1" type="file" class="form-control" id="image1" hidden >
@@ -68,25 +59,39 @@
                               <img src="/images/new-product.default.png" alt="Segunda imagen de la lista" class="img-thumbnail" id="miniatura2" style="max-width: 100px; max-height: 120px;">
                               <label class="btn btn-lg btn-outline-dark w-80" for="image2" style="width:auto; height: auto; border-color: rgb(10, 99, 150);">Agregar imagen</label>
                               </div>
+                            </div>              
+                          
+                            <div class="row justify-content-center gap-4  align-items-center">
 
-                          </div>
-                         
-                          <div class="row justify-content-center gap-1 align-items-center">
-                            <div class="col-12 col-md-4 mb-3">
-                              <div class="form-floating">
-                                  <input name="precio" type="number" class="form-control" id="precio" style="border-color: rgb(10, 99, 150);">
-                                  <label for="precio">Precio del producto</label>
-                              </div>
+                           <div class="col-12 col-md-4 mb-3">
+                            <div class="form-floating p-1">
+                              <select name="categoria" class="form-control m-0" id="categoria" aria-label="Floating label select example" style=" border-color: rgb(10, 99, 150);">
+                                <option value="" selected hidden></option>
+                                <option value="1">Perro</option>
+                                <option value="2">Gato</option>
+                                <option value="3">Ave</option>
+                                <option value = "4">Peces</option>
+                                <option value ="5">Roedor</option>
+                                <option value ="6">Otro</option>
+                              </select>
+                              <label for="categoria">Especie</label>
                             </div>
+                          </div>
+                       
+                        
                           <div class="col-12 col-md-4 mb-3">
-                            <div class="form-floating">
-                                <input name="stock" type="number" class="form-control" id="stock" style="border-color: rgb(10, 99, 150);">
+                            <div class="form-floating p-1">
+                                <input name="stock" type="number" class="form-control" id="stock" style="height: auto; border-color: rgb(10, 99, 150);">
                                 <label for="stock">Cantidad en stock</label>
                             </div>
                           </div>
-                              <div class="col-12 col-md-4 mb-3">
-                                <div class="form-floating">
-                                    <select name="sabores" class="form-select" id="sabores" aria-label="Floating label select example" style="width:100%; border-color: rgb(10, 99, 150);">
+                        </div>
+                        
+                        <div class="row justify-content-center gap-4  align-items-center">
+                          <div class="col-12 col-md-4 mb-3 w-20">
+                            
+                            <div class="form-floating p-1">
+                                    <select name="sabores" class="form-control m-0" id="sabores" aria-label="Floating label select example" style="width:90%; border-color: rgb(10, 99, 150);">
                                         <option value="" selected hidden></option>
                                         <option value="1">Pescado</option>
                                         <option value="2">Pollo y Arroz</option>
@@ -101,22 +106,56 @@
                                     <label for="sabores">Sabores</label>
                                 </div>
                               </div>
-                            <div class="col-12 col-md-4 mb-3" >
-                              <div class="form-floating ">
+                              <div class="col-12 col-md-5 mb-3 w-20">
+                                <div class="form-floating p-1">
                                   <input name="descuento" type="number" class="form-control" id="descuento" style="border-color: rgb(10, 99, 150);" >
                                   <label  for="descuento">Descuento -%</label>
                               </div>
                             </div>
+                        </div>
+
+                          <div class="row d-flex justify-content-start align-items-center w-50">
                       
-                          
-                          <div class="col-10 mb-5 " >
-                              <div class="form-floating ">
-                                <textarea name="descripcion" class="form-control overflow text-break" id="descripcion" style=" width:100% ;height: 100px; border-color: rgb(10, 99, 150); "></textarea>
+                          <div class="col-12 col-md-5 mb-3 w-50">  
+                          <div class="form-floating p-1 ">
+                                    <select name="measure" class="form-control m-0" id="measure" aria-label="Floating label select example" style="width:100%; border-color: rgb(10, 99, 150);">
+                                        <option value="" selected hidden></option>
+                                        <option value="1">Kilogramos</option>
+                                        <option value="2">Gramos</option>
+                                        <option value="3">Largo</option>
+                                        <option value="4">Ancho</option>
+                                        <option value="5">Alto</option>
+                                        <option value="6">Otro</option>
+                                        <!-- Agrega más opciones si es necesario -->
+                                    </select>
+                                    <label for="measure">Unidad de medida</label>
+                                </div>
+                              </div>
+                        
+                              <div class="col-12 col-md-5 mb-3 w-20">
+                                <div class="form-floating p-1">
+                                  <input name="value" type="number" class="form-control" id="value" style="width: 60%;border-color: rgb(10, 99, 150);" >
+                                  <label  for="value"> valor</label>
+                              </div>
+                            </div>
+                          </div>
+                         
+                          <div class="row d-flex justify-content-start col-12 col-md-5 mb-3 w-20">
+                            <div class="form-floating p-1">
+                              <input name="brand" type="text" class="form-control " id="brand" style="width: 85%; height: auto;border-color: rgb(10, 99, 150);">
+                              <label for="brand">Marca</label>
+                            </div>
+                          </div>
+
+                          <div  class="col-10 mb-3" >
+                            <div class="form-floating p-1">
+                                <textarea name="descripcion" class="form-control p-2" id="descripcion" style="height: 100px; border-color: rgb(10, 99, 150); "></textarea>
                                 <label for="descripcion">Descripción...</label>
                                 </div>
                           </div>
                         </div>
-                          <div class="col-7 d-flex justify-content-center" style="width: 100%; transition: all 0.01s;">
+                      
+                          <div class="col-7 d-flex justify-content-center" style=" transition: all 0.01s;">
                               <button class="btn btn-lg btn-dark">Agregar Producto</button>
                             
                               <!-- efecto del boton -->

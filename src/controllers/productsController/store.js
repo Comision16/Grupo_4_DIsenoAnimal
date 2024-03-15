@@ -31,8 +31,6 @@ module.exports = (req, res) => {
             flavorId : +sabores,
             productId : producto.id
         })
-<<<<<<< HEAD
-=======
 
         if (image1) {
             db.Image_products.create({
@@ -64,5 +62,4 @@ module.exports = (req, res) => {
         return res.redirect('/admin/dashboard')
     })
 })
->>>>>>> develop
 }

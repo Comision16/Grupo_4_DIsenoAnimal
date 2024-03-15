@@ -56,8 +56,8 @@
                             <div class="perfil__form__div">
                                 <div>
                                     <label class="perfil_form_div_label" for="mascota">Nombre de Mascota</label>
-                                    <input type="text" name="mascota" id="mascota" placeholder="Nombre Mascota" value="<%= mascotas.name %>">
-                                    <input type="text" name="petId" id="petId" placeholder="Nombre Mascota" value="<%= mascotas.id %>" hidden >
+                                    <input type="text" name="mascota" id="mascota" placeholder="Nombre Mascota" value="<%= mascotas ? mascotas.name : "" %>">
+                                    <input type="text" name="petId" id="petId" placeholder="Nombre Mascota" value="<%= mascotas ? mascotas.id : "" %>" hidden >
 
                                     <small class="perfil_alert" class="perfil_alert">
                                         <%= locals.errors && errors.mascota ? errors.mascota.msg : null %>
@@ -72,7 +72,7 @@
 
                                     <% especies.forEach(item => { %>
 
-                                     <option value="<%= item.id %>" <%= (item.id && mascotas.specieId == item.id) && "selected" %> ><%= item.name %></option>
+                                     <option value="<%= item.id %>" <%= mascotas && (item.id && mascotas.specieId == item.id) && "selected" %> ><%= item.name %></option>
                                      
                                     <% }) %>
                                   </select>

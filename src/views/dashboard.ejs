@@ -19,19 +19,19 @@
 
             <div class="dashboard_group_card gap-3">
               <% productos.forEach(({id, name, description, Image_products, price, product_species})=> { %>
-                <div class=" carDashboar card  bg-light justify-content-between ">
-                  <div >
+                <div class="carDashboar card d-flex flex-row justify-content-between bg-light  w-100" style="margin: -5px 150px;" >
+                  <div class="d-flex col-8 flex-row" style="height: 90px;">
                     <img class="mx-auto d-block my-3" src="/images/<%= Image_products.length ? Image_products[0].file : "new-product.default.png" %>" alt=""
-                      style="max-width: 20%; max-height: 20%;">
-                    <div class="col-12">
-                      <ul class="list-group list-group-flush">
+                      style="max-width: 20%; max-height: 0%; padding-left: 10px">
+                    <div class="col-12 d-flex flex-direction-row mt-2">
+                      <ul class="">
                         <li class="list-group-item"> <strong>Id: </strong>
                           <%= id %>
                         </li>
                         <li class="list-group-item"> <strong>Nombre: </strong>
                           <%= name %>
                         </li>
-                        <li class="list-group-item"> <strong> Descripcion: </strong>
+                        <!-- <li class="list-group-item"> <strong> Descripcion: </strong>
                           <%= description %>
                         </li>
                         <li class="list-group-item"> <strong>Precio </strong>
@@ -40,19 +40,31 @@
                         </li>
                         <li class="list-group-item mb-2"> <strong>Categoria </strong>
                           <%= product_species.name %>
-                        </li>
+                        </li> -->
                       </ul>
                     </div>
                   </div>
-                  <div class="d-flex justify-content-around mb-3">
-                    <a class="btn btn-sm btn-info col-4" href="/productos/editar-articulo/<%= id %>">Editar</a>
+                  <div class="d-flex mx-2  mt-2 gap-3">
+                    <div>
+                    <a class="btn btn-sm btn-warning pt-2" style="height: 35px;" href="/productos/editar-articulo/<%= id %>">Editar</a>
 
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalDelete<%= id %>"
-                      class="btn btn-sm btn-primary col-4 align-bottom">Eliminar</button>
-               
+                    <button type="button mb-3" data-bs-toggle="modal" data-bs-target="#modalDelete<%= id %>"
+                      class="btn btn-danger" style="height: 35px;" >Eliminar</button>
+                      <div class="mt-1" >
+                    <button type="button mb-3" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal<%= id %>"
+                      class="btn btn-primary" style="height: 35px; width: 100%;" >Detalle</button>
+
+                    </div>
+                        
+                      </div>
+
+
 
                   </div>
                 </div>
+                <%- include('./partials/modal-product-dashboard',{ id, name, description,Image_products, price
+                }) %>
                       <%- include('./partials/modal-delete-product', { id, name }) %>
             </div>
 

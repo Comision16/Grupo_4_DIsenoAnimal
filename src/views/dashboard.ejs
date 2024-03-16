@@ -2,65 +2,81 @@
 <html lang="en">
 
 <%- include('./partials/head',{ title : "Dashboard" }) %>
-  <%- include('./partials/scritps') %>
-    <link rel="icon" type="image/x-icon" href="/images/favicon-dashboard.png">
-    <title>Cancat - Dashboard</title>
+<%- include('./partials/scritps') %>
+<link rel="icon" type="image/x-icon" href="/images/favicon-dashboard.png">
+<title>Cancat - Dashboard</title>
 
-    <body class="dashboard-body">
+  <body class="dashboard-body">
 
-      <%- include('./partials/header-dashboard') %>
+    <%- include('./partials/header-dashboard') %>
 
-        <main class="container mt-3">
-          <section class="row">
+      <main class="container mt-3">
+        <section class="row">
+          <div class="col-12 col-md-10 mx-auto">
+            <div class="card shadow rounded">
+              <div class="card-header d-flex justify-content-between">
+                <h4 class="card-title">Productos</h4>
+                <a class="btn btn-outline-primary" href="/productos/agregar-articulos">Nuevo Producto</a>
+              </div>
+              <div class="p-3 pb-0 table-responsive">
 
-            <div class="col-12 card-header d-flex justify-content-center mb-4">
-              <h3 class="card-title">Productos</h3>
-            </div>
-
-            <div class="dashboard_group_card gap-3">
-              <% productos.forEach(({id, name, description, Image_products, price, product_species})=> { %>
-                <div class=" carDashboar card  bg-light justify-content-between ">
-                  <div >
-                    <img class="mx-auto d-block my-3" src="/images/<%= Image_products.length ? Image_products[0].file : "new-product.default.png" %>" alt=""
-                      style="max-width: 20%; max-height: 20%;">
-                    <div class="col-12">
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item"> <strong>Id: </strong>
+                    <% if (productos.length) { %>
+                <table class="table table-striped table-bordered">
+                  <thead class="table-primary">
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Descripción</th>
+                      <th scope="col">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% productos.forEach(({id, name, description, Image_products, price})=> { %>
+                      <tr>
+                        <th scope="row">
                           <%= id %>
-                        </li>
-                        <li class="list-group-item"> <strong>Nombre: </strong>
+                        </th>
+                        <td>
                           <%= name %>
-                        </li>
-                        <li class="list-group-item"> <strong> Descripcion: </strong>
+                        </td>
+                        <td>
                           <%= description %>
-                        </li>
-                        <li class="list-group-item"> <strong>Precio </strong>
-                          <%= price %>
-                        </li>
-                        </li>
-                        <li class="list-group-item mb-2"> <strong>Categoria </strong>
-                          <%= product_species.name %>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="d-flex justify-content-around mb-3">
-                    <a class="btn btn-sm btn-info col-4" href="/productos/editar-articulo/<%= id %>">Editar</a>
+                        </td>
+                        <td>
+                          <div class="d-flex gap-2">
+                            <a class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                              data-bs-target="#exampleModal<%= id %>">
+                              <i class="fa-solid fa-eye"></i></a>
 
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalDelete<%= id %>"
-                      class="btn btn-sm btn-primary col-4 align-bottom">Eliminar</button>
-               
+                            <a class="btn btn-sm btn-outline-warning" href="/productos/editar-articulo/<%= id %>"><i class="fa-solid fa-pencil"></i></a>
 
-                  </div>
-                </div>
-                      <%- include('./partials/modal-delete-product', { id, name }) %>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#modalDelete<%= id %>" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
+                            
+                            <%- include('./partials/modal-product-dashboard',{ id, name, description,Image_products, price
+                              }) %>
+
+                            <%- include('./partials/modal-delete-product', { id, name }) %>
+
+                          </div>
+                        </td>
+
+                      </tr>
+
+                      <% }) %>
+                     
+                    <% } else { %>
+                      <div class="col-12">
+                        <h3 class="products-title" style="color: tomato;">No hay productos que coincidan con esa búsqueda</h3>
+                      </div>                      
+                    <% } %>
+
+                  </tbody>
+                </table>
+              </div>
             </div>
-
-                </div>
-            <% }) %>
-
-          </section>
-        </main>
-    </body>
+          </div>
+        </section>
+      </main>
+  </body>
 
 </html>

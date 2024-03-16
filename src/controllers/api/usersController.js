@@ -120,7 +120,7 @@ const editarUsuario = async (req, res) => {
         const { name, email, mascota, especie } = req.body;
         const { id } = req.params
 
-        if (isNaN(req.params.id)) throw createError(404, "no se el usuario")
+        if (isNaN(id)) throw createError(404, "no se el usuario")
         if ([name, email, mascota, especie].includes("" || undefined)) throw createError(400, "Todos los campos son obligatorios")
 
         const usuario = await db.User.findByPk(id)
@@ -130,13 +130,13 @@ const editarUsuario = async (req, res) => {
         (imagenDelete && existsSync('public/images/' + usuario.image)) &&
             unlinkSync('public/images/' + usuario.image)
 
-        if (!usuario) throw createError(404, "no se encientra el usuario")
+        if (!usuario) throw createError(404, "no se encuentra el usuario")
 
         usuario.name = name?.trim() || usuario.name
         usuario.email = email?.trim() || usuario.email
-        usuario.image = req.file ? req.file.filename : user.image
+        usuario.image = req.file ? req.file.filename : usuario.image
 
-        usuario.save()
+        await usuario.save()
 
         const mascotas = await db.Pet.findOne({
             where: {
@@ -148,7 +148,7 @@ const editarUsuario = async (req, res) => {
         mascotas.specieId = especie || mascotas.specieId
         mascotas.userId = usuario.id || mascotas.userId
 
-        mascotas.save()
+        await mascotas.save()
 
         const user = {
             ...usuario.dataValues,

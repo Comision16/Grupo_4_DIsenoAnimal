@@ -33,13 +33,13 @@
                           <h3>Editando:   "<%= name %>"</h3>
                           
                           <div class="row justify-content-center gap-3 align-items-center" >
-                          <div class="col-12 col-md-4 mb-3 ">
+                          <div class="col-12 col-md-5 mb-3 ">
                               <div class="form-floating p-1">
                                   <input name="nombre" type="text" class="form-control" id="nombre" value="<%= name %>" style=" height: auto;border-color: rgb(10, 99, 150);">
                                   <label for="nombre">Nombre del articulo</label>
                                 </div>
                           </div>
-                          <div class="col-12 col-md-4 mb-3">
+                          <div class="col-12 col-md-5 mb-3">
                             <div class="form-floating p-1">
                                 <input name="precio" style=" height: auto; border-color: rgb(10, 99, 150);" type="number" class="form-control" id="precio" value="<%= price %>" >
                                 <label for="precio">Precio actual: </label>
@@ -49,13 +49,13 @@
 
                           <div class="row d-flex flex-wrap justify-content-center mr-4 align-items-center mb-3 w-100">
 
-                          <div class="row d-flex justify-content-center align-items-center gap-2 w-50">
+                          <div class="row d-flex justify-content-center align-items-center gap-4 w-50">
                             <input name="image1" type="file" style="border-color: rgb(10, 99, 150);" class="form-control" id="image1" hidden >
                             <img src="/images/<%= Image_products.length ? Image_products[0].file : "new-product.default.png" %>" alt="" class="img-thumbnail" id="miniatura1" style="max-width: 100px; max-height: 120px; ">
                             <label class="btn btn-lg btn-outline-dark w-80" for="image1" style="width:auto; height: auto; border-color: rgb(10, 99, 150);">cambiar imagen</label>
                         </div>
 
-                        <div class="row d-flex justify-content-center align-items-center gap-2 w-50">
+                        <div class="row d-flex justify-content-center align-items-center gap-4 w-50">
                           <input  name="image2" type="file" style="border-color: rgb(10, 99, 150);" class="form-control" id="image2" hidden >
                           <img src="/images/<%= Image_products.length > 1 ? Image_products[1].file : "new-product.default.png" %>" alt="" class="img-thumbnail" id="miniatura2" style="max-width: 100px; max-height: 120px; ">
                           <label class="btn btn-lg btn-outline-dark w-80" for="image2" style="width:auto; height: auto; border-color: rgb(10, 99, 150);">cambiar imagen</label>
@@ -64,7 +64,7 @@
                         </div>
                       <div class="row justify-content-center gap-4  align-items-center">
                         
-                          <div class="col-12 col-md-4 mb-3">
+                          <div class="col-12 col-md-5 mb-3">
                             <div class="form-floating p-1">
                                 <select name="categoria" class="form-select" id="category" aria-label="Floating label select example" style="height: auto; border-color: rgb(10, 99, 150);">
                                   <option value="" selected hidden></option>
@@ -79,7 +79,7 @@
                               </div>
                           </div>
                        
-                        <div class="col-12 col-md-4 mb-3">
+                        <div class="col-12 col-md-5 mb-3">
                           <div class="form-floating p-1">
                               <input name="stock" style="height: auto; border-color: rgb(10, 99, 150);" type="number" class="form-control" id="stock" value="<%= product_stock[0].amount %>">
                               <label for="stock">Stock actual:</label>
@@ -87,7 +87,7 @@
                         </div>
                       </div>
                       <div class="row justify-content-center gap-4  align-items-center">
-                            <div class="col-12 col-md-4 mb-3">
+                            <div class="col-12 col-md-5 mb-3">
                               <div class="form-floating p-1" >
                                   <select name="sabores" class="form-select" id="sabores" style="height: auto; border-color: rgb(10, 99, 150);" aria-label="Floating label select example">
                                     <option value="" selected hidden></option>
@@ -102,7 +102,7 @@
                                   <label for="flavor">Sabor</label>
                               </div>
                             </div>
-                          <div class="col-12 col-md-4 mb-3">
+                          <div class="col-12 col-md-5 mb-3">
                             <div class="form-floating p-1">
                                 <input name="descuento" type="number" style="height: auto; border-color: rgb(10, 99, 150);" class="form-control" id="descuento" value="<%= discount %>">
                                 <label  for="descuento" >Descuento -% </label>

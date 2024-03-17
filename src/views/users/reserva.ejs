@@ -85,13 +85,32 @@
                             </div>
                             <div class="perfil__form__div">
                                 <div>
-                                    <label class="perfil_form_div_label" for="fecha">Elegir fecha</label>
-                                    <input type="date" name="fecha">
+                                    <label class="perfil_form_div_label reserva_date_label" for="fecha">Fecha</label>
+                                    <input class="reserva_date" type="date" name="fecha">
                                 </div>
                                 <div class="perfil__form__div">
                                     <div>
-                                        <label class="perfil_form_div_label" for="hora">Elegir fecha</label>
-                                        <input type="time" name="hora" min="10:00:00" y max="17:00:00">
+                                        <label class="perfil_form_div_label reserva_date_label" for="hora">Hora</label>
+                                        <input class="reserva_date" type="time" name="hora" min="10:00:00" y max="17:00:00">
+                                    </div>
+                                </div>
+                                <div class="perfil__form__div">
+                                    <div>
+                                        <label class="perfil_form_div_label" for="service">Elije servicio</label>
+                                      <select name="service" class="form-select" id="service">
+                                        <option value="" selected hidden></option>
+    
+                                        <% services.forEach(item => { %>
+    
+                                         <option value="<%= item.id %>" ><%= item.name %></option>
+                                         
+                                        <% }) %>
+                                      </select>
+    
+                                        <small class="perfil_alert">
+                                            <%= locals.errors && errors.especies ? errors.especies.msg : null %>
+                                        </small>
+    
                                     </div>
                                 </div>
                             </div>

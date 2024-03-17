@@ -26,3 +26,11 @@
     padding-top: 50px;
     height: 450px;
 }
+
+.reserva_date {
+    width: 115px !important; 
+}
+
+.reserva_date_label {
+    width: 50%;
+}

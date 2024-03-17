@@ -31,7 +31,7 @@
                             <div class="perfil__form__div">
                                 <div>
                                     <label class="perfil_form_div_label" for="name">Nombre y Apellido</label>
-                                    <input type="text" name="name" id="name" placeholder="Nombre y Apellido"
+                                    <input  class="perfil_form_input_select " type="text" name="name" id="name" placeholder="Nombre y Apellido"
                                         minlength="8" maxlength="30"
                                         value="<%= locals.old && old.name ? old.name : usuario.name %>">
 
@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="perfil___form__div">
                                     <label class="perfil_form_div_label" for="email">Correo electronico</label>
-                                    <input type="email" name="email" id="email" placeholder="Correo electronico"
+                                    <input  class="perfil_form_input_select " type="email" name="email" id="email" placeholder="Correo electronico"
                                         minlength="5" maxlength="40"
                                         value="<%= locals.old && old.email ? old.email : usuario.email %>">
 
@@ -56,7 +56,7 @@
                             <div class="perfil__form__div">
                                 <div>
                                     <label class="perfil_form_div_label" for="mascota">Nombre de Mascota</label>
-                                    <input type="text" name="mascota" id="mascota" placeholder="Nombre Mascota" value="<%= mascotas ? mascotas.name : "" %>">
+                                    <input  class="perfil_form_input_select " type="text" name="mascota" id="mascota" placeholder="Nombre Mascota" value="<%= mascotas ? mascotas.name : "" %>">
                                     <input type="text" name="petId" id="petId" placeholder="Nombre Mascota" value="<%= mascotas ? mascotas.id : "" %>" hidden >
 
                                     <small class="perfil_alert" class="perfil_alert">
@@ -67,7 +67,7 @@
 
                                 <div>
                                     <label class="perfil_form_div_label" for="especie">Tipo de Mascota</label>
-                                  <select name="especie" class="form-select" id="especie">
+                                  <select  class="perfil_form_input_select " name="especie" class="form-select" id="especie">
                                     <option value="" selected hidden></option>
 
                                     <% especies.forEach(item => { %>
@@ -86,18 +86,18 @@
                             <div class="perfil__form__div">
                                 <div>
                                     <label class="perfil_form_div_label reserva_date_label" for="fecha">Fecha</label>
-                                    <input class="reserva_date" type="date" name="fecha">
+                                    <input class="reserva_date perfil_form_input_select " type="date" name="fecha">
                                 </div>
                                 <div class="perfil__form__div">
                                     <div>
                                         <label class="perfil_form_div_label reserva_date_label" for="hora">Hora</label>
-                                        <input class="reserva_date" type="time" name="hora" min="10:00:00" y max="17:00:00">
+                                        <input class="reserva_date perfil_form_input_select" type="time" name="hora" min="10:00:00" y max="17:00:00">
                                     </div>
                                 </div>
                                 <div class="perfil__form__div">
                                     <div>
                                         <label class="perfil_form_div_label" for="service">Elije servicio</label>
-                                      <select name="service" class="form-select" id="service">
+                                      <select  class="perfil_form_input_select " name="service" class="form-select" id="service">
                                         <option value="" selected hidden></option>
     
                                         <% services.forEach(item => { %>

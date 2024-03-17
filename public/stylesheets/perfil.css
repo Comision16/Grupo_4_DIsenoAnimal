@@ -82,7 +82,7 @@
     border-radius: 5px 5px 0 0;
 }
 
-.perfil_form input, select {
+.perfil_form_input_select {
     padding: 1%;
     margin: 3%;
     width: 250px;

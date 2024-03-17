@@ -6,13 +6,14 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require("express-session");
-const paginate = require('express-paginate')
+const paginate = require("express-paginate")
 
 const indexRouter = require('./routes/index.routes');
 const usersRouter = require('./routes/users.routes');
 const productsRouter = require('./routes/products.routes');
 const adminRouter = require('./routes/admin.routes');
 const usersApiRouter = require('./routes/api/users.routes');
+const apisRouter = require('./routes/apis.routes')
 
 const transferLocals = require('./middlewares/transferLocals');
 const cookieCheck = require('./middlewares/cookieCheck');
@@ -48,10 +49,9 @@ app
 }))
 
 .use(cookieCheck)
-
 .use(transferLocals)
 
-.use(paginate.middleware(10, 50)) 
+.use(paginate.middleware(12,50))
 
   /* rutas */
 app
@@ -59,7 +59,8 @@ app
   .use('/usuarios', usersRouter)
   .use('/api', usersApiRouter)
   .use('/productos', productsRouter)
-  .use('/admin', adminRouter);
+  .use('/admin', adminRouter)
+  .use('/apis', apisRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

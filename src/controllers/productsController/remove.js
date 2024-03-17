@@ -6,7 +6,8 @@ module.exports = (req, res) => {
     const { id } = req.params;
 
     db.Product.findByPk(id, {
-        include: ["Image_products", "product_stock"]
+        include: ["Image_products", "product_stock",
+        "product_filing", "product_brand"]
     })
         .then((producto) => {
 
@@ -43,7 +44,7 @@ module.exports = (req, res) => {
                     productId: producto.id
                 }
             })
-
+           
             db.Product.destroy({
                 where: {
                     id

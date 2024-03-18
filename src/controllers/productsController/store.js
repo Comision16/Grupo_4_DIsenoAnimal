@@ -1,16 +1,17 @@
 const db = require("../../database/models");
-const { validationResult } = require('express-validator');
+const { validationResult }= require('express-validator');
+
 
 module.exports = (req, res) => {
     // Extraer los resultados de la validación del objeto req
-    const errors = validationResult(req);
+    const errors = validationResult(req).mapped();
     console.log(errors);
 
-    // Si hay errores de validación, puedes manejarlos aquí
-    if (!errors.isEmpty()) {
-        // Puedes redirigir al usuario a la misma página con los mensajes de error
-        return res.render('products/product-create', { errors: errors.array(), old: req.body });
+
+    if (Object.keys(errors).length > 0) {
+        return res.render('products/product-create', { errors, old: req.body });
     }
+    
 
     // Si no hay errores de validación, puedes continuar con la lógica de creación del producto
     const { nombre, categoria, precio, stock, sabores, descuento, descripcion, brand, measure, value } = req.body;

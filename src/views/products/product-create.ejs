@@ -27,69 +27,42 @@
                   </div>
                   <div class="card-body">
                       <form action="/productos/store" method="post" style="background-color: rgb(245, 245, 245);" class="row d-flex justify-content-center align-items-center" enctype="multipart/form-data">
-                            <h3>Agregar Articulos</h3>
-                      
-                            <% if (locals.errors) { %>
-                              <% errors.forEach(error => { %>
-                                  <% if (error.param === 'nombre') { %>
-                                      <small class="text-danger ms-2"><%= error.msg %></small>
-                                  <% } %>
-                                  <% if (error.param === 'categoria') { %>
-                                      <small class="text-danger ms-2"><%= error.msg %></small>
-                                  <% } %>
-                                  <% if (error.param === 'precio') { %>
-                                      <small class="text-danger ms-2"><%= error.msg %></small>
-                                  <% } %>
-                                  <% if (error.param === 'stock') { %>
-                                      <small class="text-danger ms-2"><%= error.msg %></small>
-                                  <% } %>
-                                  <% if (error.param === 'sabores') { %>
-                                      <small class="text-danger ms-2"><%= error.msg %></small>
-                                  <% } %>
-                                  <% if (error.param === 'descuento') { %>
-                                      <small class="text-danger ms-2"><%= error.msg %></small>
-                                  <% } %>
-                                  <% if (error.param === 'descripcion') { %>
-                                      <small class="text-danger ms-2"><%= error.msg %></small>
-                                  <% } %>
-                                  <% if (error.param === 'brand') { %>
-                                      <small class="text-danger ms-2"><%= error.msg %></small>
-                                  <% } %>
-                                  <% if (error.param === 'measure') { %>
-                                      <small class="text-danger ms-2"><%= error.msg %></small>
-                                  <% } %>
-                                  <% if (error.param === 'value') { %>
-                                      <small class="text-danger ms-2"><%= error.msg %></small>
-                                  <% } %>
-                              <% }) %>
-                          <% } %>
-                          
+                            <h3>Agregar Articulos</h3>                    
 
                             <div class="row d-flex gap-2 justify-content-center align-item-center mt-2" >
                               
                               <div class="col-12 col-md-5 mb-3">
                                 <div class="form-floating">
-                                  <input name="nombre" type="text" class="form-control " id="nombre" style="  padding-bottom: 0px;">
+                                  <input name="nombre" type="text" class="form-control <%= (locals.errors && errors.nombre) ? 'is-invalid' : '' %>" id="nombre" style="padding-bottom: 0px;">
                                   <label for="nombre">Nombre del articulo</label>
+                                  <div class="invalid-feedback">
+                                    <%= (locals.errors && errors.nombre) ? errors.nombre.msg : '' %>
+                                  </div>
                                   <span id="error-nombre" class="error"></span>
                                 </div>
                               </div>
+                              
+                              
 
                               <div class="col-12 col-md-5 mb-3">
                                 <div class="form-floating">
-                                  <select name="categoria" class="form-select" id="categoria" aria-label="Floating label select example" >
+                                  <select name="categoria" class="form-select <%= (locals.errors && errors.categoria) ? 'is-invalid' : '' %>" id="categoria" aria-label="Floating label select example" >
                                     <option value="" selected hidden></option>
                                     <option value="1">perros</option>
                                     <option value="2">gatos</option>
                                     <option value="3">Aves</option>
-                                    <option value = "4">Peces</option>
-                                    <option value ="5">roedores</option>
-                                    <option value ="6">otros</option>
+                                    <option value="4">Peces</option>
+                                    <option value="5">roedores</option>
+                                    <option value="6">otros</option>
                                   </select>
                                   <label for="categoria">Categoría</label>
-                                  <span id="error-categoria" class="error"></span>
+                                  <div class="invalid-feedback">
+                                    <%= (locals.errors && errors.categoria) ? errors.categoria.msg : '' %>
+                                   </div>
+                                   <span id="error-categoria" class="error"></span>
                                 </div>
                               </div>
+                              
                             
                               <div class="row d-flex flex-wrap justify-content-center mr-4 align-items-center mb-3 w-100">
                               
@@ -110,25 +83,33 @@
 
                           </div>
                          
-                          <div class="row justify-content-center gap-2 align-items-center">
-                            <div class="col-12 col-md-5 pb-3">
-                              <div class="form-floating" >
-                                  <input name="precio" type="number" class="form-control" id="precio" style="padding-bottom: 0px;" >
-                                  <label for="precio">Precio del producto</label>
-                                  <span id="error-precio" class="error"></span>
-                              </div>
-                            </div>
-                          <div class="col-12 col-md-5 mb-3">
+                          <div class="col-12 col-md-5 pb-3">
                             <div class="form-floating">
-                                <input name="stock" type="number" class="form-control" id="stock" style="padding-bottom: 0px;">
-                                <label for="stock">Cantidad en stock</label>
-                                <span id="error-stock" class="error"></span>
+                              <input name="precio" type="number" class="form-control <%= (locals.errors && errors.precio) ? 'is-invalid' : '' %>" id="precio" style="padding-bottom: 0px;">
+                              <label for="precio">Precio del producto</label>
+                              <div class="invalid-feedback">
+                                <%= (locals.errors && errors.precio) ? errors.precio.msg : '' %>
+                              </div>
+                              <span id="error-precio" class="error"></span>
                             </div>
                           </div>
+                          
+
+                          <div class="col-12 col-md-5 mb-3">
+                            <div class="form-floating">
+                              <input name="stock" type="number" class="form-control <%= (locals.errors && errors.stock) ? 'is-invalid' : '' %>" id="stock" style="padding-bottom: 0px;">
+                              <label for="stock">Cantidad en stock</label>
+                              <div class="invalid-feedback">
+                                <%= (locals.errors && errors.stock) ? errors.stock.msg : '' %>
+                              </div>
+                              <span id="error-stock" class="error"></span>
+                            </div>
+                          </div>
+                          
+
                               <div class="col-12 col-md-5 mb-3">
                                 <div class="form-floating">
-                                    <select name="sabores" class="form-select" id="sabores" aria-label="Floating label select example" style="width:100%; padding-bottom: 0px;">
-                                        <option value="" selected hidden></option>
+                                  <select name="sabores" class="form-select <%= (locals.errors && errors.sabores) ? 'is-invalid' : '' %>" id="sabores" aria-label="Floating label select example" style="width:100%; padding-bottom: 0px;">                                        <option value="" selected hidden></option>
                                         <option value="1">Pescado</option>
                                         <option value="2">Pollo y Arroz</option>
                                         <option value="3">Carne y Pollo</option>
@@ -140,23 +121,31 @@
                                         <!-- Agrega más opciones si es necesario -->
                                     </select>
                                     <label for="sabores">Sabores</label>
+                                    <div class="invalid-feedback">
+                                      <%= (locals.errors && errors.sabores) ? errors.sabores.msg : '' %>
+                                    </div>
                                     <span id="error-sabores" class="error"></span>
                                 </div>
                               </div>
-                            <div class="col-12 col-md-5 mb-3" >
-                              <div class="form-floating ">
-                                  <input name="descuento" type="number" class="form-control" id="descuento" style="padding-bottom: 0px;" >
-                                  <label  for="descuento">Descuento -%</label>
+
+                              
+                              <div class="col-12 col-md-5 mb-3">
+                                <div class="form-floating">
+                                  <input name="descuento" type="number" class="form-control <%= (locals.errors && errors.descuento) ? 'is-invalid' : '' %>" id="descuento" style="padding-bottom: 0px;">
+                                  <label for="descuento">Descuento -%</label>
+                                  <div class="invalid-feedback">
+                                    <%= (locals.errors && errors.descuento) ? errors.descuento.msg : '' %>
+                                  </div>
                                   <span id="error-descuento" class="error"></span>
+                                </div>
                               </div>
-                            </div>
-                        </div>
+                              
 
                           <div class="row d-flex justify-content-start align-items-center w-50">
                       
                           <div class="col-12 col-md-5 mb-3 w-50">  
                           <div class="form-floating p-1 ">
-                                    <select name="measure" class="form-control m-0" id="measure" aria-label="Floating label select example" style="width:100%; padding-bottom: 0px; ">
+                                    <select name="measure" class="form-control m-0 <%= (locals.errors && errors.measure) ? 'is-invalid' : '' %>" id="measure" aria-label="Floating label select example" style="width:100%; padding-bottom: 0px; ">
                                         <option value="" selected hidden></option>
                                         <option value="1">Kilogramos</option>
                                         <option value="2">Gramos</option>
@@ -167,14 +156,20 @@
                                         <!-- Agrega más opciones si es necesario -->
                                     </select>
                                     <label for="measure">Unidad de medida</label>
+                                    <div class="invalid-feedback">
+                                      <%= (locals.errors && errors.measure) ? errors.measure.msg : '' %>
+                                    </div>
                                     <span id="error-measure" class="error"></span>
                                 </div>
                               </div>
                         
                               <div class="col-12 col-md-5 mb-3 w-20">
                                 <div class="form-floating p-1">
-                                  <input name="value" type="number" class="form-control" id="value" style="width: 60%" style="padding-bottom: 0px;" >
+                                  <input name="value" type="number" class="form-control <%= (locals.errors && errors.value) ? 'is-invalid' : '' %>" id="value" style="width: 60%" style="padding-bottom: 0px;" >
                                   <label  for="value"> valor</label>
+                                  <div class="invalid-feedback">
+                                    <%= (locals.errors && errors.value) ? errors.value.msg : '' %>
+                                  </div>
                                   <span id="error-value" class="error"></span>
                               </div>
                             </div>
@@ -182,16 +177,22 @@
                          
                           <div class="row d-flex justify-content-start col-12 col-md-5 mb-3 w-20">
                             <div class="form-floating p-1">
-                              <input name="brand" type="text" class="form-control " id="brand" style="width: 85%; height: auto; padding-bottom: 0px;">
+                              <input name="brand" type="text" class="form-control <%= (locals.errors && errors.brand) ? 'is-invalid' : '' %>" id="brand" style="width: 85%; height: auto; padding-bottom: 0px;">
                               <label for="brand">Marca</label>
+                              <div class="invalid-feedback">
+                              <%= (locals.errors && errors.brand) ? errors.brand.msg : '' %>
+                                  </div>
                               <span id="error-brand" class="error"></span>
                             </div>
                           </div>
 
                           <div  class="col-10 mb-3" >
                             <div class="form-floating p-1">
-                                <textarea name="descripcion" class="form-control" id="descripcion" style="height: 100px;  "></textarea>
+                                <textarea name="descripcion" class="form-control <%= (locals.errors && errors.descripcion) ? 'is-invalid' : '' %>" id="descripcion" style="height: 100px;  "></textarea>
                                 <label for="descripcion">Descripción...</label>
+                                <div class="invalid-feedback">
+                                <%= (locals.errors && errors.descripcion) ? errors.descripcion.msg : '' %>
+                                  </div>
                                 <span id="error-descripcion" class="error"></span>
                                 </div>
                           </div>

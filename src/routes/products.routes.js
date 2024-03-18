@@ -31,7 +31,7 @@ router
   {
     name : 'image2'
   }
-  ]),createProductValidation, store)
+  ]),createProductValidation,store)
 
   .delete("/eliminar/:id", remove)
 

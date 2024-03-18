@@ -28,20 +28,56 @@
                   <div class="card-body">
                       <form action="/productos/store" method="post" style="background-color: rgb(245, 245, 245);" class="row d-flex justify-content-center align-items-center" enctype="multipart/form-data">
                             <h3>Agregar Articulos</h3>
-                            
+                      
+                            <% if (locals.errors) { %>
+                              <% errors.forEach(error => { %>
+                                  <% if (error.param === 'nombre') { %>
+                                      <small class="text-danger ms-2"><%= error.msg %></small>
+                                  <% } %>
+                                  <% if (error.param === 'categoria') { %>
+                                      <small class="text-danger ms-2"><%= error.msg %></small>
+                                  <% } %>
+                                  <% if (error.param === 'precio') { %>
+                                      <small class="text-danger ms-2"><%= error.msg %></small>
+                                  <% } %>
+                                  <% if (error.param === 'stock') { %>
+                                      <small class="text-danger ms-2"><%= error.msg %></small>
+                                  <% } %>
+                                  <% if (error.param === 'sabores') { %>
+                                      <small class="text-danger ms-2"><%= error.msg %></small>
+                                  <% } %>
+                                  <% if (error.param === 'descuento') { %>
+                                      <small class="text-danger ms-2"><%= error.msg %></small>
+                                  <% } %>
+                                  <% if (error.param === 'descripcion') { %>
+                                      <small class="text-danger ms-2"><%= error.msg %></small>
+                                  <% } %>
+                                  <% if (error.param === 'brand') { %>
+                                      <small class="text-danger ms-2"><%= error.msg %></small>
+                                  <% } %>
+                                  <% if (error.param === 'measure') { %>
+                                      <small class="text-danger ms-2"><%= error.msg %></small>
+                                  <% } %>
+                                  <% if (error.param === 'value') { %>
+                                      <small class="text-danger ms-2"><%= error.msg %></small>
+                                  <% } %>
+                              <% }) %>
+                          <% } %>
+                          
 
                             <div class="row d-flex gap-2 justify-content-center align-item-center mt-2" >
                               
                               <div class="col-12 col-md-5 mb-3">
                                 <div class="form-floating">
-                                  <input name="nombre" type="text" class="form-control " id="nombre" style=" border-color: rgb(103, 157, 188);">
+                                  <input name="nombre" type="text" class="form-control " id="nombre" style="  padding-bottom: 0px;">
                                   <label for="nombre">Nombre del articulo</label>
+                                  <span id="error-nombre" class="error"></span>
                                 </div>
                               </div>
 
                               <div class="col-12 col-md-5 mb-3">
                                 <div class="form-floating">
-                                  <select name="categoria" class="form-select" id="categoria" aria-label="Floating label select example" style=" border-color: rgb(10, 99, 150);">
+                                  <select name="categoria" class="form-select" id="categoria" aria-label="Floating label select example" >
                                     <option value="" selected hidden></option>
                                     <option value="1">perros</option>
                                     <option value="2">gatos</option>
@@ -51,6 +87,7 @@
                                     <option value ="6">otros</option>
                                   </select>
                                   <label for="categoria">Categoría</label>
+                                  <span id="error-categoria" class="error"></span>
                                 </div>
                               </div>
                             
@@ -59,13 +96,13 @@
                               <div class="row d-flex justify-content-center align-items-center gap-4 w-50">
                               <input name="image1" type="file" class="form-control" id="image1" hidden >
                               <img src="/images/new-product.default.png" alt="Primera imagen de la lista" class="img-thumbnail" id="miniatura1" style="max-width: 100px; max-height: 120px; " >
-                              <label class="btn btn-lg btn-outline-dark w-80" for="image1" style="width:auto; height: auto; border-color: rgb(10, 99, 150);">Agregar imagen</label>
+                              <label class="btn btn-lg btn-outline-dark w-80" for="image1" style="width:auto; height: auto; ">Agregar imagen</label>
                               </div>
                           
                               <div class="row d-flex justify-content-center align-items-center gap-4 w-50">
                               <input  name="image2" type="file" class="form-control" id="image2" hidden>
                               <img src="/images/new-product.default.png" alt="Segunda imagen de la lista" class="img-thumbnail" id="miniatura2" style="max-width: 100px; max-height: 120px;">
-                              <label class="btn btn-lg btn-outline-dark w-80" for="image2" style="width:auto; height: auto; border-color: rgb(10, 99, 150);">Agregar imagen</label>
+                              <label class="btn btn-lg btn-outline-dark w-80" for="image2" style="width:auto; height: auto; ">Agregar imagen</label>
                               </div>
                             </div>              
                           
@@ -74,21 +111,23 @@
                           </div>
                          
                           <div class="row justify-content-center gap-2 align-items-center">
-                            <div class="col-12 col-md-5 mb-3">
-                              <div class="form-floating">
-                                  <input name="precio" type="number" class="form-control" id="precio" style="border-color: rgb(10, 99, 150);">
+                            <div class="col-12 col-md-5 pb-3">
+                              <div class="form-floating" >
+                                  <input name="precio" type="number" class="form-control" id="precio" style="padding-bottom: 0px;" >
                                   <label for="precio">Precio del producto</label>
+                                  <span id="error-precio" class="error"></span>
                               </div>
                             </div>
                           <div class="col-12 col-md-5 mb-3">
                             <div class="form-floating">
-                                <input name="stock" type="number" class="form-control" id="stock" style="border-color: rgb(10, 99, 150);">
+                                <input name="stock" type="number" class="form-control" id="stock" style="padding-bottom: 0px;">
                                 <label for="stock">Cantidad en stock</label>
+                                <span id="error-stock" class="error"></span>
                             </div>
                           </div>
                               <div class="col-12 col-md-5 mb-3">
                                 <div class="form-floating">
-                                    <select name="sabores" class="form-select" id="sabores" aria-label="Floating label select example" style="width:100%; border-color: rgb(10, 99, 150);">
+                                    <select name="sabores" class="form-select" id="sabores" aria-label="Floating label select example" style="width:100%; padding-bottom: 0px;">
                                         <option value="" selected hidden></option>
                                         <option value="1">Pescado</option>
                                         <option value="2">Pollo y Arroz</option>
@@ -101,12 +140,14 @@
                                         <!-- Agrega más opciones si es necesario -->
                                     </select>
                                     <label for="sabores">Sabores</label>
+                                    <span id="error-sabores" class="error"></span>
                                 </div>
                               </div>
                             <div class="col-12 col-md-5 mb-3" >
                               <div class="form-floating ">
-                                  <input name="descuento" type="number" class="form-control" id="descuento" style="border-color: rgb(10, 99, 150);" >
+                                  <input name="descuento" type="number" class="form-control" id="descuento" style="padding-bottom: 0px;" >
                                   <label  for="descuento">Descuento -%</label>
+                                  <span id="error-descuento" class="error"></span>
                               </div>
                             </div>
                         </div>
@@ -115,7 +156,7 @@
                       
                           <div class="col-12 col-md-5 mb-3 w-50">  
                           <div class="form-floating p-1 ">
-                                    <select name="measure" class="form-control m-0" id="measure" aria-label="Floating label select example" style="width:100%; border-color: rgb(10, 99, 150);">
+                                    <select name="measure" class="form-control m-0" id="measure" aria-label="Floating label select example" style="width:100%; padding-bottom: 0px; ">
                                         <option value="" selected hidden></option>
                                         <option value="1">Kilogramos</option>
                                         <option value="2">Gramos</option>
@@ -126,28 +167,32 @@
                                         <!-- Agrega más opciones si es necesario -->
                                     </select>
                                     <label for="measure">Unidad de medida</label>
+                                    <span id="error-measure" class="error"></span>
                                 </div>
                               </div>
                         
                               <div class="col-12 col-md-5 mb-3 w-20">
                                 <div class="form-floating p-1">
-                                  <input name="value" type="number" class="form-control" id="value" style="width: 60%;border-color: rgb(10, 99, 150);" >
+                                  <input name="value" type="number" class="form-control" id="value" style="width: 60%" style="padding-bottom: 0px;" >
                                   <label  for="value"> valor</label>
+                                  <span id="error-value" class="error"></span>
                               </div>
                             </div>
                           </div>
                          
                           <div class="row d-flex justify-content-start col-12 col-md-5 mb-3 w-20">
                             <div class="form-floating p-1">
-                              <input name="brand" type="text" class="form-control " id="brand" style="width: 85%; height: auto;border-color: rgb(10, 99, 150);">
+                              <input name="brand" type="text" class="form-control " id="brand" style="width: 85%; height: auto; padding-bottom: 0px;">
                               <label for="brand">Marca</label>
+                              <span id="error-brand" class="error"></span>
                             </div>
                           </div>
 
                           <div  class="col-10 mb-3" >
                             <div class="form-floating p-1">
-                                <textarea name="descripcion" class="form-control p-2" id="descripcion" style="height: 100px; border-color: rgb(10, 99, 150); "></textarea>
+                                <textarea name="descripcion" class="form-control" id="descripcion" style="height: 100px;  "></textarea>
                                 <label for="descripcion">Descripción...</label>
+                                <span id="error-descripcion" class="error"></span>
                                 </div>
                           </div>
                         </div>
@@ -166,6 +211,7 @@
           </div>
       </section>
     </main>
+    <script src="/js/products/create.js"></script>
     <%- include('../partials/script-create-product') %>
   </body>
 </html>

@@ -1,65 +1,71 @@
-
-const db = require("../../database/models")
+const db = require("../../database/models");
+const { validationResult } = require('express-validator');
 
 module.exports = (req, res) => {
+    // Extraer los resultados de la validación del objeto req
+    const errors = validationResult(req);
+    console.log(errors);
 
+    // Si hay errores de validación, puedes manejarlos aquí
+    if (!errors.isEmpty()) {
+        // Puedes redirigir al usuario a la misma página con los mensajes de error
+        return res.render('products/product-create', { errors: errors.array(), old: req.body });
+    }
+
+    // Si no hay errores de validación, puedes continuar con la lógica de creación del producto
     const { nombre, categoria, precio, stock, sabores, descuento, descripcion, brand, measure, value } = req.body;
 
-    const image1 = req.files.image1 == undefined ? "null" : req.files.image1
-    const image2 = req.files.image2 == undefined ? "null" : req.files.image2
-
-
+    const image1 = req.files.image1 == undefined ? "null" : req.files.image1;
+    const image2 = req.files.image2 == undefined ? "null" : req.files.image2;
 
     db.Brand.create({
         name: brand
-    
     }).then(brand => {
-         
-            db.Product.create({
-                name : nombre.trim(),
-                price : precio,
-                discount : +descuento,
-                description : descripcion.trim(),
-                specieId : +categoria,
-                value: value,
-                brandId: brand.id, 
-                filingId: measure, 
-            })
-    .then(producto => {
-        db.stock.create({
-            amount : +stock,
-            flavorId : +sabores,
-            productId : producto.id
+        db.Product.create({
+            name : nombre.trim(),
+            price : precio,
+            discount : +descuento,
+            description : descripcion.trim(),
+            specieId : +categoria,
+            value: value,
+            brandId: brand.id, 
+            filingId: measure, 
         })
+        .then(producto => {
+            db.stock.create({
+                amount : +stock,
+                flavorId : +sabores,
+                productId : producto.id
+            });
 
-        if (image1) {
-            db.Image_products.create({
-                file: image1[0].filename,
-                productId: producto.id,
-                primary: 1
-            })
-        } else {
-            db.Image_products.create({
-                file: null,
-                productId: producto.id,
-                primary: 1
-            })
-        }
+            if (image1) {
+                db.Image_products.create({
+                    file: image1[0].filename,
+                    productId: producto.id,
+                    primary: 1
+                });
+            } else {
+                db.Image_products.create({
+                    file: null,
+                    productId: producto.id,
+                    primary: 1
+                });
+            }
 
-        if (image2) {
-            db.Image_products.create({
-                file: image2[0].filename,
-                productId: producto.id,
-                primary: 2
-            })
-        } else {
-            db.Image_products.create({
-                file: null,
-                productId: producto.id,
-                primary: 2
-            })
-        }
-        return res.redirect('/admin/dashboard')
-    })
-})
+            if (image2) {
+                db.Image_products.create({
+                    file: image2[0].filename,
+                    productId: producto.id,
+                    primary: 2
+                });
+            } else {
+                db.Image_products.create({
+                    file: null,
+                    productId: producto.id,
+                    primary: 2
+                });
+            }
+            return res.redirect('/admin/dashboard');
+        });
+    });
 }

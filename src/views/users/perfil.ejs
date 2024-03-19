@@ -43,7 +43,7 @@
                                 <div class="perfil___form__div">
                                   <label class="perfil_form_div_label" for="email">Correo electronico</label>
                                     <input  class="perfil_form_input_select " type="email" name="email" id="email" placeholder="Correo electronico" minlength="5"
-                                        maxlength="40" value="<%= locals.old && old.email ? old.email : usuario.email %>">
+                                        maxlength="40" value="<%= locals.old && old.email ? old.email : usuario.email %>" readonly>
 
                                     <small class="perfil_alert" class="perfil_alert">
                                         <%= locals.errors && errors.email ? errors.email.msg : null %>

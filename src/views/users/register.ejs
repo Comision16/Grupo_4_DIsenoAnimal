@@ -12,19 +12,17 @@
       <main class="register_main">
         <nav>
           <h1>Registrarse</h1>
-          <form action="" method="POST">
+          <form id="form-register" action="" method="POST">
             <div class="register_form">
               <div class="register_imput">
                 <div>
 
                   <label for="name"></label>
                   <input type="text" id="name" name="name" class="<%= locals.errors && errors.email ? 'invalid' : '' %>"
-                    <%=locals.errors && errors.name ? 'invalid' : null %> placeholder="Nombre y Apellido"
-                  minlength="8"
-                  maxlength="30"
+                    <%=locals.errors && errors.name ? 'invalid' : null %> placeholder="Nombre y Apellido" 
                   value="<%= locals.old && old.name ? old.name : null %>">
                     <div class="box-alert">
-                      <small class="alert" class="alert">
+                      <small id="alert0" class="alert" >
                         <%= locals.errors && errors.name ? errors.name.msg : null %>
                       </small>
                     </div>
@@ -45,9 +43,9 @@
                       <label for="password"></label>
                       <input type="password" id="password" name="password"
                         value="<%= locals.errors && errors.password ? 'invalid' : null %>" placeholder="Contraseña"
-                        minlength="6" maxlength="12">
+                         maxlength="30">
                       <div class="box-alert">
-                        <small class="alert">
+                        <small id="alert2" class="alert">
                           <%= locals.errors && errors.password ? errors.password.msg : null %>
                         </small>
                       </div>
@@ -61,7 +59,7 @@
                   maxlength="50"
                   value="<%= locals.old && old.email ? old.email : null %>">
                     <div class="box-alert">
-                      <small class="alert">
+                      <small id="alert3" class="alert">
                         <%= locals.errors && errors.email ? errors.email.msg : null %>
                       </small>
                     </div>
@@ -78,6 +76,7 @@
 
                           <% }) %>
                       </select>
+                      <small class="alert" style="margin: 0 auto;">
                       <%= locals.errors && errors.especie ? errors.especie.msg : null %>
                         </small>
                     </div>
@@ -87,13 +86,18 @@
                       value="<%= locals.errors && errors.password2 ? 'invalid' : null %>"
                       placeholder="Confirmar contraseña" minlength="6" maxlength="12">
                     <div class="box-alert">
-                      <small class="alert">
+                      <small id="alert5" class="alert">
                         <%= locals.errors && errors.password2 ? errors.password2.msg : null %>
                       </small>
                     </div>
 
                 </div>
               </div>
+            </div>
+
+            <div>
+              <ul id="lista-error-mail" class="lista-error-mail" >
+              </ul>
             </div>
 
 
@@ -117,6 +121,8 @@
       </main>
 
       <%- include('../partials/footer.ejs') %>
+
+      <script src="/js/Users/validacion-register.js"></script>
 
   </body>
 

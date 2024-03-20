@@ -95,10 +95,26 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 191px;
-    color: red;
-    background-color: rgb(255 255 255 / 50%);
+    color:yellow;
+    height: 22px;
+    background-color:rgba(0, 0, 0, 0.5);
     border-radius: 3px;
     padding: 5px;
+}
+
+.lista-error-mail {
+    display: flex;
+    color: yellow;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    padding: 15px;
+    font-size: 14px;
+    width: 50%;
+    margin: 0 auto;
+    gap: 10px;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin-bottom: 20px;
 }
 
 .remember {
@@ -150,6 +166,10 @@
 }
 
 
-  .invalid{
+  .invalid {
     border-color: red;
  }
+  .is-invalid { 
+    border-color: red !important;
+ }
+

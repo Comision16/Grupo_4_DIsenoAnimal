@@ -67,7 +67,7 @@ $("password").addEventListener("blur", function () {
     if (!this.value) {
         this.classList.add("is-invalid");
         $("alert2").innerHTML = "La contraseña es obligatoria";
-    } else if (!exRegEmail.test(this.value)) {
+    } else if (! /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i(this.value)) {
         this.classList.add("is-invalid");
         $("alert2").innerHTML = "Formato de email inválido";
     } else {
@@ -97,4 +97,17 @@ $("password").addEventListener("keyup", function () {
 
     let errorHTML = errorMessage.map(message => `<li>${message}</li>`).join('');
     $("lista-error-mail").innerHTML = errorHTML;
+});
+
+$("password2").addEventListener("change", function () {
+    if (!this.value) {
+        this.classList.add("is-invalid");
+        $("alert5").innerHTML = "La contraseña es obligatoria";
+    } else if (!this.value != $("password").value) {
+        this.classList.add("is-invalid");
+        $("alert5").innerHTML = "Las contraseñas no coinciden";
+    } else {
+        this.classList.remove("is-invalid");
+        $("alert5").innerHTML = "";
+    }
 });

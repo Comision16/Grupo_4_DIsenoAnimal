@@ -23,6 +23,14 @@
     font-size: 14px;
 }
 
+.dashboard-body tr {
+    border-color: 5px solid red  !;
+    background-color: aqua  !;
+    border-radius: 20px  !;
+    padding: 30px  !;
+    margin: 30px  !;
+}
+
 @media (min-width : 768px) {
     .texto-delete {        
     margin-top: 0px;

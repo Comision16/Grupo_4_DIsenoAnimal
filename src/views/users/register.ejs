@@ -1,65 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('../partials/head.ejs' ,{ 
-        title : "Register" 
-         }) %>
-         <link rel="icon" type="image/x-icon" href="/images/favicon-register.png">
-<title>Cancat - Registro</title>
+<%- include('../partials/head.ejs' ,{ title : "Register" }) %>
+  <link rel="icon" type="image/x-icon" href="/images/favicon-register.png">
+  <title>Cancat - Registro</title>
 
-    <body> 
-        
-        <%- include('../partials/header.ejs') %>
+  <body>
 
-        <main class="register_main"> 
-            <nav>
-                <h1>Registrarse</h1>
-                <form class="register_form" action="" method="POST">
-                    <label for="name"></label>
-                    <input 
-                    type="text" id="name" name="name" class="<%= locals.errors && errors.email ? 'invalid' : '' %>" 
-                    <%= locals.errors && errors.name ? 'invalid' : null %> placeholder="Nombre y Apellido"  minlength="8" maxlength="30"
-                    value="<%= locals.old && old.name ? old.name : null %>">
-                    <div class="box-alert">    
-                        <small class="alert" class="alert"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
-                    </div>
-                    <label for="email"></label>
-                    <input type="text" id="email" name="email" 
-                    <%= locals.errors && errors.email ? 'invalid' : null %>placeholder="Correo electrónico"  minlength="5" maxlength="50"
-                    value="<%= locals.old && old.email ? old.email : null %>">
+    <%- include('../partials/header.ejs') %>
+
+      <main class="register_main">
+        <nav>
+          <h1>Registrarse</h1>
+          <form id="form-register" action="" method="POST">
+            <div class="register_form">
+              <div class="register_imput">
+                <div>
+
+                  <label for="name"></label>
+                  <input type="text" id="name" name="name" class="<%= locals.errors && errors.email ? 'invalid' : '' %>"
+                    <%=locals.errors && errors.name ? 'invalid' : null %> placeholder="Nombre y Apellido" 
+                  value="<%= locals.old && old.name ? old.name : null %>">
                     <div class="box-alert">
-                        <small class="alert" ><%= locals.errors && errors.email ? errors.email.msg : null %></small>
+                      <small id="alert0" class="alert" >
+                        <%= locals.errors && errors.name ? errors.name.msg : null %>
+                      </small>
                     </div>
 
-                    <label for="password"></label>
-                    <input type="password" id="password" name="password"value="<%= locals.errors && errors.password ? 'invalid' : null %>" placeholder="Contraseña"  minlength="6" maxlength="12">
+                    <label for="mascota"></label>
+                    <input type="text" id="mascota" name="mascota"
+                      class="<%= locals.errors && errors.email ? 'invalid' : '' %>" <%=locals.errors && errors.name
+                      ? 'invalid' : null %> placeholder="Nombre Mascota"
+                    value="<%= locals.old && old.mascota ? old.mascota : null %>">
+                      <div class="box-alert">
+                        <small class="alert" class="alert">
+                          <%= locals.errors && errors.mascota ? errors.mascota.msg : null %>
+                        </small>
+                      </div>
+
+
+
+                      <label for="password"></label>
+                      <input type="password" id="password" name="password"
+                        value="<%= locals.errors && errors.password ? 'invalid' : null %>" placeholder="Contraseña"
+                         maxlength="30">
+                      <div class="box-alert">
+                        <small id="alert2" class="alert">
+                          <%= locals.errors && errors.password ? errors.password.msg : null %>
+                        </small>
+                      </div>
+                </div>
+
+                <div>
+
+                  <label for="email"></label>
+                  <input type="text" id="email" name="email" <%=locals.errors && errors.email ? 'invalid' : null
+                    %>placeholder="Correo electrónico" minlength="5"
+                  maxlength="50"
+                  value="<%= locals.old && old.email ? old.email : null %>">
                     <div class="box-alert">
-                        <small class="alert"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
+                      <small id="alert3" class="alert">
+                        <%= locals.errors && errors.email ? errors.email.msg : null %>
+                      </small>
+                    </div>
+                    <div>
+
+                      <label for="especie"></label>
+                      <select class="register_select" name="especie" class="form-select" id="especie">
+                        <option value="" selected hidden>Elija el tipo de mascota</option>
+
+                        <% especies.forEach(item=> { %>
+
+                          <option value="<%= item.id %>" ><%= item.name %>
+                          </option>
+
+                          <% }) %>
+                      </select>
+                      <small class="alert" style="margin: 0 auto;">
+                      <%= locals.errors && errors.especie ? errors.especie.msg : null %>
+                        </small>
                     </div>
 
                     <label for="password2"></label>
-                    <input type="password" id="password2" name="password2" 
-                    value="<%= locals.errors && errors.password2 ? 'invalid' : null %>" placeholder="Confirmar contraseña"  minlength="6" maxlength="12">
+                    <input type="password" id="password2" name="password2"
+                      value="<%= locals.errors && errors.password2 ? 'invalid' : null %>"
+                      placeholder="Confirmar contraseña"  maxlength="30">
                     <div class="box-alert">
-                        <small class="alert"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></small>
+                      <small id="alert5" class="alert">
+                        <%= locals.errors && errors.password2 ? errors.password2.msg : null %>
+                      </small>
                     </div>
-                    <div class="remember">
-                        <div class="remember-input">
-                            <input type="checkbox" id="remember" value="1"  name="remember"></div>
-                        <div class="remember-label">
-                            <label for="remember">Acepto los términos y condiciones</label></div>
-                        <small class="alert-condiciones-small"><%= locals.errors && errors.remember ? errors.remember.msg : null %></small>
-                  </div>
-                    
-                    
-                    <button type="submit">Crear cuenta</button>
-                  </form>
-                  
-            </nav>
-        </main>
-    
-        <%- include('../partials/footer.ejs') %>
 
-    </body>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <ul id="lista-error-mail" class="lista-error-mail" >
+              </ul>
+            </div>
+
+
+            <div class="remember">
+              <div class="remember-input">
+                <input type="checkbox" id="remember" value="1" name="remember">
+              </div>
+              <div class="remember-label">
+                <label for="remember">Acepto los términos y condiciones</label>
+              </div>
+              <small class="alert-condiciones-small">
+                <%= locals.errors && errors.remember ? errors.remember.msg : null %>
+              </small>
+            </div>
+
+
+            <button class="register_button" type="submit">Crear cuenta</button>
+          </form>
+
+        </nav>
+      </main>
+
+      <%- include('../partials/footer.ejs') %>
+
+      <script src="/js/Users/validacion-register.js"></script>
+
+  </body>
 
 </html>

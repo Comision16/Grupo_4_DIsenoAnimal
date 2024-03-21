@@ -6,6 +6,7 @@ const db = require("../database/models")
 const bcryptjs = require('bcryptjs')
 
 
+
 module.exports = {
     login: (req, res) => {
         return res.render('users/login')
@@ -48,13 +49,19 @@ module.exports = {
     },
 
     register: (req, res) => {
-        return res.render('users/register', {
+
+        db.Specie.findAll()
+        .then(especies => {
+            return res.render('users/register', {
+            especies
         })
+        })      
+        
     },
 
     processRegister: (req, res) => {
         const errors = validationResult(req);
-        const { name, email, password } = req.body;
+        const { name, email, password, mascota, especie } = req.body;
 
         if (errors.isEmpty()) {
 
@@ -79,9 +86,15 @@ module.exports = {
 
 
         } else {
+
+            db.Specie.findAll()
+            .then((especies) => {               
+            
             return res.render('users/register', {
                 old: req.body,
-                errors: errors.mapped()
+                errors: errors.mapped(),
+                especies
+            })
             })
         }
 
@@ -278,14 +291,17 @@ module.exports = {
             include: ["user"]
         })
 
-        Promise.all([usuario, especies, mascotas])
+        const services = db.service.findAll()
 
-            .then(([usuario, especies, mascotas]) => {
+        Promise.all([usuario, especies, mascotas, services])
+
+            .then(([usuario, especies, mascotas, services]) => {
 
                 return res.render("users/reserva", {
                     usuario,
                     mascotas,
-                    especies
+                    especies,
+                    services
                 })
             })
             .catch(error => console.log(error))
@@ -295,17 +311,20 @@ module.exports = {
 
         const { id } = req.session.userLogin
 
-        const { name, email, mascota, especie, fecha, hora, petId } = req.body;
+        const { name, email, mascota, especie, fecha, hora, petId, service } = req.body;
+
+        const fechaHora = new Date(`${fecha}T${hora}`);
 
         db.Booking.create({
             name: mascota,
-            date_and_time: fecha,
-            petId
+            date_and_time: fechaHora,
+            petId,
+            serviceId : service
         })
 
         db.User.findByPk(id)
             .then(usuario => {
-                return res.render("users/reservado", { ...usuario.dataValues })
+                return res.render("users/reservado", { usuario })
             })
 
     }

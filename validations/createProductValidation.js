@@ -1,4 +1,4 @@
-const { body } = require('express-validator');
+const { body, check } = require('express-validator');
 
 module.exports = [
   body('nombre')
@@ -25,10 +25,7 @@ module.exports = [
     .withMessage('Por favor, selecciona un sabor.'),
 
     body('descuento')
-    .not().isEmpty().withMessage('El descuento debe ser un número entre 0 y 99.')
-    .isInt({ min:0, max: 99 })
-    .withMessage('El descuento debe ser un número entre 0 y 99.'),
-  
+    .optional(),
 
   body('measure')
     .not().isEmpty()
@@ -47,5 +44,24 @@ module.exports = [
   body('descripcion')
     .not().isEmpty().withMessage('La descripción es requerida.')
     .isLength({ min: 30 })
-    .withMessage('La descripción debe tener al menos 30 caracteres.')
+    .withMessage('La descripción debe tener al menos 30 caracteres.'),
+
+    check('image1')
+    .custom((value, {req}) => {
+        if(req.files.image1 && req.files.image1[0] && !req.files.image1[0].mimetype.startsWith('image/')){
+            throw new Error('El archivo debe ser una imagen.');
+        }
+        return true;
+    }),
+
+  check('image2')
+    .custom((value, {req}) => {
+        if(req.files.image2 && req.files.image2[0] && !req.files.image2[0].mimetype.startsWith('image/')){
+            throw new Error('El archivo debe ser una imagen.');
+        }
+        return true;
+    }),
+
+
+
 ]

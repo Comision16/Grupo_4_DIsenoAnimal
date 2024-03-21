@@ -3,18 +3,19 @@ const { validationResult }= require('express-validator');
 
 
 module.exports = (req, res) => {
-    // Extraer los resultados de la validación del objeto req
+    
     const errors = validationResult(req).mapped();
     console.log(errors);
 
 
     if (Object.keys(errors).length > 0) {
+
+        const { nombre, categoria, precio, stock, sabores, descuento, descripcion, brand, measure, value } = req.body;
+
         return res.render('products/product-create', { errors, old: req.body });
     }
     
-
-    // Si no hay errores de validación, puedes continuar con la lógica de creación del producto
-    const { nombre, categoria, precio, stock, sabores, descuento, descripcion, brand, measure, value } = req.body;
+     
 
     const image1 = req.files.image1 == undefined ? "null" : req.files.image1;
     const image2 = req.files.image2 == undefined ? "null" : req.files.image2;

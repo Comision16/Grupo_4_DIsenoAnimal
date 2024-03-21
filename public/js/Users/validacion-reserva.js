@@ -1,12 +1,14 @@
 const $ = (id) => document.getElementById(id);
 
-$("perfil_form").addEventListener("submit", function (e) {
+console.log($("reserva-form").elements);
+
+$("reserva-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
     let error = false
 
-    for (let i = 0; i < this.elements.length - 2; i++) {
-        if (!this.elements[i].value && required.includes(i)) {
+    for (let i = 0; i < this.elements.length - 1; i++) {
+        if (!this.elements[i].value && i != 4) {
             this.elements[i].classList.add("is-invalid");
             $("alert" + [i]).innerHTML = "Debe completar el campo";
             error = true;
@@ -37,6 +39,21 @@ $("especie").addEventListener("focus", function () {
     $("alert3").innerHTML = "";
 });
 
+$("fecha").addEventListener("focus", function () {
+    this.classList.remove("is-invalid");
+    $("alert3").innerHTML = "";
+});
+
+$("hora").addEventListener("focus", function () {
+    this.classList.remove("is-invalid");
+    $("alert3").innerHTML = "";
+});
+
+$("service").addEventListener("focus", function () {
+    this.classList.remove("is-invalid");
+    $("alert3").innerHTML = "";
+});
+
 $("name").addEventListener("blur", function () {
     if (!this.value) {
         this.classList.add("is-invalid");
@@ -61,5 +78,35 @@ $("mascota").addEventListener("blur", function () {
     } else {
         this.classList.remove("is-invalid");
         $("alert2").innerHTML = "";
+    }
+});
+
+$("fecha").addEventListener("blur", function () {
+    if (!this.value) {
+        this.classList.add("is-invalid");
+        $("alert5").innerHTML = "Elija fecha";
+    } else {
+        this.classList.remove("is-invalid");
+        $("alert5").innerHTML = "";
+    }
+});
+
+$("hora").addEventListener("blur", function () {
+    if (!this.value) {
+        this.classList.add("is-invalid");
+        $("alert6").innerHTML = "Elija horario";
+    } else {
+        this.classList.remove("is-invalid");
+        $("alert6").innerHTML = "";
+    }
+});
+
+$("service").addEventListener("blur", function () {
+    if (!this.value) {
+        this.classList.add("is-invalid");
+        $("alert7").innerHTML = "Elija servicio";
+    } else {
+        this.classList.remove("is-invalid");
+        $("alert7").innerHTML = "";
     }
 });

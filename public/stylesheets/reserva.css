@@ -19,7 +19,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 10px;
-    max-width: 800px;
+    max-width: 900px;
     margin: 30px auto;
     border-radius: 5px;
     padding-bottom: 100px;
@@ -29,8 +29,10 @@
 
 .reserva_date {
     width: 115px !important; 
+    height: 30px;
 }
 
 .reserva_date_label {
     width: 50%;
+    height: 26px;
 }

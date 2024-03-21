@@ -2,8 +2,6 @@ const $ = (id) => document.getElementById(id);
 const required = [0, 2, 3, 5];
 const exRegEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
-console.log($("form-register").elements);
-
 $("form-register").addEventListener("submit", function (e) {
     e.preventDefault();
 

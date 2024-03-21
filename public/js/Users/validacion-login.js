@@ -1,7 +1,5 @@
 const $ = (id) => document.getElementById(id);
 
-console.log($("login-form").elements);
-
 $("login-form").addEventListener("submit", function (e) {
     e.preventDefault();
 

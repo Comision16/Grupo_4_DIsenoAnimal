@@ -7,14 +7,18 @@ console.log($("form-register").elements);
 $("form-register").addEventListener("submit", function (e) {
     e.preventDefault();
 
+    let error = false
+
     for (let i = 0; i < this.elements.length - 2; i++) {
         if (!this.elements[i].value && required.includes(i)) {
             this.elements[i].classList.add("is-invalid");
             $("alert" + [i]).innerHTML = "Debe completar el campo";
+            error = true;
         } else {
             this.elements[i].classList.remove("is-invalid");
         }
     }
+    !error ? this.submit() : alert("te faltan datos")
 });
 
 $("name").addEventListener("focus", function () {

@@ -66,6 +66,10 @@
     margin-top: 20px;
 }
 
+.perfil_form input {
+    padding-left: 10px;
+}
+
 .perfil__form__div {
     display: flex;
     flex-direction: column;
@@ -96,12 +100,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    width: 191px;
-    color: red;
-    background-color: rgb(255 255 255 / 50%);
+    width: 230px;
+    color: yellow;
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 3px;
     margin-left: 25px;
     text-align: start;
+    margin-bottom: 10px;
+    margin-top: -5px;
+    padding: 2px;
 }
 
 .perfil_main input::placeholder {

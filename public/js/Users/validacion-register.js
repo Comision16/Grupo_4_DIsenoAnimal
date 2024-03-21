@@ -99,11 +99,11 @@ $("password").addEventListener("keyup", function () {
     $("lista-error-mail").innerHTML = errorHTML;
 });
 
-$("password2").addEventListener("change", function () {
+$("password2").addEventListener("blur", function () {
     if (!this.value) {
         this.classList.add("is-invalid");
         $("alert5").innerHTML = "La contraseña es obligatoria";
-    } else if (!this.value != $("password").value) {
+    } else if (this.value !== $("password").value) {
         this.classList.add("is-invalid");
         $("alert5").innerHTML = "Las contraseñas no coinciden";
     } else {

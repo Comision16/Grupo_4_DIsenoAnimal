@@ -8,100 +8,6 @@
       <title>CanCat - Agregar Productos</title>
 </head>
 
-<<<<<<< HEAD
-                            <div class="row d-flex gap-2 justify-content-center mt-2" >
-                              
-                              <div class="col-12 col-md-4 mb-3">
-                                <div class="form-floating">
-                                  <input name="nombre" type="text" class="form-control " id="nombre" style=" border-color: rgb(10, 99, 150);">
-                                  <label for="nombre">Nombre del articulo</label>
-                                </div>
-                              </div>
-
-                              <div class="col-12 col-md-4 mb-3">
-                                <div class="form-floating">
-                                  <select name="categoria" class="form-select" id="categoria" aria-label="Floating label select example" style=" border-color: rgb(10, 99, 150);">
-                                    <option value="" selected hidden></option>
-                                    <% species.forEach(specie => { %>
-                                      <option value="<%= specie.id %>"><%= specie.name %></option>
-
-                                    <% }) %>
-                                  
-                                  </select>
-                                  <label for="categoria">Categoría</label>
-                                </div>
-                              </div>
-                            </div>
-                            
-                            <div class="row d-flex flex-wrap justify-content-center mr-4 align-items-center mb-3 w-100">
-                              
-                              <div class="row d-flex justify-content-center align-items-center gap-2 w-50">
-                              <input name="image1" type="file" class="form-control" id="image1" hidden >
-                              <img src="/images/new-product.default.png" alt="Primera imagen de la lista" class="img-thumbnail" id="miniatura1" style="max-width: 100px; max-height: 120px; " >
-                              <label class="btn btn-lg btn-outline-dark w-80" for="image1" style="width:auto; height: auto; border-color: rgb(10, 99, 150);">Agregar imagen</label>
-                              </div>
-                          
-                              <div class="row d-flex justify-content-center align-items-center gap-2 w-50">
-                              <input  name="image2" type="file" class="form-control" id="image2" hidden>
-                              <img src="/images/new-product.default.png" alt="Segunda imagen de la lista" class="img-thumbnail" id="miniatura2" style="max-width: 100px; max-height: 120px;">
-                              <label class="btn btn-lg btn-outline-dark w-80" for="image2" style="width:auto; height: auto; border-color: rgb(10, 99, 150);">Agregar imagen</label>
-                              </div>
-
-                          </div>
-                         
-                          <div class="row justify-content-center gap-1 align-items-center">
-                            <div class="col-12 col-md-4 mb-3">
-                              <div class="form-floating">
-                                  <input name="precio" type="number" class="form-control" id="precio" style="border-color: rgb(10, 99, 150);">
-                                  <label for="precio">Precio del producto</label>
-                              </div>
-                            </div>
-                          <div class="col-12 col-md-4 mb-3">
-                            <div class="form-floating">
-                                <input name="stock" type="number" class="form-control" id="stock" style="border-color: rgb(10, 99, 150);">
-                                <label for="stock">Cantidad en stock</label>
-                            </div>
-                          </div>
-                              <div class="col-12 col-md-4 mb-3">
-                                <div class="form-floating">
-                                    <select name="sabores" class="form-select" id="sabores" aria-label="Floating label select example" style="width:100%; border-color: rgb(10, 99, 150);">
-                                        <option value="" selected hidden></option>
-                                        <% flavors.forEach(flavor => { %>
-                                          <option value="<%= flavor.id %>"><%= flavor.name %></option>
-
-                                        <% }) %>
-                                        <!-- Agrega más opciones si es necesario -->
-                                    </select>
-                                    <label for="sabores">Sabores</label>
-                                </div>
-                              </div>
-                            <div class="col-12 col-md-4 mb-3" >
-                              <div class="form-floating ">
-                                  <input name="descuento" type="number" class="form-control" id="descuento" style="border-color: rgb(10, 99, 150);" >
-                                  <label  for="descuento">Descuento -%</label>
-                              </div>
-                            </div>
-                      
-                          
-                          <div class="col-10 mb-5 " >
-                              <div class="form-floating ">
-                                <textarea name="descripcion" class="form-control overflow text-break" id="descripcion" style=" width:100% ;height: 100px; border-color: rgb(10, 99, 150); "></textarea>
-                                <label for="descripcion">Descripción...</label>
-                                </div>
-                          </div>
-                        </div>
-                          <div class="col-7 d-flex justify-content-center" style="width: 100%; transition: all 0.01s;">
-                              <button class="btn btn-lg btn-dark">Agregar Producto</button>
-                            
-                              <!-- efecto del boton -->
-                          <style>.btn:hover {transform: scale(1.01);}</style>
-
-                     </div>
-                      </form>
-
-                  </div>
-              </div>
-=======
 <body class="dashboard-body">
   <header>
     <%- include('../partials/header-dashboard') %>
@@ -117,7 +23,6 @@
                 <li class="breadcrumb-item active" aria-current="page">Agregar Productos</li>
               </ol>
             </nav>
->>>>>>> e5e3ae29978995bfe1f0098703c056014964324a
           </div>
           <div class="card-body">
             <form action="/productos/store" method="post" style="background-color: rgb(245, 245, 245);"
@@ -146,13 +51,12 @@
                     <select name="categoria"
                       class="form-select <%= (locals.errors && errors.categoria) ? 'is-invalid' : '' %>" id="categoria"
                       st aria-label="Floating label select example" style="width:100%; padding-bottom: 0px; ">
-                      <option value="" <%=locals.old && old.categoria=='' ? 'selected' : '' %> selected hidden></option>
-                      <option value="1" selected>Perro</option>
-                      <option value="2" <%=locals.old && old.categoria=='2' ? 'selected' : '' %> >Gato</option>
-                      <option value="3" <%=locals.old && old.categoria=='3' ? 'selected' : '' %> >Ave</option>
-                      <option value="4" <%=locals.old && old.categoria=='4' ? 'selected' : '' %> >Pece</option>
-                      <option value="5" <%=locals.old && old.categoria=='5' ? 'selected' : '' %> >Roedor</option>
-                      <option value="6" <%=locals.old && old.categoria=='6' ? 'selected' : '' %> >Otro</option>
+                      <option value=""  selected hidden>Seleccione...</option>
+                      <% species.forEach(category => { %>
+                        <option value="<%= category.id %>" ><%= category.name%></option>
+
+                      <% }) %>
+                     
                     </select>
                     <label for="categoria">Especie</label>
                     <div class="invalid-feedback">
@@ -226,18 +130,12 @@
                   <div class="form-floating">
                     <select name="sabores"
                       class="form-select <%= (locals.errors && errors.sabores) ? 'is-invalid' : '' %>" id="sabores"
-                      aria-label="Floating label select example" style="width:100%; padding-bottom: 0px;"
-                      value="<%= locals.old && old.sabores %>">
-                      <option value="" selected hidden></option>
-                      <option value="" <%=locals.old && old.sabores=='' ? 'selected' : '' %> selected hidden></option>
-                      <option value="1" <%=locals.old && old.sabores=='' ? 'selected' : '' %> >Pescado</option>
-                      <option value="2" <%=locals.old && old.sabores=='' ? 'selected' : '' %> >Pollo y Arroz</option>
-                      <option value="3" <%=locals.old && old.sabores=='' ? 'selected' : '' %> >Carne y Pollo</option>
-                      <option value="4" selected>Carne</option>
-                      <option value="5" <%=locals.old && old.sabores=='' ? 'selected' : '' %> >Leche</option>
-                      <option value="6" <%=locals.old && old.sabores=='' ? 'selected' : '' %> >Arroz y Pescado</option>
-                      <option value="7" <%=locals.old && old.sabores=='' ? 'selected' : '' %> >Pescado y Carne</option>
-                      <option value="8" <%=locals.old && old.sabores=='' ? 'selected' : '' %> >Otro</option>
+                      aria-label="Floating label select example" style="width:100%; padding-bottom: 0px;">
+                      <option value="" selected hidden>Seleccione...</option>
+                      <% flavors.forEach(element => { %>
+                        <option value="<%= element.id %>" ><%= element.name %></option>
+                      <% }) %>
+                    
                       <!-- Agrega más opciones si es necesario -->
                     </select>
                     <label for="sabores">Sabores</label>
@@ -271,14 +169,10 @@
                         class="form-control m-0 <%= (locals.errors && errors.measure) ? 'is-invalid' : '' %>"
                         id="measure" aria-label="Floating label select example"
                         style="width:100%; padding-bottom: 0px; ">
-                        <option value="" <%=locals.old && old.sabores=='' ? 'selected' : '' %> selected hidden></option>
-                        <option value="" <%=locals.old && old.measure=='' ? 'selected' : '' %> selected hidden></option>
-                        <option value="1" selected>Kilogramos</option>
-                        <option value="2" <%=locals.old && old.measure=='' ? 'selected' : '' %> >Gramos</option>
-                        <option value="3" <%=locals.old && old.measure=='' ? 'selected' : '' %> >Largo</option>
-                        <option value="4" <%=locals.old && old.measure=='' ? 'selected' : '' %> >Ancho</option>
-                        <option value="5" <%=locals.old && old.measure=='' ? 'selected' : '' %> >Alto</option>
-                        <option value="6" <%=locals.old && old.measure=='' ? 'selected' : '' %> >Otro</option>
+                        <option value="" selected hidden>Seleccione...</option>
+                        <% filings.forEach(element => { %>
+                          <option value="<%= element.id %>" ><%= element.name %></option>
+                        <% }) %>
                         <!-- Agrega más opciones si es necesario -->
                       </select>
                       <label for="measure">Unidad de medida</label>

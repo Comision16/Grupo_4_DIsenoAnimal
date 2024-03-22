@@ -7,12 +7,17 @@ const db = require('../../database/models')
         const species = db.Specie.findAll({
             order : ['id']
         });
+        const filings = db.Filing.findAll({
+            order : ['id']
+        });
 
-        Promise.all([flavors, species])
-            .then(([flavors, species]) => {
+
+        Promise.all([flavors, species, filings])
+            .then(([flavors, species, filings]) => {
                 return res.render('products/product-create',{
                     flavors,
-                    species
+                    species,
+                    filings
                 })
             })
             .catch(error => console.log(error))

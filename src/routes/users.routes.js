@@ -18,10 +18,10 @@ router
   .get('/perfil/', checkUserLogin, profile)
   .put('/update/:id', upload.single('imagen') ,userPerfil, update)
   .get("/salir", logout)
-  .get("/dashboardUsuarios", dashboardUsuarios)
-  .put("/dashboardUsuarios/:id", gerarquia)
-  .get("/reserva", reserva)
-  .post("/reserva", reservar)
+  .get("/dashboardUsuarios",checkUserLogin, dashboardUsuarios)
+  .put("/dashboardUsuarios/:id",checkUserLogin, gerarquia)
+  .get("/reserva", checkUserLogin, reserva)
+  .post("/reserva",checkUserLogin, reservar)
   
   
 module.exports = router;

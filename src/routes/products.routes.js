@@ -4,6 +4,7 @@ const {detail, edit , create, store, update, search, filtrados, remove, todos} =
 const router = express.Router();
 const upload = require('../middlewares/upload');
 const createProductValidation = require('../../validations/createProductValidation');
+const checkUserLogin = require('../middlewares/checkUserLogin');
 
 
 /* GET productos listing. */
@@ -11,8 +12,8 @@ router
   .get('/detalle/:id?', detail )
   .get('/filtrados/:categoria',filtrados)
   
-  .get('/editar-articulo/:id', edit)
-  .put('/update/:id',  upload.fields([
+  .get('/editar-articulo/:id', checkUserLogin, edit)
+  .put('/update/:id', checkUserLogin,  upload.fields([
   {
     name : 'image1'
   },
@@ -21,7 +22,7 @@ router
   }
   ]),update)
 
-  .get('/agregar-articulos', create)
+  .get('/agregar-articulos', checkUserLogin, create)
   .get('/todos', todos)
   .get('/search', search)
   .post('/store', upload.fields([
@@ -31,9 +32,9 @@ router
   {
     name : 'image2'
   }
-  ]),createProductValidation,store)
+  ]),createProductValidation, checkUserLogin,store)
 
-  .delete("/eliminar/:id", remove)
+  .delete("/eliminar/:id",checkUserLogin, remove)
 
 
 module.exports = router;

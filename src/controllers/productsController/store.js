@@ -10,10 +10,10 @@ module.exports = (req, res) => {
 
     if (Object.keys(errors).length > 0) {
 
-        const { nombre, categoria, precio, stock, sabores, descuento, descripcion, brand, measure, value } = req.body;
 
         return res.render('products/product-create', { errors, old: req.body });
     }
+    const { nombre, categoria, precio, stock, sabores, descuento, descripcion, brand, measure, value } = req.body;
     
      
 

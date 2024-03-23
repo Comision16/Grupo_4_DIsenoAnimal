@@ -1,13 +1,59 @@
+const { validationResult, param }= require('express-validator');
 
 const db = require("../../database/models")
 const { existsSync, unlinkSync } = require('fs');
 
 module.exports = (req, res) => {
+    const errors = validationResult(req).mapped();
+    console.log(errors);
+    const { id } = req.session.userLogin
+    const params = req.params;
 
-  const { id } = req.params
-  const { nombre, categoria, precio, stock, sabores, descuento, descripcion, brand, measure, value } = req.body;
+    const { nombre, categoria, precio, stock, sabores, descuento, descripcion, brand, measure, value } = req.body;
+    console.log(req.body);
 
-  db.Product.findByPk(id, {
+    if (Object.keys(errors).length > 0) {
+      
+    const product = db.Product.findByPk(params.id, {
+        include: [
+            "Image_products", "product_stock",
+            "product_filing", "product_brand"
+            
+        ]
+    })
+
+    const mascotas = db.Pet.findOne({
+        where: {
+            userId: id
+        },
+        include: ["user"]
+    })
+    const brand = db.Brand.findAll()
+
+    const filing = db.Filing.findAll()
+
+    const especies = db.Specie.findAll()
+
+    const sabores = db.Flavor.findAll()
+
+      
+    Promise.all([product, especies, mascotas, sabores, brand, filing])
+    .then(([product, especies, mascotas, sabores, brand, filing]) => {
+        
+    
+        return res.render('products/product-edit',{errors, old: req.body,
+            ...product.dataValues, 
+            especies,
+            mascotas,
+            sabores,
+            brand,
+            filing
+        })
+    }); return;
+    }
+
+
+  db.Product.findByPk(params.id, {
     include: [
       "Image_products", "product_stock",
               "product_filing", "product_brand"

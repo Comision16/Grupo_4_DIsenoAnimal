@@ -4,6 +4,7 @@ const {detail, edit , create, store, update, search, filtrados, remove, todos} =
 const router = express.Router();
 const upload = require('../middlewares/upload');
 const createProductValidation = require('../../validations/createProductValidation');
+const editProductValidation = require('../../validations/editProductValidation');
 
 
 /* GET productos listing. */
@@ -19,7 +20,7 @@ router
   {
     name : 'image2'
   }
-  ]),update)
+  ]), editProductValidation,update)
 
   .get('/agregar-articulos', create)
   .get('/todos', todos)

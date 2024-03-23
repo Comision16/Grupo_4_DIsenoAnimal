@@ -56,7 +56,7 @@ o
     validarCampo(categoria, categoria.value, 'Por favor, selecciona una categoría.');
     validarCampo(stock, stock.value > 0, 'Por favor, introduce una cantidad válida en stock.');
     validarCampo(sabores, sabores.value, 'Por favor, selecciona un sabor.');
-    validarCampo(descuento, descuento.value <= 100 || descuento.value == '', 'El descuento debe ser menor a 99.');
+    validarCampo(descuento, descuento.value <= 100, 'El descuento debe ser menor a 99.');
     validarCampo(measure, measure.value, 'Por favor, selecciona una unidad de medida.');
     validarCampo(value, value.value > 0, 'Por favor, introduce un valor válido mayor a 0.');
     validarCampo(brand, brand.value.length >= 2, 'La marca debe tener al menos 2 caracteres.');
@@ -68,7 +68,7 @@ o
     }
   });
   
-  var campos = ['nombre', 'precio', 'categoria', 'stock', 'sabores', 'measure', 'value', 'brand', 'descripcion', 'descuento', 'image1', 'image2'];
+  var campos = ['nombre', 'precio', 'categoria', 'stock', 'sabores', 'measure', 'value', 'brand', 'descripcion', 'image1', 'image2'];
   campos.forEach(function(campo) {
     var input = document.querySelector('#' + campo);
     input.addEventListener('input', function() {
@@ -79,16 +79,12 @@ o
         this.classList.remove('is-invalid');
         errorSpan.style.display = 'none';  
         if (invalidFeedback) invalidFeedback.style.display = 'none';
-      } else if ((campo === 'precio' || campo === 'value') && this.value > 0 && this.value <= 99) {
+      } else if ((campo === 'precio' || campo === 'value') && this.value > 0 ) {
         this.style.borderColor = 'green';
         this.classList.remove('is-invalid');
         errorSpan.style.display = 'none';
         if (invalidFeedback) invalidFeedback.style.display = 'none';
-      } else if (campo === 'descuento' && (this.value === '' || (this.value > 0 && this.value <= 99))) {
-        this.style.borderColor = 'green';
-        this.classList.remove('is-invalid');
-        errorSpan.style.display = 'none';
-        if (invalidFeedback) invalidFeedback.style.display = 'none';
+     
       } else if (campo === 'image1' || campo === 'image2') {
         var file = this.files[0];
         if (file && file.type.startsWith('image/')) {
@@ -113,7 +109,7 @@ o
       
     input.addEventListener('blur', function() {
       var errorSpan = document.querySelector('#error-' + campo);
-      if (!this.value || (campo === 'nombre' && this.value.length < 4) || (campo === 'brand' && this.value.length < 2) || (campo === 'descripcion' && this.value.length < 30) || ((campo === 'precio' || campo === 'value' || campo === 'descuento') && (this.value <= 0 || this.value > 99))) {
+      if (!this.value || (campo === 'nombre' && this.value.length < 4) || (campo === 'brand' && this.value.length < 2) || (campo === 'descripcion' && this.value.length < 30) || ((campo === 'precio' || campo === "descuento" || campo === 'value') && (this.value <= 0 ))) {
         this.style.borderColor = 'red';
         errorSpan.textContent = getErrorMessage(campo);
         errorSpan.style.display = 'block';
@@ -131,7 +127,7 @@ o
       case 'categoria':
         return 'Por favor, selecciona una categoría.';
       case 'stock':
-        return 'Por favor, introduce una cantidad válida en stock.';
+        return 'Por favor, introduce un valor superior a 0.';
       case 'sabores':
         return 'Por favor, selecciona un sabor.';
       case 'measure':

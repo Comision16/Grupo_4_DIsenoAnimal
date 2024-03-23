@@ -144,12 +144,12 @@
                       </div>
 
                          
-                         <div class="row d-flex justify-content-end  align-items-center w-50">
+                         <div style="padding-left: 3.5%;" class="row d-flex justify-content-end  align-items-center w-50">
                           
                              <div class="col-12 col-md-5 mb-3 w-50">  
-                             <div class="form-floating p-1 ">
+                             <div class="form-floating  ">
                                        <select name="measure" class="form-select <%= (locals.errors && errors.measure) ? 'is-invalid' : '' %>" id="measure" aria-label="Floating label select example" style="width:100%; border-color: rgb(10, 99, 150);">
-                                           <option value="" selected hidden></option>
+                                           <option value="" selected hidden>Elija medida</option>
 
                                            <% filing.forEach(fili => { %>
                                             <option value="<%= fili.measure %>" <%= product_filing.measure == fili.measure ? 'selected' : '' %>><%= fili.measure %></option>
@@ -166,8 +166,8 @@
                            
                              
                                  <div class="col-12 col-md-5 mb-3 w-20">
-                                   <div class="form-floating p-1">
-                                     <input name="value" type="number" class="form-control <%= (locals.errors && errors.value) ? 'is-invalid' : '' %>" id="value" style="width: 60%;border-color: rgb(10, 99, 150);" value="<%= value %>" >
+                                   <div class="form-floating ">
+                                     <input name="value" type="number" class="form-control <%= (locals.errors && errors.value) ? 'is-invalid' : '' %>" id="value" style="width: 90%;border-color: rgb(10, 99, 150);" value="<%= value %>" >
                                      <label  for="value"> valor</label>
                                      <div class="invalid-feedback">
                                       <%= (locals.errors && errors.value) ? errors.value.msg : '' %>
@@ -177,7 +177,7 @@
                                </div>
                              </div>
                              
-                              <div class="row d-flex justify-content-start col-12 col-md-5 mb-3 w-20">
+                              <div style="padding-left: 4%;" class="row d-flex justify-content-start col-12 col-md-5 mb-3 w-50">
                                <div class="form-floating p-1">
                                  <input name="brand" type="text" class="form-control <%= (locals.errors && errors.brand) ? 'is-invalid' : '' %>" id="brand" style=" width: 85%; height: auto; border-color: rgb(10, 99, 150)" value="<%= product_brand.name %>">
                                  <label for="brand">Marca</label>
@@ -189,7 +189,7 @@
                              </div>
 
                         <div class="col-10 mb-3">
-                            <div class="form-floating p-1">
+                            <div class="form-floating">
                               
                                 <label for="descripcion"></label>
                                 <textarea name="descripcion" class="form-control <%= (locals.errors && errors.descripcion) ? 'is-invalid' : '' %>" id="descripcion" style=" height:100px; border-color: rgb(10, 99, 150);" ><%= description %></textarea>

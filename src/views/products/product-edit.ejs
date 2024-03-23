@@ -117,7 +117,7 @@
                              <div class="col-12 col-md-5 mb-3 w-50">  
                              <div class="form-floating p-1 ">
                                        <select name="measure" class="form-select" id="measure" aria-label="Floating label select example" style="width:100%; border-color: rgb(10, 99, 150);">
-                                           <option value="" selected hidden></option>
+                                           <option value="" selected hidden>Elija medida</option>
 
                                            <% filing.forEach(fili => { %>
                                             <option value="<%= fili.measure %>" <%= product_filing.measure == fili.measure ? 'selected' : '' %>><%= fili.measure %></option>

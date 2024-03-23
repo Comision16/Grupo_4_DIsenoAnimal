@@ -1,9 +1,22 @@
+const db = require("../../database/models")
 
-const fs = require('fs');
+module.exports = (req, res) => {
+    const especies = db.Specie.findAll()
 
-function pushProducts (parametro){
-fs.writeFileSync("./src/data/productos.json", JSON.stringify(parametro, null, 3), "utf-8");}
+    const mascotas = db.Pet.findOne()
 
-    module.exports = (req, res) =>  {
-            return res.render('products/product-create')
-        }
+    const sabores = db.Flavor.findAll()
+
+    const filing = db.Filing.findAll()
+
+    Promise.all([especies, mascotas, sabores, filing])
+        .then(([especies, mascotas, sabores, filing]) => {
+            return res.render('products/product-create', {
+                especies,
+                mascotas,
+                sabores,
+                filing
+            })
+        })
+
+}

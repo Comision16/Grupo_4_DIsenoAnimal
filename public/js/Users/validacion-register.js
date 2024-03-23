@@ -16,6 +16,12 @@ $("form-register").addEventListener("submit", function (e) {
             this.elements[i].classList.remove("is-invalid");
         }
     }
+
+    if (!$("remember").checked) {
+        error = true;
+        $("error-remember").innerHTML = "Debe aceptar los terminos y codiciones";
+    } 
+
     !error && this.submit()
 });
 
@@ -113,3 +119,4 @@ $("password2").addEventListener("blur", function () {
         $("alert5").innerHTML = "";
     }
 });
+

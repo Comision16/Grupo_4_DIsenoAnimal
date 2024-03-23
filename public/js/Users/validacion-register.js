@@ -2,19 +2,21 @@ const $ = (id) => document.getElementById(id);
 const required = [0, 2, 3, 5];
 const exRegEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
-console.log($("form-register").elements);
-
 $("form-register").addEventListener("submit", function (e) {
     e.preventDefault();
+
+    let error = false
 
     for (let i = 0; i < this.elements.length - 2; i++) {
         if (!this.elements[i].value && required.includes(i)) {
             this.elements[i].classList.add("is-invalid");
             $("alert" + [i]).innerHTML = "Debe completar el campo";
+            error = true;
         } else {
             this.elements[i].classList.remove("is-invalid");
         }
     }
+    !error && this.submit()
 });
 
 $("name").addEventListener("focus", function () {
@@ -99,11 +101,11 @@ $("password").addEventListener("keyup", function () {
     $("lista-error-mail").innerHTML = errorHTML;
 });
 
-$("password2").addEventListener("change", function () {
+$("password2").addEventListener("blur", function () {
     if (!this.value) {
         this.classList.add("is-invalid");
         $("alert5").innerHTML = "La contraseña es obligatoria";
-    } else if (!this.value != $("password").value) {
+    } else if (this.value !== $("password").value) {
         this.classList.add("is-invalid");
         $("alert5").innerHTML = "Las contraseñas no coinciden";
     } else {

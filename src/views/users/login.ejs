@@ -12,13 +12,13 @@
     <main class="login_main">
         <nav>
             <h1>Iniciar Sesion </h1>
-            <form class="login_form" action="" method="POST">
+            <form id="login-form" class="login_form" action="" method="POST">
 
                 <div class="form-group">
                     <label for="email">Correo electrónico</label>
                     <input class="login-input"  type="text" id="email" name="email" class="<%= locals.errors && errors.email ? 'invalid' : '' %>" value="<%= locals.old && old.email ? old.email : '' %>">
                     <div class="box-alert">
-                        <small class="alert"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
+                        <small id="alertLogin0" class="alert"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
                     </div>
                 </div>
 
@@ -29,7 +29,7 @@
                         <span id="togglePassword" class="password-toggle">&#128065;</span>
                     </div>
                     <div class="box-alert">
-                        <small class="alert"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
+                        <small id="alertLogin1" class="alert"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
                     </div>
                 </div>
 
@@ -64,6 +64,7 @@
             }
         });
     </script>
+    <script src="/js/Users/validacion-login.js"></script>
 
    
     <%- include('../partials/footer') %>

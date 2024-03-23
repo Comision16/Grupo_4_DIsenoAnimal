@@ -57,10 +57,6 @@
     text-align: left;
 }
 
-#especie {
-    text-align: center;
-}
-
 .register_main input::placeholder {
     color: var(--ColorAzul);
     text-align: center;
@@ -94,7 +90,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 191px;
+    width: 300px;
     color:yellow;
     height: 22px;
     background-color:rgba(0, 0, 0, 0.5);

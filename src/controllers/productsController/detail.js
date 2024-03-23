@@ -13,7 +13,7 @@ module.exports =
                     "Image_products"
                 ],
                 where: {
-                    specieId: 2
+                    specieId: 1
                 }
             }
             )
@@ -43,7 +43,10 @@ module.exports =
             const productos = db.Product.findAll({
                 include: [
                     "Image_products"
-                ]
+                ],
+                where: {
+                    specieId: 1
+                }
             })
 
             const idproducto = db.Product.findByPk(params, {

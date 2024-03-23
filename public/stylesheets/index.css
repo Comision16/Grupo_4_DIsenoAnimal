@@ -71,6 +71,7 @@
       margin-bottom: 30px;
   }
 
+
   .index__body__main__section--producto {
       display: flex;
       flex-direction: column;
@@ -80,12 +81,26 @@
       padding: 30px 0;
       margin-top: 30px;
       margin-bottom: 30px;
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 6px 6px 27px -3px rgba(0,0,0,0.75);
+      -webkit-box-shadow: 6px 6px 27px -3px rgba(0,0,0,0.75);
+      -moz-box-shadow: 6px 6px 27px -3px rgba(0,0,0,0.75);
+  }
+
+  .index__body__main__section--producto:hover {
+      transform: scale(1.1);
   }
 
   .index__body__main__section--producto--columna1 {
       display: flex;
       justify-content: center;
       margin-bottom: 20px;
+  }
+
+  .index__body__main__section--producto--columna2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .index__body__main__section--producto img {
@@ -105,7 +120,6 @@
   .index__body__main__section--producto--descripcion {
       text-align: center;
       padding: 15px;
-      font-size: 20px;
       color: rgb(85, 85, 85);
       font-weight: 500;
       margin-bottom: 20px;
@@ -182,14 +196,14 @@
       }
 
       .descripcion_mas_precio {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
       }
 
       .index__body__main__section--producto--columna1 {
           justify-content: flex-start;
-          position: absolute;         
+          position: absolute;
           left: -30px;
           bottom: 35px;
           width: 30%;

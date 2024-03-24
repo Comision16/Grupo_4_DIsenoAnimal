@@ -31,7 +31,9 @@ module.exports = (req, res) => {
         const { nombre, categoria, precio, stock, sabores, descuento, descripcion, brand, measure, value } = req.body;
         const image1 = req.files.image1 == undefined ? null : req.files.image1[0].filename;
         const image2 = req.files.image2 == undefined ? null : req.files.image2[0].filename;
-
+        
+        let producto; 
+    
         db.Brand.create({ name: brand })
             .then(brand => {
                 return db.Product.create({
@@ -45,7 +47,8 @@ module.exports = (req, res) => {
                     filingId: measure,
                 });
             })
-            .then(producto => {
+            .then(createdProduct => {
+                producto = createdProduct; 
                 return db.stock.create({
                     amount: +stock,
                     flavorId: +sabores,
@@ -55,14 +58,14 @@ module.exports = (req, res) => {
             .then(() => {
                 if (image1) {
                     return db.Image_products.create({
-                        file: image1,
-                        productId: req.params.id,
+                        file: image1  ,
+                        productId: producto.id,
                         primary: 1
                     });
                 } else {
                     return db.Image_products.create({
                         file: null,
-                        productId: req.params.id,
+                        productId: producto.id,
                         primary: 1
                     });
                 }
@@ -77,7 +80,7 @@ module.exports = (req, res) => {
                 } else {
                     return db.Image_products.create({
                         file: null,
-                        productId: req.params.id,
+                        productId: producto.id,
                         primary: 2
                     });
                 }
@@ -87,7 +90,7 @@ module.exports = (req, res) => {
             })
             .catch(err => {
                 console.error('Error creating product:', err);
-                return res.status(500).send('Internal Server Error');
             });
     }
+    
 };

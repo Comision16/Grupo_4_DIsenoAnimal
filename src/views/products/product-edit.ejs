@@ -156,7 +156,7 @@
                                           <% }) %>
 
                                        </select>
-                                       <label for="measure"></label>
+                                       <label for="measure">Medidas</label>
                                        <div class="invalid-feedback">
                                         <%= (locals.errors && errors.measure) ? errors.measure.msg : '' %>
                                       </div>
@@ -191,8 +191,8 @@
                         <div class="col-10 mb-3">
                             <div class="form-floating">
                               
-                                <label for="descripcion"></label>
                                 <textarea name="descripcion" class="form-control <%= (locals.errors && errors.descripcion) ? 'is-invalid' : '' %>" id="descripcion" style=" height:100px; border-color: rgb(10, 99, 150);" ><%= description %></textarea>
+                                <label for="descripcion">Descripción</label>
                                 <div class="invalid-feedback">
                                   <%= (locals.errors && errors.descripcion) ? errors.descripcion.msg : '' %>
                                 </div>

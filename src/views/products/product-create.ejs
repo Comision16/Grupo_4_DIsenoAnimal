@@ -182,7 +182,7 @@
                     <select name="measure" class="form-control m-0 <%= (locals.errors && errors.measure) ? 'is-invalid' : '' %>" id="measure" aria-label="Floating label select example" >
                       <option value="" selected hidden>Elija Medida</option>
                       <% filing.forEach(fili=> { %>
-                        <option value="<%= fili.measure %>">
+                        <option value="<%= fili.id %>">
                           <%= fili.measure %>
                         </option>
                       <% }) %>

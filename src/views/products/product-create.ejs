@@ -50,14 +50,15 @@
                   <div class="form-floating">
                     <select name="categoria"
                       class="form-select <%= (locals.errors && errors.categoria) ? 'is-invalid' : '' %>" id="categoria"
-                      st aria-label="Floating label select example" style="width:100%; padding-bottom: 0px; ">
-                      <option value=""  selected hidden>Seleccione...</option>
-                      <% species.forEach(category => { %>
-                        <option value="<%= category.id %>" ><%= category.name%></option>
-
-                      <% }) %>
-                     
+                      aria-label="Floating label select example" style="width:100%; padding-bottom: 0px; ">
+                      <option value="" selected hidden>Elija la especie</option>
+                      <% especies.forEach(item=> { %>
+                        <option value="<%= item.id %>">
+                          <%= item.name %>
+                        </option>
+                        <% }); %>
                     </select>
+
                     <label for="categoria">Especie</label>
                     <div class="invalid-feedback">
                       <%= (locals.errors && errors.categoria) ? errors.categoria.msg : '' %>
@@ -70,138 +71,142 @@
                 <div class="row d-flex flex-wrap justify-content-center mr-4 align-items-center mb-3 w-100">
 
                   <div class="row d-flex justify-content-center align-items-center gap-4 w-50">
-                    <input name="image1" type="file" class="form-control <%= (locals.errors && errors.image1) ? 'is-invalid' : '' %> " id="image1" hidden>
+                    <input name="image1" type="file"
+                      class="form-control <%= (locals.errors && errors.image1) ? 'is-invalid' : '' %> " id="image1"
+                      hidden>
                     <img src="/images/new-product.default.png" alt="Primera imagen de la lista" class="img-thumbnail"
                       id="miniatura1" style="max-width: 100px; max-height: 120px; ">
                     <label class="btn btn-lg btn-outline-dark w-80" for="image1"
                       style="width:auto; height: auto; ">Agregar imagen</label>
-                      <span id="error-image1" class="error"></span>
-                      <div class="invalid-feedback align-items-center text-center">
-                        <%= (locals.errors && errors.image1) ? errors.image1.msg : '' %>
-                      </div>
+                    <span id="error-image1" class="error text-center"></span>
+                    <div class="invalid-feedback align-items-center text-center">
+                      <%= (locals.errors && errors.image1) ? errors.image1.msg : '' %>
+                    </div>
                   </div>
 
                   <div class="row d-flex justify-content-center align-items-center gap-4 w-50">
-                    <input name="image2" type="file" class="form-control <%= (locals.errors && errors.image2) ? 'is-invalid' : '' %> " id="image2" id="image2" hidden>
+                    <input name="image2" type="file"
+                      class="form-control <%= (locals.errors && errors.image2) ? 'is-invalid' : '' %> " id="image2"
+                      id="image2" hidden>
                     <img src="/images/new-product.default.png" alt="Segunda imagen de la lista" class="img-thumbnail"
                       id="miniatura2" style="max-width: 100px; max-height: 120px;">
                     <label class="btn btn-lg btn-outline-dark w-80" for="image2"
                       style="width:auto; height: auto; ">Agregar imagen</label>
-                      <span id="error-image2" class="error"></span>
-                      <div class="invalid-feedback align-items-center text-center">
-                        <%= (locals.errors && errors.image2) ? errors.image2.msg : '' %>
-                      </div>
+                    <span id="error-image2" class="error text-center"></span>
+                    <div class="invalid-feedback align-items-center text-center">
+                      <%= (locals.errors && errors.image2) ? errors.image2.msg : '' %>
                     </div>
-                </div>
-
-                <div class="row justify-content-center gap-4  align-items-center">
-
-                </div>
-
-                <div class="col-12 col-md-5 pb-3">
-                  <div class="form-floating">
-                    <input name="precio" type="number"
-                      class="form-control <%= (locals.errors && errors.precio) ? 'is-invalid' : '' %>" id="precio"
-                      style="padding-bottom: 0px;" value="<%= locals.old && old.precio %>">
-                    <label for="precio">Precio del producto</label>
-                    <div class="invalid-feedback">
-                      <%= (locals.errors && errors.precio) ? errors.precio.msg : '' %>
-                    </div>
-                    <span id="error-precio" class="error"></span>
                   </div>
                 </div>
+              </div>
 
+              <div class="row justify-content-center gap-4  align-items-center">
 
-                <div class="col-12 col-md-5 mb-3">
-                  <div class="form-floating">
-                    <input name="stock" type="number"
-                      class="form-control <%= (locals.errors && errors.stock) ? 'is-invalid' : '' %>" id="stock"
-                      style="padding-bottom: 0px;" value="<%= locals.old && old.stock %>">
-                    <label for="stock">Cantidad en stock</label>
-                    <div class="invalid-feedback">
-                      <%= (locals.errors && errors.stock) ? errors.stock.msg : '' %>
-                    </div>
-                    <span id="error-stock" class="error"></span>
+              </div>
+
+              <div class="col-12 col-md-5 pb-3">
+                <div class="form-floating">
+                  <input name="precio" type="number"
+                    class="form-control <%= (locals.errors && errors.precio) ? 'is-invalid' : '' %>" id="precio"
+                    style="padding-bottom: 0px;" value="<%= locals.old && old.precio %>">
+                  <label for="precio">Precio del producto</label>
+                  <div class="invalid-feedback">
+                    <%= (locals.errors && errors.precio) ? errors.precio.msg : '' %>
                   </div>
+                  <span id="error-precio" class="error"></span>
                 </div>
+              </div>
 
 
-                <div class="col-12 col-md-5 mb-3">
-                  <div class="form-floating">
-                    <select name="sabores"
-                      class="form-select <%= (locals.errors && errors.sabores) ? 'is-invalid' : '' %>" id="sabores"
-                      aria-label="Floating label select example" style="width:100%; padding-bottom: 0px;">
-                      <option value="" selected hidden>Seleccione...</option>
-                      <% flavors.forEach(element => { %>
-                        <option value="<%= element.id %>" ><%= element.name %></option>
+              <div class="col-12 col-md-5 mb-3">
+                <div class="form-floating">
+                  <input name="stock" type="number"
+                    class="form-control <%= (locals.errors && errors.stock) ? 'is-invalid' : '' %>" id="stock"
+                    style="padding-bottom: 0px;" value="<%= locals.old && old.stock %>">
+                  <label for="stock">Cantidad en stock</label>
+                  <div class="invalid-feedback">
+                    <%= (locals.errors && errors.stock) ? errors.stock.msg : '' %>
+                  </div>
+                  <span id="error-stock" class="error"></span>
+                </div>
+              </div>
+
+              <div style="width: 96%;" class="d-flex justify-content-center gap-4">
+                 <div class="col-12 col-md-5 mb-3">
+                <div class="form-floating">
+                  <select name="sabores"
+                    class="form-select <%= (locals.errors && errors.sabores) ? 'is-invalid' : '' %>" id="sabores"
+                    aria-label="Floating label select example" style="width:100%; padding-bottom: 0px;"
+                    value="<%= locals.old && old.sabores %>">
+                    <option value="" selected hidden>Elija el sabor</option>
+
+                    <% sabores.forEach(item=> { %>
+
+                      <option value="<%= item.id %>">
+                        <%= item.name %>
+                      </option>
+
                       <% }) %>
-                    
-                      <!-- Agrega más opciones si es necesario -->
-                    </select>
-                    <label for="sabores">Sabores</label>
-                    <div class="invalid-feedback">
-                      <%= (locals.errors && errors.sabores) ? errors.sabores.msg : '' %>
-                    </div>
-                    <span id="error-sabores" class="error"></span>
-                  </div>
-                </div>
-
-
-                <div class="col-12 col-md-5 mb-3">
-                  <div class="form-floating">
-                    <input name="descuento" type="number"
-                      class="form-control <%= (locals.errors && errors.descuento) ? 'is-invalid' : '' %>" id="descuento"
-                      style="padding-bottom: 0px;" value="<%= locals.old && old.descuento %> ">
-                    <label for="descuento">Descuento -%</label>
-                    <div class="invalid-feedback">
-                      <%= (locals.errors && errors.descuento) ? errors.descuento.msg : '' %>
-                    </div>
-                    <span id="error-descuento" class="error"></span>
-                  </div>
-                </div>
-
-
-                <div class="row d-flex justify-content-center align-items-center w-50">
-
-                  <div class="col-12 col-md-5 mb-3 w-50">
-                    <div class="form-floating p-1 ">
-                      <select name="measure"
-                        class="form-control m-0 <%= (locals.errors && errors.measure) ? 'is-invalid' : '' %>"
-                        id="measure" aria-label="Floating label select example"
-                        style="width:100%; padding-bottom: 0px; ">
-                        <option value="" selected hidden>Seleccione...</option>
-                        <% filings.forEach(element => { %>
-                          <option value="<%= element.id %>" ><%= element.name %></option>
-                        <% }) %>
                         <!-- Agrega más opciones si es necesario -->
-                      </select>
-                      <label for="measure">Unidad de medida</label>
-                      <div class="invalid-feedback">
-                        <%= (locals.errors && errors.measure) ? errors.measure.msg : '' %>
-                      </div>
-                      <span id="error-measure" class="error"></span>
-                    </div>
+                  </select>
+                  <label for="sabores">Sabores</label>
+                  <div class="invalid-feedback">
+                    <%= (locals.errors && errors.sabores) ? errors.sabores.msg : '' %>
                   </div>
+                  <span id="error-sabores" class="error"></span>
+                </div>
+              </div>
 
-                  <div class="col-12 col-md-5 mb-3 w-20">
-                    <div class="form-floating p-1">
-                      <input name="value" type="number"
-                        class="form-control <%= (locals.errors && errors.value) ? 'is-invalid' : '' %>" id="value"
-                        style="width: 60%" style="padding-bottom: 0px;" value="<%= locals.old && old.value %>">
-                      <label for="value"> valor</label>
-                      <div class="invalid-feedback">
-                        <%= (locals.errors && errors.value) ? errors.value.msg : '' %>
-                      </div>
-                      <span id="error-value" class="error"></span>
+
+              <div class="col-12 col-md-5 mb-3">
+                <div class="form-floating">
+                  <input name="descuento" type="number"
+                    class="form-control <%= (locals.errors && errors.descuento) ? 'is-invalid' : '' %>" id="descuento"
+                    style="padding-bottom: 0px;" value="<%= locals.old && old.descuento %> ">
+                  <label for="descuento">Descuento -%</label>
+                  <div class="invalid-feedback">
+                    <%= (locals.errors && errors.descuento) ? errors.descuento.msg : '' %>
+                  </div>
+                  <span id="error-descuento" class="error"></span>
+                </div>
+              </div>
+              </div>
+
+
+             
+
+              <div class="row d-flex justify-content-center mb-3">
+
+                <div style="width: 43.5%; margin-right: -1%; "  class="col-5 d-flex gap-4">
+                  <div class="form-floating col-6">
+                    <select name="measure" class="form-control m-0 <%= (locals.errors && errors.measure) ? 'is-invalid' : '' %>" id="measure" aria-label="Floating label select example" >
+                      <option value="" selected hidden>Elija Medida</option>
+                      <% filing.forEach(fili=> { %>
+                        <option value="<%= fili.id %>">
+                          <%= fili.measure %>
+                        </option>
+                      <% }) %>
+                    </select>
+                    <label for="measure">Medida</label>
+                    <div class="invalid-feedback">
+                      <%= (locals.errors && errors.measure) ? errors.measure.msg : '' %>
                     </div>
+                    <span id="error-measure" class="error"></span>
+                  </div>
+              
+                  <div class="form-floating col-5">
+                    <input name="value" type="number" class="form-control <%= (locals.errors && errors.value) ? 'is-invalid' : '' %>" id="value" value="<%= locals.old && old.value %>">
+                    <label for="value">Valor</label>
+                    <div class="invalid-feedback">
+                      <%= (locals.errors && errors.value) ? errors.value.msg : '' %>
+                    </div>
+                    <span id="error-value" class="error"></span>
                   </div>
                 </div>
-
-                <div class="row d-flex justify-content-start col-12 col-md-5 mb-3 w-20">
-                  <div class="form-floating p-1">
-                    <input name="brand" type="text"
-                      class="form-control <%= (locals.errors && errors.brand) ? 'is-invalid' : '' %>" id="brand"
-                      style="width: 85%; height: auto; padding-bottom: 0px;" value="<%= locals.old && old.brand %>">
+              
+                <div style="width: 43%;"  class="col-6">
+                  <div class="form-floating">
+                    <input name="brand" type="text" class="form-control <%= (locals.errors && errors.brand) ? 'is-invalid' : '' %>" id="brand"  value="<%= locals.old && old.brand %>">
                     <label for="brand">Marca</label>
                     <div class="invalid-feedback">
                       <%= (locals.errors && errors.brand) ? errors.brand.msg : '' %>
@@ -209,36 +214,37 @@
                     <span id="error-brand" class="error"></span>
                   </div>
                 </div>
+              </div>  
 
-                <div class="col-10 mb-3">
-                  <div class="form-floating p-1">
-                    <textarea name="descripcion"
-                      class="form-control <%= (locals.errors && errors.descripcion) ? 'is-invalid' : '' %>"
-                      id="descripcion" style="height: 100px; " value="<%= locals.old && old.descripcion %>"></textarea>
-                    <label for="descripcion">Descripción...</label>
-                    <div class="invalid-feedback">
-                      <%= (locals.errors && errors.descripcion) ? errors.descripcion.msg : '' %>
-                    </div>
-                    <span id="error-descripcion" class="error"></span>
+
+              <div class="d-flex justify-content-center form-floating mb-3">
+                <div class="col-10  p-1">
+                  <textarea placeholder="Descripción" name="descripcion"
+                    class="form-control <%= (locals.errors && errors.descripcion) ? 'is-invalid' : '' %>"
+                    id="descripcion" style="height: 100px; " value="<%= locals.old && old.descripcion %>"></textarea>
+                  <div class="invalid-feedback">
+                    <%= (locals.errors && errors.descripcion) ? errors.descripcion.msg : '' %>
                   </div>
+                  <span id="error-descripcion" class="error"></span>
                 </div>
               </div>
-
-              <div class="col-7 d-flex justify-content-center" style=" transition: all 0.01s;">
+              <div class="col-7 d-flex justify-content-center mp-3" style=" transition: all 0.01s;">
                 <button class="btn btn-lg btn-dark">Agregar Producto</button>
-
-                <!-- efecto del boton -->
-                <style>
-                  .btn:hover {
-                    transform: scale(1.01);
-                  }
-                </style>
-
               </div>
-            </form>
+
+
+              <!-- efecto del boton -->
+              <style>
+                .btn:hover {
+                  transform: scale(1.01);
+                }
+              </style>
 
           </div>
+          </form>
+
         </div>
+      </div>
       </div>
     </section>
   </main>

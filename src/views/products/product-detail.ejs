@@ -165,7 +165,7 @@ const precioConDescuento = precio - (descuento * precio) / 100;
       <section class="productos__destacados">
 
  <% productos.forEach(product => { %>
- <%- include('../partials/productCardDetail.ejs',{ product }) %>
+ <%- include('../partials/productCard.ejs',{ product }) %>
 <% }) %>
   </section>
   <%- include('../partials/footer') %>

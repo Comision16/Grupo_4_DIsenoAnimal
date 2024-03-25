@@ -286,7 +286,7 @@ const updateProduct = async (req, res) => {
 
             if (imageToUpdate) {
                 
-                fs.unlinkSync(path.join(__dirname, '/ruta/a/tus/imagenes/', imageToUpdate.file));
+                fs.unlinkSync(path.join(__dirname, '../../public/images/', imageToUpdate.file));
 
                
                 await imageToUpdate.update({
@@ -305,7 +305,7 @@ const updateProduct = async (req, res) => {
 
             if (imageToUpdate) {
                 
-                fs.unlinkSync(path.join(__dirname, '/ruta/a/tus/imagenes/', imageToUpdate.file));
+                fs.unlinkSync(path.join(__dirname, '../../public/images/', imageToUpdate.file));
 
               
                 await imageToUpdate.update({

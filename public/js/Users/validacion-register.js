@@ -2,8 +2,6 @@ const $ = (id) => document.getElementById(id);
 const required = [0, 2, 3, 5];
 const exRegEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
-console.log($("form-register").elements);
-
 $("form-register").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -18,7 +16,13 @@ $("form-register").addEventListener("submit", function (e) {
             this.elements[i].classList.remove("is-invalid");
         }
     }
-    !error ? this.submit() : alert("te faltan datos")
+
+    if (!$("remember").checked) {
+        error = true;
+        $("error-remember").innerHTML = "Debe aceptar los terminos y codiciones";
+    } 
+
+    !error && this.submit()
 });
 
 $("name").addEventListener("focus", function () {
@@ -115,3 +119,4 @@ $("password2").addEventListener("blur", function () {
         $("alert5").innerHTML = "";
     }
 });
+

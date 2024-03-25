@@ -1,7 +1,5 @@
 const $ = (id) => document.getElementById(id);
 
-console.log($("login-form").elements);
-
 $("login-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -16,7 +14,7 @@ $("login-form").addEventListener("submit", function (e) {
             this.elements[i].classList.remove("is-invalid");
         }
     }
-    !error ? this.submit() : alert("te faltan datos")
+    !error && this.submit() 
 });
 
 $("email").addEventListener("focus", function () {

@@ -57,10 +57,6 @@
     text-align: left;
 }
 
-#especie {
-    text-align: center;
-}
-
 .register_main input::placeholder {
     color: var(--ColorAzul);
     text-align: center;
@@ -94,7 +90,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 250px;
+    width: 300px;
     color:yellow;
     height: 22px;
     background-color:rgba(0, 0, 0, 0.5);
@@ -158,10 +154,10 @@
 }
 .alert-condiciones-small{
     width: 250px;
-  color: red;
+  color: yellow;
     text-align: center;
     justify-content: center;
-    background-color: rgb(255 255 255 / 50%);
+    background-color: rgb(0 0 0 / 50%);
     border-radius: 3px;
 }
 

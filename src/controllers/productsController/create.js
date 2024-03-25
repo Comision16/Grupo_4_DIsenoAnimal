@@ -1,24 +1,22 @@
-const db = require('../../database/models')
+const db = require("../../database/models")
 
-    module.exports = (req, res) =>  {
-        const flavors = db.Flavor.findAll({
-            order : ['name']
-        });
-        const species = db.Specie.findAll({
-            order : ['id']
-        });
-        const filings = db.Filing.findAll({
-            order : ['id']
-        });
+module.exports = (req, res) => {
+    const especies = db.Specie.findAll()
 
+    const mascotas = db.Pet.findOne()
 
-        Promise.all([flavors, species, filings])
-            .then(([flavors, species, filings]) => {
-                return res.render('products/product-create',{
-                    flavors,
-                    species,
-                    filings
-                })
+    const sabores = db.Flavor.findAll()
+
+    const filing = db.Filing.findAll()
+
+    Promise.all([especies, mascotas, sabores, filing])
+        .then(([especies, mascotas, sabores, filing]) => {
+            return res.render('products/product-create', {
+                especies,
+                mascotas,
+                sabores,
+                filing
             })
-            .catch(error => console.log(error))
-        }
+        })
+
+}

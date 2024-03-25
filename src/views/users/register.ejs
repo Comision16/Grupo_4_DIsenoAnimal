@@ -22,7 +22,7 @@
                     <%=locals.errors && errors.name ? 'invalid' : null %> placeholder="Nombre y Apellido" 
                   value="<%= locals.old && old.name ? old.name : null %>">
                     <div class="box-alert">
-                      <small id="alert0" class="alert" >
+                      <small id="alert0" class="alert" style="display: none;" >
                         <%= locals.errors && errors.name ? errors.name.msg : null %>
                       </small>
                     </div>
@@ -33,7 +33,7 @@
                       ? 'invalid' : null %> placeholder="Nombre Mascota"
                     value="<%= locals.old && old.mascota ? old.mascota : null %>">
                       <div class="box-alert">
-                        <small class="alert" class="alert">
+                        <small class="alert" class="alert"  style="display: none;">
                           <%= locals.errors && errors.mascota ? errors.mascota.msg : null %>
                         </small>
                       </div>

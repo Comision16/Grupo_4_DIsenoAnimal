@@ -136,7 +136,14 @@
                 <li><a href="/productos/todos">Todos los Productos</a></li>
 
                 <% if (locals.userLogin) { %>
-                <li><a href="/usuarios/reserva">Resevar Turno</a></li>
+                <!-- <li><a href="/usuarios/reserva">Resevar Turno</a></li> -->
+                <li>
+                    <!-- Calendly link widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/alejandroelias25/reserva'});return false;">Reservas</a>
+<!-- Calendly link widget end -->
+                </li>
                  
                 <% } %>
                 <% if (locals.userLogin) { %>                 

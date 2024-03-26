@@ -2,6 +2,18 @@ const $ = (id) => document.getElementById(id);
 const required = [0, 2, 3, 5];
 const exRegEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
+const showError = (element, message) => {
+    if(message){
+        element.classList.add("is-invalid");
+        element.style.display = "block";
+        element.innerHTML = message;
+    }else {
+        element.classList.remove("is-invalid");
+        element.style.display = "none";
+        element.innerHTML = "";
+    }
+}
+
 $("form-register").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -26,48 +38,45 @@ $("form-register").addEventListener("submit", function (e) {
 });
 
 $("name").addEventListener("focus", function () {
-    this.classList.remove("is-invalid");
-    $("alert0").innerHTML = "";
+    showError($("alert0"))
 });
 
 $("email").addEventListener("focus", function () {
-    this.classList.remove("is-invalid");
-    $("alert3").innerHTML = "";
+    showError($("alert3"))
+
 });
 
 $("password").addEventListener("focus", function () {
-    this.classList.remove("is-invalid");
-    $("alert2").innerHTML = "";
+    showError($("alert2"))
+
 });
 
 $("password2").addEventListener("focus", function () {
-    this.classList.remove("is-invalid");
-    $("alert5").innerHTML = "";
+    showError($("alert5"))
+
 });
 
 $("name").addEventListener("blur", function () {
     if (!this.value) {
-        this.classList.add("is-invalid");
-        $("alert0").innerHTML = "El nombre es obligatorio";
+         showError($("alert0"),"El nombre es obligatorio!!")
     } else if (this.value.length < 2) {
-        this.classList.add("is-invalid");
-        $("alert0").innerHTML = "Mínimo 2 caracteres";
+        showError($("alert0"),"Mínimo 2 caracteres")
     } else {
-        this.classList.remove("is-invalid");
-        $("alert0").innerHTML = "";
+        showError($("alert0"))
     }
 });
 
 $("email").addEventListener("blur", function () {
     if (!this.value) {
         this.classList.add("is-invalid");
-        $("alert3").innerHTML = "El email es obligatorio";
+        showError($("alert3"),"El email es obligatorio")
     } else if (!exRegEmail.test(this.value)) {
         this.classList.add("is-invalid");
-        $("alert3").innerHTML = "Formato de email inválido";
+        showError($("alert3"),"Formato de email inválido")
     } else {
         this.classList.remove("is-invalid");
-        $("alert3").innerHTML = "";
+        showError($("alert3"))
+
     }
 });
 

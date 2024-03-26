@@ -30,7 +30,8 @@
   "nodemonConfig": {
     "ignore": [
       "data/users.json",
-      "data/productos.json"
+      "data/productos.json",
+      "public/Users/*.js"
     ]
   }
 }

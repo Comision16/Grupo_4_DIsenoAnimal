@@ -1,6 +1,6 @@
 const $ = (id) => document.getElementById(id);
 
-console.log($("reserva-form").elements);
+const fechaActual = moment();
 
 $("reserva-form").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -85,6 +85,9 @@ $("fecha").addEventListener("blur", function () {
     if (!this.value) {
         this.classList.add("is-invalid");
         $("alert5").innerHTML = "Elija fecha";
+    }else if (moment(this.value).isBefore(fechaActual)){
+        this.classList.add("is-invalid");
+        $("alert5").innerHTML = "No puede elgir una fecha anterior a la actual";
     } else {
         this.classList.remove("is-invalid");
         $("alert5").innerHTML = "";

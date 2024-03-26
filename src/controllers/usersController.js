@@ -70,13 +70,12 @@ module.exports = {
                 email,
                 password: bcryptjs.hashSync(password.trim(), 10),
                 roleId: 2,
-                mascota: ""
             })
                 .then((user) => {
 
                     db.Pet.create({
-                        name : "",
-                        specieId : 6,
+                        name : mascota,
+                        specieId : especie,
                         userId : user.id
                     })
 

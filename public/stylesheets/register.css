@@ -176,9 +176,11 @@
 
  .password-toggle-register {
     position: absolute;
+    height: 40px;
     left: 261px;
     top: 12px;
     padding: 8.9px;
+    border-radius: 0 6px 6px 0;
  }
 
  @media (min-width: 768px) {

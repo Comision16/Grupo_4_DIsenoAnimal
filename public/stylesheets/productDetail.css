@@ -472,9 +472,8 @@ color: grey}
   }
 
   .image-gallery img {
-    max-height: 400px;
+    max-height: 300px;
     height: auto;
-    max-width: 300px;
     width: auto;
     margin: 30px 91px 20px;
   }

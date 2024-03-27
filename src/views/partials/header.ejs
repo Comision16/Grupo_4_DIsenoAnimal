@@ -47,8 +47,10 @@
                     <a href="/productos/filtrados/gato" class="menu-item"> <i class="fa-solid fa-cat"></i> </a>
                     <a href="/productos/filtrados/pez" class="menu-item"> <i class="fa-solid fa-otter"></i> </a>
                     <a href="/productos/filtrados/otro" class="menu-item"> <i class="fa-solid fa-square-plus"> </i> </a>
-                    <a href="/productos/filtrados/roedor" class="menu-item"> <i class="fa-solid fa-percent"></i> </i>
-                    </a>
+                    <a href="/productos/filtrados/roedor" class="menu-item"> <i class="fa-solid fa-percent"></i> </a>
+                    <% if (locals.userLogin) { %>
+                    <a href="" class="menu-item"> <i class="fa-solid fa-calendar-days" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/alejandroelias25/reserva'});return false;"></i> </a>    
+                    <% } %>            
 
 
                 </nav>

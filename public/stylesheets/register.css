@@ -170,6 +170,17 @@
     border-color: red !important;
  }
 
+ .register-pass {
+    position: relative;
+ }
+
+ .password-toggle-register {
+    position: absolute;
+    left: 261px;
+    top: 12px;
+    padding: 8.9px;
+ }
+
  @media (min-width: 768px) {
     .register-linea {
         display: flex;

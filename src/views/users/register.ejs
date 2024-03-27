@@ -50,9 +50,13 @@
 
                   <div>
                     <label for="password"></label>
-                    <input type="password" id="password" name="password"
-                      value="<%= locals.errors && errors.password ? 'invalid' : null %>" placeholder="Contraseña"
-                      maxlength="30">
+                    <div class="register-pass">
+                        <input type="password" id="password" name="password"
+                        value="<%= locals.errors && errors.password ? 'invalid' : null %>" placeholder="Contraseña"
+                        maxlength="30">
+                        <span id="togglePassword" class="password-toggle password-toggle-register">&#128065;</span>
+                    </div>
+                    
                     <div class="box-alert">
                       <small id="alert2" class="alert">
                         <%= locals.errors && errors.password ? errors.password.msg : null %>
@@ -140,6 +144,19 @@
       <%- include('../partials/footer.ejs') %>
 
         <script src="/js/Users/validacion-register.js"></script>
+
+        <script>
+          const passwordInput = document.getElementById('password');
+          const togglePasswordButton = document.getElementById('togglePassword');
+  
+          togglePasswordButton.addEventListener('click', function () {
+              if (passwordInput.type === 'password') {
+                  passwordInput.type = 'text';
+              } else {
+                  passwordInput.type = 'password';
+              }
+          });
+      </script>
 
   </body>
 

@@ -4,7 +4,7 @@
     text-align: center;
     text-decoration: underline;
     text-decoration-color: var(--ColorAmarillo);
-    padding-top: 5%;
+    padding-top: 30px;
     margin-left: 25px;
     -webkit-text-stroke: rgb(205, 220, 236) 0.5px;
 }
@@ -20,6 +20,7 @@
     background-image: url(/images/background-login.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    margin-bottom: 30px;
 }
 
 .register_form {

@@ -11,7 +11,7 @@
 
 .register-linea {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
 }
 
@@ -168,5 +168,13 @@
  }
   .is-invalid { 
     border-color: red !important;
+ }
+
+ @media (min-width: 768px) {
+    .register-linea {
+        display: flex;
+        flex-direction: row;
+    
+    }
  }
 

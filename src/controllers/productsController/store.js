@@ -1,10 +1,8 @@
 const db = require("../../database/models");
 const { validationResult } = require('express-validator');
 
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
     const errors = validationResult(req).mapped();
-
-    console.log(req.body);
 
     if (Object.keys(errors).length > 0) {
         const especiesPromise = db.Specie.findAll();
@@ -34,7 +32,7 @@ module.exports = (req, res) => {
         
         let producto; 
     
-        db.Brand.create({ name: brand })
+        await db.Brand.create({ name: brand })
             .then(brand => {
                 return db.Product.create({
                     name: nombre.trim(),
@@ -88,8 +86,8 @@ module.exports = (req, res) => {
             .then(() => {
                 return res.redirect('/admin/dashboard');
             })
-            .catch(err => {
-                console.error('Error creating product:', err);
+            .catch(error => {
+                console.error(console.log(error));
             });
     }
     

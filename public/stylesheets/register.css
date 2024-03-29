@@ -28,7 +28,7 @@
     flex-direction: column;
     justify-content: center;
     margin: 30px auto 0;
-    /* color: var(--ColorAzul); */
+    color: var(--ColorAzul);
     padding-bottom: 1%;
 }
 
@@ -101,14 +101,15 @@
     width: 300px;
     color:yellow;
     height: 22px;
-    background-color:rgba(0, 0, 0, 0.5);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     border-radius: 3px;
     padding: 5px;
+    text-align: center;
 }
 
 .lista-error-mail {
     color: yellow;
-    background-color: rgba(0, 0, 0, 0.5);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     border-radius: 30px;
     padding: 15px;
     font-size: 14px;
@@ -158,16 +159,14 @@
   color: yellow;
     text-align: center;
     justify-content: center;
-    background-color: rgb(0 0 0 / 50%);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     border-radius: 3px;
+    margin-bottom: 10px;
 }
 
 
-  .invalid {
-    border-color: red;
- }
-  .is-invalid { 
-    border-color: red !important;
+  .is-invalid {
+    border-color: yellow !important;
  }
 
  .register-pass {

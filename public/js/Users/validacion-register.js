@@ -1,13 +1,14 @@
+
 const $ = (id) => document.getElementById(id);
 const required = [0, 2, 3, 5];
 const exRegEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
 const showError = (element, message) => {
-    if(message){
+    if (message) {
         element.classList.add("is-invalid");
         element.style.display = "block";
         element.innerHTML = message;
-    }else {
+    } else {
         element.classList.remove("is-invalid");
         element.style.display = "none";
         element.innerHTML = "";
@@ -17,7 +18,7 @@ const showError = (element, message) => {
 $("form-register").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    let error = false
+    let error = false;
 
     for (let i = 0; i < this.elements.length - 2; i++) {
         if (!this.elements[i].value && required.includes(i)) {
@@ -31,11 +32,23 @@ $("form-register").addEventListener("submit", function (e) {
 
     if (!$("remember").checked) {
         error = true;
-        $("error-remember").innerHTML = "Debe aceptar los terminos y codiciones";
-    } 
+        $("error-remember").innerHTML = "Debe aceptar los términos y condiciones";
+    }
 
-    !error && this.submit()
+    
+    const especieSelect = $("especie");
+    if (especieSelect.selectedIndex === 0) {
+        especieSelect.classList.remove("is-invalid");
+        showError($("alert-especie"), null);
+    }
+
+    if (!error) {
+        this.submit();
+    }
 });
+
+
+
 
 $("name").addEventListener("focus", function () {
     showError($("alert0"))
@@ -58,11 +71,14 @@ $("password2").addEventListener("focus", function () {
 
 $("name").addEventListener("blur", function () {
     if (!this.value) {
-         showError($("alert0"),"El nombre es obligatorio!!")
+        showError($("alert0"), "El nombre es obligatorio!!");
+        this.classList.add("is-invalid");
     } else if (this.value.length < 2) {
-        showError($("alert0"),"Mínimo 2 caracteres")
+        showError($("alert0"), "Mínimo 2 caracteres");
+        this.classList.add("is-invalid");
     } else {
-        showError($("alert0"))
+        showError($("alert0"), null);
+        this.classList.remove("is-invalid");
     }
 });
 
@@ -81,51 +97,46 @@ $("email").addEventListener("blur", function () {
 });
 
 $("password").addEventListener("blur", function () {
-    if (!this.value) {
-        this.classList.add("is-invalid");
-        $("alert2").innerHTML = "La contraseña es obligatoria";
-    } else if (! /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i(this.value)) {
-        this.classList.add("is-invalid");
-        $("alert2").innerHTML = "Formato de email inválido";
-    } else {
-        this.classList.remove("is-invalid");
-        $("alert2").innerHTML = "";
-    }
-});
-
-$("password").addEventListener("keyup", function () {
     let errorMessage = [];
 
-    if (this.value.length < 8) {
+    if (!this.value) {
+        errorMessage.push("La contraseña es obligatoria");
+        this.classList.add("is-invalid");
+    } else if (this.value.length < 8) {
         errorMessage.push("La contraseña debe tener al menos 8 caracteres.");
-    }
-    if (!/(?=.*[a-z])/.test(this.value)) {
+        this.classList.add("is-invalid");
+    } else if (!/(?=.*[a-z])/.test(this.value)) {
         errorMessage.push("La contraseña debe contener al menos una letra minúscula.");
-    }
-    if (!/(?=.*[A-Z])/.test(this.value)) {
+        this.classList.add("is-invalid");
+    } else if (!/(?=.*[A-Z])/.test(this.value)) {
         errorMessage.push("La contraseña debe contener al menos una letra mayúscula.");
-    }
-    if (!/(?=.*\d)/.test(this.value)) {
+        this.classList.add("is-invalid");
+    } else if (!/(?=.*\d)/.test(this.value)) {
         errorMessage.push("La contraseña debe contener al menos un número.");
-    }
-    if (!/(?=.*[@$!%*?&])/.test(this.value)) {
+        this.classList.add("is-invalid");
+    } else if (!/(?=.*[@$!%*?&])/.test(this.value)) {
         errorMessage.push("La contraseña debe contener al menos un carácter especial entre @$!%*?&.");
+        this.classList.add("is-invalid");
     }
 
-    let errorHTML = errorMessage.map(message => `<li>${message}</li>`).join('');
-    $("lista-error-mail").innerHTML = errorHTML;
+    if (errorMessage.length > 0) {
+        showError($("alert2"), errorMessage.join("<br>"));
+    } else {
+        showError($("alert2"), null);
+        this.classList.remove("is-invalid");
+    }
 });
 
 $("password2").addEventListener("blur", function () {
     if (!this.value) {
+        showError($("alert5"), "La contraseña es obligatoria");
         this.classList.add("is-invalid");
-        $("alert5").innerHTML = "La contraseña es obligatoria";
     } else if (this.value !== $("password").value) {
+        showError($("alert5"), "Las contraseñas no coinciden");
         this.classList.add("is-invalid");
-        $("alert5").innerHTML = "Las contraseñas no coinciden";
     } else {
+        showError($("alert5"), null);
         this.classList.remove("is-invalid");
-        $("alert5").innerHTML = "";
     }
 });
 

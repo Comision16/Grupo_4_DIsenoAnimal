@@ -63,6 +63,13 @@ label {
     justify-content: center;
 }
 
+.password-container input {
+    border-radius: 8px 0 0 8px;
+    flex-grow: 1;
+    width: 200px;
+    border: 2px solid var(--ColorAzul);
+    
+}
 
 .password-toggle {
     position: absolute;
@@ -95,9 +102,10 @@ label {
     margin-top: 10px;
 }
 
-.invalid {
-    border-color: red;
+.is-invalid {
+    border-color: yellow;
 }
+
 .login_form2{
     display: flex;
     flex-wrap: wrap;

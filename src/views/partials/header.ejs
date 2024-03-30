@@ -3,83 +3,80 @@
 
 <%- include('./head') %>
 
-    <body class="body">
-        <header class="header">
+<body class="body">
+  <header class="header">
 
-            <div class="header__img">
-                <a href="/"><img src="/images/logo-header.png" alt="imagen de la marca"></a>
-            </div>
+    <div class="header__img">
+      <a href="/"><img src="/images/logo-header.png" alt="imagen de la marca"></a>
+    </div>
 
-            <div class="header__div__register--login">
-                <% if (locals.userLogin) { %>
-                    <div class="header_imagen_y_nombre">
-                        <div class="header_imagen_content">
-                            <img class="perfil_imagen" src="/images/<%= usuario.image != " defalut.jpeg" ? usuario.image
+    <div class="header__div__register--login">
+      <% if (locals.userLogin) { %>
+      <div class="header_imagen_y_nombre">
+        <div class="header_imagen_content">
+          <img class="perfil_imagen" src="/images/<%= usuario.image != " defalut.jpeg" ? usuario.image
                                 : "user_default.jpeg" %>" alt="">
-                        </div>
-                    </div>
+        </div>
+      </div>
 
-                    <% } else { %>
-                        <i class="fa-solid fa-user-plus"></i>
-                        <% } %>
-
-
-                            <% if (locals.userLogin) { %>
-                                <a class="header__div__login" href="/usuarios/perfil">Perfil</a>
-                                <a class="header__div__login" href="/usuarios/salir">Cerrar sesión</a>
-                                <% } else { %>
-                                    <a class="header__div__register" href="/usuarios/registro">Regístrate</a>
-                                    <a class="header__div__login" href="/usuarios/ingreso">Iniciar Sesion</a>
-                                    <% } %>
-            </div>
-
-            <div class="header__div__menu-hambuerguesa">
-                <!-- <i class="fas fa-bars"></i> -->
-                <nav class="menu">
-                    <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
-                    <label class="menu-open-button" for="menu-open">
-                        <span class="hamburger hamburger-1"></span>
-                        <span class="hamburger hamburger-2"></span>
-                        <span class="hamburger hamburger-3"></span>
-                    </label>
-
-                    <a href="/productos/filtrados/perro" class="menu-item"> <i class="fa-solid fa-dog"></i> </a>
-                    <a href="/productos/filtrados/gato" class="menu-item"> <i class="fa-solid fa-cat"></i> </a>
-                    <a href="/productos/filtrados/pez" class="menu-item"> <i class="fa-solid fa-otter"></i> </a>
-                    <a href="/productos/filtrados/otro" class="menu-item"> <i class="fa-solid fa-square-plus"> </i> </a>
-                    <a href="/productos/filtrados/roedor" class="menu-item"> <i class="fa-solid fa-percent"></i> </a>
-                    <% if (locals.userLogin) { %>
-                    <a href="" class="menu-item"> <i class="fa-solid fa-calendar-days" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/alejandroelias25/reserva'});return false;"></i> </a>    
-                    <% } %>            
+      <% } else { %>
+      <i class="fa-solid fa-user-plus"></i>
+      <% } %>
 
 
-                </nav>
+      <% if (locals.userLogin) { %>
+      <a class="header__div__login" href="/usuarios/perfil">Perfil</a>
+      <a class="header__div__login" href="/usuarios/salir">Cerrar sesión</a>
+      <% } else { %>
+      <a class="header__div__register" href="/usuarios/registro">Regístrate</a>
+      <a class="header__div__login" href="/usuarios/ingreso">Iniciar Sesion</a>
+      <% } %>
+    </div>
+
+    <div class="header__div__menu-hambuerguesa">
+      <!-- <i class="fas fa-bars"></i> -->
+      <nav class="menu">
+        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+        <label class="menu-open-button" for="menu-open">
+          <span class="hamburger hamburger-1"></span>
+          <span class="hamburger hamburger-2"></span>
+          <span class="hamburger hamburger-3"></span>
+        </label>
+
+        <a href="/productos/filtrados/perro" class="menu-item"> <i class="fa-solid fa-dog"></i> </a>
+        <a href="/productos/filtrados/gato" class="menu-item"> <i class="fa-solid fa-cat"></i> </a>
+        <a href="/productos/filtrados/pez" class="menu-item"> <i class="fa-solid fa-otter"></i> </a>
+        <a href="/productos/filtrados/otro" class="menu-item"> <i class="fa-solid fa-square-plus"> </i> </a>
+        <a href="/productos/filtrados/roedor" class="menu-item"> <i class="fa-solid fa-percent"></i> </a>
+        <% if (locals.userLogin) { %>
+        <a href="" class="menu-item"> <i class="fa-solid fa-calendar-days" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/alejandroelias25/reserva'});return false;"></i> </a>
+        <% } %>
 
 
-                <!-- filters -->
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-                    <defs>
-                        <filter id="shadowed-goo">
+      </nav>
 
-                            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
-                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-                                result="goo" />
-                            <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
-                            <feColorMatrix in="shadow" mode="matrix"
-                                values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
-                            <feOffset in="shadow" dx="1" dy="1" result="shadow" />
-                            <feComposite in2="shadow" in="goo" result="goo" />
-                            <feComposite in2="goo" in="SourceGraphic" result="mix" />
-                        </filter>
-                        <filter id="goo">
-                            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
-                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-                                result="goo" />
-                            <feComposite in2="goo" in="SourceGraphic" result="mix" />
-                        </filter>
-                    </defs>
-                </svg>
-    </body>
+
+      <!-- filters -->
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="shadowed-goo">
+
+            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+            <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+            <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+            <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+            <feComposite in2="shadow" in="goo" result="goo" />
+            <feComposite in2="goo" in="SourceGraphic" result="mix" />
+          </filter>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+            <feComposite in2="goo" in="SourceGraphic" result="mix" />
+          </filter>
+        </defs>
+      </svg>
+</body>
 
 </html>
 </div>
@@ -87,89 +84,94 @@
 </div>
 
 <form action="/productos/search" method="GET" class="header__form__barra-de-busqueda">
-    <input type="text" placeholder="Busca tus productos favoritos" name="keywords">
-    <button class="header__form__button"><i class="fa-solid fa-magnifying-glass"></i></button>
+  <input type="text" placeholder="Busca tus productos favoritos" name="keywords">
+  <button class="header__form__button"><i class="fa-solid fa-magnifying-glass"></i></button>
 </form>
 
 <div class="header__div__carrito-de-compras">
-    <div class="header__div__carrito-de-compras-icono">
-        <a href="/carrito"><i class="fa-solid fa-cart-plus"></i></a>
-        <div class="header__div__carrito-de-compras-numero">
-            <p>4</p>
-        </div>
+  <div class="header__div__carrito-de-compras-icono">
+    <a href="/carrito"><i class="fa-solid fa-cart-plus"></i></a>
+    <div class="header__div__carrito-de-compras-numero">
+      <p>4</p>
     </div>
-    <div class="header__div__carrito-de-compras-texto">
-        <a href="/carrito">
-            <p>Tu compra</p>
-        </a>
-        <!-- numero que va sobre el carrito -->
-    </div>
+  </div>
+  <div class="header__div__carrito-de-compras-texto">
+    <a href="/carrito">
+      <p>Tu compra</p>
+    </a>
+    <!-- numero que va sobre el carrito -->
+  </div>
 
 </div>
 
 <div class="nav">
-    <ul class="header__div__lista">
-        <li>
-            <a href="/productos/filtrados/perro">Perros</a>
-            <!-- <ul>
+  <ul class="header__div__lista">
+    <li>
+      <a href="/productos/filtrados/perro">Perros</a>
+      <!-- <ul>
                         <li><a href="">Alimento</a></li>
                         <li><a href="">Accesorios</a></li>
                         <li><a href="">Cuidado</a></li>
                         <li><a href="">Corte de pelo y baño</a></li>
 
                     </ul> -->
-        </li>
+    </li>
 
-        <li>
-            <a href="/productos/filtrados/gato">Gatos</a>
-            <!-- <ul>
+    <li>
+      <a href="/productos/filtrados/gato">Gatos</a>
+      <!-- <ul>
                         <li><a href="">Alimento</a></li>
                         <li><a href="">Accesorios</a></li>
                         <li><a href="">Cuidado</a></li>
                         <li><a href="">Baño</a></li>
                     </ul> -->
-        </li>
+    </li>
 
-        <li>
-            <a href="/productos/filtrados/pez">Animales pequeños</a>
-            <!-- <ul>
+    <li>
+      <a href="/productos/filtrados/pez">Animales pequeños</a>
+      <!-- <ul>
                         <li><a href="">Aves</a></li>
                         <li><a href="">Peces</a></li>
                         <li><a href="">Roedores</a></li>
                     </ul> -->
 
-        </li>
+    </li>
 
-        <li><a href="/productos/filtrados/otro">Lo + vendido</a></li>
+    <li><a href="/productos/filtrados/otro">Lo + vendido</a></li>
 
-        <li><a href="/productos/filtrados/roedor">Ofertas</a></li>
-        <li><a href="/productos/todos">Todos los Productos</a></li>
+    <li><a href="/productos/filtrados/roedor">Ofertas</a></li>
+    <li><a href="/productos/todos">Todos los Productos</a></li>
 
-        <% if (locals.userLogin) { %>
-            <!-- <li><a href="/usuarios/reserva">Resevar Turno</a></li> -->
-            <li>
-                <!-- Calendly link widget begin -->
-                <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-                <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"
-                    async></script>
-                <a href=""
-                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/alejandroelias25/reserva'});return false;">Reservas</a>
-                <!-- Calendly link widget end -->
-            </li>
+    <% if (locals.userLogin) { %>
+    <!-- <li><a href="/usuarios/reserva">Resevar Turno</a></li> -->
+    <li>
+      <a href="#" id="openModalLink">Abrir Modal</a>
+    </li>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <!-- Calendly inline widget begin -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/alejandroelias25/reserva" style="min-width: 200px;height: 320px; width: 100%;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Calendly inline widget end -->
+      </div>
+    </div>
 
-            <% } %>
-                <% if (locals.userLogin) { %>
-                    <% if (userLogin.role==1 ) { %>
+    <% } %>
+    <% if (locals.userLogin) { %>
+    <% if (userLogin.role==1 ) { %>
 
-                        <li><a href="/admin/dashboard">Dashboard</a></li>
-                        <% } %>
-                            <% } %>
+    <li><a href="/admin/dashboard">Dashboard</a></li>
+    <% } %>
+    <% } %>
 
-    </ul>
+  </ul>
 
 </div>
 
 </header>
+
+<script src="/js/calendly.js"></script>
 </body>
 
 </html>

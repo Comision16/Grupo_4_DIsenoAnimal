@@ -24,14 +24,11 @@
           </a>
         </div>
 
-        <% productos.forEach(productos => { %>
-        <%- include('./partials/productCardCarrito.ejs',{
-              productos
-            }) %>
 
-        <% }) %>
+        <div id="cart-box" style="width: 90%;">
 
-
+        </div>
+      
         <!-- Swiper -->
         <div class="swiper mySwiper similares">
           <div class="swiper_titulo">
@@ -202,7 +199,7 @@
       </div>
       <div class="subtotal">
         <p class="subtotal__izquierda">Subtotal</p>
-        <p class="subtotal__derecha">$26.400</p>
+        <p class="subtotal__derecha" id="cart-subtotal">--</p>
       </div>
       <div class="cod__de__descuento">
         <label for="numero">Cod. de descuento</label>
@@ -214,7 +211,7 @@
       </div>
       <div class="formas__de__pago__total--pagar">
         <p class="formas__de__pago__total">Total</p>
-        <p class="formas__de__pago__pagar">Pagar $28.700</p>
+        <button style="cursor: pointer;" class="formas__de__pago__pagar" id="cart-total">Pagar</button>
       </div>
 
     </section>

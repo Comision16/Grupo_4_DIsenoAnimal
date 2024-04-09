@@ -11,7 +11,7 @@
 
     <div class="index__body__main__section--producto--columna3">
       <p class="index__body__main__section--producto--precio"> $ <%= Intl.NumberFormat('de-DE').format(product.price)%> </p>
-      <a href="/carrito" class="index__body__main__section--producto--agregar">
+      <a href="#" class="index__body__main__section--producto--agregar" onclick="addToCart('<%=product.id%>', '<%=product.name%>','<%=product.description%>', '<%=product.price%>', '<%=product.Image_products[0].file%>')">
         <p>Agregar al Carrito</p>
         <i class="fa-solid fa-cart-plus"></i>
       </a>

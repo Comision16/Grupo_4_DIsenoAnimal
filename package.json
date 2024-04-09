@@ -31,7 +31,8 @@
     "ignore": [
       "data/users.json",
       "data/productos.json",
-      "public/Users/*.js"
+      "public/Users/*.js",
+      "public/js/*.js"
     ]
   }
 }

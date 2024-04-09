@@ -79,6 +79,7 @@
     height: 80px;
     gap: 5px;
     padding: 3px 2px;
+    margin-bottom: 10px;
 }
 
 .producto__agregado img {
@@ -504,7 +505,7 @@
     .producto__agregado {
         width: 100%;
         height: 57px;
-        margin: 0px 5px;
+        margin: 0px 5px 10px;
     }
 
     .Productos-en-el-carrito__div__titulo__descripcion__precio {

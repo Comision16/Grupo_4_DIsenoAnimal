@@ -77,7 +77,7 @@
                 Precio sin descuento $<%= new Intl.NumberFormat('de-DE').format(precio) %> 
               </p>
               <br>
-              <a href="/Carrito" class="button_comprar__detailproduct">COMPRAR</a>
+              <button class="button_comprar__detailproduct" onclick="addToCart('<%=idproducto.id%>', '<%=idproducto.name%>','<%=idproducto.description%>', '<%=idproducto.price%>', '<%=idproducto.Image_products[0].file%>')">COMPRAR</button>
             </div>
 
           <div> 
